@@ -1,0 +1,99 @@
+QCNN Thyroid Paper Reproduction
+
+Date: 4-06-2026
+
+Day 1
+
+1. Downloaded DDTI dataset.
+2. Verified XML files are present.
+3. Verified JPG images are present.
+4. Created project folder structure.
+
+Status:
+Ready for dataset verification.
+
+--------------------------------------------------
+
+Date: 4-06-2026
+
+Day 2 (Continued)
+
+Phase 0 Completed
+
+Dataset Inspection Results:
+- JPG Files : 480
+- XML Files : 390
+- Total Files : 870
+
+Observations:
+- One XML file corresponds to one patient/case.
+- Some cases have multiple ultrasound images.
+  Example:
+  106.xml
+  106_1.jpg
+  106_2.jpg
+  106_3.jpg
+  106_4.jpg
+
+Inference:
+- Dataset structure appears consistent with DDTI dataset used in the paper.
+- XML files likely contain diagnosis and TI-RADS information.
+
+Next Step:
+Read XML files and identify:
+1. Benign/Malignant labels
+2. TI-RADS labels
+3. Annotation information
+
+----------------------------------------------------
+Date: 5-06-2026
+
+Day 3 
+
+Phase 2 Completed – XML Structure Analysis
+
+Tasks Performed:
+
+1. Opened and inspected XML files from DDTI dataset.
+2. Examined sample file: 100.xml.
+3. Verified patient metadata is available in XML.
+4. Identified the following attributes:
+   - Case Number
+   - Age
+   - Gender
+   - Composition
+   - Echogenicity
+   - Margins
+   - Calcifications
+   - TI-RADS Classification
+
+5. Confirmed TI-RADS label for sample case:
+   Case 100 → TI-RADS 4a
+
+6. Verified SVG annotation data exists.
+7. Confirmed SVG stores nodule boundary coordinates.
+8. Verified corresponding ultrasound image (100_1.jpg) exists.
+
+Key Learning:
+
+- JPG files contain thyroid ultrasound images.
+- XML files contain patient metadata and annotations.
+- TI-RADS labels will be used as classification targets.
+- SVG coordinates represent expert-marked nodule boundaries.
+
+Research Observation:
+
+The DDTI dataset contains:
+- 390 XML case files
+- 480 ultrasound images
+- Multiple images may belong to a single case.
+
+Current Understanding:
+
+Case
+  ├── XML File
+  │      ├── Patient Information
+  │      ├── TI-RADS Label
+  │      └── Annotation Coordinates
+  │
+  └── One or More JPG Images
