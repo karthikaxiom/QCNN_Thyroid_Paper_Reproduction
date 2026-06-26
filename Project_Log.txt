@@ -100,7 +100,7 @@ Case
 
 --------------------------------------------
 
-Date: 5-06-2026
+Date: 15-06-2026
 
 Day 3 (Continued)
 
@@ -165,6 +165,76 @@ Conclusion:
 
 Phase 3 successfully produced a validated master dataset that combines image information and patient metadata. The dataset is internally consistent and ready for image preprocessing in the next phase.
 
-Next Phase:
 
-Phase 4 – Image Inspection and Preprocessing
+----------------------------------------------------
+
+Date: 16-06-2026
+
+Day 4
+
+Phase 4 Started – Image Inspection
+
+Tasks Performed:
+
+1. Created image_inspector.py.
+2. Inspected all ultrasound images.
+3. Verified image readability.
+4. Verified image dimensions.
+5. Checked image channel information.
+6. Computed pixel intensity statistics.
+
+Inspection Results:
+
+- Total Images : 480
+- Readable Images : 480
+- Corrupted Images : 0
+- All images share identical dimensions.
+- Pixel values range from 0 to 255.
+
+Research Observation:
+
+The DDTI ultrasound dataset is highly consistent. No corrupted images were detected, and all images have the same resolution, making the dataset suitable for a uniform preprocessing pipeline.
+
+Phase 4.2 – Design and implement the image preprocessing pipeline.
+****
+Date: 16-06-2026
+
+Day 4
+
+Phase 4 Completed – Image Preprocessing
+
+Tasks Performed:
+
+1. Verified preprocessing pipeline using the generated master dataset.
+2. Loaded all image metadata from master_dataset.csv.
+3. Resized ultrasound images to 128 × 128 pixels.
+4. Converted all images to grayscale (single channel).
+5. Normalized pixel values for model compatibility.
+6. Generated compressed NumPy dataset (.npz).
+7. Verified dataset dimensions.
+
+Output Files:
+- preprocessed_matrices.npz
+
+Dataset Statistics:
+- Total images available : 480
+- Images with valid TI-RADS labels : 349
+- Images without TI-RADS labels : 131
+
+TI-RADS Distribution:
+2  : 42
+3  : 19
+4a : 96
+4b : 79
+4c : 68
+5  : 45
+
+Generated Array Shapes:
+Image Array      : (349, 128, 128, 1)
+Tumor Labels     : (349,)
+TI-RADS Labels   : (349,)
+
+Research Observation:
+
+Only images containing valid TI-RADS annotations were included in the preprocessing pipeline. Images without TI-RADS labels were excluded to ensure consistency during supervised learning.
+
