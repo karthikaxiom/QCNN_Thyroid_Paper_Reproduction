@@ -196,7 +196,7 @@ Research Observation:
 The DDTI ultrasound dataset is highly consistent. No corrupted images were detected, and all images have the same resolution, making the dataset suitable for a uniform preprocessing pipeline.
 
 Phase 4.2 – Design and implement the image preprocessing pipeline.
-****
+------------------------------------------------------------
 Date: 16-06-2026
 
 Day 4
@@ -237,4 +237,47 @@ TI-RADS Labels   : (349,)
 Research Observation:
 
 Only images containing valid TI-RADS annotations were included in the preprocessing pipeline. Images without TI-RADS labels were excluded to ensure consistency during supervised learning.
+-------------------------------------------------------
+PHASE 4.3 COMPLETED — DATA PREPROCESSING
+Date: 18-06-2026
 
+Completed Tasks
+---------------
+✓ Downloaded and organized DDTI dataset
+✓ Parsed 390 XML annotation files
+✓ Mapped 480 ultrasound images
+✓ Extracted patient metadata
+✓ Extracted TI-RADS labels
+✓ Resized all images to 128×128
+✓ Normalized pixel intensities
+✓ Generated compressed NumPy matrices
+✓ Audited dataset consistency
+✓ Investigated missing diagnosis labels
+
+Dataset Summary
+---------------
+XML Files               : 390
+Ultrasound Images       : 480
+Processed Images        : 480
+Images with TI-RADS     : 349
+Images without TI-RADS  : 131
+
+Important Observation
+---------------------
+The publicly available DDTI dataset does not contain Benign/Malignant
+(pathology) labels required for binary classification. Extensive searches
+through XML files, reportbacaf, reporteco, SVG annotations and metadata
+confirmed that these labels are absent.
+
+The original QCNN paper likely used a private pathology mapping or
+institutional clinical records not included in the public dataset.
+
+Decision
+--------
+Proceed with the 349 labelled images for paper reproduction while preserving
+all 480 images. If pathology labels become available later, the preprocessing
+pipeline can be rerun without modification.
+
+Status
+------
+PHASE 4 SUCCESSFULLY COMPLETED
