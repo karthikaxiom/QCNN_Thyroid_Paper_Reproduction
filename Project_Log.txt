@@ -281,3 +281,26 @@ pipeline can be rerun without modification.
 Status
 ------
 PHASE 4 SUCCESSFULLY COMPLETED
+
+------------------------------------------------
+PHASE 4 COMPLETED
+Date: 19-06-2026
+=========================================================
+
+✔ Audited complete DDTI dataset
+✔ Verified XML-image correspondence
+✔ Extracted clinical metadata from XML
+✔ Built master dataset (480 ultrasound images)
+✔ Resized all images to 128×128 grayscale
+✔ Normalized pixel values
+✔ Generated compressed NumPy matrices
+✔ Created final_dataset.csv
+✔ Inferred diagnosis labels from TI-RADS:
+    - Benign: 157
+    - Malignant: 192
+    - Unknown: 131
+✔ Training will use only labelled images (349 samples)
+✔ SMOTE will be applied later only on the training split as described in the paper.
+
+Phase 4 Status:
+COMPLETED
