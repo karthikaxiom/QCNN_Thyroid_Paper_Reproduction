@@ -97,3 +97,74 @@ Case
   │      └── Annotation Coordinates
   │
   └── One or More JPG Images
+
+--------------------------------------------
+
+Date: 5-06-2026
+
+Day 3 (Continued)
+
+Phase 3 Completed – Master Dataset Generation
+
+Tasks Performed:
+
+1. Developed the master_parser.py script.
+2. Parsed all XML metadata files from the DDTI dataset.
+3. Matched every XML case with its corresponding ultrasound image(s).
+4. Extracted the following metadata:
+
+   * Case ID
+   * XML File
+   * Image Name
+   * Image Number
+   * Image Path
+   * Age
+   * Sex
+   * Composition
+   * Echogenicity
+   * Margins
+   * Calcifications
+   * TI-RADS Classification
+5. Generated a consolidated master dataset.
+6. Exported the dataset as:
+
+   * master_dataset.csv
+   * master_dataset.xlsx
+7. Verified successful creation of both output files.
+
+Dataset Audit:
+
+* XML Files Processed : 390
+* Ultrasound Images Matched : 480
+* Cases with Multiple Images : 72
+* XML Files without Matching Images : 0
+
+TI-RADS Verification:
+
+* XML files containing TI-RADS values : 298
+* XML files with blank TI-RADS field : 92
+
+Research Observations:
+
+* Every XML file has at least one corresponding ultrasound image.
+* Several patients contain multiple ultrasound views.
+* The downloaded public DDTI dataset contains:
+
+  * 390 XML files
+  * 480 ultrasound images
+* These numbers differ slightly from those reported in the reference paper, suggesting that the public dataset has been updated since the paper was published.
+
+Development Improvements:
+
+* Added Excel export support using openpyxl.
+* Created Python virtual environment (.venv) for project dependency isolation.
+* Installed required project libraries.
+* Generated requirements.txt for reproducible environment setup.
+
+Conclusion:
+
+Phase 3 successfully produced a validated master dataset that combines image information and patient metadata. The dataset is internally consistent and ready for image preprocessing in the next phase.
+
+Next Phase:
+
+Phase 4 – Image Inspection and Preprocessing
