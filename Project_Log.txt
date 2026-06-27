@@ -304,3 +304,116 @@ Date: 19-06-2026
 
 Phase 4 Status:
 COMPLETED
+------------------------------------------------
+Date: 21-06-2026
+
+PHASE 5 – STEP 1 COMPLETED
+=========================================================
+
+Objective
+---------
+Prepare the labelled thyroid ultrasound dataset for QCNN training by creating
+training and testing subsets.
+
+Tasks Performed
+---------------
+
+✓ Loaded final_dataset.csv
+✓ Selected only images with valid diagnosis labels
+✓ Encoded diagnosis labels:
+      Benign    → 0
+      Malignant → 1
+✓ Loaded all resized grayscale ultrasound images
+✓ Verified image dimensions (128 × 128 × 1)
+✓ Performed an 80:20 stratified train-test split
+✓ Saved datasets as NumPy arrays for model training
+
+Dataset Statistics
+------------------
+
+Total Images               : 480
+Labelled Images            : 349
+
+Diagnosis Distribution
+----------------------
+
+Benign                     : 157
+Malignant                  : 192
+
+Training Images            : 279
+Testing Images             : 70
+
+Generated Files
+---------------
+
+X_train.npy
+y_train.npy
+X_test.npy
+y_test.npy
+
+Research Observation
+--------------------
+
+A stratified train-test split was used to preserve the class distribution
+between benign and malignant samples. Only labelled images were included in
+the supervised learning pipeline.
+
+Status
+------
+
+PHASE 5 STEP 1 COMPLETED
+------------------------------------------------
+Date: 22-06-2026
+
+PHASE 5 – STEP 2 COMPLETED
+=========================================================
+
+Objective
+---------
+Balance the training dataset using Synthetic Minority Oversampling Technique
+(SMOTE) prior to QCNN training, following the methodology described in the
+reference paper.
+
+Tasks Performed
+---------------
+
+✓ Loaded training dataset
+✓ Flattened 128 × 128 grayscale images
+✓ Applied SMOTE to the training data only
+✓ Restored balanced samples to image format
+✓ Preserved the testing dataset without modification
+✓ Saved balanced datasets for QCNN training
+
+Training Dataset Before SMOTE
+-----------------------------
+
+Total Samples              : 279
+
+Benign                     : 126
+Malignant                  : 153
+
+Training Dataset After SMOTE
+----------------------------
+
+Total Samples              : 306
+
+Benign                     : 153
+Malignant                  : 153
+
+Generated Files
+---------------
+
+X_train_smote.npy
+y_train_smote.npy
+
+Research Observation
+--------------------
+
+SMOTE was applied only to the training dataset to eliminate class imbalance
+while keeping the testing dataset untouched for unbiased model evaluation.
+This follows the methodology reported in the QCNN thyroid classification paper.
+
+Status
+------
+
+PHASE 5 STEP 2 COMPLETED
