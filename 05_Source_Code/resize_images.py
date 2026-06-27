@@ -1,65 +1,67 @@
 from pathlib import Path
 from PIL import Image
 
-# Paths
+print("=" * 60)
+print("PHASE 4 : IMAGE RESIZING")
+print("=" * 60)
 
-INPUT_FOLDER = Path("../02_Dataset_Raw/archive")
-OUTPUT_FOLDER = Path("../03_Dataset_Processed/resized_images")
+# Project paths
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+INPUT_FOLDER = PROJECT_ROOT / "02_Dataset_Raw" / "archive"
+OUTPUT_FOLDER = PROJECT_ROOT / "03_Dataset_Processed" / "resized_images"
 
 OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
 
-# Settings
-
 TARGET_SIZE = (128, 128)
 
-# Find Images
+# Find images
 
 image_files = sorted(INPUT_FOLDER.glob("*.jpg"))
 
-print("=" * 50)
-print("QCNN Image Resizer")
-print("=" * 50)
+print(f"\nInput Folder : {INPUT_FOLDER}")
+print(f"Output Folder: {OUTPUT_FOLDER}")
 
 print(f"\nImages Found : {len(image_files)}")
 
+if len(image_files) == 0:
+    raise Exception("No JPG images found!")
+
 saved = 0
 
-# Resize Images
+# Resize
 
 for image_path in image_files:
 
-    image = Image.open(image_path)
+    img = Image.open(image_path)
 
-    resized = image.resize(
+    img = img.convert("L")          # grayscale
+
+    img = img.resize(
         TARGET_SIZE,
         Image.Resampling.LANCZOS
     )
 
     output_path = OUTPUT_FOLDER / image_path.name
 
-    resized.save(output_path)
+    img.save(output_path)
 
     saved += 1
 
-# Verification
-
-print("\nProcessing Complete")
-print("-" * 30)
-
-print(f"Images Processed : {saved}")
-print(f"Output Folder    : {OUTPUT_FOLDER}")
-print(f"Resize Dimension : {TARGET_SIZE}")
-
-print("\nVerification")
+# Verify
 
 output_images = list(OUTPUT_FOLDER.glob("*.jpg"))
 
-print(f"Input Images  : {len(image_files)}")
-print(f"Output Images : {len(output_images)}")
+print("\nProcessing Complete")
+print("-" * 40)
 
-if len(image_files) == len(output_images):
-    print("\nSUCCESS ✓")
-    print("All images resized successfully.")
-else:
-    print("\nWARNING")
-    print("Image count mismatch detected.")
+print("Images Processed :", saved)
+print("Input Images     :", len(image_files))
+print("Output Images    :", len(output_images))
+
+if len(output_images) != len(image_files):
+    raise Exception("Resize failed.")
+
+print("\nSUCCESS")
+print("All images resized correctly.")
