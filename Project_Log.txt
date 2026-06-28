@@ -413,7 +413,35 @@ SMOTE was applied only to the training dataset to eliminate class imbalance
 while keeping the testing dataset untouched for unbiased model evaluation.
 This follows the methodology reported in the QCNN thyroid classification paper.
 
-Status
-------
-
 PHASE 5 STEP 2 COMPLETED
+
+__________________________________________________
+------------------------------------------------
+Date: 24-06-2026
+
+PHASE 6 BASELINE COMPLETED
+=========================================================
+
+Objective:
+Train and evaluate the first QuCNet tumor classification baseline using generated quantum feature maps.
+
+Completed:
+- Built QuCNet tumor classifier.
+- Loaded X_train_quantum.npy and X_test_quantum.npy.
+- Trained baseline dense classifier on 64×64×4 quantum features.
+- Applied EarlyStopping, ReduceLROnPlateau, and ModelCheckpoint.
+- Saved best_qucnet.keras and final_qucnet.keras.
+- Evaluated model on untouched test set.
+- Generated metrics, confusion matrix, accuracy plot, and loss plot.
+
+Results:
+Accuracy  : 54.29%
+Precision : 56.14%
+Recall    : 82.05%
+F1 Score  : 66.67%
+
+Observation:
+The first baseline trained successfully but showed weak generalization. The model favored the Malignant class, achieving high recall for Malignant but poor recall for Benign. This indicates that further architecture tuning, normalization review, or reproduction refinement is required.
+
+Status:
+PHASE 6 BASELINE COMPLETED
