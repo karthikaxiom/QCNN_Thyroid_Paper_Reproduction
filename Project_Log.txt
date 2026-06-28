@@ -445,3 +445,24 @@ The first baseline trained successfully but showed weak generalization. The mode
 
 Status:
 PHASE 6 BASELINE COMPLETED
+------------------------------------------------
+Date: 25-06-2026
+
+PHASE 7 CLASSICAL BASELINE COMPLETED
+=========================================================
+
+Objective:
+Evaluate whether the low QuCNet accuracy was caused by the quantum feature transformation or by dataset/label limitations.
+
+Method:
+A small classical CNN was trained directly on the SMOTE-balanced 128×128 grayscale images using the same train/test split.
+
+Result:
+Classical CNN Test Accuracy : 57.14%
+QuCNet Baseline Accuracy    : 54.29%
+
+Observation:
+The classical CNN also produced weak generalization. This indicates that the low performance is likely not caused only by the quantum feature extraction stage. The stronger explanation is that the reconstructed Benign/Malignant labels derived from TI-RADS do not fully match the pathology labels used in the original paper.
+
+Conclusion:
+The public DDTI dataset and reconstructed labels are insufficient to reproduce the original paper's reported 97.63% binary classification accuracy directly. This becomes a key reproducibility finding.

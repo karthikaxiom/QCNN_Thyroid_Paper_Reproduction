@@ -1,0 +1,60 @@
+
+FILE SHAPE CHECK
+----------------------------------------
+X_train           : (279, 128, 128, 1)
+X_test            : (70, 128, 128, 1)
+X_train_smote     : (306, 128, 128, 1)
+X_train_quantum   : (306, 64, 64, 4)
+X_test_quantum    : (70, 64, 64, 4)
+y_train           : (279,)
+y_train_smote     : (306,)
+y_test            : (70,)
+
+LABEL DISTRIBUTION
+----------------------------------------
+y_train.npy
+  Benign    : 126
+  Malignant : 153
+y_train_smote.npy
+  Benign    : 153
+  Malignant : 153
+y_test.npy
+  Benign    : 31
+  Malignant : 39
+
+QUANTUM FEATURE STATISTICS
+----------------------------------------
+X_train_quantum.npy
+  Min  : -0.557984
+  Max  : 0.468286
+  Mean : -0.000113
+  Std  : 0.367640
+  NaN  : 0
+  Inf  : 0
+X_test_quantum.npy
+  Min  : -0.530935
+  Max  : 0.468286
+  Mean : -0.000342
+  Std  : 0.367301
+  NaN  : 0
+  Inf  : 0
+
+FINAL DATASET CHECK
+----------------------------------------
+final_dataset.csv rows: 480
+diagnosis
+Malignant    192
+Benign       157
+NaN          131
+Name: count, dtype: int64
+
+TI-RADS distribution:
+tirads
+NaN    131
+4a      96
+4b      79
+4c      68
+5       45
+2       42
+3       19
+Name: count, dtype: int64
