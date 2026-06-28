@@ -1,0 +1,21 @@
+QuCNet Tumor Classification Metrics
+==================================================
+
+Accuracy : 0.5429
+Precision: 0.5614
+Recall   : 0.8205
+F1 Score : 0.6667
+
+Confusion Matrix
+[[ 6 25]
+ [ 7 32]]
+
+Classification Report
+              precision    recall  f1-score   support
+
+      Benign       0.46      0.19      0.27        31
+   Malignant       0.56      0.82      0.67        39
+
+    accuracy                           0.54        70
+   macro avg       0.51      0.51      0.47        70
+weighted avg       0.52      0.54      0.49        70

@@ -53,6 +53,14 @@ def quantum_filter(patch):
         for i in range(N_QUBITS)
     ]
 
+# FAST NUMPY WRAPPER
+
+def quantum_filter_fast(patch):
+    """
+    Executes the quantum circuit and returns plain NumPy values.
+    Used only during preprocessing for faster execution.
+    """
+    return np.asarray(quantum_filter(patch), dtype=np.float32)
 # TEST
 
 if __name__ == "__main__":
