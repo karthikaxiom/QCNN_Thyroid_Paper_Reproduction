@@ -1,0 +1,22 @@
+{
+    "quantum_model": {
+        "experiment": "Phase 9 paper-structured quantum TI-RADS model",
+        "accuracy": 0.18571428571428572,
+        "balanced_accuracy": 0.15162907268170425,
+        "macro_f1": 0.06715506715506715,
+        "weighted_f1": 0.08738880167451597
+    },
+    "classical_model": {
+        "experiment": "Phase 10 controlled classical TI-RADS model",
+        "accuracy": 0.24285714285714285,
+        "balanced_accuracy": 0.2809280144806461,
+        "macro_f1": 0.23184168149843207,
+        "weighted_f1": 0.22761250953470633
+    },
+    "difference_classical_minus_quantum": {
+        "accuracy": 0.057142857142857134,
+        "balanced_accuracy": 0.12929894179894183,
+        "macro_f1": 0.1646866143433649,
+        "weighted_f1": 0.14022370786019034
+    }
+}

@@ -1,0 +1,21 @@
+PHASE 10 CLASSICAL TI-RADS TEST EVALUATION
+==========================================
+
+Test samples               : 70
+Test loss                  : 1.688514
+Accuracy                   : 24.29%
+Balanced accuracy          : 28.09%
+
+Macro precision            : 24.43%
+Macro recall               : 28.09%
+Macro F1-score             : 23.18%
+
+Weighted precision         : 26.69%
+Weighted recall            : 24.29%
+Weighted F1-score          : 22.76%
+
+Majority class             : TI-RADS 4a
+Majority baseline accuracy : 27.14%
+
+Predicted classes used     : 6/6
+Single-class collapse      : False

@@ -1,0 +1,43 @@
+FINAL QUCNET REPRODUCTION CONCLUSION
+====================================
+
+Phase 9 Quantum TI-RADS Model
+-----------------------------
+Accuracy          : 18.57%
+Balanced accuracy : 15.16%
+Macro F1-score    : 6.72%
+Weighted F1-score : 8.74%
+
+Phase 10 Classical TI-RADS Model
+--------------------------------
+Accuracy          : 24.29%
+Balanced accuracy : 28.09%
+Macro F1-score    : 23.18%
+Weighted F1-score : 22.76%
+
+Accuracy Difference
+-------------------
+Classical minus quantum:
+5.71 percentage points
+
+Interpretation
+--------------
+The classical model achieved higher test accuracy than the quantum-feature model.
+
+The available QuCNet methodology and processing pipeline were
+implemented successfully. However, the numerical performance reported
+in the original paper could not be reproduced using the publicly
+available DDTI data and the implementation details disclosed in the
+paper.
+
+The main reproducibility limitations include:
+
+1. Missing original pathology labels for binary classification.
+2. Incomplete architecture and quantum-circuit specifications.
+3. Small number of publicly labelled TI-RADS samples.
+4. Severe similarity between adjacent TI-RADS categories.
+5. Weak generalization in both quantum and classical experiments.
+
+The reproduction stage is therefore considered complete. Further work
+must be presented separately as model improvement rather than as part
+of the original paper reproduction.

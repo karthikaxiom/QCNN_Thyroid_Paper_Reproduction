@@ -1,0 +1,60 @@
+{
+    "phase": "Phase 10 - Classical TI-RADS Ablation",
+    "experiment_type": "Controlled raw-image versus quantum-feature comparison",
+    "random_seed": 42,
+    "epochs": 120,
+    "batch_size": 16,
+    "training_samples": 223,
+    "validation_samples": 56,
+    "input_shape": [
+        128,
+        128,
+        1
+    ],
+    "internal_resize": [
+        64,
+        64
+    ],
+    "number_of_classes": 6,
+    "optimizer": "Adam",
+    "initial_learning_rate": 0.0001,
+    "loss": "sparse_categorical_crossentropy",
+    "imbalance_method": "Same class weights as Phase 9",
+    "smote_used": false,
+    "augmentation_used": false,
+    "test_set_used_during_training": false,
+    "phase9_indices_reused": true,
+    "phase9_class_weights_reused": true,
+    "automatic_division_by_255": false,
+    "model_parameters": 1062150,
+    "architecture": [
+        "Resize 128x128 to 64x64",
+        "Conv2D 16",
+        "MaxPooling2D",
+        "Conv2D 32",
+        "MaxPooling2D",
+        "Flatten",
+        "Dense 128",
+        "Dense 64",
+        "Softmax 6"
+    ],
+    "controlled_difference": {
+        "phase9_input": "64x64x4 quantum feature maps",
+        "phase10_input": "128x128x1 grayscale images",
+        "common_training_split": true,
+        "common_validation_split": true,
+        "common_class_weights": true,
+        "common_random_seed": true,
+        "common_optimizer": true,
+        "common_learning_rate": true,
+        "common_batch_size": true
+    },
+    "class_mapping": {
+        "0": "TI-RADS 2",
+        "1": "TI-RADS 3",
+        "2": "TI-RADS 4a",
+        "3": "TI-RADS 4b",
+        "4": "TI-RADS 4c",
+        "5": "TI-RADS 5"
+    }
+}

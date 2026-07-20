@@ -466,3 +466,49 @@ The classical CNN also produced weak generalization. This indicates that the low
 
 Conclusion:
 The public DDTI dataset and reconstructed labels are insufficient to reproduce the original paper's reported 97.63% binary classification accuracy directly. This becomes a key reproducibility finding.
+======================================================
+---
+
+Date: 20-07-2026
+
+# QUCNET PAPER REPRODUCTION AND CONTROLLED ABLATION COMPLETED
+
+Objective:
+Complete the reproduction of the QuCNet thyroid nodule classification methodology and evaluate whether quantum-transformed feature maps provide an advantage over original grayscale ultrasound images.
+
+Method:
+The complete pipeline was implemented using the public DDTI dataset, including dataset inspection, XML parsing, preprocessing, train-test splitting, class balancing, quantum feature generation, QuCNet implementation, classical baselines and reproducibility audits.
+
+For the final six-class TI-RADS comparison, two controlled models were evaluated:
+
+1. Paper-structured QuCNet classifier operating on 64×64×4 quantum feature maps.
+2. Equivalent classical CNN operating on original grayscale ultrasound images.
+
+Both models used the same original 279 training samples, identical train-validation indices, identical class weights, the same optimizer, learning rate, batch size and untouched 70-image test set.
+
+Results:
+
+Quantum TI-RADS Model:
+Accuracy          : 18.57%
+Balanced Accuracy : 15.16%
+Macro F1-Score    : 6.72%
+Weighted F1-Score : 8.74%
+
+Classical TI-RADS Model:
+Accuracy          : 24.29%
+Balanced Accuracy : 28.09%
+Macro F1-Score    : 23.18%
+Weighted F1-Score : 22.76%
+
+Majority-Class Baseline:
+Accuracy          : 27.14%
+
+Observation:
+The quantum model showed near-prediction collapse and used only three of the six output classes. The classical model predicted all six classes and achieved substantially better balanced accuracy and F1-scores, although its overall accuracy remained below the majority-class baseline.
+
+Conclusion:
+The available QuCNet methodology and processing pipeline were successfully implemented. However, the numerical performance reported in the original paper could not be reproduced using the publicly available DDTI dataset and disclosed implementation details.
+
+Major limitations identified were missing original pathology labels, incomplete architecture and quantum-circuit specifications, small class sizes and strong visual similarity between adjacent TI-RADS categories.
+
+The controlled comparison did not demonstrate an advantage from quantum-transformed features over original grayscale images. The reproduction stage is now complete. Any further experiments will be presented separately as proposed improvements and not as part of the original reproduction.
