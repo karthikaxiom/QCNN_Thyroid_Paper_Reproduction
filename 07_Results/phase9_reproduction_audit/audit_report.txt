@@ -1,0 +1,20 @@
+PHASE 9 REPRODUCTION CORRECTION AUDIT
+=====================================
+
+Original images                 : (279, 128, 128, 1)
+SMOTE images                    : (462, 128, 128, 1)
+SMOTE quantum features          : (462, 64, 64, 4)
+
+Original-image prefix match     : True
+Original-label prefix match     : True
+
+NaN values                      : 0
+Infinite values                 : 0
+Constant quantum maps           : 0
+
+Unique quantum maps             : 462
+Repeated samples                : 0
+Duplicate groups                : 0
+Conflicting-label groups        : 0
+
+Original quantum extraction     : True

@@ -1,0 +1,35 @@
+{
+    "test_samples": 70,
+    "test_loss": 1.7852835655212402,
+    "keras_accuracy": 0.18571428954601288,
+    "accuracy": 0.18571428571428572,
+    "balanced_accuracy": 0.15162907268170425,
+    "macro_precision": 0.11458333333333333,
+    "macro_recall": 0.15162907268170425,
+    "macro_f1": 0.06715506715506715,
+    "weighted_precision": 0.1732142857142857,
+    "weighted_recall": 0.18571428571428572,
+    "weighted_f1": 0.08738880167451597,
+    "majority_class_id": 2,
+    "majority_class_name": "TI-RADS 4a",
+    "majority_baseline_accuracy": 0.2714285714285714,
+    "predicted_classes_used": 3,
+    "single_class_collapse": false,
+    "true_class_distribution": [
+        8,
+        4,
+        19,
+        16,
+        14,
+        9
+    ],
+    "predicted_class_distribution": [
+        0,
+        0,
+        2,
+        0,
+        64,
+        4
+    ],
+    "model_path": "D:\\QCNN_Thyroid_Paper_Reproduction\\06_Models\\best_phase9_paper_tirads.keras"
+}

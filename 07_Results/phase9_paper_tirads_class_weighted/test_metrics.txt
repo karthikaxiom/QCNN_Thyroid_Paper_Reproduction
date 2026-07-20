@@ -1,0 +1,21 @@
+PHASE 9 CORRECTED PAPER-STRUCTURED TI-RADS EVALUATION
+=====================================================
+
+Test samples               : 70
+Test loss                  : 1.785284
+Accuracy                   : 18.57%
+Balanced accuracy          : 15.16%
+
+Macro precision            : 11.46%
+Macro recall               : 15.16%
+Macro F1-score             : 6.72%
+
+Weighted precision         : 17.32%
+Weighted recall            : 18.57%
+Weighted F1-score          : 8.74%
+
+Majority class             : TI-RADS 4a
+Majority baseline accuracy : 27.14%
+
+Predicted classes used     : 3/6
+Single-class collapse      : False
