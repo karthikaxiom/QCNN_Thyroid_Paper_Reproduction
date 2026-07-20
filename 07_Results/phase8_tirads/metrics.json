@@ -1,0 +1,12 @@
+{
+    "accuracy": 0.2714285714285714,
+    "macro_precision": 0.04523809523809524,
+    "macro_recall": 0.16666666666666666,
+    "macro_f1": 0.07116104868913857,
+    "weighted_precision": 0.0736734693877551,
+    "weighted_recall": 0.2714285714285714,
+    "weighted_f1": 0.11589085072231138,
+    "test_samples": 70,
+    "number_of_classes": 6,
+    "model_path": "D:\\QCNN_Thyroid_Paper_Reproduction\\06_Models\\best_tirads_qucnet.keras"
+}

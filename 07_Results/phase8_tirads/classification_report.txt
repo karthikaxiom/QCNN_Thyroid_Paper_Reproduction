@@ -1,0 +1,12 @@
+              precision    recall  f1-score   support
+
+   TI-RADS 2     0.0000    0.0000    0.0000         8
+   TI-RADS 3     0.0000    0.0000    0.0000         4
+  TI-RADS 4a     0.2714    1.0000    0.4270        19
+  TI-RADS 4b     0.0000    0.0000    0.0000        16
+  TI-RADS 4c     0.0000    0.0000    0.0000        14
+   TI-RADS 5     0.0000    0.0000    0.0000         9
+
+    accuracy                         0.2714        70
+   macro avg     0.0452    0.1667    0.0712        70
+weighted avg     0.0737    0.2714    0.1159        70

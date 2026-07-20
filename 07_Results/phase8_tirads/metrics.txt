@@ -1,0 +1,11 @@
+PHASE 8: TI-RADS QUCNET EVALUATION
+==================================================
+
+Test samples       : 70
+Accuracy           : 27.14%
+Macro precision    : 4.52%
+Macro recall       : 16.67%
+Macro F1-score     : 7.12%
+Weighted precision : 7.37%
+Weighted recall    : 27.14%
+Weighted F1-score  : 11.59%
