@@ -18,9 +18,9 @@
 
 # Research Summary
 
-Artificial Intelligence has demonstrated remarkable success in medical image classification. Recently, Quantum Machine Learning (QML) has emerged as a promising research direction by combining concepts from quantum computing with deep learning architectures. One such work is **QuCNet**, a Quantum-Inspired Convolutional Neural Network proposed for thyroid nodule classification using ultrasound images.
+Artificial Intelligence has demonstrated remarkable success in medical image classification. Recently, Quantum Machine Learning (QML) has emerged as a promising research direction by combining concepts from quantum computing with deep learning architectures.One such work is **QuCNet**, a quantum-inspired convolutional framework proposed by Swathi, Altalbe and Kumar for thyroid nodule classification using ultrasound images [[1]](#references).
 
-The original paper reported exceptionally high classification performance using quantum-inspired feature extraction on the Digital Database of Thyroid Ultrasound Images (DDTI). However, reproducing published research is often challenging because many implementation details, preprocessing decisions, dataset versions and experimental settings are not fully disclosed.
+The reference study reported high classification performance for both tumour classification and multi-class TI-RADS prediction [[1]](#references). using quantum-inspired feature extraction on the Digital Database of Thyroid Ultrasound Images (DDTI). However, reproducing published research is often challenging because many implementation details, preprocessing decisions, dataset versions and experimental settings are not fully disclosed.
 
 This repository presents a **complete independent reproduction and methodological audit** of the QuCNet framework using the publicly available DDTI dataset.
 
@@ -50,27 +50,31 @@ This repository aims to provide a carefully documented reference implementation 
 
 ---
 
-# Reference Paper
+# Reference Study
 
-**Title**
+This repository independently reproduces and audits the methodology presented in the following research article:
 
-> QuCNet: Quantum-Inspired CNN for Optimized Thyroid Nodule Classification
+> **Gunti Swathi, Ali Altalbe and R. Prasanna Kumar**,  
+> “QuCNet: Quantum-Inspired Convolutional Neural Networks for Optimized Thyroid Nodule Classification,”  
+> *IEEE Access*, vol. 12, pp. 27829–27842, 2024.  
+> **DOI:** [10.1109/ACCESS.2024.3367806](https://doi.org/10.1109/ACCESS.2024.3367806)
 
-**Journal**
+### Publication Details
 
-IEEE Access (2024)
+| Field | Information |
+|---|---|
+| Title | QuCNet: Quantum-Inspired Convolutional Neural Networks for Optimized Thyroid Nodule Classification |
+| Authors | Gunti Swathi, Ali Altalbe and R. Prasanna Kumar |
+| Journal | IEEE Access |
+| Volume | 12 |
+| Pages | 27829–27842 |
+| Publication Year | 2024 |
+| DOI | [10.1109/ACCESS.2024.3367806](https://doi.org/10.1109/ACCESS.2024.3367806) |
+| Publisher | Institute of Electrical and Electronics Engineers |
+| Research Domain | Quantum-Inspired Learning and Thyroid Ultrasound Classification |
 
-**DOI**
-
-10.1109/ACCESS.2024.3367806
-
----
-
-> **Important Note**
->
-> This repository is an **independent academic reproduction** of the published methodology.
-> It is **not** an official implementation released by the original authors.
-
+> [!IMPORTANT]
+> This repository is an independent academic reproduction and methodological audit. It is not the official source-code implementation of the original authors and is not affiliated with IEEE or the authors of the reference study.
 ---
 
 # Research Objectives
@@ -1296,3 +1300,190 @@ Therefore:
 - No further model will be presented as part of the original QuCNet reproduction
 
 ---
+
+# Research Integrity and Scope
+
+This repository documents both the successful technical reconstruction and the unsuccessful reproduction of the reported performance.
+
+The purpose of retaining the complete experimental history is to make clear:
+
+- Which parts of the published workflow could be reconstructed
+- Which details required interpretation
+- Which dataset limitations affected the study
+- Which earlier experiments contained methodological risks
+- Which final results were produced under the leakage-free protocol
+- Why the reported performance could not be independently verified
+
+No experiment has been removed solely because it produced low accuracy.
+
+No final test split was modified after observing model performance.
+
+No additional architecture is presented as part of the original-paper reproduction after the formal closure of Phase 14.
+
+This distinction protects the difference between:
+
+1. **Reproducing the published QuCNet study**, and
+2. **Developing a new model inspired by the reproduction findings**
+
+Any future architecture, ordinal-learning method or performance-improvement study will therefore be documented separately as an extension and will not be presented as reproduced evidence from the original paper.
+
+---
+
+# Citation
+
+## Citing This Repository
+
+This repository is part of an academic reproduction study conducted for postgraduate research.
+
+Until a formal thesis or associated research article is published, the repository may be cited as:
+
+> **Karthik B. R.**  
+> *Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification*.  
+> GitHub repository, 2026.  
+> Available at: [github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction](https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction)
+
+### BibTeX
+
+```bibtex
+@software{karthik_2026_qucnet_reproduction,
+  author       = {Karthik B. R.},
+  title        = {Reproduction and Methodological Audit of QuCNet
+                  for Thyroid Nodule Classification},
+  year         = {2026},
+  publisher    = {GitHub},
+  url          = {https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction},
+  note         = {Independent reproduction and methodological audit
+                  using the publicly available DDTI dataset}
+}
+```
+
+> [!NOTE]
+> The citation information may be updated after the completion of the M.Tech thesis or publication of an associated research article.
+
+---
+
+# References
+
+<a id="references"></a>
+
+[1] G. Swathi, A. Altalbe and R. P. Kumar,  
+“QuCNet: Quantum-Inspired Convolutional Neural Networks for Optimized Thyroid Nodule Classification,”  
+*IEEE Access*, vol. 12, pp. 27829–27842, 2024.  
+[https://doi.org/10.1109/ACCESS.2024.3367806](https://doi.org/10.1109/ACCESS.2024.3367806)
+
+---
+
+# Researcher
+
+<table>
+<tr>
+<td>
+
+## Karthik B. R.
+
+**M.Tech — Information Technology**  
+**University Visvesvaraya College of Engineering**  
+**Bengaluru, Karnataka, India**
+
+</td>
+</tr>
+</table>
+
+I undertook this project as an independent reproduction and methodological audit of quantum-inspired thyroid ultrasound classification.
+
+My contribution covered the complete research lifecycle, including:
+
+- Literature analysis
+- Dataset recovery and verification
+- XML annotation parsing
+- Image and metadata preprocessing
+- Quantum-inspired feature reconstruction
+- Classical and quantum model implementation
+- Binary and multi-class experimentation
+- Annotation and patient-level leakage auditing
+- Case-independent dataset splitting
+- Lesion ROI construction
+- ROI-level and case-level evaluation
+- Reproducibility analysis
+- Experimental documentation
+- Repository development
+
+The central aim of this work was not to reproduce a high number by repeated tuning, but to determine whether the published findings could be recovered under transparent and independently verifiable conditions.
+
+### Research Interests
+
+- Artificial Intelligence and Machine Learning
+- Medical Image Analysis
+- Quantum Machine Learning
+- Deep Learning
+- Scientific Reproducibility
+- Computer Vision
+
+### Research Profiles
+
+| Platform | Link |
+|---|---|
+| GitHub | [Robbin808](https://github.com/Robbin808) |
+| Repository | [QCNN Thyroid Paper Reproduction](https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction) |
+
+---
+
+# Academic Context
+
+| Field | Details |
+|---|---|
+| Researcher | Karthik B. R. |
+| Programme | Master of Technology |
+| Specialization | Information Technology |
+| Institution | University Visvesvaraya College of Engineering |
+| Location | Bengaluru, Karnataka, India |
+| Research Area | Quantum-Inspired Medical Image Classification |
+| Study Type | Independent Reproduction and Methodological Audit |
+| Dataset | Digital Database of Thyroid Ultrasound Images |
+| Reference Model | QuCNet |
+| Project Status | Reproduction Completed |
+| Completion Year | 2026 |
+
+---
+
+# Acknowledgements
+
+I acknowledge the authors of the original QuCNet study for introducing the quantum-inspired thyroid nodule classification framework investigated in this project.
+
+I also acknowledge the researchers and medical experts involved in creating and annotating the DDTI dataset. Their work made this independent study possible.
+
+This repository is maintained for academic, educational and reproducibility-oriented research purposes.
+
+---
+
+# Disclaimer
+
+This project is intended exclusively for research and educational use.
+
+The models, outputs and findings contained in this repository:
+
+- Are not medical devices
+- Have not been clinically validated
+- Must not be used for diagnosis
+- Must not replace professional medical judgement
+- Must not be used to make patient-care decisions
+
+The TI-RADS predictions generated during this research are experimental machine-learning outputs and should not be interpreted as clinical assessments.
+
+---
+
+<div align="center">
+
+## Reproducibility Before Performance
+
+**A negative result documented honestly is more valuable than a high result that cannot be independently verified.**
+
+<br>
+
+Developed and documented by **Karthik B. R.**
+
+M.Tech Information Technology  
+University Visvesvaraya College of Engineering  
+Bengaluru, India
+
+</div>
