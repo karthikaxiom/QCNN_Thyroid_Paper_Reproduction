@@ -1,223 +1,336 @@
-# Reproduction and Audit of QuCNet for Thyroid Nodule Classification
+<div align="center">
 
-A systematic reproduction study of the quantum-inspired CNN proposed for
-thyroid ultrasound classification using the publicly recoverable DDTI dataset.
+# Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification
 
-## Research Summary
-
-This repository presents a systematic reproduction and methodological audit of
-the paper **“QuCNet: Quantum-Inspired CNN for Optimized Thyroid Nodule
-Classification.”**
-
-The study reconstructs the public DDTI data pipeline, XML annotation parser,
-TI-RADS classification workflow, quantum-inspired four-channel transformation,
-classical CNN baselines, case-level leakage audit, lesion ROI extraction, and
-patient-independent evaluation.
-
-The high classification performance reported in the reference paper could not
-be independently reproduced using the publicly recoverable dataset and the
-implementation details disclosed in the publication.
-
-This repository preserves both successful implementation outputs and negative
-experimental findings as part of a transparent reproducibility study.
-
-## Main Findings
-
-- The public dataset contained 480 ultrasound images and 390 XML case files.
-- Only 349 images had usable TI-RADS labels.
-- Public pathology-confirmed benign/malignant labels were not available.
-- The earlier binary labels were therefore treated only as provisional proxies.
-- A complete annotation audit identified 291 usable cases and 449 valid ROIs.
-- The final case-level split contained zero case and ROI overlap.
-- The classical grayscale baseline outperformed the reconstructed quantum-feature model in the controlled image-level experiment.
-- The final leakage-free ROI CNN achieved 12.50% ROI accuracy and 11.36% case accuracy.
-- The original paper’s reported performance could not be reproduced under publicly reconstructable conditions.
-
-## Reference Paper
-
-**Title:** QuCNet: Quantum-Inspired CNN for Optimized Thyroid Nodule Classification  
-**Journal:** IEEE Access  
-**Year:** 2024  
-**DOI:** 10.1109/ACCESS.2024.3367806
-
-This repository is an independent academic reproduction. It is not an official
-implementation released by the original authors.
-
-
-## Research Objectives
-
-1. Reconstruct the publicly reproducible QuCNet workflow.
-2. Audit the available DDTI data and XML annotations.
-3. Compare quantum-transformed and original grayscale inputs.
-4. identify data leakage and label-reconstruction risks.
-5. Build a patient-independent lesion-level evaluation pipeline.
-6. Document the gap between reported and independently reproduced results.
-
-## Experimental Pipeline
-
-DDTI Dataset
-      ↓
-XML and Image Audit
-      ↓
-Master Dataset Generation
-      ↓
-Image Preprocessing
-      ↓
-Initial Binary Proxy Experiment
-      ↓
-Quantum Feature Generation
-      ↓
-QuCNet and Classical CNN Comparison
-      ↓
-Case and Annotation Audit
-      ↓
-Leakage-Free Case Split
-      ↓
-Lesion ROI Dataset
-      ↓
-Final ROI and Case-Level Evaluation
-
-
-
-Later, we can replace this with a polished workflow image.
+### A Systematic Reproduction Study of Quantum-Inspired Deep Learning for Thyroid Ultrasound Classification Using the Public DDTI Dataset
 
 ---
 
-### 6. Dataset summary
+![Research](https://img.shields.io/badge/Research-Reproducibility%20Study-success)
+![Status](https://img.shields.io/badge/Status-Completed-blue)
+![Framework](https://img.shields.io/badge/Framework-TensorFlow%202.21-orange)
+![Language](https://img.shields.io/badge/Python-3.13-yellow)
+![Dataset](https://img.shields.io/badge/Dataset-DDTI-red)
 
-## Dataset Summary
+</div>
 
-| Item | Count |
-|---|---:|
-| Ultrasound images | 480 |
+---
 
+# Research Summary
 
-## Research Phases
+Artificial Intelligence has demonstrated remarkable success in medical image classification. Recently, Quantum Machine Learning (QML) has emerged as a promising research direction by combining concepts from quantum computing with deep learning architectures. One such work is **QuCNet**, a Quantum-Inspired Convolutional Neural Network proposed for thyroid nodule classification using ultrasound images.
+
+The original paper reported exceptionally high classification performance using quantum-inspired feature extraction on the Digital Database of Thyroid Ultrasound Images (DDTI). However, reproducing published research is often challenging because many implementation details, preprocessing decisions, dataset versions and experimental settings are not fully disclosed.
+
+This repository presents a **complete independent reproduction and methodological audit** of the QuCNet framework using the publicly available DDTI dataset.
+
+Unlike a conventional implementation project, the primary objective of this work was **not to maximize classification accuracy**, but to answer a more fundamental scientific question:
+
+> **Can the performance reported in the original QuCNet paper be independently reproduced using the publicly recoverable dataset and the implementation details described in the publication?**
+
+To answer this question, the complete pipeline was reconstructed from scratch, including dataset verification, XML parsing, metadata extraction, preprocessing, quantum-inspired feature generation, classical and quantum baselines, annotation auditing, patient-level leakage analysis, lesion-level ROI extraction, and a final leakage-free evaluation protocol.
+
+The study successfully reconstructed the entire experimental workflow and identified several important reproducibility challenges, including missing pathology labels, incomplete methodological specifications, annotation-level ambiguities, and patient-level data leakage risks.
+
+Although the complete implementation pipeline was successfully executed, the reported performance of the original publication could **not** be independently reproduced using the publicly available resources.
+
+Rather than treating this as a failure, the project preserves these findings as a transparent and scientifically valuable reproducibility study.
+
+---
+
+# Why This Research Matters
+
+Reproducibility is one of the foundations of scientific research.
+
+A published model can only be considered reliable when independent researchers are able to reconstruct the methodology, obtain comparable experimental conditions, and verify the reported findings.
+
+Medical AI research becomes particularly important because model performance may directly influence future clinical decision-support systems. Therefore, identifying missing implementation details, hidden assumptions, undocumented preprocessing steps, or dataset inconsistencies contributes to improving transparency and research quality.
+
+This repository aims to provide a carefully documented reference implementation that future researchers can build upon while understanding the practical challenges involved in reproducing quantum-inspired medical image classification systems.
+
+---
+
+# Reference Paper
+
+**Title**
+
+> QuCNet: Quantum-Inspired CNN for Optimized Thyroid Nodule Classification
+
+**Journal**
+
+IEEE Access (2024)
+
+**DOI**
+
+10.1109/ACCESS.2024.3367806
+
+---
+
+> **Important Note**
+>
+> This repository is an **independent academic reproduction** of the published methodology.
+> It is **not** an official implementation released by the original authors.
+
+---
+
+# Research Objectives
+
+The objectives of this work were:
+
+- Reconstruct the complete QuCNet pipeline using only publicly available resources.
+- Study the DDTI dataset in detail by analysing XML annotations, metadata and image relationships.
+- Develop a reproducible preprocessing pipeline for thyroid ultrasound images.
+- Reconstruct the quantum-inspired feature generation procedure described in the paper.
+- Compare quantum-inspired features against conventional grayscale image representations.
+- Evaluate both binary and multi-class TI-RADS classification tasks.
+- Investigate the effect of annotation quality, dataset structure and patient-level data leakage.
+- Build a leakage-free lesion-level evaluation protocol using expert-marked ROI annotations.
+- Document every phase of the reproduction process in chronological order.
+- Preserve both successful implementations and negative experimental findings for future reproducibility research.
+
+---
+
+# Research Contributions
+
+This repository provides:
+
+- A complete phase-wise reconstruction of the QuCNet workflow.
+- Automated XML parsing and metadata extraction for the DDTI dataset.
+- Dataset verification and consistency auditing.
+- Quantum-inspired feature generation pipeline.
+- Classical CNN and Quantum-inspired CNN implementations.
+- Controlled experimental comparisons.
+- Annotation-level and patient-level dataset auditing.
+- Leakage-free case-level train-validation-test splitting.
+- Lesion ROI dataset generation using expert annotations.
+- ROI-level and Case-level performance evaluation.
+- Complete research log documenting every development stage.
+- Reproducible implementation scripts, reports and evaluation outputs.
+
+---
+
+# Current Project Status
+
+| Component | Status |
+|------------|--------|
+| Dataset Verification | ✅ Completed |
+| XML Metadata Parsing | ✅ Completed |
+| Image Preprocessing | ✅ Completed |
+| Binary Classification Reproduction | ✅ Completed |
+| Quantum Feature Generation | ✅ Completed |
+| Classical Baseline | ✅ Completed |
+| Multi-Class TI-RADS Evaluation | ✅ Completed |
+| Annotation Audit | ✅ Completed |
+| Case-Level Leakage Audit | ✅ Completed |
+| Frozen Dataset Split | ✅ Completed |
+| ROI Dataset Generation | ✅ Completed |
+| Final Leakage-Free Evaluation | ✅ Completed |
+| Research Documentation | ✅ Ongoing |
+
+---
+
+> **Project Outcome**
+>
+> The complete QuCNet methodology was successfully reconstructed and evaluated.
+> However, the high classification performance reported in the original publication could not be independently reproduced using the publicly available DDTI dataset and the methodological details disclosed in the paper.
+>
+> The repository therefore serves as a **complete reproducibility study**, documenting both the implementation process and the scientific challenges encountered during independent verification.
+
+---
+
+# Experimental Pipeline
+
+The complete reproduction was performed through a structured multi-phase workflow. Every phase was independently verified before progressing to the next stage, ensuring that the final implementation remained reproducible, transparent and scientifically defensible.
+
+```text
+                     PUBLIC DDTI DATASET
+                              │
+                              ▼
+                 Dataset Verification & Audit
+                              │
+                              ▼
+                 XML Parsing & Metadata Extraction
+                              │
+                              ▼
+               Master Dataset Generation (CSV)
+                              │
+                              ▼
+              Image Inspection & Preprocessing
+                              │
+                              ▼
+            Binary Classification Reproduction
+                              │
+                              ▼
+         Quantum Feature Generation (QuCNet)
+                              │
+                              ▼
+      Classical CNN & Quantum CNN Comparison
+                              │
+                              ▼
+      Multi-Class TI-RADS Classification Study
+                              │
+                              ▼
+         Complete Annotation & Case-Level Audit
+                              │
+                              ▼
+        Leakage-Free Patient-Level Dataset Split
+                              │
+                              ▼
+            Lesion ROI Dataset Construction
+                              │
+                              ▼
+        Final ROI-Level & Case-Level Evaluation
+                              │
+                              ▼
+        Scientific Analysis & Reproducibility Report
+```
+
+---
+
+# Repository Structure
+
+```text
+QCNN_Thyroid_Paper_Reproduction
+│
+├── 01_Paper
+│   ├── Reference paper
+│   └── Supporting literature
+│
+├── 02_Dataset_Raw
+│   └── Original DDTI dataset
+│
+├── 03_Dataset_Processed
+│   └── Generated datasets, NumPy arrays and processed outputs
+│
+├── 04_Notebooks
+│   └── Experimental notebooks and exploratory analysis
+│
+├── 05_Source_Code
+│   ├── Phase-wise implementation
+│   ├── Utility modules
+│   └── Reproduction scripts
+│
+├── 06_Models
+│   └── Saved TensorFlow model checkpoints
+│
+├── 07_Results
+│   ├── Metrics
+│   ├── Reports
+│   ├── Confusion matrices
+│   ├── Prediction files
+│   └── Experimental outputs
+│
+├── 08_Presentation
+│   └── Presentation material
+│
+├── 09_Output_images
+│   └── Pipeline visualizations
+│
+├── Project_Log.txt
+│
+├── README.md
+│
+├── requirements.txt
+│
+└── .gitignore
+```
+
+---
+
+# Dataset Overview
+
+This reproduction uses the **Digital Database of Thyroid Ultrasound Images (DDTI)**, a publicly available thyroid ultrasound dataset containing expert-annotated ultrasound scans together with XML metadata describing thyroid nodules.
+
+Unlike many benchmark datasets, the DDTI dataset contains multiple ultrasound images for several patients, XML annotation files, SVG-based lesion boundaries and TI-RADS information, making the preprocessing pipeline considerably more complex than conventional image classification datasets.
+
+During the reproduction process, the complete dataset was independently verified before any model training was performed.
+
+---
+
+## Original Dataset Statistics
+
+| Component | Count |
+|-----------|------:|
+| XML Files | 390 |
+| Ultrasound Images | 480 |
+| Images with TI-RADS Labels | 349 |
+| Images without TI-RADS Labels | 131 |
+
+---
+
+## Audited Dataset Statistics
+
+Following the complete annotation and patient-level audit performed during the later stages of this research, the validated dataset consisted of:
+
+| Component | Count |
+|-----------|------:|
+| Valid Patient Cases | 291 |
+| Valid Lesion ROIs | 449 |
+| Invalid Annotation Records | Documented Separately |
+
+---
+
+# Research Timeline
+
+The reproduction study was carried out as a sequence of progressively refined experimental phases.
+
+Rather than directly implementing the published model, the project focused on understanding every stage of the original methodology, verifying each intermediate result and correcting potential reproducibility issues whenever they were identified.
 
 | Phase | Description | Status |
-|---|---|---|
-| 0–4 | Dataset inspection, XML parsing and preprocessing | Completed |
-| 5 | Dataset split, class balancing and feature preparation | Completed |
-| 6 | Initial QuCNet binary baseline | Completed |
-| 7 | Classical binary baseline | Completed |
-| 8–10 | Six-class TI-RADS controlled comparison | Completed |
-| 11 | Case and annotation audit | Completed and frozen |
-| 12 | Leakage-free case-level split | Completed and frozen |
-| 13 | Lesion ROI dataset preparation | Completed and frozen |
-| 14 | Final ROI categorical CNN baseline | Completed |
-| XML case files | 390 |
-| Images with TI-RADS labels | 349 |
-| Images without TI-RADS labels | 131 |
-| Audited valid cases | 291 |
-| Audited valid ROI regions | 449 |
+|------|-----------------------------------------------|:------:|
+| Phase 0 | Dataset Verification | ✅ |
+| Phase 1 | XML Structure Analysis | ✅ |
+| Phase 2 | Master Dataset Generation | ✅ |
+| Phase 3 | Image Inspection | ✅ |
+| Phase 4 | Image Preprocessing | ✅ |
+| Phase 5 | Binary Dataset Preparation | ✅ |
+| Phase 6 | Initial QuCNet Baseline | ✅ |
+| Phase 7 | Classical CNN Baseline | ✅ |
+| Phase 8 | Multi-Class TI-RADS Study | ✅ |
+| Phase 9 | Controlled Experimental Comparison | ✅ |
+| Phase 10 | Evaluation & Analysis | ✅ |
+| Phase 11 | Annotation Audit | ✅ |
+| Phase 12 | Leakage-Free Case Split | ✅ |
+| Phase 13 | ROI Dataset Generation | ✅ |
+| Phase 14 | Final ROI-Level Evaluation | ✅ |
 
-## Initial Controlled TI-RADS Comparison
+---
 
-| Model | Accuracy | Balanced Accuracy | Macro F1 |
-|---|---:|---:|---:|
-| Quantum-feature QuCNet | 18.57% | 15.16% | 6.72% |
-| Classical grayscale CNN | 24.29% | 28.09% | 23.18% |
-| Majority-class baseline | 27.14% | — | — |
+# Research Philosophy
 
+Throughout this project, the primary objective was **scientific reproducibility rather than model optimisation**.
 
-Under matched data partitions and training conditions, the quantum-transformed
-features did not demonstrate an advantage over original grayscale ultrasound
-images.
+Every experimental decision was guided by the following principles:
 
-## Final Leakage-Free ROI Evaluation
+- Preserve reproducibility over reported accuracy.
+- Never modify the testing dataset after observing results.
+- Freeze validated dataset splits before training.
+- Preserve unsuccessful experiments as part of the research record.
+- Maintain complete transparency in preprocessing and evaluation.
+- Avoid undocumented modifications to the original methodology.
+- Document every important experimental decision chronologically.
 
-### Dataset split
+These principles ensured that the final conclusions were based on a scientifically rigorous experimental protocol rather than repeated optimisation attempts.
 
-| Split | Cases | ROIs |
-|---|---:|---:|
-| Train | 203 | 319 |
-| Validation | 44 | 58 |
-| Test | 44 | 72 |
+---
 
-All case-level and ROI-level overlap checks were zero.
+# Key Challenges Encountered
 
-### Test performance
+Reproducing the QuCNet paper required overcoming several practical challenges that were not fully described in the original publication.
 
-| Evaluation level | Accuracy | Balanced Accuracy | Macro F1 |
-|---|---:|---:|---:|
-| ROI level | 12.50% | 16.67% | 3.70% |
-| Case level | 11.36% | 16.67% | 3.40% |
+The major challenges included:
 
-## Scientific Interpretation
+- Understanding the XML annotation structure.
+- Mapping XML files to corresponding ultrasound images.
+- Reconstructing the complete preprocessing pipeline.
+- Absence of publicly available pathology-confirmed benign/malignant labels.
+- Recovering the quantum-inspired feature generation procedure.
+- Reconstructing the reported model architecture.
+- Managing severe class imbalance across TI-RADS categories.
+- Detecting and eliminating patient-level data leakage.
+- Designing a clinically meaningful ROI-level evaluation protocol.
+- Preserving complete reproducibility throughout every phase of development.
 
-The final result will  not be interpreted as a software execution failure.
-The complete pipeline successfully performed dataset parsing, annotation
-validation, ROI extraction, leakage-free partitioning, training, checkpoint
-selection and untouched test evaluation.
+These challenges significantly influenced the final experimental design and motivated the later annotation audit and leakage-free evaluation protocol.
 
-The low test performance is therefore preserved as a valid negative
-reproduction finding.
-
-Possible causes of the reproduction gap include:
-
-- unavailable pathology-confirmed labels;
-- possible use of a private or different dataset subset;
-- incomplete sample-selection information;
-- unspecified patient-level partitioning;
-- incomplete quantum-circuit details;
-- incomplete model and optimization specifications;
-- severe class imbalance;
-- small minority-class sample sizes;
-- similarity between adjacent TI-RADS categories.
-
-
-## Repository Structure
-
-| Directory | Purpose |
-|---|---|
-| `05_Source_Code/` | Phase-wise implementation scripts |
-| `07_Results/` | Metrics, reports, predictions and figures |
-| `Project_Log.txt` | Chronological research record |
-| `03_Dataset_Processed/` | Locally generated arrays, excluded from Git |
-| `06_Models/` | Locally generated checkpoints, excluded from Git |
-
-
-## Environment Setup
-
-bash
-python -m venv .venv
-
-
-.venv\Scripts\activate
-pip install -r requirements.txt
-
-
-python 05_Source_Code/phase11_case_annotation_audit.py
-python 05_Source_Code/phase12_create_case_level_split.py
-python 05_Source_Code/phase13_prepare_roi_dataset.py
-python 05_Source_Code/phase14_train_roi_categorical_baseline.py
-
-
-
-Before publishing these commands, confirm that each script actually works from the root with that syntax.
-
-
-
-### 13. Limitations and ethics
-
-Add:
-
-markdown
-## Limitations and Responsible Use
-
-This repository is intended for academic research and reproducibility analysis.
-
-- It is not a clinical diagnostic system.
-- Predictions must not be used for patient-care decisions.
-- The public data did not contain the original pathology mapping described for the binary task.
-- Reproduced labels, outputs and conclusions are limited to the available dataset and disclosed methodology.
-
-- ## Researcher
-
-**Karthik B. R.**  
-M.Tech Information Technology  
-University Visvesvaraya College of Engineering, Bengaluru
-
-Research interests: quantum machine learning, medical image analysis,
-reproducible AI and trustworthy evaluation.
-- 
+---
