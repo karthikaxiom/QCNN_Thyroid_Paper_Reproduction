@@ -1481,6 +1481,7 @@ The TI-RADS predictions generated during this research are experimental machine-
 <br>
 
 Developed and documented by **Karthik B R.**
+</div>
 
 ---
 
