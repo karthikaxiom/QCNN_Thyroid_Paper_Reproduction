@@ -512,3 +512,526 @@ The available QuCNet methodology and processing pipeline were successfully imple
 Major limitations identified were missing original pathology labels, incomplete architecture and quantum-circuit specifications, small class sizes and strong visual similarity between adjacent TI-RADS categories.
 
 The controlled comparison did not demonstrate an advantage from quantum-transformed features over original grayscale images. The reproduction stage is now complete. Any further experiments will be presented separately as proposed improvements and not as part of the original reproduction.
+
+
+------------------------------------------------
+Date: 21-07-2026
+
+POST-REPRODUCTION DATASET AND SPLIT AUDIT INITIATED
+=========================================================
+
+After completing the initial QuCNet reproduction and the controlled comparison
+between quantum-transformed features and classical grayscale images, I reviewed
+the complete experimental pipeline once again.
+
+During this review, I identified an important methodological concern. The DDTI
+dataset contains multiple ultrasound images for several cases, and some images
+also contain multiple annotated nodule regions. Therefore, an image-level
+train-test split alone may not guarantee patient-level independence.
+
+If images or regions belonging to the same case are placed in different
+partitions, the model may indirectly receive information from the same patient
+during both training and testing. This can produce data leakage and may lead to
+overestimated performance.
+
+I therefore decided that the initial image-level experiments should be treated
+as exploratory reproduction experiments. Before closing the reproduction
+study, I initiated a complete case-level and annotation-level audit.
+
+Important Clarification
+-----------------------
+
+The earlier Benign/Malignant labels were not pathology-confirmed diagnosis
+labels. I had constructed them as provisional binary proxy labels using the
+available TI-RADS categories because the public DDTI dataset did not contain
+the pathology mapping required by the original paper.
+
+These binary experiments remain valuable because they demonstrate the
+limitations of reproducing the reported tumor-classification task using the
+public dataset. However, they cannot be presented as an exact pathology-based
+reproduction.
+
+Decision
+--------
+
+I decided to perform a complete audit of:
+
+1. Case-to-image relationships
+2. XML annotation structures
+3. Multiple images belonging to the same case
+4. Multiple regions belonging to the same image
+5. Valid and invalid annotation coordinates
+6. Previous train-test assignments
+7. Case-level leakage across dataset partitions
+
+This audit was necessary to produce a final experimental pipeline that is
+scientifically defensible and reproducible.
+
+------------------------------------------------
+Date: 21-07-2026
+
+PHASE 11 COMPLETED – CASE AND ANNOTATION AUDIT
+=========================================================
+
+Objective
+---------
+
+The objective of Phase 11 was to reconstruct the DDTI dataset at the case,
+image and nodule-region levels and to verify whether the earlier image-level
+split contained any case-level leakage risk.
+
+Work Performed
+--------------
+
+I developed and executed:
+
+phase11_case_annotation_audit.py
+
+The script performed the following tasks:
+
+✓ Parsed the available XML annotation structures
+✓ Mapped each XML file to its corresponding ultrasound image or images
+✓ Identified cases containing multiple ultrasound views
+✓ Identified images containing multiple nodule annotations
+✓ Extracted SVG annotation points and bounding-box coordinates
+✓ Verified whether annotation coordinates were geometrically valid
+✓ Separated valid and invalid annotation records
+✓ Reconstructed case-to-image and case-to-ROI relationships
+✓ Audited the previous train-test image assignments
+✓ Checked whether images from the same case appeared in different partitions
+✓ Created a complete candidate manifest for lesion-region extraction
+✓ Generated ROI preview images for visual verification
+
+Final Audit Results
+-------------------
+
+Valid Cases                : 291
+Valid ROI Regions          : 449
+
+All invalid, incomplete or unusable annotation records were preserved in
+separate audit files instead of being silently removed.
+
+Major Finding
+-------------
+
+The audit showed that the earlier image-level split could not be treated as the
+final patient-independent evaluation. Multiple images or annotation regions
+originating from the same case could potentially be assigned to different
+partitions.
+
+This does not make the earlier experiments useless. They remain part of the
+research history and helped evaluate the reconstructed QuCNet pipeline.
+However, they are classified as exploratory image-level experiments rather
+than the final leakage-free reproduction.
+
+Generated Outputs
+-----------------
+
+- annotation_coverage_report.txt
+- annotation_inventory.csv
+- case_distribution.json
+- case_image_mapping.csv
+- invalid_annotation_records.csv
+- leaking_case_details.csv
+- phase11_audit_summary.txt
+- previous_split_image_assignments.csv
+- previous_split_leakage_report.txt
+- roi_candidate_manifest.csv
+- roi_preview_grid.png
+
+Research Decision
+-----------------
+
+I decided not to modify or hide the earlier results. Instead, I preserved them
+and introduced a stricter case-level experimental design for the final
+evaluation.
+
+Status
+------
+
+PHASE 11 COMPLETED AND FROZEN
+
+------------------------------------------------
+Date: 22-07-2026
+
+PHASE 12 COMPLETED – LEAKAGE-FREE CASE-LEVEL SPLIT
+=========================================================
+
+Objective
+---------
+
+The objective of Phase 12 was to create a patient-independent
+train-validation-test split using case IDs instead of individual image files.
+
+Method
+------
+
+I used the audited case and ROI manifests generated in Phase 11. All images and
+ROI regions belonging to the same case were assigned to only one partition.
+
+The split was created while attempting to preserve the available TI-RADS class
+distribution as far as possible. However, patient-level independence was given
+higher priority than obtaining perfectly balanced partitions.
+
+Final Case-Level Split
+----------------------
+
+Training Cases             : 203
+Validation Cases           : 44
+Testing Cases              : 44
+Total Cases                : 291
+
+Final ROI Distribution
+----------------------
+
+Training ROIs              : 319
+Validation ROIs            : 58
+Testing ROIs               : 72
+Total ROIs                 : 449
+
+Leakage Verification
+--------------------
+
+Train–Validation Case Overlap    : 0
+Train–Test Case Overlap          : 0
+Validation–Test Case Overlap     : 0
+
+Train–Validation ROI Overlap     : 0
+Train–Test ROI Overlap           : 0
+Validation–Test ROI Overlap      : 0
+
+Result
+------
+
+The final split achieved complete separation at both case and ROI levels.
+
+Generated Outputs
+-----------------
+
+- case_level_manifest.csv
+- split_case_assignments.csv
+- train_cases.csv
+- validation_cases.csv
+- test_cases.csv
+- train_roi_manifest.csv
+- validation_roi_manifest.csv
+- test_roi_manifest.csv
+- split_distribution.json
+- split_audit_report.txt
+
+Research Decision
+-----------------
+
+I permanently froze this split.
+
+I decided that:
+
+✓ The case assignments will not be reshuffled to improve model accuracy
+✓ The test set will not be used for model selection
+✓ The validation set alone will be used for checkpoint selection
+✓ No sample will be transferred between partitions after observing results
+✓ All split manifests will be preserved for complete reproducibility
+
+Status
+------
+
+PHASE 12 COMPLETED AND FROZEN
+
+------------------------------------------------
+Date: 22-07-2026
+
+PHASE 13 COMPLETED – LESION ROI DATASET PREPARATION
+=========================================================
+
+Objective
+---------
+
+The objective of Phase 13 was to prepare a lesion-focused TI-RADS dataset using
+the expert-marked annotation regions and the frozen case-level split.
+
+Reason for ROI-Based Preparation
+--------------------------------
+
+The earlier experiments used complete ultrasound images. However, the DDTI XML
+files provide expert-marked nodule boundaries. Using these annotations allows
+the model to focus directly on the thyroid lesion rather than learning from
+irrelevant background regions, text overlays or surrounding ultrasound tissue.
+
+ROI Processing Procedure
+------------------------
+
+For each valid annotation region, I performed the following operations:
+
+1. Loaded the original ultrasound image
+2. Read the expert annotation coordinates
+3. Calculated the nodule bounding box
+4. Added approximately 10 percent contextual margin
+5. Cropped the lesion region
+6. Converted the crop to grayscale
+7. Applied square padding to preserve lesion geometry
+8. Resized the padded crop to 64 × 64 pixels
+9. Normalized pixel values to the range [0,1]
+10. Preserved the case ID, ROI ID and TI-RADS label
+11. Saved each partition as reproducible NumPy arrays
+
+Final Dataset Shapes
+--------------------
+
+Training Dataset           : (319, 64, 64, 1)
+Validation Dataset         : (58, 64, 64, 1)
+Testing Dataset            : (72, 64, 64, 1)
+
+Associated Cases
+----------------
+
+Training Cases             : 203
+Validation Cases           : 44
+Testing Cases              : 44
+
+ROI Processing Audit
+--------------------
+
+Failed ROI Records         : 0
+Case Leakage               : 0
+ROI Leakage                : 0
+
+Generated NumPy Files
+---------------------
+
+Training:
+- X_roi_train.npy
+- y_roi_train.npy
+- case_ids_roi_train.npy
+- roi_ids_train.npy
+
+Validation:
+- X_roi_validation.npy
+- y_roi_validation.npy
+- case_ids_roi_validation.npy
+- roi_ids_validation.npy
+
+Testing:
+- X_roi_test.npy
+- y_roi_test.npy
+- case_ids_roi_test.npy
+- roi_ids_test.npy
+
+Generated Audit Files
+---------------------
+
+- roi_dataset_summary.txt
+- roi_dataset_distribution.json
+- roi_dataset_audit.csv
+- failed_roi_records.csv
+- train_roi_preview.png
+- validation_roi_preview.png
+- test_roi_preview.png
+
+Research Decisions
+------------------
+
+I intentionally did not store augmented images inside the frozen dataset.
+
+I also decided that:
+
+✓ No SMOTE would be applied before splitting
+✓ No synthetic data would be added to validation or testing
+✓ No test-set image would be modified based on model performance
+✓ All augmentation, if used, would occur dynamically during training
+✓ The Phase 13 arrays would remain unchanged after validation
+
+Status
+------
+
+PHASE 13 COMPLETED AND FROZEN
+
+------------------------------------------------
+Date: 23-07-2026
+
+PHASE 14 COMPLETED – FINAL LEAKAGE-FREE ROI CATEGORICAL CNN
+=========================================================
+
+Objective
+---------
+
+The objective of Phase 14 was to perform one final, controlled and
+patient-independent six-class TI-RADS baseline experiment using the audited ROI
+dataset.
+
+This experiment was designed to determine whether a conventional CNN could
+learn meaningful TI-RADS representations when trained only on expert-marked
+lesion regions under a strict leakage-free evaluation protocol.
+
+Classification Classes
+----------------------
+
+Class 0 → TI-RADS 2
+Class 1 → TI-RADS 3
+Class 2 → TI-RADS 4a
+Class 3 → TI-RADS 4b
+Class 4 → TI-RADS 4c
+Class 5 → TI-RADS 5
+
+Experimental Controls
+---------------------
+
+I used the following controls:
+
+✓ Frozen Phase 12 case-level split
+✓ Frozen Phase 13 ROI arrays
+✓ Compact CNN architecture suitable for the available dataset size
+✓ Training-only image augmentation
+✓ Class weights calculated only from the training labels
+✓ No SMOTE
+✓ No modification of validation or test samples
+✓ EarlyStopping
+✓ ReduceLROnPlateau
+✓ ModelCheckpoint based only on validation performance
+✓ Untouched test-set evaluation
+✓ Separate ROI-level and case-level analysis
+
+Case-Level Evaluation Method
+----------------------------
+
+Because a single case may contain multiple ROI samples, I evaluated the model
+at two levels.
+
+ROI-Level Evaluation:
+Each nodule region was treated as one prediction sample.
+
+Case-Level Evaluation:
+The predicted class probabilities of all ROI samples belonging to the same
+case were averaged. The final case prediction was then obtained from the
+aggregated probability vector.
+
+This provided a more clinically meaningful patient-level evaluation.
+
+Training Result
+---------------
+
+Completed Epochs           : 19
+Best Validation Epoch      : 1
+
+The training accuracy continued to improve after the first epoch, while the
+validation performance degraded. This indicated immediate overfitting and weak
+generalization.
+
+The best model was therefore the checkpoint saved at Epoch 1 rather than the
+final training epoch.
+
+ROI-Level Test Results
+----------------------
+
+Accuracy                   : 12.50%
+Balanced Accuracy          : 16.67%
+Macro Precision            : 2.08%
+Macro Recall               : 16.67%
+Macro F1-Score             : 3.70%
+Weighted F1-Score          : 2.78%
+Cohen's Kappa              : 0.000
+Quadratic Weighted Kappa   : 0.000
+Mean Absolute Class Error  : 2.319
+Test Loss                  : 1.803905
+
+Case-Level Test Results
+-----------------------
+
+Accuracy                   : 11.36%
+Balanced Accuracy          : 16.67%
+Macro Precision            : 1.89%
+Macro Recall               : 16.67%
+Macro F1-Score             : 3.40%
+Weighted F1-Score          : 2.32%
+Cohen's Kappa              : 0.000
+Quadratic Weighted Kappa   : 0.000
+Mean Absolute Class Error  : 2.273
+
+Observation
+-----------
+
+The final categorical CNN failed to learn a reliable six-class TI-RADS
+decision boundary. Its predictions largely collapsed toward a single class,
+which produced a balanced accuracy of approximately random-choice level for
+six classes.
+
+The difference between increasing training accuracy and poor validation
+performance confirmed that the model was memorizing limited training patterns
+instead of learning features that generalized to unseen cases.
+
+Scientific Interpretation
+-------------------------
+
+This result is not treated as a coding failure.
+
+The complete pipeline executed successfully:
+
+✓ Dataset parsing succeeded
+✓ Annotation extraction succeeded
+✓ ROI generation succeeded
+✓ Case-level splitting succeeded
+✓ Leakage checks succeeded
+✓ Model training succeeded
+✓ Checkpoint selection succeeded
+✓ Test evaluation succeeded
+✓ All required reports and figures were generated
+
+The poor performance is therefore a valid experimental finding obtained under
+a strict and reproducible protocol.
+
+Final Reproduction Finding
+--------------------------
+
+I was unable to reproduce the high classification performance reported in the
+original QuCNet paper using the publicly recoverable DDTI dataset and the
+implementation details available in the publication.
+
+The reproduction gap is most likely associated with a combination of:
+
+- Missing pathology-confirmed Benign/Malignant labels
+- Possible use of a different or private dataset subset
+- Unreported sample-selection criteria
+- Incomplete annotation-handling details
+- Unreported patient-level split information
+- Strong TI-RADS class imbalance
+- Very small sample counts in minority categories
+- Visual similarity between adjacent TI-RADS classes
+- Incomplete quantum-circuit specification
+- Incomplete architecture and training specifications
+- Possible differences in preprocessing and augmentation
+
+Final Decision
+--------------
+
+I decided not to continue adding architectures merely to search for a higher
+accuracy value.
+
+Doing so would change the objective from reproduction to performance
+optimization and would weaken the scientific clarity of the work.
+
+Therefore:
+
+* The original-paper reproduction is considered complete
+* All positive and negative findings will be preserved
+* The leakage-free result will be used as the final reproduction evidence
+* Earlier image-level experiments will be retained as historical experiments
+* Any transfer-learning, ordinal-classification, improved CNN or quantum model
+  will be presented separately as an extension and not as part of the original
+  paper reproduction
+
+Generated Outputs
+-----------------
+
+- evaluation_metrics.json
+- training_configuration.json
+- training_history.csv
+- training_curves.png
+- roi_classification_report.csv
+- roi_confusion_matrix.csv
+- roi_confusion_matrix.png
+- test_roi_predictions.csv
+- case_classification_report.csv
+- case_confusion_matrix.csv
+- case_confusion_matrix.png
+- test_case_predictions.csv
+- phase14_summary.txt
+**********************************************************************************
