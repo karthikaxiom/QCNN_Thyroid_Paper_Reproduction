@@ -334,3 +334,200 @@ The major challenges included:
 These challenges significantly influenced the final experimental design and motivated the later annotation audit and leakage-free evaluation protocol.
 
 ---
+
+# Experimental Pipeline
+
+The complete reproduction was performed through a structured multi-phase workflow. Every phase was independently verified before progressing to the next stage, ensuring that the final implementation remained reproducible, transparent and scientifically defensible.
+
+```text
+                     PUBLIC DDTI DATASET
+                              │
+                              ▼
+                 Dataset Verification & Audit
+                              │
+                              ▼
+                 XML Parsing & Metadata Extraction
+                              │
+                              ▼
+               Master Dataset Generation (CSV)
+                              │
+                              ▼
+              Image Inspection & Preprocessing
+                              │
+                              ▼
+            Binary Classification Reproduction
+                              │
+                              ▼
+         Quantum Feature Generation (QuCNet)
+                              │
+                              ▼
+      Classical CNN & Quantum CNN Comparison
+                              │
+                              ▼
+      Multi-Class TI-RADS Classification Study
+                              │
+                              ▼
+         Complete Annotation & Case-Level Audit
+                              │
+                              ▼
+        Leakage-Free Patient-Level Dataset Split
+                              │
+                              ▼
+            Lesion ROI Dataset Construction
+                              │
+                              ▼
+        Final ROI-Level & Case-Level Evaluation
+                              │
+                              ▼
+        Scientific Analysis & Reproducibility Report
+```
+
+---
+
+# Repository Structure
+
+```text
+QCNN_Thyroid_Paper_Reproduction
+│
+├── 01_Paper
+│   ├── Reference paper
+│   └── Supporting literature
+│
+├── 02_Dataset_Raw
+│   └── Original DDTI dataset
+│
+├── 03_Dataset_Processed
+│   └── Generated datasets, NumPy arrays and processed outputs
+│
+├── 04_Notebooks
+│   └── Experimental notebooks and exploratory analysis
+│
+├── 05_Source_Code
+│   ├── Phase-wise implementation
+│   ├── Utility modules
+│   └── Reproduction scripts
+│
+├── 06_Models
+│   └── Saved TensorFlow model checkpoints
+│
+├── 07_Results
+│   ├── Metrics
+│   ├── Reports
+│   ├── Confusion matrices
+│   ├── Prediction files
+│   └── Experimental outputs
+│
+├── 08_Presentation
+│   └── Presentation material
+│
+├── 09_Output_images
+│   └── Pipeline visualizations
+│
+├── Project_Log.txt
+│
+├── README.md
+│
+├── requirements.txt
+│
+└── .gitignore
+```
+
+---
+
+# Dataset Overview
+
+This reproduction uses the **Digital Database of Thyroid Ultrasound Images (DDTI)**, a publicly available thyroid ultrasound dataset containing expert-annotated ultrasound scans together with XML metadata describing thyroid nodules.
+
+Unlike many benchmark datasets, the DDTI dataset contains multiple ultrasound images for several patients, XML annotation files, SVG-based lesion boundaries and TI-RADS information, making the preprocessing pipeline considerably more complex than conventional image classification datasets.
+
+During the reproduction process, the complete dataset was independently verified before any model training was performed.
+
+---
+
+## Original Dataset Statistics
+
+| Component | Count |
+|-----------|------:|
+| XML Files | 390 |
+| Ultrasound Images | 480 |
+| Images with TI-RADS Labels | 349 |
+| Images without TI-RADS Labels | 131 |
+
+---
+
+## Audited Dataset Statistics
+
+Following the complete annotation and patient-level audit performed during the later stages of this research, the validated dataset consisted of:
+
+| Component | Count |
+|-----------|------:|
+| Valid Patient Cases | 291 |
+| Valid Lesion ROIs | 449 |
+| Invalid Annotation Records | Documented Separately |
+
+---
+
+# Research Timeline
+
+The reproduction study was carried out as a sequence of progressively refined experimental phases.
+
+Rather than directly implementing the published model, the project focused on understanding every stage of the original methodology, verifying each intermediate result and correcting potential reproducibility issues whenever they were identified.
+
+| Phase | Description | Status |
+|------|-----------------------------------------------|:------:|
+| Phase 0 | Dataset Verification | ✅ |
+| Phase 1 | XML Structure Analysis | ✅ |
+| Phase 2 | Master Dataset Generation | ✅ |
+| Phase 3 | Image Inspection | ✅ |
+| Phase 4 | Image Preprocessing | ✅ |
+| Phase 5 | Binary Dataset Preparation | ✅ |
+| Phase 6 | Initial QuCNet Baseline | ✅ |
+| Phase 7 | Classical CNN Baseline | ✅ |
+| Phase 8 | Multi-Class TI-RADS Study | ✅ |
+| Phase 9 | Controlled Experimental Comparison | ✅ |
+| Phase 10 | Evaluation & Analysis | ✅ |
+| Phase 11 | Annotation Audit | ✅ |
+| Phase 12 | Leakage-Free Case Split | ✅ |
+| Phase 13 | ROI Dataset Generation | ✅ |
+| Phase 14 | Final ROI-Level Evaluation | ✅ |
+
+---
+
+# Research Philosophy
+
+Throughout this project, the primary objective was **scientific reproducibility rather than model optimisation**.
+
+Every experimental decision was guided by the following principles:
+
+- Preserve reproducibility over reported accuracy.
+- Never modify the testing dataset after observing results.
+- Freeze validated dataset splits before training.
+- Preserve unsuccessful experiments as part of the research record.
+- Maintain complete transparency in preprocessing and evaluation.
+- Avoid undocumented modifications to the original methodology.
+- Document every important experimental decision chronologically.
+
+These principles ensured that the final conclusions were based on a scientifically rigorous experimental protocol rather than repeated optimisation attempts.
+
+---
+
+# Key Challenges Encountered
+
+Reproducing the QuCNet paper required overcoming several practical challenges that were not fully described in the original publication.
+
+The major challenges included:
+
+- Understanding the XML annotation structure.
+- Mapping XML files to corresponding ultrasound images.
+- Reconstructing the complete preprocessing pipeline.
+- Absence of publicly available pathology-confirmed benign/malignant labels.
+- Recovering the quantum-inspired feature generation procedure.
+- Reconstructing the reported model architecture.
+- Managing severe class imbalance across TI-RADS categories.
+- Detecting and eliminating patient-level data leakage.
+- Designing a clinically meaningful ROI-level evaluation protocol.
+- Preserving complete reproducibility throughout every phase of development.
+
+These challenges significantly influenced the final experimental design and motivated the later annotation audit and leakage-free evaluation protocol.
+
+---
