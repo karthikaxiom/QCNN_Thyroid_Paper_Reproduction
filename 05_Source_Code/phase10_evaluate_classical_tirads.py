@@ -26,9 +26,7 @@ from sklearn.metrics import (
 )
 
 
-# ---------------------------------------------------------------------
-# Project paths
-# ---------------------------------------------------------------------
+
 
 SOURCE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SOURCE_DIR.parent

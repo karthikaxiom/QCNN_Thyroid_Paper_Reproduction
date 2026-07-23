@@ -1,0 +1,51 @@
+PHASE 13 - ROI DATASET PREPARATION SUMMARY
+========================================================================
+
+Configuration
+------------------------------------------------------------------------
+Output image size              : 64 x 64
+Image channels                 : 1
+Color mode                     : Grayscale
+Pixel normalization            : [0, 1]
+ROI margin fraction            : 0.10
+Square padding                 : Enabled
+Augmentation                   : Not applied
+SMOTE                          : Not applied
+Model training                 : Not performed
+
+Processed split statistics
+------------------------------------------------------------------------
+Train samples                    : 319
+Train unique cases               : 203
+Train array shape                   : [319, 64, 64, 1]
+Train class counts                 : 2=33, 3=14, 4a=95, 4b=77, 4c=63, 5=37
+
+Validation samples               : 58
+Validation unique cases          : 44
+Validation array shape              : [58, 64, 64, 1]
+Validation class counts            : 2=7, 3=2, 4a=17, 4b=14, 4c=9, 5=9
+
+Test samples                     : 72
+Test unique cases                : 44
+Test array shape                    : [72, 64, 64, 1]
+Test class counts                  : 2=10, 3=4, 4a=18, 4b=16, 4c=15, 5=9
+
+Leakage checks
+------------------------------------------------------------------------
+Train/validation case overlap : 0
+Train/test case overlap       : 0
+Validation/test case overlap  : 0
+Train/validation ROI overlap  : 0
+Train/test ROI overlap        : 0
+Validation/test ROI overlap   : 0
+
+Processing failures
+------------------------------------------------------------------------
+Failed ROI records             : 0
+
+Decision
+------------------------------------------------------------------------
+Phase 13 is valid only when all case-overlap and ROI-overlap counts are zero.
+The saved train, validation and test arrays must remain frozen for all subsequent baseline and ordinal models.
+Only the training set may receive augmentation or class balancing during later training phases.
+Validation and test data must never be augmented, oversampled or used for fitting preprocessing parameters.

@@ -1,0 +1,48 @@
+PHASE 12 - CASE-LEVEL SPLIT AUDIT REPORT
+==============================================================
+
+Configuration
+--------------------------------------------------------------
+Random seed                    : 42
+Requested train fraction       : 0.70
+Requested validation fraction  : 0.15
+Requested test fraction        : 0.15
+
+Final case counts
+--------------------------------------------------------------
+Total cases                    : 291
+Train cases                    : 203
+Validation cases               : 44
+Test cases                     : 44
+
+Final ROI counts
+--------------------------------------------------------------
+Total ROI records              : 449
+Train ROI records              : 319
+Validation ROI records         : 58
+Test ROI records               : 72
+
+Leakage checks
+--------------------------------------------------------------
+Train/validation overlap       : 0
+Train/test overlap             : 0
+Validation/test overlap        : 0
+Duplicated ROI assignments     : 0
+
+Case class distributions
+--------------------------------------------------------------
+Train: 2=26, 3=10, 4a=57, 4b=51, 4c=38, 5=21
+Validation: 2=6, 3=2, 4a=13, 4b=11, 4c=8, 5=4
+Test: 2=5, 3=2, 4a=12, 4b=11, 4c=9, 5=5
+
+Class-presence checks
+--------------------------------------------------------------
+Train missing classes: None
+Validation missing classes: None
+Test missing classes: None
+
+Decision
+--------------------------------------------------------------
+The split is valid only when all overlap counts and duplicated ROI assignments are zero.
+Reuse this exact case-level split for all final ROI categorical, ordinal and optional quantum experiments.
+No model was trained and no source data was modified.

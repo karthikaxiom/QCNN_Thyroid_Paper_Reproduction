@@ -1,0 +1,121 @@
+{
+    "configuration": {
+        "image_size": 64,
+        "channels": 1,
+        "color_mode": "grayscale",
+        "normalization": "[0, 1]",
+        "roi_margin_fraction": 0.1,
+        "square_padding": true,
+        "augmentation_applied": false,
+        "smote_applied": false,
+        "random_seed": 42
+    },
+    "processed_dataset": {
+        "split_audit": {
+            "train": {
+                "sample_count": 319,
+                "unique_case_count": 203,
+                "unique_roi_count": 319,
+                "shape": [
+                    319,
+                    64,
+                    64,
+                    1
+                ],
+                "dtype": "float32",
+                "minimum_pixel": 0.0,
+                "maximum_pixel": 1.0,
+                "mean_pixel": 0.3075805604457855,
+                "unique_labels": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "class_distribution": {
+                    "2": 33,
+                    "3": 14,
+                    "4a": 95,
+                    "4b": 77,
+                    "4c": 63,
+                    "5": 37
+                }
+            },
+            "validation": {
+                "sample_count": 58,
+                "unique_case_count": 44,
+                "unique_roi_count": 58,
+                "shape": [
+                    58,
+                    64,
+                    64,
+                    1
+                ],
+                "dtype": "float32",
+                "minimum_pixel": 0.0,
+                "maximum_pixel": 0.9921568632125854,
+                "mean_pixel": 0.3072125017642975,
+                "unique_labels": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "class_distribution": {
+                    "2": 7,
+                    "3": 2,
+                    "4a": 17,
+                    "4b": 14,
+                    "4c": 9,
+                    "5": 9
+                }
+            },
+            "test": {
+                "sample_count": 72,
+                "unique_case_count": 44,
+                "unique_roi_count": 72,
+                "shape": [
+                    72,
+                    64,
+                    64,
+                    1
+                ],
+                "dtype": "float32",
+                "minimum_pixel": 0.0,
+                "maximum_pixel": 1.0,
+                "mean_pixel": 0.3110964894294739,
+                "unique_labels": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "class_distribution": {
+                    "2": 10,
+                    "3": 4,
+                    "4a": 18,
+                    "4b": 16,
+                    "4c": 15,
+                    "5": 9
+                }
+            }
+        },
+        "case_overlap_counts": {
+            "train_validation": 0,
+            "train_test": 0,
+            "validation_test": 0
+        },
+        "roi_overlap_counts": {
+            "train_validation": 0,
+            "train_test": 0,
+            "validation_test": 0
+        }
+    },
+    "failed_roi_count": 0
+}

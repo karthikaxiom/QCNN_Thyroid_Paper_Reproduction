@@ -1,0 +1,172 @@
+{
+    "random_seed": 42,
+    "requested_fractions": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+    },
+    "case_distribution": {
+        "train": {
+            "case_count": 203,
+            "class_counts": {
+                "2": 26,
+                "3": 10,
+                "4a": 57,
+                "4b": 51,
+                "4c": 38,
+                "5": 21
+            },
+            "class_percentages": {
+                "2": 12.8079,
+                "3": 4.9261,
+                "4a": 28.0788,
+                "4b": 25.1232,
+                "4c": 18.7192,
+                "5": 10.3448
+            }
+        },
+        "validation": {
+            "case_count": 44,
+            "class_counts": {
+                "2": 6,
+                "3": 2,
+                "4a": 13,
+                "4b": 11,
+                "4c": 8,
+                "5": 4
+            },
+            "class_percentages": {
+                "2": 13.6364,
+                "3": 4.5455,
+                "4a": 29.5455,
+                "4b": 25.0,
+                "4c": 18.1818,
+                "5": 9.0909
+            }
+        },
+        "test": {
+            "case_count": 44,
+            "class_counts": {
+                "2": 5,
+                "3": 2,
+                "4a": 12,
+                "4b": 11,
+                "4c": 9,
+                "5": 5
+            },
+            "class_percentages": {
+                "2": 11.3636,
+                "3": 4.5455,
+                "4a": 27.2727,
+                "4b": 25.0,
+                "4c": 20.4545,
+                "5": 11.3636
+            }
+        }
+    },
+    "roi_distribution": {
+        "train": {
+            "roi_count": 319,
+            "class_counts": {
+                "2": 33,
+                "3": 14,
+                "4a": 95,
+                "4b": 77,
+                "4c": 63,
+                "5": 37
+            },
+            "class_percentages": {
+                "2": 10.3448,
+                "3": 4.3887,
+                "4a": 29.7806,
+                "4b": 24.1379,
+                "4c": 19.7492,
+                "5": 11.5987
+            }
+        },
+        "validation": {
+            "roi_count": 58,
+            "class_counts": {
+                "2": 7,
+                "3": 2,
+                "4a": 17,
+                "4b": 14,
+                "4c": 9,
+                "5": 9
+            },
+            "class_percentages": {
+                "2": 12.069,
+                "3": 3.4483,
+                "4a": 29.3103,
+                "4b": 24.1379,
+                "4c": 15.5172,
+                "5": 15.5172
+            }
+        },
+        "test": {
+            "roi_count": 72,
+            "class_counts": {
+                "2": 10,
+                "3": 4,
+                "4a": 18,
+                "4b": 16,
+                "4c": 15,
+                "5": 9
+            },
+            "class_percentages": {
+                "2": 13.8889,
+                "3": 5.5556,
+                "4a": 25.0,
+                "4b": 22.2222,
+                "4c": 20.8333,
+                "5": 12.5
+            }
+        }
+    },
+    "audit": {
+        "total_cases": 291,
+        "total_rois": 449,
+        "train_cases": 203,
+        "validation_cases": 44,
+        "test_cases": 44,
+        "train_validation_overlap_count": 0,
+        "train_test_overlap_count": 0,
+        "validation_test_overlap_count": 0,
+        "duplicated_roi_assignments": 0,
+        "class_presence": {
+            "train": {
+                "present": [
+                    "2",
+                    "3",
+                    "4a",
+                    "4b",
+                    "4c",
+                    "5"
+                ],
+                "missing": []
+            },
+            "validation": {
+                "present": [
+                    "2",
+                    "3",
+                    "4a",
+                    "4b",
+                    "4c",
+                    "5"
+                ],
+                "missing": []
+            },
+            "test": {
+                "present": [
+                    "2",
+                    "3",
+                    "4a",
+                    "4b",
+                    "4c",
+                    "5"
+                ],
+                "missing": []
+            }
+        }
+    }
+}

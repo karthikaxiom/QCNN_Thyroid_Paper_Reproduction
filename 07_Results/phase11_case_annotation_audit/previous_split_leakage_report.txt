@@ -1,0 +1,27 @@
+PHASE 11 - PREVIOUS SPLIT LEAKAGE AUDIT
+======================================================
+
+Previous image-level train/test split
+------------------------------------------------------
+Training images              : 279
+Test images                  : 70
+Training cases               : 244
+Test cases                   : 68
+Cases present in both        : 14
+
+Leaking train/test case IDs:
+85, 88, 122, 225, 233, 296, 317, 318, 334, 335, 337, 347, 367, 381
+
+Phase 9 train/validation split
+------------------------------------------------------
+Saved indices available      : True
+Training cases               : 199
+Validation cases             : 54
+Cases present in both        : 9
+
+Leaking train/validation case IDs:
+65, 81, 130, 177, 227, 294, 337, 391, 395
+
+Interpretation
+------------------------------------------------------
+The previous experiments used image-level splitting. When a case contains multiple images, related images can appear in different subsets. These experiments remain part of the reproduction record, but the final proposed-method evaluation must use case-level splitting.

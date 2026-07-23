@@ -16,3 +16,6 @@ __pycache__/
 
 # VS Code
 .vscode/
+# Temporary Phase 11 audit inputs
+phase11_audit_input/
+phase11_audit_input.zip

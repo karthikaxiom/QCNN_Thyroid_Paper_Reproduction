@@ -1,0 +1,33 @@
+{
+    "total_case_image_rows": 480,
+    "unique_cases_with_images": 390,
+    "cases_with_valid_tirads": 298,
+    "cases_with_multiple_images": 72,
+    "maximum_images_in_one_case": 5,
+    "total_valid_roi_regions": 449,
+    "cases_with_valid_roi_regions": 291,
+    "maximum_roi_regions_in_one_case": 6,
+    "image_count_frequency": {
+        "1": 318,
+        "2": 58,
+        "3": 11,
+        "4": 2,
+        "5": 1
+    },
+    "tirads_image_distribution": {
+        "2": 42,
+        "3": 19,
+        "4a": 96,
+        "4b": 79,
+        "4c": 68,
+        "5": 45
+    },
+    "tirads_case_distribution": {
+        "2": 38,
+        "3": 14,
+        "4a": 85,
+        "4b": 75,
+        "4c": 56,
+        "5": 30
+    }
+}

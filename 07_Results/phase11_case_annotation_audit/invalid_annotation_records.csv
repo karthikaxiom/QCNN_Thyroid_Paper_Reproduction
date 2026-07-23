@@ -1,0 +1,24 @@
+case_id,xml_file,image_name,image_number,mark_index,region_index,error_type,details
+120,120.xml,120_1.jpg,1,1,,empty_svg_regions,No annotation region found.
+127,127.xml,127_1.jpg,1,1,,svg_parse_error,"'{' was never closed (<unknown>, line 1)"
+142,142.xml,142_2.jpg,2,2,,empty_svg_regions,No annotation region found.
+165,165.xml,165_1.jpg,1,1,,svg_parse_error,"'{' was never closed (<unknown>, line 1)"
+166,166.xml,166_1.jpg,1,1,,svg_parse_error,"'{' was never closed (<unknown>, line 1)"
+176,176.xml,176_1.jpg,1,1,,svg_parse_error,"unterminated string literal (detected at line 1) (<unknown>, line 1)"
+197,197.xml,197_1.jpg,1,1,,svg_parse_error,"unterminated string literal (detected at line 1) (<unknown>, line 1)"
+203,203.xml,203_1.jpg,1,1,,svg_parse_error,"'{' was never closed (<unknown>, line 1)"
+205,205.xml,205_1.jpg,1,1,,svg_parse_error,"unterminated string literal (detected at line 1) (<unknown>, line 1)"
+213,213.xml,213_2.jpg,2,3,,empty_svg_regions,No annotation region found.
+230,230.xml,230_2.jpg,2,2,,empty_svg_regions,No annotation region found.
+337,337.xml,337_3.jpg,3,3,1,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+337,337.xml,337_3.jpg,3,3,2,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+337,337.xml,337_3.jpg,3,3,3,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+338,338.xml,338_2.jpg,2,1,1,invalid_annotation_region,point_0_out_of_bounds;point_10_out_of_bounds;point_11_out_of_bounds;point_12_out_of_bounds;point_13_out_of_bounds;point_14_out_of_bounds;point_15_out_of_bounds;point_16_out_of_bounds;point_17_out_of_bounds;point_1_out_of_bounds;point_2_out_of_bounds;point_39_out_of_bounds;point_3_out_of_bounds;point_40_out_of_bounds;point_41_out_of_bounds;point_42_out_of_bounds;point_43_out_of_bounds;point_44_out_of_bounds;point_45_out_of_bounds;point_46_out_of_bounds;point_47_out_of_bounds;point_48_out_of_bounds;point_49_out_of_bounds;point_4_out_of_bounds;point_50_out_of_bounds;point_5_out_of_bounds;point_6_out_of_bounds;point_7_out_of_bounds;point_8_out_of_bounds;point_9_out_of_bounds
+358,358.xml,358_1.jpg,1,1,2,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+362,362.xml,362_1.jpg,1,1,2,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+378,378.xml,378_1.jpg,1,1,2,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+384,384.xml,384_1.jpg,1,1,2,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+389,389.xml,389_1.jpg,1,1,,empty_svg_regions,No annotation region found.
+399,399.xml,399_1.jpg,1,1,2,invalid_annotation_region,fewer_than_three_unique_points;fewer_than_three_valid_points;unexpected_region_type:arrow
+54,54.xml,54_1.jpg,1,1,,svg_parse_error,"'{' was never closed (<unknown>, line 1)"
+62,62.xml,62_3.jpg,3,2,,empty_svg_regions,No annotation region found.

@@ -1,0 +1,36 @@
+{
+    "roi_level": {
+        "accuracy": 0.125,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_precision": 0.020833333333333332,
+        "macro_recall": 0.16666666666666666,
+        "macro_f1": 0.037037037037037035,
+        "weighted_f1": 0.027777777777777776,
+        "cohen_kappa": 0.0,
+        "quadratic_weighted_kappa": 0.0,
+        "mean_absolute_class_error": 2.3194444444444446,
+        "categorical_crossentropy_loss": 1.8039054870605469,
+        "keras_accuracy": 0.125
+    },
+    "case_level": {
+        "accuracy": 0.11363636363636363,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_precision": 0.01893939393939394,
+        "macro_recall": 0.16666666666666666,
+        "macro_f1": 0.034013605442176874,
+        "weighted_f1": 0.02319109461966605,
+        "cohen_kappa": 0.0,
+        "quadratic_weighted_kappa": 0.0,
+        "mean_absolute_class_error": 2.272727272727273
+    },
+    "test_roi_count": 72,
+    "test_case_count": 44,
+    "class_mapping": {
+        "0": "2",
+        "1": "3",
+        "2": "4a",
+        "3": "4b",
+        "4": "4c",
+        "5": "5"
+    }
+}

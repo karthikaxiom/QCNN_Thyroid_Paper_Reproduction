@@ -1,0 +1,31 @@
+PHASE 11 - CASE AND ANNOTATION AUDIT SUMMARY
+==========================================================
+
+Dataset structure
+----------------------------------------------------------
+Unique cases with images         : 390
+Cases with valid TI-RADS         : 298
+Cases with multiple images       : 72
+Maximum images in one case       : 5
+
+Annotation structure
+----------------------------------------------------------
+Images with annotation           : 466
+Total annotation regions         : 656
+Valid annotation regions         : 647
+Valid TI-RADS ROI regions        : 449
+Valid TI-RADS ROI cases          : 291
+Invalid audit records            : 23
+
+Previous split leakage
+----------------------------------------------------------
+Old train/test shared cases      : 14
+Phase 9 train/validation shared  : 9
+
+Research decision
+----------------------------------------------------------
+The previous image-level experiments are retained as the reproduction history. The final proposed-method experiments must use a fixed case-level split. Valid freehand annotations will be used to create nodule-centred ROI inputs.
+
+Next authorised step
+----------------------------------------------------------
+Create one leakage-free case-level train/validation/test manifest. Do not train a new model until that manifest and the ROI preview have been reviewed.

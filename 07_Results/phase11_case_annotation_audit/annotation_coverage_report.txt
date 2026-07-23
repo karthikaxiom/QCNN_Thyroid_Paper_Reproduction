@@ -1,0 +1,26 @@
+PHASE 11 - ANNOTATION COVERAGE REPORT
+==================================================
+
+Images matched to XML cases        : 480
+Images with annotations            : 466
+Annotation image coverage          : 97.08%
+Total annotation regions           : 656
+Valid annotation regions           : 647
+Invalid annotation regions         : 9
+Valid TI-RADS ROI regions          : 449
+Valid TI-RADS ROI images           : 341
+Valid TI-RADS ROI cases            : 291
+Invalid audit records              : 23
+
+Region type distribution
+--------------------------------------------------
+freehand: 648
+arrow: 8
+
+Regions per annotated image
+--------------------------------------------------
+1 region(s): 284 image(s)
+2 region(s): 178 image(s)
+3 region(s): 1 image(s)
+4 region(s): 2 image(s)
+5 region(s): 1 image(s)

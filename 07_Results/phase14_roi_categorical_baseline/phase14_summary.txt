@@ -1,0 +1,71 @@
+PHASE 14 - ROI CATEGORICAL CNN BASELINE
+==============================================================================
+
+Experiment
+------------------------------------------------------------------------------
+Task                         : Six-class TI-RADS classification
+Input                        : Frozen Phase 13 ROI arrays
+Input shape                  : 64 x 64 x 1
+Augmentation                 : Training only
+Class balancing              : Training class weights
+SMOTE                        : Not used
+Validation set               : Used for checkpoint selection
+Test set                     : Evaluated after training
+
+Training
+------------------------------------------------------------------------------
+Maximum epochs               : 100
+Completed epochs             : 19
+Best validation-loss epoch   : 1
+Best validation loss         : 1.802971
+Best validation accuracy     : 0.155172
+
+Training class weights
+------------------------------------------------------------------------------
+TI-RADS 2                   : 1.611111
+TI-RADS 3                   : 3.797619
+TI-RADS 4a                  : 0.559649
+TI-RADS 4b                  : 0.690476
+TI-RADS 4c                  : 0.843915
+TI-RADS 5                   : 1.436937
+
+ROI-level test evaluation (72 ROIs)
+------------------------------------------------------------------------------
+accuracy                      : 0.125000
+balanced_accuracy             : 0.166667
+macro_precision               : 0.020833
+macro_recall                  : 0.166667
+macro_f1                      : 0.037037
+weighted_f1                   : 0.027778
+cohen_kappa                   : 0.000000
+quadratic_weighted_kappa      : 0.000000
+mean_absolute_class_error     : 2.319444
+categorical_crossentropy_loss : 1.803905
+keras_accuracy                : 0.125000
+
+Case-level test evaluation (44 cases)
+------------------------------------------------------------------------------
+accuracy                      : 0.113636
+balanced_accuracy             : 0.166667
+macro_precision               : 0.018939
+macro_recall                  : 0.166667
+macro_f1                      : 0.034014
+weighted_f1                   : 0.023191
+cohen_kappa                   : 0.000000
+quadratic_weighted_kappa      : 0.000000
+mean_absolute_class_error     : 2.272727
+
+Interpretation rules
+------------------------------------------------------------------------------
+ROI-level metrics treat each valid annotation region as one prediction unit.
+Case-level metrics average all ROI probability vectors from the same patient case.
+Macro F1 and balanced accuracy are important because the TI-RADS classes are imbalanced.
+Quadratic weighted kappa and mean absolute class error are included because TI-RADS categories are ordered.
+
+Generated model
+------------------------------------------------------------------------------
+D:\QCNN_Thyroid_Paper_Reproduction\06_Models\phase14_roi_categorical_baseline\best_roi_categorical_baseline.keras
+
+Result directory
+------------------------------------------------------------------------------
+D:\QCNN_Thyroid_Paper_Reproduction\07_Results\phase14_roi_categorical_baseline
