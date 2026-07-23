@@ -1480,7 +1480,790 @@ The TI-RADS predictions generated during this research are experimental machine-
 
 <br>
 
-Developed and documented by **Karthik B. R.**
+Developed and documented by **Karthik B R.**
+
+
+# Installation and Environment Setup
+
+This repository was developed and tested using a Python virtual environment on Windows.
+
+The project should be executed from the repository root so that all relative paths remain valid.
+
+---
+
+## System Requirements
+
+Recommended minimum environment:
+
+| Requirement | Recommended Configuration |
+|---|---|
+| Operating System | Windows 10 or later |
+| Python | Python 3.13 |
+| RAM | 8 GB or more |
+| Storage | At least 5 GB of free space |
+| GPU | Not required |
+| Internet | Required only for initial package installation |
+| IDE | Visual Studio Code or equivalent |
+
+The project can be executed on a CPU-only system.
+
+However, model training time may vary depending on processor speed, memory availability and TensorFlow configuration.
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction.git
+```
+
+Move into the project directory:
+
+```bash
+cd QCNN_Thyroid_Paper_Reproduction
+```
+
+---
+
+## Create a Virtual Environment
+
+### Windows PowerShell
+
+```powershell
+py -3.13 -m venv .venv
+```
+
+Activate the environment:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+After successful activation, the terminal should display:
+
+```text
+(.venv)
+```
+
+---
+
+## PowerShell Execution Policy
+
+If PowerShell prevents activation of the virtual environment, run:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Then activate the environment again:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+This changes the execution policy only for the current PowerShell session.
+
+---
+
+## Install Dependencies
+
+Upgrade `pip` first:
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+Install the required packages:
+
+```powershell
+pip install -r requirements.txt
+```
+
+---
+
+## Verify the Python Interpreter
+
+The project should use the interpreter inside `.venv`.
+
+Check the active Python path:
+
+```powershell
+where.exe python
+```
+
+The expected interpreter should point to:
+
+```text
+QCNN_Thyroid_Paper_Reproduction\.venv\Scripts\python.exe
+```
+
+Check the Python version:
+
+```powershell
+python --version
+```
+
+Expected output:
+
+```text
+Python 3.13.x
+```
+
+---
+
+## Verify TensorFlow
+
+Run:
+
+```powershell
+python -c "import tensorflow as tf; print(tf.__version__)"
+```
+
+Verify NumPy:
+
+```powershell
+python -c "import numpy as np; print(np.__version__)"
+```
+
+Verify OpenCV:
+
+```powershell
+python -c "import cv2; print(cv2.__version__)"
+```
+
+Verify Scikit-learn:
+
+```powershell
+python -c "import sklearn; print(sklearn.__version__)"
+```
+
+---
+
+> [!IMPORTANT]
+> Do not run the source files using the VS Code **Run and Debug** button.
+>
+> Activate the virtual environment and execute each script directly from the terminal.
+>
+> This avoids interpreter mismatch, relative-path errors and package-resolution problems.
+
+---
+
+# Dataset Preparation
+
+The original DDTI dataset is not redistributed directly through this repository.
+
+Users must obtain the dataset separately and place it inside the expected raw-data directory.
+
+The raw dataset should be stored under:
+
+```text
+02_Dataset_Raw/
+```
+
+A typical arrangement may look like:
+
+```text
+02_Dataset_Raw/
+│
+├── archive/
+│   ├── XML files
+│   ├── ultrasound images
+│   └── dataset folders
+│
+└── README or source information
+```
+
+The exact internal structure should remain consistent with the paths expected by the phase-wise scripts.
+
+---
+
+> [!CAUTION]
+> Do not modify image filenames, XML filenames or case identifiers before running the parsing and audit scripts.
+>
+> The project depends on preserving the original relationships between:
+>
+> - XML records
+> - case IDs
+> - image numbers
+> - ultrasound files
+> - lesion annotations
+
+---
+
+# Execution Strategy
+
+This repository is organized as a sequential research pipeline.
+
+The scripts should be executed phase by phase because later stages depend on outputs produced during earlier stages.
+
+The recommended workflow is:
+
+```text
+Raw Dataset
+     │
+     ▼
+Dataset Verification
+     │
+     ▼
+XML and Metadata Parsing
+     │
+     ▼
+Processed Dataset Generation
+     │
+     ▼
+Initial Reproduction Experiments
+     │
+     ▼
+Controlled Classical and Quantum Comparison
+     │
+     ▼
+Annotation Audit
+     │
+     ▼
+Leakage-Free Case Split
+     │
+     ▼
+ROI Dataset Construction
+     │
+     ▼
+Final Leakage-Free Evaluation
+```
+
+---
+
+# Running the Source Code
+
+All commands should be executed from the repository root.
+
+General command format:
+
+```powershell
+python .\05_Source_Code\<script_name>.py
+```
+
+A fully explicit interpreter path may also be used:
+
+```powershell
+.\.venv\Scripts\python.exe .\05_Source_Code\<script_name>.py
+```
+
+Using the explicit interpreter is useful when multiple Python installations are present on the system.
+
+---
+
+# Recommended Phase-Wise Execution
+
+The exact filenames inside `05_Source_Code` should be followed as stored in the repository.
+
+The general phase order is:
+
+| Order | Research Stage |
+|---:|---|
+| 1 | Dataset Verification |
+| 2 | XML Structure Analysis |
+| 3 | Master Dataset Generation |
+| 4 | Image Inspection |
+| 5 | Image Preprocessing |
+| 6 | Binary Dataset Preparation |
+| 7 | Initial QuCNet Reproduction |
+| 8 | Classical CNN Baseline |
+| 9 | Multi-Class TI-RADS Experiment |
+| 10 | Controlled Evaluation |
+| 11 | Case and Annotation Audit |
+| 12 | Leakage-Free Case-Level Split |
+| 13 | ROI Dataset Construction |
+| 14 | Final Leakage-Free CNN Evaluation |
+
+---
+
+## Example Command
+
+For a source file stored as:
+
+```text
+05_Source_Code/phase11_case_annotation_audit.py
+```
+
+run:
+
+```powershell
+python .\05_Source_Code\phase11_case_annotation_audit.py
+```
+
+For the explicit virtual-environment interpreter:
+
+```powershell
+.\.venv\Scripts\python.exe .\05_Source_Code\phase11_case_annotation_audit.py
+```
+
+---
+
+# Important Execution Rules
+
+To preserve the original research protocol:
+
+1. Run the scripts from the repository root.
+2. Do not rename dataset folders after preprocessing begins.
+3. Do not manually edit generated manifests.
+4. Do not reshuffle the frozen Phase 12 case split.
+5. Do not modify the final test partition.
+6. Do not overwrite results without preserving the previous outputs.
+7. Do not apply SMOTE to validation or test data.
+8. Do not add test samples to training after observing results.
+9. Do not tune the model using final test metrics.
+10. Record any methodological change in `Project_Log.txt`.
+
+---
+
+# Generated Data Locations
+
+The project stores outputs according to their function.
+
+## Processed Data
+
+```text
+03_Dataset_Processed/
+```
+
+This folder may contain:
+
+- Processed image arrays
+- Encoded labels
+- Train-validation-test arrays
+- ROI datasets
+- Case IDs
+- ROI IDs
+- Intermediate manifests
+- Serialized NumPy files
+
+---
+
+## Saved Models
+
+```text
+06_Models/
+```
+
+This folder may contain:
+
+- TensorFlow model checkpoints
+- Best validation checkpoints
+- Final saved models
+- Training configuration artifacts
+
+---
+
+## Experimental Results
+
+```text
+07_Results/
+```
+
+This folder contains the primary scientific evidence generated by the project.
+
+Typical outputs include:
+
+- Classification reports
+- Confusion matrices
+- Prediction CSV files
+- Training histories
+- Evaluation summaries
+- Split audits
+- Annotation reports
+- Leakage reports
+- ROI manifests
+- Dataset distributions
+- Failed-record reports
+
+---
+
+## Output Images
+
+```text
+09_Output_images/
+```
+
+This folder is used for visual research outputs such as:
+
+- Sample ultrasound visualizations
+- ROI previews
+- Feature maps
+- Confusion matrices
+- Training curves
+- Pipeline diagrams
+- Dataset illustrations
+
+Additional README figures will be added here later and linked directly from this document.
+
+---
+
+# Reproducing the Final Audited Experiment
+
+The final scientifically preferred experiment begins from the Phase 11 annotation audit and continues through Phase 14.
+
+The required sequence is:
+
+```text
+Phase 11 — Case and Annotation Audit
+          │
+          ▼
+Phase 12 — Frozen Leakage-Free Case Split
+          │
+          ▼
+Phase 13 — ROI Dataset Construction
+          │
+          ▼
+Phase 14 — Final Categorical CNN Evaluation
+```
+
+---
+
+## Step 1 — Run the Annotation Audit
+
+```powershell
+python .\05_Source_Code\phase11_case_annotation_audit.py
+```
+
+Expected outcome:
+
+- Case-image relationships reconstructed
+- ROI candidates validated
+- Invalid annotations recorded
+- Previous leakage risks documented
+- Audited manifests generated
+
+---
+
+## Step 2 — Generate the Frozen Case-Level Split
+
+Run the corresponding Phase 12 script stored in:
+
+```text
+05_Source_Code/
+```
+
+Expected outcome:
+
+| Split | Cases | ROIs |
+|---|---:|---:|
+| Training | 203 | 319 |
+| Validation | 44 | 58 |
+| Testing | 44 | 72 |
+
+Expected leakage result:
+
+```text
+Case overlap: 0
+ROI overlap: 0
+```
+
+---
+
+## Step 3 — Construct the ROI Dataset
+
+Run the corresponding Phase 13 ROI dataset script.
+
+Expected array shapes:
+
+```text
+Training:   (319, 64, 64, 1)
+Validation: (58, 64, 64, 1)
+Testing:    (72, 64, 64, 1)
+```
+
+Expected failed ROI records:
+
+```text
+0
+```
+
+---
+
+## Step 4 — Run the Final CNN Evaluation
+
+Run the corresponding Phase 14 training and evaluation script.
+
+Expected training behaviour:
+
+```text
+Best validation epoch: 1
+Training stopped: Epoch 19
+```
+
+The final result files should be written under:
+
+```text
+07_Results/phase14_roi_categorical_baseline/
+```
+
+or the matching Phase 14 result directory present in the repository.
+
+---
+
+# Expected Final Metrics
+
+The reproduced results may differ slightly depending on:
+
+- TensorFlow version
+- CPU architecture
+- Random-number implementation
+- Operating system
+- Package versions
+- Hardware-level numerical behaviour
+
+However, the overall scientific conclusion should remain unchanged.
+
+The recorded final evaluation produced:
+
+## ROI-Level
+
+| Metric | Recorded Result |
+|---|---:|
+| Accuracy | 12.50% |
+| Balanced Accuracy | 16.67% |
+| Macro F1 | 3.70% |
+| Weighted F1 | 2.78% |
+| Quadratic Weighted Kappa | 0.000 |
+| Mean Absolute Class Error | 2.319 |
+
+## Case-Level
+
+| Metric | Recorded Result |
+|---|---:|
+| Accuracy | 11.36% |
+| Balanced Accuracy | 16.67% |
+| Macro F1 | 3.40% |
+| Weighted F1 | 2.32% |
+| Quadratic Weighted Kappa | 0.000 |
+| Mean Absolute Class Error | 2.273 |
+
+---
+
+> [!NOTE]
+> Exact floating-point values may vary across environments.
+>
+> Reproducibility should therefore be assessed using:
+>
+> - dataset counts,
+> - split integrity,
+> - array shapes,
+> - leakage results,
+> - training behaviour,
+> - prediction patterns,
+> - and the overall experimental conclusion,
+>
+> rather than requiring bit-for-bit equality of every metric.
+
+---
+
+# Result Verification Checklist
+
+After completing the final pipeline, verify the following:
+
+- [ ] 291 valid patient cases are present
+- [ ] 449 valid ROI regions are present
+- [ ] Training split contains 203 cases
+- [ ] Validation split contains 44 cases
+- [ ] Test split contains 44 cases
+- [ ] Training split contains 319 ROIs
+- [ ] Validation split contains 58 ROIs
+- [ ] Test split contains 72 ROIs
+- [ ] No case overlap exists
+- [ ] No ROI overlap exists
+- [ ] No failed ROI records exist
+- [ ] Test data remains untouched during training
+- [ ] ROI-level metrics are generated
+- [ ] Case-level metrics are generated
+- [ ] Confusion matrices are saved
+- [ ] Prediction files are saved
+- [ ] Final reports are written to `07_Results`
+
+---
+
+# Research Log
+
+A complete chronological record of the project is available in:
+
+```text
+Project_Log.txt
+```
+
+The log documents:
+
+- Dataset recovery
+- Initial implementation decisions
+- Errors and corrections
+- Model experiments
+- Reproduction failures
+- Methodological concerns
+- Annotation audit
+- Leakage investigation
+- Frozen split creation
+- ROI dataset construction
+- Final evaluation
+- Reproduction closure decision
+
+Researchers attempting to understand the development history should read the project log together with this README.
+
+---
+
+# Troubleshooting
+
+## Virtual Environment Is Not Active
+
+Check whether the terminal begins with:
+
+```text
+(.venv)
+```
+
+If not, run:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+---
+
+## Python Uses the Wrong Interpreter
+
+Run:
+
+```powershell
+where.exe python
+```
+
+Then execute the script explicitly using:
+
+```powershell
+.\.venv\Scripts\python.exe .\05_Source_Code\<script_name>.py
+```
+
+---
+
+## Module Not Found
+
+Example:
+
+```text
+ModuleNotFoundError
+```
+
+Install the missing dependencies again:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Verify that the virtual environment is active before installation.
+
+---
+
+## File or Folder Not Found
+
+Example:
+
+```text
+FileNotFoundError
+```
+
+Confirm that:
+
+- The command is executed from the repository root
+- The raw dataset exists under `02_Dataset_Raw`
+- The expected processed files have already been generated
+- Earlier phases were completed successfully
+- Folder names were not changed
+
+---
+
+## TensorFlow Import Error
+
+Check the installed version:
+
+```powershell
+pip show tensorflow
+```
+
+Reinstall dependencies if necessary:
+
+```powershell
+pip install --upgrade --force-reinstall -r requirements.txt
+```
+
+---
+
+## Memory Error
+
+If the system runs out of memory:
+
+- Close unnecessary applications
+- Restart the terminal
+- Reduce non-essential background processes
+- Confirm that large arrays are not loaded multiple times
+- Run only one training process at a time
+
+The final pipeline was designed to remain practical on an 8 GB RAM system, although training speed may be limited.
+
+---
+
+## Results Differ from Recorded Metrics
+
+Small numerical differences may be caused by nondeterministic operations.
+
+Before concluding that the reproduction failed, verify:
+
+- Dataset version
+- Dataset counts
+- Package versions
+- Split manifests
+- Case overlap
+- ROI overlap
+- Label encoding
+- Random seeds
+- Model checkpoint selection
+- Test evaluation procedure
+
+The frozen split files and generated reports should be treated as the primary reproducibility artifacts.
+
+---
+
+# Reproducibility Boundaries
+
+This repository supports reproduction of the implementation and audit performed in this study.
+
+It cannot guarantee exact reproduction of the original QuCNet publication because the following were not publicly recoverable in complete form:
+
+- Exact pathology-confirmed label mapping
+- Exact dataset subset
+- Exact patient-level split
+- Complete quantum-circuit source code
+- Complete preprocessing configuration
+- Exact random seeds
+- Full model-training configuration
+- Private implementation decisions
+
+Therefore, this repository reproduces the published methodology as faithfully as possible using the available public evidence, while clearly documenting all assumptions and deviations.
+
+---
+
+# Recommended Reading Order
+
+For a complete understanding of the project, review the repository in the following order:
+
+1. `README.md`
+2. `Project_Log.txt`
+3. `01_Paper/`
+4. `05_Source_Code/`
+5. `07_Results/phase11_case_annotation_audit/`
+6. `07_Results/phase12_case_level_split/`
+7. `07_Results/phase13_roi_dataset/`
+8. Final Phase 14 results
+9. `03_Dataset_Processed/` manifests and arrays
+
+This sequence provides both the scientific motivation and the complete experimental evidence.
+
+---
 
 M.Tech Information Technology  
 University Visvesvaraya College of Engineering  
