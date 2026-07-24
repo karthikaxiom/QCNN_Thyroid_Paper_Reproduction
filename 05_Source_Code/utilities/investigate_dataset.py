@@ -1,8 +1,9 @@
+from pathlib import Path
 import os
 import xml.etree.ElementTree as ET
 
-folder = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive"
-
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+folder = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive")
 bacaf_values = set()
 eco_values = set()
 
