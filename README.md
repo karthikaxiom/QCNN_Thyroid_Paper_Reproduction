@@ -860,9 +860,9 @@ Square padding was therefore applied before resizing so that the lesion shape re
 
 | Split | Array Shape |
 |---|---|
-| Training | `(319, 64, 64, 1)` |
+| Training | `(311, 64, 64, 1)` |
 | Validation | `(58, 64, 64, 1)` |
-| Testing | `(72, 64, 64, 1)` |
+| Testing | `(71, 64, 64, 1)` |
 
 ---
 
@@ -1960,9 +1960,9 @@ Expected outcome:
 
 | Split | Cases | ROIs |
 |---|---:|---:|
-| Training | 203 | 319 |
+| Training | 203 | 311 |
 | Validation | 44 | 58 |
-| Testing | 44 | 72 |
+| Testing | 44 | 71 |
 
 Expected leakage result:
 
@@ -1980,9 +1980,9 @@ Run the corresponding Phase 13 ROI dataset script.
 Expected array shapes:
 
 ```text
-Training:   (319, 64, 64, 1)
+Training:   (311, 64, 64, 1)
 Validation: (58, 64, 64, 1)
-Testing:    (72, 64, 64, 1)
+Testing:    (71, 64, 64, 1)
 ```
 
 Expected failed ROI records:
@@ -2284,3 +2284,64 @@ University Visvesvaraya College of Engineering
 Bengaluru, India
 
 </div>
+
+
+---
+
+# Phase 15 ? Verified Research Consolidation
+
+Phase 15 consolidated the verified task-specific findings without presenting
+one universal project accuracy.
+
+| Experiment | Verified Result |
+|---|---:|
+| TI-RADS-derived binary proxy classification | 54.29% |
+| Matched quantum TI-RADS model | 18.57% |
+| Matched classical TI-RADS model | 24.29% |
+| Deduplicated strict six-class ROI baseline | 5.63% |
+| Deduplicated strict six-class case aggregation | 4.55% |
+
+Outputs: `07_Results/phase15_final_research_evaluation/`
+
+---
+
+# Phase 16 ? Binary QuCNet Proxy-Task Reevaluation
+
+The saved binary QuCNet model was reevaluated using scientifically accurate
+terminology. Its classes are TI-RADS-derived low-suspicion and high-suspicion
+proxy labels, not pathology-confirmed diagnoses.
+
+Because the historical 70-image holdout was used for validation-based
+checkpoint selection, its result is reported as validation-selected holdout
+performance.
+
+Outputs: `07_Results/phase16_binary_qucnet_evaluation/`
+
+---
+
+# Phase 17 ? Paper Master Tables
+
+Phase 17 generated the audited dataset-flow, experiment-configuration, master
+results and research-artifact tables.
+
+Outputs: `07_Results/phase17_paper_master_tables/`
+
+---
+
+# Phase 18 ? Binary Proxy Error Analysis
+
+Phase 18 identified 25 false positives and 7 false negatives in the binary
+proxy task. The interpretation is restricted to model behaviour and does not
+claim unsupported clinical consequences.
+
+Outputs: `07_Results/phase18_binary_error_analysis/`
+
+---
+
+# Audited Repository Status
+
+Current tagged historical release: **v1.1.0**
+
+The pre-audit results remain preserved through Git history and chronological
+project-log entries. The current final documentation uses the deduplicated
+strict dataset containing 440 unique ROI geometries.

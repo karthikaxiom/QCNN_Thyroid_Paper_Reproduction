@@ -1,0 +1,137 @@
+QCNN THYROID PAPER REPRODUCTION - SOURCE CODE INVENTORY
+======================================================================
+
+config.py
+  QCNN PAPER CONFIGURATION
+
+dataset_audit.py
+  Project source module.
+
+dataset_explorer.py
+  Project source module.
+
+dataset_inspector.py
+  Project source module.
+
+image_inspector.py
+  Project source module.
+
+image_preprocessor.py
+  Project source module.
+
+infer_benign_malignant.py
+  Project source module.
+
+master_parser.py
+  Project source module.
+
+phase10_classical_tirads_model.py
+  Project source module.
+
+phase10_evaluate_classical_tirads.py
+  Project source module.
+
+phase10_train_classical_tirads.py
+  Project source module.
+
+phase11_case_annotation_audit.py
+  Phase 11 - Case and Annotation Audit
+
+phase12_create_case_level_split.py
+  Project source module.
+
+phase13_prepare_roi_dataset.py
+  Project source module.
+
+phase14_train_roi_categorical_baseline.py
+  Project source module.
+
+phase15_verified_research_consolidation.py
+  Project source module.
+
+phase16_binary_qucnet_evaluation.py
+  Project source module.
+
+phase17_paper_master_tables.py
+  Project source module.
+
+phase18_binary_error_analysis.py
+  Project source module.
+
+phase5_generate_quantum_dataset.py
+  Project source module.
+
+phase5_prepare_dataset.py
+  Project source module.
+
+phase5_quantum_filter.py
+  Project source module.
+
+phase5_smote.py
+  Project source module.
+
+phase6_evaluate.py
+  Project source module.
+
+phase6_qucnet_model.py
+  Project source module.
+
+phase6_train.py
+  Project source module.
+
+phase7_classical_baseline.py
+  Project source module.
+
+phase7_reproducibility_audit.py
+  Project source module.
+
+phase8_evaluate.py
+  Project source module.
+
+phase8_generate_quantum_dataset.py
+  Project source module.
+
+phase8_prepare_tirads_dataset.py
+  Project source module.
+
+phase8_qucnet_model.py
+  Project source module.
+
+phase8_tirads_smote.py
+  Project source module.
+
+phase8_train.py
+  Project source module.
+
+phase9_evaluate_paper_tirads.py
+  Project source module.
+
+phase9_paper_tirads_model.py
+  Phase 9 - Corrected Paper-Structured TI-RADS QuCNet Model
+
+phase9_reproduction_audit.py
+  Project source module.
+
+phase9_spatial_qucnet_model.py
+  Project source module.
+
+phase9_train_paper_tirads.py
+  Project source module.
+
+phase9_train_smote.py
+  Project source module.
+
+read_xml.py
+  Project source module.
+
+resize_images.py
+  Project source module.
+
+search_labels.py
+  Project source module.
+
+test_checkpoint.py
+  Project source module.
+
+verify_tirads.py
+  Project source module.

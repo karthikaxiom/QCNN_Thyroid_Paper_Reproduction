@@ -1,4 +1,4 @@
-\# Raw Dataset
+# Raw Dataset
 
 
 
@@ -16,17 +16,17 @@ Users must obtain the dataset separately and preserve the original:
 
 
 
-\- image filenames,
+- image filenames,
 
-\- XML filenames,
+- XML filenames,
 
-\- case identifiers,
+- case identifiers,
 
-\- image identifiers,
+- image identifiers,
 
-\- lesion annotations,
+- lesion annotations,
 
-\- and directory relationships.
+- and directory relationships.
 
 
 

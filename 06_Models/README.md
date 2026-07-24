@@ -1,4 +1,4 @@
-\# Saved Models
+# Saved Models
 
 
 
@@ -12,17 +12,17 @@ Typical contents include:
 
 
 
-\- QuCNet checkpoints,
+- QuCNet checkpoints,
 
-\- classical CNN checkpoints,
+- classical CNN checkpoints,
 
-\- best validation checkpoints,
+- best validation checkpoints,
 
-\- final leakage-free baseline models,
+- final leakage-free baseline models,
 
-\- model configuration summaries,
+- model configuration summaries,
 
-\- and training metadata.
+- and training metadata.
 
 
 

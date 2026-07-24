@@ -1,4 +1,4 @@
-\# Processed Dataset Artifacts
+# Processed Dataset Artifacts
 
 
 
@@ -12,23 +12,23 @@ Typical contents include:
 
 
 
-\- processed ultrasound arrays,
+- processed ultrasound arrays,
 
-\- quantum-inspired feature arrays,
+- quantum-inspired feature arrays,
 
-\- encoded labels,
+- encoded labels,
 
-\- train-validation-test arrays,
+- train-validation-test arrays,
 
-\- case identifiers,
+- case identifiers,
 
-\- ROI identifiers,
+- ROI identifiers,
 
-\- frozen split manifests,
+- frozen split manifests,
 
-\- dataset summaries,
+- dataset summaries,
 
-\- and integrity reports.
+- and integrity reports.
 
 
 

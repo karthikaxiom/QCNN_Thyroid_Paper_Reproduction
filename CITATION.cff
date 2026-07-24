@@ -9,8 +9,7 @@ authors:
   - family-names: "B. R."
     given-names: "Karthik"
 
-version: "1.0.0"
-
+version: "1.1.0"
 date-released: 2026-07-24
 
 repository-code: "https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction"

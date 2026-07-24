@@ -1136,3 +1136,27 @@ Status
 FINAL GEOMETRY AUDIT COMPLETED
 AUTHORITATIVE STRICT DATASET: 440 UNIQUE ROI GEOMETRIES
 =========================================================
+
+
+------------------------------------------------
+Date: 24-07-2026
+
+PHASES 15?18 DOCUMENTATION COMPLETION
+=========================================================
+
+Phase 15 consolidated the verified task-specific results and final research
+interpretation.
+
+Phase 16 reevaluated the saved binary model using TI-RADS-derived
+low-suspicion and high-suspicion proxy terminology. The historical result is
+classified as validation-selected holdout performance.
+
+Phase 17 generated the dataset-flow, experiment-configuration, master-results
+and research-artifact tables.
+
+Phase 18 analyzed 25 false positives and 7 false negatives. Unsupported
+clinical-effect claims were excluded.
+
+Status:
+PHASES 15?18 DOCUMENTED
+=========================================================
