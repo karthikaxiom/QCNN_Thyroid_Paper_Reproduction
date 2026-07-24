@@ -12,6 +12,7 @@
 ![Framework](https://img.shields.io/badge/Framework-TensorFlow%202.21-orange)
 ![Language](https://img.shields.io/badge/Python-3.13-yellow)
 ![Dataset](https://img.shields.io/badge/Dataset-DDTI-red)
+![Quantum Backend](https://img.shields.io/badge/Quantum%20Backend-PennyLane%200.45.1-7B2CBF)
 
 </div>
 
@@ -140,6 +141,188 @@ This repository provides:
 > However, the high classification performance reported in the original publication could not be independently reproduced using the publicly available DDTI dataset and the methodological details disclosed in the paper.
 >
 > The repository therefore serves as a **complete reproducibility study**, documenting both the implementation process and the scientific challenges encountered during independent verification.
+
+---
+
+<!-- VERIFIED_RESULTS_DASHBOARD_START -->
+
+# Verified Research Results Dashboard
+
+> [!IMPORTANT]
+> This repository does not have one universal project accuracy. Each value
+> below belongs to a different task, representation, or evaluation protocol.
+
+## Complete Experimental Results
+
+| Experiment | Task and Input | Evaluation Context | Accuracy |
+|---|---|---|---:|
+| Binary Quantum-Feature QuCNet | TI-RADS-derived binary proxy; `64 x 64 x 4` quantum features | Validation-selected 70-image holdout | **54.29%** |
+| Binary Classical CNN | Same binary proxy; grayscale images | Historical matched image-level setting | **57.14%** |
+| Six-Class Quantum-Feature QuCNet | Six TI-RADS classes; quantum-transformed features | Controlled image-level comparison | **18.57%** |
+| Six-Class Classical CNN | Six TI-RADS classes; grayscale images | Matched controlled comparison | **24.29%** |
+| Majority-Class Baseline | Six TI-RADS classes | Same controlled task | **27.14%** |
+| Strict ROI CNN | Six TI-RADS classes; deduplicated lesion ROIs | Case-separated untouched test set | **5.63%** |
+| Strict Case Aggregation | Mean aggregation of strict ROI probabilities | Case-separated untouched test set | **4.55%** |
+
+![Recorded accuracy across experimental protocols](09_Output_images/README/fig_01_experiment_accuracy_comparison.png)
+
+### Interpretation
+
+- **54.29%** is the binary hybrid quantum-classical QuCNet result.
+- **57.14%** is the corresponding binary classical CNN result.
+- The binary labels are TI-RADS-derived suspicion proxies, not pathology-confirmed diagnoses.
+- The six-class quantum model did not outperform the matched classical model.
+- Phase 14 is a separate strict classical ROI baseline.
+- The Phase 14 model predicted TI-RADS 3 for all 71 test ROIs and all 44 test cases.
+- Therefore, 5.63% ROI and 4.55% case are not the overall project accuracy.
+
+---
+
+## Verified PennyLane Quantum Implementation
+
+| Component | Verified Configuration |
+|---|---|
+| Framework | PennyLane 0.45.1 |
+| Device | `default.qubit` |
+| Input patch | Non-overlapping `2 x 2` grayscale pixels |
+| Qubits | 4 |
+| Layers | 2 |
+| Encoding | `RX` |
+| Fixed random rotations | `RY` |
+| Entanglement | CNOT ring `0 -> 1 -> 2 -> 3 -> 0` |
+| Measurements | Four Pauli-Z expectation values |
+| Random seed | 42 |
+| Output | `64 x 64 x 4` quantum feature tensor |
+| Hardware | Classical CPU simulation |
+
+The correct description is a **hybrid quantum-classical QuCNet-style
+pipeline**: simulated quantum circuits generate features and a classical
+neural network performs classification.
+
+<table>
+<tr>
+<td align="center"><b>Quantum Filter Application</b></td>
+<td align="center"><b>Four-Channel Quantum Features</b></td>
+</tr>
+<tr>
+<td><img src="09_Output_images/Quantum_filter_applied.png" width="430"></td>
+<td><img src="09_Output_images/Quantum_utils_4channel.png" width="430"></td>
+</tr>
+</table>
+
+---
+
+# Visual Experimental Evidence
+
+## Binary Proxy QuCNet
+
+| Metric | Result |
+|---|---:|
+| Accuracy | **54.29%** |
+| Precision | 56.14% |
+| Recall | 82.05% |
+| F1 Score | 66.67% |
+
+<table>
+<tr>
+<td align="center"><b>Confusion Matrix</b></td>
+<td align="center"><b>Precision-Recall Curve</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/phase16_binary_qucnet_evaluation/binary_confusion_matrix.png" width="430"></td>
+<td><img src="07_Results/phase16_binary_qucnet_evaluation/binary_precision_recall_curve.png" width="430"></td>
+</tr>
+</table>
+
+## Controlled Six-Class Comparison
+
+| Model | Accuracy | Balanced Accuracy | Macro F1 | Weighted F1 |
+|---|---:|---:|---:|---:|
+| Quantum-Feature QuCNet | 18.57% | 15.16% | 6.72% | 8.74% |
+| Classical Grayscale CNN | 24.29% | 28.09% | 23.18% | 22.76% |
+| Majority-Class Baseline | 27.14% | - | - | - |
+
+<table>
+<tr>
+<td align="center"><b>Quantum Confusion Matrix</b></td>
+<td align="center"><b>Quantum Training Accuracy</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/phase9_paper_tirads_class_weighted/test_confusion_matrix.png" width="430"></td>
+<td><img src="07_Results/phase9_paper_tirads_class_weighted/training_accuracy_plot.png" width="430"></td>
+</tr>
+<tr>
+<td align="center"><b>Classical Confusion Matrix</b></td>
+<td align="center"><b>Classical Training Accuracy</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/phase10_classical_tirads_class_weighted/test_confusion_matrix.png" width="430"></td>
+<td><img src="07_Results/phase10_classical_tirads_class_weighted/training_accuracy_plot.png" width="430"></td>
+</tr>
+</table>
+
+## Audited Dataset and ROI Evidence
+
+| Audit Item | Verified Result |
+|---|---:|
+| Valid cases | **291** |
+| Unique ROI geometries | **440** |
+| Redundant ROI copies removed | **9** |
+| Exact duplicate groups | **6** |
+| Train / validation / test cases | **203 / 44 / 44** |
+| Train / validation / test ROIs | **311 / 58 / 71** |
+| Case overlap | **0** |
+| ROI overlap | **0** |
+
+![Audited case-separated split](09_Output_images/README/fig_02_audited_dataset_split.png)
+
+<table>
+<tr>
+<td align="center"><b>Annotation Audit Preview</b></td>
+<td align="center"><b>Strict Test ROI Preview</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/phase11_case_annotation_audit/roi_preview_grid.png" width="430"></td>
+<td><img src="07_Results/phase13_roi_dataset/test_roi_preview.png" width="430"></td>
+</tr>
+</table>
+
+## Strict Phase 14 ROI Baseline
+
+| Evaluation | Accuracy | Balanced Accuracy | Macro F1 |
+|---|---:|---:|---:|
+| ROI level | **5.63%** | 16.67% | 1.78% |
+| Case level | **4.55%** | 16.67% | 1.45% |
+
+<table>
+<tr>
+<td align="center"><b>Training Curves</b></td>
+<td align="center"><b>ROI Confusion Matrix</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/phase14_roi_categorical_baseline/training_curves.png" width="430"></td>
+<td><img src="07_Results/phase14_roi_categorical_baseline/roi_confusion_matrix.png" width="430"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><b>Case Confusion Matrix</b></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><img src="07_Results/phase14_roi_categorical_baseline/case_confusion_matrix.png" width="520"></td>
+</tr>
+</table>
+
+![Phase 14 single-class prediction collapse](09_Output_images/README/fig_03_phase14_prediction_collapse.png)
+
+## Research Closure
+
+Model development for the original-paper reproduction ended after Phase 14.
+Phases 15-18 contain consolidation, terminology correction, paper tables, and
+error analysis only. They did not train new models.
+
+No Phase 19 experiment is part of this research release. The audited release
+is **v1.2.0**.
+
+<!-- VERIFIED_RESULTS_DASHBOARD_END -->
 
 ---
 
@@ -948,7 +1131,7 @@ The following controls were applied:
 
 ---
 
-# Phase 14 — Final Leakage-Free Categorical CNN Baseline
+# Phase 14 — Strict Audited ROI Categorical CNN Baseline
 
 The objective of Phase 14 was to perform one final controlled six-class TI-RADS experiment using the audited ROI dataset.
 
@@ -1030,7 +1213,7 @@ The checkpoint saved at Epoch 1 was therefore used for final testing.
 
 ---
 
-# Final Leakage-Free Results
+# Strict Phase 14 Results
 
 ## ROI-Level Test Performance
 
@@ -1116,7 +1299,7 @@ Under the reconstructed and controlled conditions, the quantum-transformed featu
 
 ---
 
-# Scientific Interpretation of the Final Result
+# Scientific Interpretation of the Strict Phase 14 Result
 
 The final result should not be interpreted as a software implementation failure.
 
@@ -1911,7 +2094,7 @@ Additional README figures will be added here later and linked directly from this
 
 ---
 
-# Reproducing the Final Audited Experiment
+# Reproducing the Strict Audited ROI Baseline
 
 The final scientifically preferred experiment begins from the Phase 11 annotation audit and continues through Phase 14.
 
@@ -2014,7 +2197,7 @@ or the matching Phase 14 result directory present in the repository.
 
 ---
 
-# Expected Final Metrics
+# Expected Strict Phase 14 Metrics
 
 The reproduced results may differ slightly depending on:
 
@@ -2284,64 +2467,3 @@ University Visvesvaraya College of Engineering
 Bengaluru, India
 
 </div>
-
-
----
-
-# Phase 15 ? Verified Research Consolidation
-
-Phase 15 consolidated the verified task-specific findings without presenting
-one universal project accuracy.
-
-| Experiment | Verified Result |
-|---|---:|
-| TI-RADS-derived binary proxy classification | 54.29% |
-| Matched quantum TI-RADS model | 18.57% |
-| Matched classical TI-RADS model | 24.29% |
-| Deduplicated strict six-class ROI baseline | 5.63% |
-| Deduplicated strict six-class case aggregation | 4.55% |
-
-Outputs: `07_Results/phase15_final_research_evaluation/`
-
----
-
-# Phase 16 ? Binary QuCNet Proxy-Task Reevaluation
-
-The saved binary QuCNet model was reevaluated using scientifically accurate
-terminology. Its classes are TI-RADS-derived low-suspicion and high-suspicion
-proxy labels, not pathology-confirmed diagnoses.
-
-Because the historical 70-image holdout was used for validation-based
-checkpoint selection, its result is reported as validation-selected holdout
-performance.
-
-Outputs: `07_Results/phase16_binary_qucnet_evaluation/`
-
----
-
-# Phase 17 ? Paper Master Tables
-
-Phase 17 generated the audited dataset-flow, experiment-configuration, master
-results and research-artifact tables.
-
-Outputs: `07_Results/phase17_paper_master_tables/`
-
----
-
-# Phase 18 ? Binary Proxy Error Analysis
-
-Phase 18 identified 25 false positives and 7 false negatives in the binary
-proxy task. The interpretation is restricted to model behaviour and does not
-claim unsupported clinical consequences.
-
-Outputs: `07_Results/phase18_binary_error_analysis/`
-
----
-
-# Audited Repository Status
-
-Current audited release: **v1.2.0**
-
-The pre-audit results remain preserved through Git history and chronological
-project-log entries. The current final documentation uses the deduplicated
-strict dataset containing 440 unique ROI geometries.
