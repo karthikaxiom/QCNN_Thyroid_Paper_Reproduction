@@ -1,0 +1,26 @@
+PHASE 16 - BINARY QUCNET FINAL EVALUATION
+==============================================================================
+
+Test samples                         : 70
+Benign / Malignant                  : 31 / 39
+Accuracy                            : 0.5429 (54.29%)
+Precision (Malignant)               : 0.5614 (56.14%)
+Sensitivity / Recall (Malignant)    : 0.8205 (82.05%)
+Specificity (Benign)                : 0.1935 (19.35%)
+Negative predictive value           : 0.4615 (46.15%)
+F1 score (Malignant)                : 0.6667 (66.67%)
+Matthews correlation coefficient    : 0.0180
+Cohen kappa                         : 0.0150
+ROC-AUC                             : 0.6634
+Average precision                   : 0.7487
+
+Confusion matrix
+------------------------------------------------------------------------------
+True negatives                      : 6
+False positives                     : 25
+False negatives                     : 7
+True positives                      : 32
+
+Interpretation
+------------------------------------------------------------------------------
+The model prioritizes malignant-case detection, producing high sensitivity but low specificity. The ROC-AUC and average precision must be reported together with the threshold-dependent confusion matrix metrics.

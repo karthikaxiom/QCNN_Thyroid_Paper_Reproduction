@@ -1,0 +1,22 @@
+{
+    "task": "binary benign versus malignant classification",
+    "test_samples": 70,
+    "benign_test_samples": 31,
+    "malignant_test_samples": 39,
+    "accuracy": 0.5428571428571428,
+    "precision_positive_malignant": 0.5614035087719298,
+    "sensitivity_recall_malignant": 0.8205128205128205,
+    "specificity_benign": 0.1935483870967742,
+    "negative_predictive_value": 0.46153846153846156,
+    "f1_score_malignant": 0.6666666666666666,
+    "matthews_correlation_coefficient": 0.017960840946558455,
+    "cohen_kappa": 0.014951627088830355,
+    "roc_auc": 0.663358147229115,
+    "average_precision": 0.7487053323626652,
+    "confusion_matrix": {
+        "true_negative": 6,
+        "false_positive": 25,
+        "false_negative": 7,
+        "true_positive": 32
+    }
+}

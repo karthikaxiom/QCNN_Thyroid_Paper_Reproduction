@@ -1,0 +1,3 @@
+error_type,count,meaning,clinical_effect
+False Positive,25,Benign image predicted as malignant,May increase unnecessary follow-up or biopsy recommendations
+False Negative,7,Malignant image predicted as benign,May delay detection of a potentially malignant nodule

@@ -1,0 +1,14 @@
+Paper artifact,Status
+Dataset flow table,Complete
+Experiment configuration table,Complete
+Master results table,Complete
+Binary ROC curve,Complete
+Binary precision-recall curve,Complete
+Binary confusion matrices,Complete
+Binary classification report,Complete
+TI-RADS confusion matrices,Complete
+Quantum vs classical comparison,Complete
+Strict ROI and case evaluation,Complete
+Error-analysis gallery,Pending
+Final architecture diagram,Pending
+Grad-CAM explainability,Optional / Pending

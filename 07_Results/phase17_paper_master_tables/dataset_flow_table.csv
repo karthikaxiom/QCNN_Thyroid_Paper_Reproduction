@@ -1,0 +1,11 @@
+Stage,Unit,Count,Purpose
+Raw metadata inventory,Metadata rows,480,Initial DDTI-derived metadata inventory
+Diagnosed records,Images,349,Records with benign or malignant diagnosis
+Benign records,Images,157,Binary class 0
+Malignant records,Images,192,Binary class 1
+Diagnosis-missing records,Rows,131,Excluded from binary classification
+Binary training set,Images,279,Original binary training split
+SMOTE-balanced binary training set,Images,306,153 benign and 153 malignant
+Binary test set,Images,70,31 benign and 39 malignant
+Strict ROI test set,ROIs,72,Leakage-free Phase 14 ROI evaluation
+Strict case-level test set,Cases,44,Case-aggregated Phase 14 evaluation

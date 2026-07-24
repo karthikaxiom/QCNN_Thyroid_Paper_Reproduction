@@ -1,0 +1,31 @@
+FINAL VERIFIED RESEARCH PERFORMANCE INTERPRETATION
+==============================================================================
+
+Important reporting rule
+------------------------------------------------------------------------------
+The experiments below solve different tasks and use different evaluation units. Their accuracy values must not be presented as directly interchangeable.
+
+1. Binary QuCNet tumor classification
+------------------------------------------------------------------------------
+Accuracy               : 54.29%
+Precision              : 56.14%
+Recall                 : 82.05%
+F1 score               : 66.67%
+Interpretation          : The binary experiment achieved the highest accuracy and strong malignant recall, but produced many false-positive malignant predictions.
+
+2. Six-class TI-RADS comparison
+------------------------------------------------------------------------------
+Phase 9 quantum model  : 18.57% accuracy
+Phase 10 classical     : 24.29% accuracy
+Interpretation          : Under the matched class-weighted TI-RADS comparison, the classical model outperformed the quantum-inspired model.
+
+3. Strict leakage-free ROI and case evaluation
+------------------------------------------------------------------------------
+ROI-level accuracy     : 12.50%
+Case-level accuracy    : 11.36%
+Interpretation          : The six-class CNN collapsed to a single class under the strict case-separated ROI protocol. This is retained as an honest negative result rather than hidden.
+
+Final scientific conclusion
+------------------------------------------------------------------------------
+The reproduction does not support one universal project accuracy. It supports a task-specific set of results: 54.29% for binary tumor classification, 18.57% versus 24.29% in the matched quantum-versus-classical TI-RADS comparison, and 12.50% ROI / 11.36% case accuracy for the strict leakage-free six-class baseline.
+The central research contribution is the discovery that stricter case-level and ROI-level evaluation substantially reduces the optimistic performance observed in earlier image-level experiments.

@@ -1,0 +1,26 @@
+sample_index,true_class,true_label,predicted_class,predicted_label,probability_benign,probability_malignant,confidence,correct,error_type
+69,0,Benign,1,Malignant,0.45358962,0.54641044,0.54641044,False,False Positive
+41,0,Benign,1,Malignant,0.45493102,0.54506904,0.54506904,False,False Positive
+54,0,Benign,1,Malignant,0.4681653,0.5318347,0.5318347,False,False Positive
+49,0,Benign,1,Malignant,0.46869254,0.5313075,0.5313075,False,False Positive
+16,0,Benign,1,Malignant,0.46980655,0.5301935,0.5301935,False,False Positive
+20,0,Benign,1,Malignant,0.47161737,0.52838254,0.52838254,False,False Positive
+22,0,Benign,1,Malignant,0.47196433,0.52803576,0.52803576,False,False Positive
+43,0,Benign,1,Malignant,0.47323063,0.5267694,0.5267694,False,False Positive
+33,0,Benign,1,Malignant,0.48144498,0.51855505,0.51855505,False,False Positive
+10,0,Benign,1,Malignant,0.48176265,0.51823735,0.51823735,False,False Positive
+42,0,Benign,1,Malignant,0.48198158,0.5180185,0.5180185,False,False Positive
+21,0,Benign,1,Malignant,0.48395288,0.5160471,0.5160471,False,False Positive
+44,0,Benign,1,Malignant,0.48407903,0.515921,0.515921,False,False Positive
+36,0,Benign,1,Malignant,0.48681566,0.51318437,0.51318437,False,False Positive
+18,0,Benign,1,Malignant,0.48764718,0.5123528,0.5123528,False,False Positive
+57,0,Benign,1,Malignant,0.48899475,0.51100516,0.51100516,False,False Positive
+19,0,Benign,1,Malignant,0.48987186,0.51012814,0.51012814,False,False Positive
+65,0,Benign,1,Malignant,0.49151382,0.50848615,0.50848615,False,False Positive
+50,0,Benign,1,Malignant,0.4922256,0.5077744,0.5077744,False,False Positive
+26,0,Benign,1,Malignant,0.49266806,0.5073319,0.5073319,False,False Positive
+45,0,Benign,1,Malignant,0.49332535,0.50667465,0.50667465,False,False Positive
+58,0,Benign,1,Malignant,0.49397004,0.50602996,0.50602996,False,False Positive
+3,0,Benign,1,Malignant,0.4947052,0.50529486,0.50529486,False,False Positive
+39,0,Benign,1,Malignant,0.49678513,0.5032149,0.5032149,False,False Positive
+27,0,Benign,1,Malignant,0.4995604,0.5004396,0.5004396,False,False Positive

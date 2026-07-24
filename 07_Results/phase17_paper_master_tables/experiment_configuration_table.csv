@@ -1,0 +1,7 @@
+Experiment,Task,Input,Balancing,Classes,Evaluation unit,Split protocol,Model
+Binary QuCNet,Benign vs Malignant,64x64x4 quantum-inspired maps,SMOTE,2,Image,Original reproduction split,Flatten + Dense 128 + Dense 64 + Softmax
+Phase 8 TI-RADS,Six-class TI-RADS,Prepared TI-RADS image features,None / baseline,6,Image,Earlier image-level split,TI-RADS baseline model
+Phase 9 Quantum TI-RADS,Weighted six-class TI-RADS,Quantum-inspired representation,Class weights,6,Image,Earlier image-level split,Quantum-inspired TI-RADS model
+Phase 10 Classical TI-RADS,Weighted six-class TI-RADS,Classical representation,Class weights,6,Image,Earlier image-level split,Classical CNN
+Phase 14 Strict ROI,Six-class TI-RADS,64x64x1 ROI crops,Class weights,6,ROI,Leakage-free case-level split,Compact categorical CNN
+Phase 14 Case Aggregation,Six-class TI-RADS,Mean ROI probabilities per case,Inherited from ROI model,6,Case,Leakage-free case-level split,Probability aggregation
