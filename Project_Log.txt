@@ -1,5 +1,40 @@
 QCNN Thyroid Paper Reproduction
 
+
+=========================================================
+HOW I READ THIS CHRONOLOGICAL LOG - 24-07-2026
+=========================================================
+
+This file is my day-by-day research journal. I have kept the earlier entries
+because they show what I understood, implemented, observed and corrected at
+each stage of the work.
+
+Some early entries use the words Benign and Malignant. I later confirmed that
+the public DDTI files do not contain the pathology-confirmed mapping required
+for that task. Those labels were created from TI-RADS categories and must be
+read as low-suspicion and high-suspicion proxy labels.
+
+The 54.29 percent binary QuCNet result was obtained on a 70-image holdout that
+was also used for validation-based checkpoint selection. I therefore report it
+as validation-selected holdout performance, not as an untouched independent
+test result.
+
+The earlier 449-ROI counts and the 12.50 percent ROI / 11.36 percent case
+results are preserved as the historical pre-deduplication experiment. The
+authoritative strict result is based on 440 unique ROI geometries and is
+5.63 percent at ROI level and 4.55 percent at case level.
+
+This research has no single overall accuracy. Each percentage belongs to a
+different task and evaluation protocol.
+
+Model development for the original-paper reproduction ended after Phase 14.
+Phases 15-18 were used to consolidate results, correct terminology, prepare
+paper tables and analyze saved prediction errors. I did not include a Phase 19
+model experiment.
+
+=========================================================
+
+
 Date: 4-06-2026
 
 Day 1
@@ -1085,9 +1120,9 @@ Total Unique ROIs                 : 440
 Leakage Verification
 --------------------
 
-Train?Validation Case Overlap     : 0
-Train?Test Case Overlap           : 0
-Validation?Test Case Overlap      : 0
+Train-Validation Case Overlap     : 0
+Train-Test Case Overlap           : 0
+Validation-Test Case Overlap      : 0
 Duplicate ROI Geometries          : 0
 
 Corrected Phase 14 Evaluation
@@ -1141,7 +1176,7 @@ AUTHORITATIVE STRICT DATASET: 440 UNIQUE ROI GEOMETRIES
 ------------------------------------------------
 Date: 24-07-2026
 
-PHASES 15?18 DOCUMENTATION COMPLETION
+PHASES 15-18 DOCUMENTATION COMPLETION
 =========================================================
 
 Phase 15 consolidated the verified task-specific results and final research
@@ -1158,5 +1193,337 @@ Phase 18 analyzed 25 false positives and 7 false negatives. Unsupported
 clinical-effect claims were excluded.
 
 Status:
-PHASES 15?18 DOCUMENTED
+PHASES 15-18 DOCUMENTED
+=========================================================
+
+------------------------------------------------
+Date: 24-07-2026
+
+FINAL AUTHORITATIVE RESEARCH CLOSURE - 24-07-2026
+=========================================================
+
+Why I Added This Final Entry
+----------------------------
+
+Today I reviewed the complete repository again before closing the research. I
+checked the source code, saved quantum arrays, dataset manifests, prediction
+files, result reports, README, Git history and the corrected case-level split.
+
+I am keeping every earlier dated entry because it shows the actual path of the
+research: the first assumptions, the experiments, the problems I noticed, the
+audits I performed and the corrections I made. This final entry records what I
+now accept as the authoritative interpretation of the complete work.
+
+---------------------------------------------------------
+1. FINAL QUANTUM IMPLEMENTATION VERIFICATION
+---------------------------------------------------------
+
+I inspected:
+
+05_Source_Code/utilities/quantum_utils.py
+
+I verified the following implementation:
+
+Quantum framework            : PennyLane 0.45.1
+Quantum device               : default.qubit
+Number of qubits             : 4
+Number of circuit layers     : 2
+Input to one circuit         : 2 x 2 grayscale image patch
+Data encoding                : RX rotation on each qubit
+Fixed random rotations       : RY
+Entanglement                 : CNOT ring
+CNOT order                   : 0 -> 1 -> 2 -> 3 -> 0
+Measurements                 : Four Pauli-Z expectation values
+Random seed                  : 42
+Output per image             : 64 x 64 x 4 quantum feature tensor
+Execution                    : Classical CPU simulation
+Physical quantum hardware    : Not used
+
+Qiskit was not installed in the final environment. The actual reproduction
+code used PennyLane.
+
+My final description of the model is therefore:
+
+A hybrid quantum-classical QuCNet-style pipeline in which a simulated quantum
+circuit generates four-channel image features and a classical neural network
+performs classification.
+
+---------------------------------------------------------
+2. QUANTUM FEATURE INTEGRITY CHECK
+---------------------------------------------------------
+
+I inspected the saved binary and TI-RADS quantum arrays.
+
+I confirmed that:
+
+- the expected arrays were present;
+- their feature shape was 64 x 64 x 4;
+- there were no NaN values;
+- there were no infinite values;
+- all four channels had non-zero variance;
+- no pair of channels was exactly identical.
+
+I also observed very high correlation between several channels. This means the
+quantum transformation ran correctly, but the four outputs may contain limited
+independent information. This is one possible reason why the quantum features
+did not improve classification.
+
+---------------------------------------------------------
+3. FINAL PHASE 14 PREDICTION CHECK
+---------------------------------------------------------
+
+I verified the final saved Phase 14 prediction files.
+
+Final strict test set:
+
+ROI samples                  : 71
+Patient cases                : 44
+
+ROI prediction distribution:
+
+TI-RADS 3                    : 71
+All other classes            : 0
+
+Case prediction distribution:
+
+TI-RADS 3                    : 44
+All other classes            : 0
+
+The strict model therefore produced complete single-class collapse. The
+5.63 percent ROI accuracy occurred because 4 of the 71 test ROIs had the true
+TI-RADS 3 label. The 4.55 percent case accuracy occurred because 2 of the 44
+test cases had the true TI-RADS 3 label.
+
+This is the result of the strict classical ROI baseline. It is not the quantum
+result and it is not the overall accuracy of the project.
+
+---------------------------------------------------------
+4. FINAL MASTER RESULT MATRIX
+---------------------------------------------------------
+
+A. Binary Quantum-Feature QuCNet
+--------------------------------
+
+Task                         : TI-RADS-derived binary proxy
+Input                        : 64 x 64 x 4 quantum features
+Evaluation                   : Validation-selected 70-image holdout
+Accuracy                     : 54.29 percent
+Precision                    : 56.14 percent
+Recall                       : 82.05 percent
+F1 Score                     : 66.67 percent
+
+B. Binary Classical CNN
+-----------------------
+
+Task                         : Same TI-RADS-derived binary proxy
+Input                        : Original grayscale ultrasound images
+Accuracy                     : 57.14 percent
+
+C. Controlled Six-Class Quantum Model
+-------------------------------------
+
+Task                         : Six-class TI-RADS classification
+Input                        : Quantum-transformed features
+Accuracy                     : 18.57 percent
+Balanced Accuracy            : 15.16 percent
+Macro F1                     : 6.72 percent
+Weighted F1                  : 8.74 percent
+
+D. Controlled Six-Class Classical Model
+---------------------------------------
+
+Task                         : Six-class TI-RADS classification
+Input                        : Original grayscale ultrasound images
+Accuracy                     : 24.29 percent
+Balanced Accuracy            : 28.09 percent
+Macro F1                     : 23.18 percent
+Weighted F1                  : 22.76 percent
+
+E. Majority-Class Baseline
+--------------------------
+
+Accuracy                     : 27.14 percent
+
+F. Strict Case-Separated ROI Baseline
+-------------------------------------
+
+Valid patient cases          : 291
+Unique ROI geometries        : 440
+Training ROIs                : 311
+Validation ROIs              : 58
+Testing ROIs                 : 71
+ROI accuracy                 : 5.63 percent
+Case accuracy                : 4.55 percent
+Balanced accuracy            : 16.67 percent
+ROI Macro F1                 : 1.78 percent
+Case Macro F1                : 1.45 percent
+Prediction behaviour         : Complete TI-RADS 3 collapse
+
+---------------------------------------------------------
+5. HISTORICAL RESULT AND FINAL AUDITED CORRECTION
+---------------------------------------------------------
+
+My first strict ROI experiment used 449 manifest rows:
+
+Training ROIs                : 319
+Validation ROIs              : 58
+Testing ROIs                 : 72
+ROI accuracy                 : 12.50 percent
+Case accuracy                : 11.36 percent
+
+During the final geometry-level audit, I found 15 manifest rows across six
+groups that described exactly the same source image, bounding box and
+annotation geometry.
+
+I removed nine redundant copies and retained:
+
+Unique ROI geometries        : 440
+Valid cases                  : 291
+Training ROIs                : 311
+Validation ROIs              : 58
+Testing ROIs                 : 71
+
+The corrected split had:
+
+Case overlap                 : 0
+ROI overlap                  : 0
+Exact duplicate geometries   : 0
+
+I preserved the earlier result above in the journal because it was a real
+stage of the research. The 440-ROI result is the authoritative final result.
+
+---------------------------------------------------------
+6. WHAT I LEARNED FROM THE COMPLETE REPRODUCTION
+---------------------------------------------------------
+
+1. I successfully reconstructed the public DDTI data pipeline from XML files
+   and ultrasound images.
+
+2. I confirmed that the public files do not provide the pathology-confirmed
+   binary label mapping required for an exact reproduction of the reported
+   tumor-classification task.
+
+3. I implemented and verified the PennyLane quantum feature generator.
+
+4. Under matched conditions, the quantum-transformed representation did not
+   outperform the original grayscale representation.
+
+5. The controlled six-class quantum and classical models both remained below
+   the 27.14 percent majority-class baseline in raw accuracy.
+
+6. Image-level splitting was not sufficient for final patient-independent
+   evidence because multiple images and ROIs can belong to the same case.
+
+7. The case-level and geometry-level audits were necessary to obtain a
+   defensible final split.
+
+8. Removing the exact duplicate ROI records changed the numerical result but
+   did not change the scientific conclusion.
+
+9. The strict classical ROI model did not generalize to unseen cases and
+   collapsed to one predicted class.
+
+10. I could not independently reproduce the high performance reported in the
+    reference paper using the public dataset and disclosed methodology.
+
+---------------------------------------------------------
+7. PHASES 15-18
+---------------------------------------------------------
+
+Phase 15
+-------
+
+I consolidated all verified results without presenting one universal project
+accuracy.
+
+Phase 16
+--------
+
+I reevaluated the saved binary QuCNet predictions using the correct
+TI-RADS-derived proxy terminology and validation-selected holdout terminology.
+
+Phase 17
+--------
+
+I generated the audited dataset-flow, experiment-configuration, master-result
+and research-artifact tables needed for the paper.
+
+Phase 18
+--------
+
+I analyzed the saved binary predictions:
+
+False positives              : 25
+False negatives              : 7
+
+I restricted the interpretation to model behaviour and removed unsupported
+claims about clinical treatment or patient outcomes.
+
+No new model was trained in Phases 15-18.
+
+---------------------------------------------------------
+8. README AND REPOSITORY CLOSURE
+---------------------------------------------------------
+
+Audited release tag          : v1.2.0
+Audited release commit       : 13567e7
+README dashboard commit      : f227761
+README merge commit          : f235310
+
+I updated the README to show the complete research instead of allowing the
+strict Phase 14 percentage to appear as the only project result.
+
+The README now contains:
+
+- the complete experimental result matrix;
+- verified PennyLane circuit details;
+- quantum feature visualizations;
+- saved confusion matrices and training curves;
+- the audited case/ROI split graph;
+- the Phase 14 single-class-collapse graph;
+- the corrected role of Phases 15-18;
+- an explicit statement that there is no Phase 19 experiment.
+
+I merged and pushed the documentation to the GitHub main branch.
+
+---------------------------------------------------------
+9. MY FINAL RESEARCH DECISION
+---------------------------------------------------------
+
+After reviewing the full pipeline, I concluded that the implementation
+executed correctly, but the public dataset and the disclosed methodology were
+not sufficient to reproduce the reported performance.
+
+I decided not to add more architectures only to search for a higher accuracy.
+That would change the work from an independent reproduction into a separate
+performance-optimization study.
+
+I therefore close the original-paper reproduction and methodological audit
+with all positive and negative findings preserved.
+
+No Phase 19 model experiment is included.
+
+Any future work involving transfer learning, ordinal classification, new
+class-balancing methods, improved CNNs, alternative quantum circuits, larger
+datasets or pathology-confirmed labels will be documented as a separate
+research extension.
+
+FINAL PROJECT STATUS
+--------------------
+
+Dataset reconstruction       : COMPLETED
+Quantum implementation       : COMPLETED AND VERIFIED
+Binary experiments           : COMPLETED
+Six-class comparison         : COMPLETED
+Case-level audit             : COMPLETED
+Geometry deduplication       : COMPLETED
+Strict ROI evaluation        : COMPLETED
+Result consolidation         : COMPLETED
+README documentation         : COMPLETED
+Chronological project log    : COMPLETED
+Original reproduction scope  : CLOSED
+Next formal deliverable      : RESEARCH PAPER
+
+=========================================================
+END OF CHRONOLOGICAL PROJECT LOG
 =========================================================
