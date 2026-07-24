@@ -1,3 +1,4 @@
+[![Cite this repository](https://img.shields.io/badge/Cite-CITATION.cff-blue.svg)](CITATION.cff)
 <div align="center">
 
 # Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification
