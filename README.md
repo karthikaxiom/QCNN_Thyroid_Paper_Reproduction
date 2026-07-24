@@ -19,9 +19,9 @@
 
 # Research Summary
 
-Artificial Intelligence has demonstrated remarkable success in medical image classification. Recently, Quantum Machine Learning (QML) has emerged as a promising research direction by combining concepts from quantum computing with deep learning architectures.One such work is **QuCNet**, a quantum-inspired convolutional framework proposed by Swathi, Altalbe and Kumar for thyroid nodule classification using ultrasound images [[1]](#references).
+Artificial Intelligence has demonstrated remarkable success in medical image classification. Recently, Quantum Machine Learning (QML) has emerged as a promising research direction by combining concepts from quantum computing with deep learning architectures. One such work is **QuCNet**, a quantum-inspired convolutional framework proposed by Swathi, Altalbe and Kumar for thyroid nodule classification using ultrasound images [[1]](#references).
 
-The reference study reported high classification performance for both tumour classification and multi-class TI-RADS prediction [[1]](#references). using quantum-inspired feature extraction on the Digital Database of Thyroid Ultrasound Images (DDTI). However, reproducing published research is often challenging because many implementation details, preprocessing decisions, dataset versions and experimental settings are not fully disclosed.
+The reference study reported high classification performance for both tumour classification and multi-class TI-RADS prediction [[1]](#references) using quantum-inspired feature extraction on the Digital Database of Thyroid Ultrasound Images (DDTI). However, reproducing published research is often challenging because many implementation details, preprocessing decisions, dataset versions and experimental settings are not fully disclosed.
 
 This repository presents a **complete independent reproduction and methodological audit** of the QuCNet framework using the publicly available DDTI dataset.
 
@@ -130,7 +130,7 @@ This repository provides:
 | Frozen Dataset Split | ✅ Completed |
 | ROI Dataset Generation | ✅ Completed |
 | Final Leakage-Free Evaluation | ✅ Completed |
-| Research Documentation | ✅ Ongoing |
+| Research Documentation | ✅ Completed |
 
 ---
 
