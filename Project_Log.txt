@@ -409,9 +409,7 @@ y_train_smote.npy
 Research Observation
 --------------------
 
-SMOTE was applied only to the training dataset to eliminate class imbalance
-while keeping the testing dataset untouched for unbiased model evaluation.
-This follows the methodology reported in the QCNN thyroid classification paper.
+SMOTE was applied only to the training dataset to eliminate class imbalance. However, the 70-image holdout set was later used as validation data for early stopping and checkpoint selection in Phase 6, so it was not a fully independent untouched test set.
 
 PHASE 5 STEP 2 COMPLETED
 
@@ -431,7 +429,7 @@ Completed:
 - Trained baseline dense classifier on 64×64×4 quantum features.
 - Applied EarlyStopping, ReduceLROnPlateau, and ModelCheckpoint.
 - Saved best_qucnet.keras and final_qucnet.keras.
-- Evaluated model on untouched test set.
+- Evaluated the checkpoint on the same 70-image holdout set used for validation-based model selection; therefore, these metrics are validation-selected holdout results.
 - Generated metrics, confusion matrix, accuracy plot, and loss plot.
 
 Results:

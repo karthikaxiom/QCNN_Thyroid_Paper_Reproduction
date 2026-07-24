@@ -90,7 +90,7 @@ def validate_required_files() -> None:
 
 
 def load_test_dataset() -> tuple[np.ndarray, np.ndarray]:
-    """Load and validate the untouched TI-RADS test dataset."""
+    """Load and validate the validation-selected TI-RADS holdout dataset."""
 
     x_test = np.load(X_TEST_PATH).astype(np.float32)
     y_test = np.load(Y_TEST_PATH).astype(np.int32)
@@ -317,7 +317,7 @@ def main() -> None:
 
     validate_required_files()
 
-    print("\nLoading untouched test dataset...")
+    print("\nLoading validation-selected holdout dataset...")
 
     x_test, y_test = load_test_dataset()
 

@@ -487,7 +487,7 @@ The pipeline included:
 - Dataset serialization
 - Class distribution verification
 
-Training data imbalance was handled using SMOTE only on the training partition, preserving an untouched testing dataset.
+Training data imbalance was handled using SMOTE only on the training partition. However, the 70-image holdout set was also used as validation data for early stopping and checkpoint selection during the initial Phase 6 experiment. Therefore, the resulting binary metrics must be interpreted as validation-selected holdout performance rather than evaluation on a fully independent untouched test set.
 
 ### Important Clarification
 

@@ -329,6 +329,8 @@ def main() -> None:
 
     callbacks = create_callbacks()
 
+    print("\nPROTOCOL NOTE: x_test and y_test are used for validation-based model selection in this historical Phase 8 experiment.")
+    print("Phase 8 results must therefore be reported as validation-selected holdout performance.")
     print("\nStarting training...")
     print("-" * 70)
 

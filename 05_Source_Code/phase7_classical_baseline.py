@@ -68,6 +68,9 @@ callbacks = [
     )
 ]
 
+print("\nPROTOCOL NOTE: X_test and y_test are used for validation-based model selection in this historical Phase 7 experiment.")
+print("Phase 7 results must therefore be reported as validation-selected holdout performance.")
+
 history = model.fit(
     X_train,
     y_train_cat,

@@ -59,7 +59,7 @@ def main() -> None:
     for path in [MODEL_PATH, X_TEST_PATH, Y_TEST_PATH]:
         require(path)
 
-    print("[1/6] Loading model and untouched binary test set...")
+    print("[1/6] Loading saved model and validation-selected binary holdout set...")
     model = keras.models.load_model(MODEL_PATH)
     X_test = np.load(X_TEST_PATH).astype(np.float32)
     y_true = np.load(Y_TEST_PATH).astype(int)
