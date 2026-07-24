@@ -1,11 +1,13 @@
+from pathlib import Path
 import os
 import cv2
 import numpy as np
 import pandas as pd
 
 # Setup your exact D: drive project paths
-MANIFEST_CSV = r"D:\QCNN_Thyroid_Paper_Reproduction\03_Dataset_Processed\master_manifest.csv"
-OUTPUT_NPZ = r"D:\QCNN_Thyroid_Paper_Reproduction\03_Dataset_Processed\preprocessed_matrices.npz"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+MANIFEST_CSV = str(PROJECT_ROOT / "03_Dataset_Processed" / "master_manifest.csv")
+OUTPUT_NPZ = str(PROJECT_ROOT / "03_Dataset_Processed" / "preprocessed_matrices.npz")
 
 def run_image_preprocessing():
     if not os.path.exists(MANIFEST_CSV):

@@ -1,10 +1,12 @@
+from pathlib import Path
 import os
 from PIL import Image
 import numpy as np
 
 # Project Paths
 
-DATASET_DIR = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATASET_DIR = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive")
 
 # Main Inspection
 

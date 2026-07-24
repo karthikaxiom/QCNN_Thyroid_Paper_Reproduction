@@ -1,6 +1,8 @@
+from pathlib import Path
 import os
 
-folder = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+folder = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive")
 
 keywords = [
     "benign",

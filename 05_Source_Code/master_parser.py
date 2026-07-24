@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 import xml.etree.ElementTree as ET
 import pandas as pd
@@ -6,9 +7,10 @@ import pandas as pd
 # Project Paths
 # ==========================================================
 
-DATASET_DIR = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATASET_DIR = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive")
 
-OUTPUT_DIR = r"D:\QCNN_Thyroid_Paper_Reproduction\03_Dataset_Processed"
+OUTPUT_DIR = str(PROJECT_ROOT / "03_Dataset_Processed")
 
 OUTPUT_CSV = os.path.join(
     OUTPUT_DIR,

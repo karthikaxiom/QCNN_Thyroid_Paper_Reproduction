@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 
@@ -7,7 +8,8 @@ print("=" * 60)
 
 # Load Dataset
 
-csv_path = r"D:\QCNN_Thyroid_Paper_Reproduction\03_Dataset_Processed\master_dataset.csv"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+csv_path = str(PROJECT_ROOT / "03_Dataset_Processed" / "master_dataset.csv")
 
 df = pd.read_csv(csv_path)
 
@@ -64,7 +66,7 @@ for i, row in df[df["diagnosis"].isna()].iterrows():
 
 # Save
 
-output = r"D:\QCNN_Thyroid_Paper_Reproduction\03_Dataset_Processed\final_dataset.csv"
+output = str(PROJECT_ROOT / "03_Dataset_Processed" / "final_dataset.csv")
 
 df.to_csv(output, index=False)
 

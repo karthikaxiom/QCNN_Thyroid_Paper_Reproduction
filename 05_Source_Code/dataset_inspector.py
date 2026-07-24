@@ -1,6 +1,8 @@
+from pathlib import Path
 import os
 
-dataset_path = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+dataset_path = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive")
 
 jpg_count = 0
 xml_count = 0

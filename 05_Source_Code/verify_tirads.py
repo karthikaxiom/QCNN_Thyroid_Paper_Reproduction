@@ -1,7 +1,9 @@
+from pathlib import Path
 import os
 import xml.etree.ElementTree as ET
 
-DATASET_DIR = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATASET_DIR = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive")
 
 blank_count = 0
 filled_count = 0

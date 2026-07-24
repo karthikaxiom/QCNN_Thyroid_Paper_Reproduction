@@ -1,6 +1,8 @@
+from pathlib import Path
 import xml.etree.ElementTree as ET
 
-xml_file = r"D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\100.xml"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+xml_file = str(PROJECT_ROOT / "02_Dataset_Raw" / "archive" / "100.xml")
 
 tree = ET.parse(xml_file)
 root = tree.getroot()
