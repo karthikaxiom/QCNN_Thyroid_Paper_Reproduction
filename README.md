@@ -1589,7 +1589,7 @@ Until a formal thesis or associated research article is published, the repositor
 > **Karthik B. R.**  
 > *Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification*.  
 > GitHub repository, 2026.  
-> Available at: [github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction](https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction)
+> Available at: [github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction)
 
 ### BibTeX
 
@@ -1600,7 +1600,7 @@ Until a formal thesis or associated research article is published, the repositor
                   for Thyroid Nodule Classification},
   year         = {2026},
   publisher    = {GitHub},
-  url          = {https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction},
+  url          = {https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction},
   note         = {Independent reproduction and methodological audit
                   using the publicly available DDTI dataset}
 }
@@ -1672,8 +1672,8 @@ The central aim of this work was not to reproduce a high number by repeated tuni
 
 | Platform | Link |
 |---|---|
-| GitHub | [Robbin808](https://github.com/Robbin808) |
-| Repository | [QCNN Thyroid Paper Reproduction](https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction) |
+| GitHub | [karthikaxiom](https://github.com/karthikaxiom) |
+| Repository | [QCNN Thyroid Paper Reproduction](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction) |
 
 ---
 
