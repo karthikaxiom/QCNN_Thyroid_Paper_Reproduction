@@ -2,7 +2,7 @@ QCNN Thyroid Paper Reproduction
 
 
 =========================================================
-FINAL AUDIT CLARIFICATIONS - 24-07-2026
+ AUDIT CLARIFICATIONS - 24-07-2026
 =========================================================
 
 This file is my day-by-day research journal. I have kept the earlier entries
