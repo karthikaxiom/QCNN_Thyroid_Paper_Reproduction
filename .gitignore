@@ -19,3 +19,101 @@ __pycache__/
 # Temporary Phase 11 audit inputs
 phase11_audit_input/
 phase11_audit_input.zip
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ============================================================
+# Virtual environments
+# ============================================================
+.venv/
+venv/
+env/
+
+# ============================================================
+# IDE and operating-system files
+# ============================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Raw dataset
+# DDTI is obtained separately and is not redistributed here.
+# ============================================================
+02_Dataset_Raw/*
+!02_Dataset_Raw/README.md
+!02_Dataset_Raw/.gitkeep
+
+# ============================================================
+# Processed datasets and generated arrays
+# Preserve documentation and lightweight manifests only.
+# ============================================================
+03_Dataset_Processed/**/*.npy
+03_Dataset_Processed/**/*.npz
+03_Dataset_Processed/**/*.pkl
+03_Dataset_Processed/**/*.pickle
+03_Dataset_Processed/**/*.h5
+03_Dataset_Processed/**/*.hdf5
+03_Dataset_Processed/**/*.joblib
+
+!03_Dataset_Processed/**/
+!03_Dataset_Processed/**/README.md
+!03_Dataset_Processed/**/.gitkeep
+!03_Dataset_Processed/**/*.csv
+!03_Dataset_Processed/**/*.json
+!03_Dataset_Processed/**/*.txt
+
+# ============================================================
+# Saved model binaries
+# Preserve folder documentation and summaries.
+# ============================================================
+06_Models/**/*.keras
+06_Models/**/*.h5
+06_Models/**/*.hdf5
+06_Models/**/*.ckpt
+06_Models/**/*.weights
+06_Models/**/*.pb
+06_Models/**/*.onnx
+06_Models/**/*.tflite
+
+!06_Models/**/
+!06_Models/**/README.md
+!06_Models/**/.gitkeep
+!06_Models/**/*.json
+!06_Models/**/*.txt
+!06_Models/**/*.csv
+
+# ============================================================
+# Temporary logs and cache
+# ============================================================
+*.tmp
+*.temp
+*.log
+logs/
+cache/
+
+# ============================================================
+# Secrets and local settings
+# ============================================================
+.env
+.env.*
+*.key
+*.pem
+credentials.json
+
+# ============================================================
+# Keep research results, reports and README figures
+# ============================================================
+!07_Results/**
+!09_Output_images/**
