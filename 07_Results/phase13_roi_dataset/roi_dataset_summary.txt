@@ -15,20 +15,20 @@ Model training                 : Not performed
 
 Processed split statistics
 ------------------------------------------------------------------------
-Train samples                    : 319
+Train samples                    : 311
 Train unique cases               : 203
-Train array shape                   : [319, 64, 64, 1]
-Train class counts                 : 2=33, 3=14, 4a=95, 4b=77, 4c=63, 5=37
+Train array shape                   : [311, 64, 64, 1]
+Train class counts                 : 2=33, 3=14, 4a=91, 4b=77, 4c=62, 5=34
 
 Validation samples               : 58
 Validation unique cases          : 44
 Validation array shape              : [58, 64, 64, 1]
 Validation class counts            : 2=7, 3=2, 4a=17, 4b=14, 4c=9, 5=9
 
-Test samples                     : 72
+Test samples                     : 71
 Test unique cases                : 44
-Test array shape                    : [72, 64, 64, 1]
-Test class counts                  : 2=10, 3=4, 4a=18, 4b=16, 4c=15, 5=9
+Test array shape                    : [71, 64, 64, 1]
+Test class counts                  : 2=9, 3=4, 4a=18, 4b=16, 4c=15, 5=9
 
 Leakage checks
 ------------------------------------------------------------------------

@@ -4,9 +4,9 @@
     "cases_with_valid_tirads": 298,
     "cases_with_multiple_images": 72,
     "maximum_images_in_one_case": 5,
-    "total_valid_roi_regions": 449,
+    "total_valid_roi_regions": 440,
     "cases_with_valid_roi_regions": 291,
-    "maximum_roi_regions_in_one_case": 6,
+    "maximum_roi_regions_in_one_case": 5,
     "image_count_frequency": {
         "1": 318,
         "2": 58,

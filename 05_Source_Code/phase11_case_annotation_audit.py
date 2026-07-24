@@ -928,8 +928,61 @@ def build_case_and_annotation_audit() -> tuple[
         invalid_columns,
     )
 
+    # Deduplicate exact ROI geometries while preserving an audit trail.
+    geometry_columns = [
+        "case_id",
+        "image_name",
+        "bbox_x1",
+        "bbox_y1",
+        "bbox_x2",
+        "bbox_y2",
+        "points_json",
+    ]
+
+    unique_roi_rows = []
+    duplicate_roi_rows = []
+    retained_roi_by_geometry = {}
+
+    for row in roi_rows:
+        geometry_key = tuple(
+            row[column] for column in geometry_columns
+        )
+
+        if geometry_key in retained_roi_by_geometry:
+            duplicate_row = dict(row)
+            duplicate_row["retained_roi_id"] = (
+                retained_roi_by_geometry[geometry_key]
+            )
+            duplicate_roi_rows.append(duplicate_row)
+            continue
+
+        retained_roi_by_geometry[geometry_key] = row["roi_id"]
+        unique_roi_rows.append(row)
+
+    duplicate_geometry_path = (
+        ROI_CANDIDATE_MANIFEST_PATH.parent
+        / "duplicate_roi_geometry_records.csv"
+    )
+
+    pd.DataFrame(
+        duplicate_roi_rows,
+        columns=roi_columns + ["retained_roi_id"],
+    ).to_csv(
+        duplicate_geometry_path,
+        index=False,
+    )
+
+    print(
+        "Exact duplicate ROI geometries removed: "
+        f"{len(duplicate_roi_rows)}"
+    )
+    print(
+        "Unique ROI geometries retained: "
+        f"{len(unique_roi_rows)}"
+    )
+
     roi_df = dataframe_to_csv(
-        roi_rows,
+        unique_roi_rows,
         ROI_CANDIDATE_MANIFEST_PATH,
         roi_columns,
     )

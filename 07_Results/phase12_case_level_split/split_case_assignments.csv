@@ -1,7 +1,7 @@
 case_id,tirads,tirads_class,roi_count,image_count,first_image_name,split
 305,2,0,1,1,305_1.jpg,test
 336,2,0,1,1,336_2.jpg,test
-359,2,0,6,2,359_2.jpg,test
+359,2,0,5,2,359_2.jpg,test
 369,2,0,1,1,369_1.jpg,test
 397,2,0,1,1,397_1.jpg,test
 366,3,1,3,3,366_3.jpg,test
@@ -116,8 +116,8 @@ case_id,tirads,tirads_class,roi_count,image_count,first_image_name,split
 307,4a,2,1,1,307_1.jpg,train
 314,4a,2,2,1,314_1.jpg,train
 32,4a,2,1,1,32_1.jpg,train
-348,4a,2,5,1,348_1.jpg,train
-350,4a,2,3,2,350_2.jpg,train
+348,4a,2,2,1,348_1.jpg,train
+350,4a,2,2,2,350_2.jpg,train
 353,4a,2,2,2,353_2.jpg,train
 358,4a,2,2,2,358_1.jpg,train
 360,4a,2,2,2,360_2.jpg,train
@@ -222,7 +222,7 @@ case_id,tirads,tirads_class,roi_count,image_count,first_image_name,split
 370,4c,4,1,1,370_1.jpg,train
 371,4c,4,2,2,371_1.jpg,train
 379,4c,4,1,1,379_1.jpg,train
-381,4c,4,3,2,381_1.jpg,train
+381,4c,4,2,2,381_1.jpg,train
 392,4c,4,1,1,392_1.jpg,train
 8,4c,4,1,1,8_1.jpg,train
 11,5,5,1,1,11_1.jpg,train
@@ -233,7 +233,7 @@ case_id,tirads,tirads_class,roi_count,image_count,first_image_name,split
 246,5,5,2,1,246_1.jpg,train
 29,5,5,1,1,29_1.jpg,train
 290,5,5,1,1,290_1.jpg,train
-294,5,5,5,3,294_3.jpg,train
+294,5,5,3,3,294_3.jpg,train
 296,5,5,5,5,296_3.jpg,train
 315,5,5,2,2,315_1.jpg,train
 330,5,5,2,2,330_2.jpg,train
@@ -241,7 +241,7 @@ case_id,tirads,tirads_class,roi_count,image_count,first_image_name,split
 345,5,5,1,1,345_1.jpg,train
 351,5,5,2,2,351_2.jpg,train
 36,5,5,1,1,36_1.jpg,train
-374,5,5,2,1,374_1.jpg,train
+374,5,5,1,1,374_1.jpg,train
 394,5,5,1,1,394_1.jpg,train
 46,5,5,1,1,46_1.jpg,train
 56,5,5,1,1,56_1.jpg,train

@@ -13,7 +13,7 @@ Annotation structure
 Images with annotation           : 466
 Total annotation regions         : 656
 Valid annotation regions         : 647
-Valid TI-RADS ROI regions        : 449
+Valid TI-RADS ROI regions        : 440
 Valid TI-RADS ROI cases          : 291
 Invalid audit records            : 23
 

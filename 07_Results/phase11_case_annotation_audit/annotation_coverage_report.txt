@@ -7,7 +7,7 @@ Annotation image coverage          : 97.08%
 Total annotation regions           : 656
 Valid annotation regions           : 647
 Invalid annotation regions         : 9
-Valid TI-RADS ROI regions          : 449
+Valid TI-RADS ROI regions          : 440
 Valid TI-RADS ROI images           : 341
 Valid TI-RADS ROI cases            : 291
 Invalid audit records              : 23

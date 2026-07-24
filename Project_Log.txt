@@ -1033,3 +1033,106 @@ Generated Outputs
 - test_case_predictions.csv
 - phase14_summary.txt
 **********************************************************************************
+
+
+------------------------------------------------
+Date: 24-07-2026
+
+FINAL GEOMETRY-LEVEL AUDIT CORRECTION
+=========================================================
+
+Reason for Correction
+---------------------
+
+A repository-wide final audit identified 15 ROI manifest rows belonging to
+six groups with exactly identical source image, bounding-box coordinates and
+annotation-point geometry.
+
+Each duplicate group represented repeated XML region records for the same
+physical ROI rather than separate lesion geometries.
+
+Corrective Action
+-----------------
+
+The Phase 11 generator was updated to deduplicate exact ROI geometries while
+preserving a complete audit trail.
+
+Results of Geometry Deduplication
+---------------------------------
+
+Original ROI manifest rows        : 449
+Redundant ROI copies removed      : 9
+Unique ROI geometries retained    : 440
+Duplicate geometry groups         : 6
+Valid patient cases retained      : 291
+
+The removed rows were not discarded silently. They were preserved in:
+
+duplicate_roi_geometry_records.csv
+
+Corrected Frozen Split
+----------------------
+
+Training Cases                    : 203
+Validation Cases                  : 44
+Testing Cases                     : 44
+
+Training ROIs                     : 311
+Validation ROIs                   : 58
+Testing ROIs                      : 71
+Total Unique ROIs                 : 440
+
+Leakage Verification
+--------------------
+
+Train?Validation Case Overlap     : 0
+Train?Test Case Overlap           : 0
+Validation?Test Case Overlap      : 0
+Duplicate ROI Geometries          : 0
+
+Corrected Phase 14 Evaluation
+-----------------------------
+
+ROI-Level Test Results:
+
+Accuracy                          : 5.63%
+Balanced Accuracy                 : 16.67%
+Macro Precision                   : 0.94%
+Macro Recall                      : 16.67%
+Macro F1-Score                    : 1.78%
+Weighted F1-Score                 : 0.60%
+Cohen's Kappa                     : 0.000
+Quadratic Weighted Kappa          : 0.000
+Mean Absolute Class Error         : 1.972
+Test Loss                         : 1.818729
+
+Case-Level Test Results:
+
+Accuracy                          : 4.55%
+Balanced Accuracy                 : 16.67%
+Macro Precision                   : 0.76%
+Macro Recall                      : 16.67%
+Macro F1-Score                    : 1.45%
+Weighted F1-Score                 : 0.40%
+Cohen's Kappa                     : 0.000
+Quadratic Weighted Kappa          : 0.000
+Mean Absolute Class Error         : 1.955
+
+Scientific Interpretation
+-------------------------
+
+The numerical percentages changed after removal of the redundant ROI copies
+and retraining on the corrected dataset. However, the central experimental
+finding remained unchanged: the strict six-class model collapsed to a single
+prediction class and did not learn meaningful TI-RADS class separation.
+
+The earlier 449-ROI and 12.50%/11.36% results remain preserved above as the
+historical pre-audit result. The 440-ROI and 5.63%/4.55% results are the
+authoritative final audited results.
+
+Status
+------
+
+FINAL GEOMETRY AUDIT COMPLETED
+AUTHORITATIVE STRICT DATASET: 440 UNIQUE ROI GEOMETRIES
+=========================================================

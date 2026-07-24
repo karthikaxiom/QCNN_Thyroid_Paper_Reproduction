@@ -355,7 +355,7 @@ def write_research_interpretation(df: pd.DataFrame) -> None:
             "accuracy. It supports a task-specific set of results: 54.29% "
             "for TI-RADS-derived binary proxy classification, 18.57% versus 24.29% in the "
             "matched quantum-versus-classical TI-RADS comparison, and "
-            "12.50% ROI / 11.36% case accuracy for the strict leakage-free "
+            "5.63% ROI / 4.55% case accuracy for the deduplicated strict leakage-free "
             "six-class baseline."
         ),
         (

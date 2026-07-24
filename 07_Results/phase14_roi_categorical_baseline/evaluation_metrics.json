@@ -1,29 +1,29 @@
 {
     "roi_level": {
-        "accuracy": 0.125,
+        "accuracy": 0.056338028169014086,
         "balanced_accuracy": 0.16666666666666666,
-        "macro_precision": 0.020833333333333332,
+        "macro_precision": 0.009389671361502348,
         "macro_recall": 0.16666666666666666,
-        "macro_f1": 0.037037037037037035,
-        "weighted_f1": 0.027777777777777776,
+        "macro_f1": 0.017777777777777778,
+        "weighted_f1": 0.006009389671361502,
         "cohen_kappa": 0.0,
         "quadratic_weighted_kappa": 0.0,
-        "mean_absolute_class_error": 2.3194444444444446,
-        "categorical_crossentropy_loss": 1.8039054870605469,
-        "keras_accuracy": 0.125
+        "mean_absolute_class_error": 1.971830985915493,
+        "categorical_crossentropy_loss": 1.8187294006347656,
+        "keras_accuracy": 0.056338027119636536
     },
     "case_level": {
-        "accuracy": 0.11363636363636363,
+        "accuracy": 0.045454545454545456,
         "balanced_accuracy": 0.16666666666666666,
-        "macro_precision": 0.01893939393939394,
+        "macro_precision": 0.007575757575757576,
         "macro_recall": 0.16666666666666666,
-        "macro_f1": 0.034013605442176874,
-        "weighted_f1": 0.02319109461966605,
+        "macro_f1": 0.014492753623188406,
+        "weighted_f1": 0.003952569169960474,
         "cohen_kappa": 0.0,
         "quadratic_weighted_kappa": 0.0,
-        "mean_absolute_class_error": 2.272727272727273
+        "mean_absolute_class_error": 1.9545454545454546
     },
-    "test_roi_count": 72,
+    "test_roi_count": 71,
     "test_case_count": 44,
     "class_mapping": {
         "0": "2",

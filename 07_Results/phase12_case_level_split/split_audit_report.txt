@@ -17,10 +17,10 @@ Test cases                     : 44
 
 Final ROI counts
 --------------------------------------------------------------
-Total ROI records              : 449
-Train ROI records              : 319
+Total ROI records              : 440
+Train ROI records              : 311
 Validation ROI records         : 58
-Test ROI records               : 72
+Test ROI records               : 71
 
 Leakage checks
 --------------------------------------------------------------

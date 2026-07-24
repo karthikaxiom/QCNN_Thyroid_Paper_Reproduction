@@ -17,43 +17,43 @@ Training
 Maximum epochs               : 100
 Completed epochs             : 19
 Best validation-loss epoch   : 1
-Best validation loss         : 1.802971
-Best validation accuracy     : 0.155172
+Best validation loss         : 1.818202
+Best validation accuracy     : 0.034483
 
 Training class weights
 ------------------------------------------------------------------------------
-TI-RADS 2                   : 1.611111
-TI-RADS 3                   : 3.797619
-TI-RADS 4a                  : 0.559649
-TI-RADS 4b                  : 0.690476
-TI-RADS 4c                  : 0.843915
-TI-RADS 5                   : 1.436937
+TI-RADS 2                   : 1.570707
+TI-RADS 3                   : 3.702381
+TI-RADS 4a                  : 0.569597
+TI-RADS 4b                  : 0.673160
+TI-RADS 4c                  : 0.836022
+TI-RADS 5                   : 1.524510
 
-ROI-level test evaluation (72 ROIs)
+ROI-level test evaluation (71 ROIs)
 ------------------------------------------------------------------------------
-accuracy                      : 0.125000
+accuracy                      : 0.056338
 balanced_accuracy             : 0.166667
-macro_precision               : 0.020833
+macro_precision               : 0.009390
 macro_recall                  : 0.166667
-macro_f1                      : 0.037037
-weighted_f1                   : 0.027778
+macro_f1                      : 0.017778
+weighted_f1                   : 0.006009
 cohen_kappa                   : 0.000000
 quadratic_weighted_kappa      : 0.000000
-mean_absolute_class_error     : 2.319444
-categorical_crossentropy_loss : 1.803905
-keras_accuracy                : 0.125000
+mean_absolute_class_error     : 1.971831
+categorical_crossentropy_loss : 1.818729
+keras_accuracy                : 0.056338
 
 Case-level test evaluation (44 cases)
 ------------------------------------------------------------------------------
-accuracy                      : 0.113636
+accuracy                      : 0.045455
 balanced_accuracy             : 0.166667
-macro_precision               : 0.018939
+macro_precision               : 0.007576
 macro_recall                  : 0.166667
-macro_f1                      : 0.034014
-weighted_f1                   : 0.023191
+macro_f1                      : 0.014493
+weighted_f1                   : 0.003953
 cohen_kappa                   : 0.000000
 quadratic_weighted_kappa      : 0.000000
-mean_absolute_class_error     : 2.272727
+mean_absolute_class_error     : 1.954545
 
 Interpretation rules
 ------------------------------------------------------------------------------

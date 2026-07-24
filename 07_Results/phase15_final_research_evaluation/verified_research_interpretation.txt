@@ -21,11 +21,11 @@ Interpretation          : Under the matched class-weighted TI-RADS comparison, t
 
 3. Strict leakage-free ROI and case evaluation
 ------------------------------------------------------------------------------
-ROI-level accuracy     : 12.50%
-Case-level accuracy    : 11.36%
+ROI-level accuracy     : 5.63%
+Case-level accuracy    : 4.55%
 Interpretation          : The six-class CNN collapsed to a single class under the strict case-separated ROI protocol. This is retained as an honest negative result rather than hidden.
 
 Final scientific conclusion
 ------------------------------------------------------------------------------
-The reproduction does not support one universal project accuracy. It supports a task-specific set of results: 54.29% for TI-RADS-derived binary proxy classification, 18.57% versus 24.29% in the matched quantum-versus-classical TI-RADS comparison, and 12.50% ROI / 11.36% case accuracy for the strict leakage-free six-class baseline.
+The reproduction does not support one universal project accuracy. It supports a task-specific set of results: 54.29% for TI-RADS-derived binary proxy classification, 18.57% versus 24.29% in the matched quantum-versus-classical TI-RADS comparison, and 5.63% ROI / 4.55% case accuracy for the deduplicated strict leakage-free six-class baseline.
 The central research contribution is the discovery that stricter case-level and ROI-level evaluation substantially reduces the optimistic performance observed in earlier image-level experiments.

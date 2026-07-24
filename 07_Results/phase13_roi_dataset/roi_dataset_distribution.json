@@ -13,11 +13,11 @@
     "processed_dataset": {
         "split_audit": {
             "train": {
-                "sample_count": 319,
+                "sample_count": 311,
                 "unique_case_count": 203,
-                "unique_roi_count": 319,
+                "unique_roi_count": 311,
                 "shape": [
-                    319,
+                    311,
                     64,
                     64,
                     1
@@ -25,7 +25,7 @@
                 "dtype": "float32",
                 "minimum_pixel": 0.0,
                 "maximum_pixel": 1.0,
-                "mean_pixel": 0.3075805604457855,
+                "mean_pixel": 0.30641695857048035,
                 "unique_labels": [
                     0,
                     1,
@@ -37,10 +37,10 @@
                 "class_distribution": {
                     "2": 33,
                     "3": 14,
-                    "4a": 95,
+                    "4a": 91,
                     "4b": 77,
-                    "4c": 63,
-                    "5": 37
+                    "4c": 62,
+                    "5": 34
                 }
             },
             "validation": {
@@ -75,11 +75,11 @@
                 }
             },
             "test": {
-                "sample_count": 72,
+                "sample_count": 71,
                 "unique_case_count": 44,
-                "unique_roi_count": 72,
+                "unique_roi_count": 71,
                 "shape": [
-                    72,
+                    71,
                     64,
                     64,
                     1
@@ -87,7 +87,7 @@
                 "dtype": "float32",
                 "minimum_pixel": 0.0,
                 "maximum_pixel": 1.0,
-                "mean_pixel": 0.3110964894294739,
+                "mean_pixel": 0.3110421299934387,
                 "unique_labels": [
                     0,
                     1,
@@ -97,7 +97,7 @@
                     5
                 ],
                 "class_distribution": {
-                    "2": 10,
+                    "2": 9,
                     "3": 4,
                     "4a": 18,
                     "4b": 16,

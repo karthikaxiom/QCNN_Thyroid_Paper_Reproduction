@@ -270,7 +270,7 @@ Following the complete annotation and patient-level audit performed during the l
 | Component | Count |
 |-----------|------:|
 | Valid Patient Cases | 291 |
-| Valid Lesion ROIs | 449 |
+| Unique Valid ROI Geometries | 440 |
 | Invalid Annotation Records | Documented Separately |
 
 ---
@@ -669,12 +669,14 @@ For every annotation record, the script extracted and verified:
 | Audit Component | Count |
 |---|---:|
 | Valid Patient Cases | 291 |
-| Valid Lesion ROIs | 449 |
+| Unique Valid ROI Geometries | 440 |
 | Invalid or Incomplete Records | Preserved Separately |
 
 Invalid records were not silently removed.
 
 They were documented in dedicated reports to maintain transparency and allow future researchers to inspect the exact reasons for exclusion.
+
+A final geometry-level audit identified nine redundant ROI copies across six exact duplicate groups. These redundant copies were excluded from the strict dataset, leaving 440 unique ROI geometries. All removed records remain preserved in `duplicate_roi_geometry_records.csv`.
 
 ---
 
@@ -703,6 +705,7 @@ including:
 - `annotation_coverage_report.txt`
 - `annotation_inventory.csv`
 - `case_distribution.json`
+- `duplicate_roi_geometry_records.csv`
 - `case_image_mapping.csv`
 - `invalid_annotation_records.csv`
 - `leaking_case_details.csv`
@@ -765,10 +768,10 @@ The following principles were followed:
 
 | Split | ROIs |
 |---|---:|
-| Training | 319 |
+| Training | 311 |
 | Validation | 58 |
-| Testing | 72 |
-| **Total** | **449** |
+| Testing | 71 |
+| **Total** | **440** |
 
 ---
 
@@ -881,7 +884,7 @@ Square padding was therefore applied before resizing so that the lesion shape re
 | Case Leakage | 0 |
 | ROI Leakage | 0 |
 
-All 449 validated ROI regions were processed successfully.
+All 440 unique validated ROI geometries were processed successfully.
 
 ---
 
@@ -1033,16 +1036,16 @@ The checkpoint saved at Epoch 1 was therefore used for final testing.
 
 | Metric | Result |
 |---|---:|
-| Accuracy | 12.50% |
+| Accuracy | 5.63% |
 | Balanced Accuracy | 16.67% |
-| Macro Precision | 2.08% |
+| Macro Precision | 0.94% |
 | Macro Recall | 16.67% |
-| Macro F1-Score | 3.70% |
-| Weighted F1-Score | 2.78% |
+| Macro F1-Score | 1.78% |
+| Weighted F1-Score | 0.60% |
 | Cohen's Kappa | 0.000 |
 | Quadratic Weighted Kappa | 0.000 |
-| Mean Absolute Class Error | 2.319 |
-| Test Loss | 1.803905 |
+| Mean Absolute Class Error | 1.972 |
+| Test Loss | 1.818729 |
 
 ---
 
@@ -1050,15 +1053,15 @@ The checkpoint saved at Epoch 1 was therefore used for final testing.
 
 | Metric | Result |
 |---|---:|
-| Accuracy | 11.36% |
+| Accuracy | 4.55% |
 | Balanced Accuracy | 16.67% |
-| Macro Precision | 1.89% |
+| Macro Precision | 0.76% |
 | Macro Recall | 16.67% |
-| Macro F1-Score | 3.40% |
-| Weighted F1-Score | 2.32% |
+| Macro F1-Score | 1.45% |
+| Weighted F1-Score | 0.40% |
 | Cohen's Kappa | 0.000 |
 | Quadratic Weighted Kappa | 0.000 |
-| Mean Absolute Class Error | 2.273 |
+| Mean Absolute Class Error | 1.955 |
 
 ---
 
@@ -2030,23 +2033,23 @@ The recorded final evaluation produced:
 
 | Metric | Recorded Result |
 |---|---:|
-| Accuracy | 12.50% |
+| Accuracy | 5.63% |
 | Balanced Accuracy | 16.67% |
-| Macro F1 | 3.70% |
-| Weighted F1 | 2.78% |
+| Macro F1 | 1.78% |
+| Weighted F1 | 0.60% |
 | Quadratic Weighted Kappa | 0.000 |
-| Mean Absolute Class Error | 2.319 |
+| Mean Absolute Class Error | 1.972 |
 
 ## Case-Level
 
 | Metric | Recorded Result |
 |---|---:|
-| Accuracy | 11.36% |
+| Accuracy | 4.55% |
 | Balanced Accuracy | 16.67% |
-| Macro F1 | 3.40% |
-| Weighted F1 | 2.32% |
+| Macro F1 | 1.45% |
+| Weighted F1 | 0.40% |
 | Quadratic Weighted Kappa | 0.000 |
-| Mean Absolute Class Error | 2.273 |
+| Mean Absolute Class Error | 1.955 |
 
 ---
 
@@ -2072,13 +2075,13 @@ The recorded final evaluation produced:
 After completing the final pipeline, verify the following:
 
 - [ ] 291 valid patient cases are present
-- [ ] 449 valid ROI regions are present
+- [ ] 440 unique ROI geometries are present
 - [ ] Training split contains 203 cases
 - [ ] Validation split contains 44 cases
 - [ ] Test split contains 44 cases
-- [ ] Training split contains 319 ROIs
+- [ ] Training split contains 311 ROIs
 - [ ] Validation split contains 58 ROIs
-- [ ] Test split contains 72 ROIs
+- [ ] Test split contains 71 ROIs
 - [ ] No case overlap exists
 - [ ] No ROI overlap exists
 - [ ] No failed ROI records exist

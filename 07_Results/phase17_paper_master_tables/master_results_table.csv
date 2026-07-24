@@ -3,5 +3,5 @@ QuCNet Proxy-Label Classifier,TI-RADS-derived low- vs high-suspicion proxy,Image
 Phase 8 TI-RADS Baseline,Six-class TI-RADS classification,Image,0.2714285714285714,,0.0452380952380952,0.1666666666666666,,0.0711610486891385,,,,Completed multiclass baseline
 Phase 9 Quantum TI-RADS,Class-weighted six-class TI-RADS classification,Image,0.1857142857142857,0.1516290726817042,0.1145833333333333,0.1516290726817042,,0.0671550671550671,,,,Completed quantum multiclass experiment
 Phase 10 Classical TI-RADS,Class-weighted six-class TI-RADS classification,Image,0.2428571428571428,0.2809280144806461,0.2442640692640692,0.2809280144806461,,0.231841681498432,,,,Completed classical multiclass experiment
-Phase 14 Strict ROI Baseline,Six-class TI-RADS classification,ROI,0.125,0.1666666666666666,0.0208333333333333,0.1666666666666666,,0.037037037037037,,,,Failed baseline: single-class collapse
-Phase 14 Strict Case Aggregation,Six-class TI-RADS classification,Case,0.1136363636363636,0.1666666666666666,0.0189393939393939,0.1666666666666666,,0.0340136054421768,,,,Failed baseline: single-class collapse
+Phase 14 Strict ROI Baseline,Six-class TI-RADS classification,ROI,0.056338028169014,0.1666666666666666,0.0093896713615023,0.1666666666666666,,0.0177777777777777,,,,Failed baseline: single-class collapse
+Phase 14 Strict Case Aggregation,Six-class TI-RADS classification,Case,0.0454545454545454,0.1666666666666666,0.0075757575757575,0.1666666666666666,,0.0144927536231884,,,,Failed baseline: single-class collapse
