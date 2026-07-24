@@ -144,6 +144,61 @@ This repository provides:
 
 ---
 
+<!-- VERIFIED_ARCHITECTURE_START -->
+
+# Reproduced Architecture and Research Flow
+
+## End-to-End Research Workflow
+
+```mermaid
+flowchart TD
+    A[Public DDTI dataset] --> B[XML and image inspection]
+    B --> C[Master dataset generation]
+    C --> D[128 x 128 grayscale preprocessing]
+    D --> E[349 images with valid TI-RADS labels]
+    E --> F{Experimental paths}
+    F --> G[Binary TI-RADS proxy experiments]
+    F --> H[Controlled six-class comparison]
+    F --> I[Case and ROI audit]
+    G --> G1[Quantum QuCNet: 54.29 percent]
+    G --> G2[Classical CNN: 57.14 percent]
+    H --> H1[Quantum six-class: 18.57 percent]
+    H --> H2[Classical six-class: 24.29 percent]
+    H --> H3[Majority baseline: 27.14 percent]
+    I --> I1[Deduplicate exact ROI geometries]
+    I1 --> I2[440 unique ROIs and 291 cases]
+    I2 --> I3[Frozen case-separated split]
+    I3 --> I4[Strict ROI CNN]
+    I4 --> I5[ROI: 5.63 percent; Case: 4.55 percent]
+```
+
+## Reconstructed QuCNet Architecture
+
+```mermaid
+flowchart LR
+    A[128 x 128 grayscale image] --> B[Non-overlapping 2 x 2 patches]
+    B --> C[Four-qubit PennyLane circuit]
+    C --> D[RX data encoding]
+    D --> E[Fixed random RY rotations]
+    E --> F[CNOT ring: 0-1-2-3-0]
+    F --> G[Four Pauli-Z measurements]
+    G --> H[64 x 64 x 4 quantum feature tensor]
+    H --> I[Classical neural classifier]
+    I --> J[Binary proxy or six-class TI-RADS prediction]
+```
+
+The quantum circuit is used as a feature-transformation stage. Final classification is performed by a classical neural network, making the reproduced model a hybrid quantum-classical pipeline.
+
+## Quantum Transformation Evidence
+
+![Quantum filter applied to thyroid ultrasound data](09_Output_images/Quantum_filter_applied.png)
+
+![Four-channel quantum feature representation](09_Output_images/Quantum_utils_4channel.png)
+
+![Model training and evaluation process](09_Output_images/model_training_process.png)
+
+<!-- VERIFIED_ARCHITECTURE_END -->
+
 <!-- VERIFIED_RESULTS_DASHBOARD_START -->
 
 # Verified Research Results Dashboard
