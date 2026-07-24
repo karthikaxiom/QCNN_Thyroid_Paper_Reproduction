@@ -1,71 +1,71 @@
 sample_index,true_class,true_label,predicted_class,predicted_label,probability_benign,probability_malignant,confidence,correct,error_type
-0,1,Malignant,1,Malignant,0.46324894,0.5367511,0.5367511,True,Correct
-1,1,Malignant,1,Malignant,0.44713384,0.5528662,0.5528662,True,Correct
-2,1,Malignant,0,Benign,0.50147897,0.49852106,0.50147897,False,False Negative
-3,0,Benign,1,Malignant,0.4947052,0.50529486,0.50529486,False,False Positive
-4,1,Malignant,0,Benign,0.5027278,0.49727222,0.5027278,False,False Negative
-5,1,Malignant,1,Malignant,0.49959862,0.5004013,0.5004013,True,Correct
-6,1,Malignant,1,Malignant,0.43517128,0.5648287,0.5648287,True,Correct
-7,0,Benign,0,Benign,0.51155347,0.4884465,0.51155347,True,Correct
-8,1,Malignant,1,Malignant,0.4795966,0.52040344,0.52040344,True,Correct
-9,1,Malignant,1,Malignant,0.4866443,0.51335573,0.51335573,True,Correct
-10,0,Benign,1,Malignant,0.48176265,0.51823735,0.51823735,False,False Positive
-11,1,Malignant,1,Malignant,0.4547795,0.54522043,0.54522043,True,Correct
-12,1,Malignant,1,Malignant,0.4718673,0.5281327,0.5281327,True,Correct
-13,1,Malignant,1,Malignant,0.45607904,0.54392093,0.54392093,True,Correct
-14,1,Malignant,1,Malignant,0.48646653,0.51353353,0.51353353,True,Correct
-15,1,Malignant,0,Benign,0.5175186,0.4824814,0.5175186,False,False Negative
-16,0,Benign,1,Malignant,0.46980655,0.5301935,0.5301935,False,False Positive
-17,1,Malignant,1,Malignant,0.48936826,0.51063174,0.51063174,True,Correct
-18,0,Benign,1,Malignant,0.48764718,0.5123528,0.5123528,False,False Positive
-19,0,Benign,1,Malignant,0.48987186,0.51012814,0.51012814,False,False Positive
-20,0,Benign,1,Malignant,0.47161737,0.52838254,0.52838254,False,False Positive
-21,0,Benign,1,Malignant,0.48395288,0.5160471,0.5160471,False,False Positive
-22,0,Benign,1,Malignant,0.47196433,0.52803576,0.52803576,False,False Positive
-23,1,Malignant,1,Malignant,0.48902574,0.5109742,0.5109742,True,Correct
-24,0,Benign,0,Benign,0.50750357,0.49249646,0.50750357,True,Correct
-25,1,Malignant,0,Benign,0.5067157,0.49328429,0.5067157,False,False Negative
-26,0,Benign,1,Malignant,0.49266806,0.5073319,0.5073319,False,False Positive
-27,0,Benign,1,Malignant,0.4995604,0.5004396,0.5004396,False,False Positive
-28,1,Malignant,1,Malignant,0.45855016,0.5414498,0.5414498,True,Correct
-29,1,Malignant,1,Malignant,0.47931865,0.5206813,0.5206813,True,Correct
-30,0,Benign,0,Benign,0.507828,0.49217197,0.507828,True,Correct
-31,0,Benign,0,Benign,0.5423657,0.4576343,0.5423657,True,Correct
-32,1,Malignant,1,Malignant,0.4717742,0.52822584,0.52822584,True,Correct
-33,0,Benign,1,Malignant,0.48144498,0.51855505,0.51855505,False,False Positive
-34,1,Malignant,1,Malignant,0.4797745,0.5202254,0.5202254,True,Correct
-35,1,Malignant,1,Malignant,0.46105447,0.5389455,0.5389455,True,Correct
-36,0,Benign,1,Malignant,0.48681566,0.51318437,0.51318437,False,False Positive
-37,0,Benign,0,Benign,0.5680807,0.43191925,0.5680807,True,Correct
-38,1,Malignant,1,Malignant,0.47832853,0.5216714,0.5216714,True,Correct
-39,0,Benign,1,Malignant,0.49678513,0.5032149,0.5032149,False,False Positive
-40,1,Malignant,1,Malignant,0.48062518,0.51937485,0.51937485,True,Correct
-41,0,Benign,1,Malignant,0.45493102,0.54506904,0.54506904,False,False Positive
-42,0,Benign,1,Malignant,0.48198158,0.5180185,0.5180185,False,False Positive
-43,0,Benign,1,Malignant,0.47323063,0.5267694,0.5267694,False,False Positive
-44,0,Benign,1,Malignant,0.48407903,0.515921,0.515921,False,False Positive
-45,0,Benign,1,Malignant,0.49332535,0.50667465,0.50667465,False,False Positive
-46,1,Malignant,1,Malignant,0.46627864,0.5337213,0.5337213,True,Correct
-47,1,Malignant,0,Benign,0.5086611,0.4913389,0.5086611,False,False Negative
-48,0,Benign,0,Benign,0.50368947,0.49631044,0.50368947,True,Correct
-49,0,Benign,1,Malignant,0.46869254,0.5313075,0.5313075,False,False Positive
-50,0,Benign,1,Malignant,0.4922256,0.5077744,0.5077744,False,False Positive
-51,1,Malignant,1,Malignant,0.4675461,0.5324539,0.5324539,True,Correct
-52,1,Malignant,1,Malignant,0.49033418,0.5096659,0.5096659,True,Correct
-53,1,Malignant,0,Benign,0.5037176,0.49628243,0.5037176,False,False Negative
-54,0,Benign,1,Malignant,0.4681653,0.5318347,0.5318347,False,False Positive
-55,1,Malignant,1,Malignant,0.488442,0.511558,0.511558,True,Correct
-56,1,Malignant,1,Malignant,0.4606694,0.53933054,0.53933054,True,Correct
-57,0,Benign,1,Malignant,0.48899475,0.51100516,0.51100516,False,False Positive
-58,0,Benign,1,Malignant,0.49397004,0.50602996,0.50602996,False,False Positive
-59,1,Malignant,1,Malignant,0.4884417,0.5115583,0.5115583,True,Correct
-60,1,Malignant,1,Malignant,0.4891743,0.5108257,0.5108257,True,Correct
-61,1,Malignant,1,Malignant,0.44282925,0.5571707,0.5571707,True,Correct
-62,1,Malignant,1,Malignant,0.4393004,0.56069964,0.56069964,True,Correct
-63,1,Malignant,1,Malignant,0.46225476,0.5377453,0.5377453,True,Correct
-64,1,Malignant,0,Benign,0.5013361,0.49866396,0.5013361,False,False Negative
-65,0,Benign,1,Malignant,0.49151382,0.50848615,0.50848615,False,False Positive
-66,1,Malignant,1,Malignant,0.4517844,0.5482156,0.5482156,True,Correct
-67,1,Malignant,1,Malignant,0.47565135,0.5243486,0.5243486,True,Correct
-68,1,Malignant,1,Malignant,0.4530541,0.5469459,0.5469459,True,Correct
-69,0,Benign,1,Malignant,0.45358962,0.54641044,0.54641044,False,False Positive
+0,1,High-suspicion proxy,1,High-suspicion proxy,0.46324894,0.5367511,0.5367511,True,Correct
+1,1,High-suspicion proxy,1,High-suspicion proxy,0.44713384,0.5528662,0.5528662,True,Correct
+2,1,High-suspicion proxy,0,Low-suspicion proxy,0.50147897,0.49852106,0.50147897,False,False Negative
+3,0,Low-suspicion proxy,1,High-suspicion proxy,0.4947052,0.50529486,0.50529486,False,False Positive
+4,1,High-suspicion proxy,0,Low-suspicion proxy,0.5027278,0.49727222,0.5027278,False,False Negative
+5,1,High-suspicion proxy,1,High-suspicion proxy,0.49959862,0.5004013,0.5004013,True,Correct
+6,1,High-suspicion proxy,1,High-suspicion proxy,0.43517128,0.5648287,0.5648287,True,Correct
+7,0,Low-suspicion proxy,0,Low-suspicion proxy,0.51155347,0.4884465,0.51155347,True,Correct
+8,1,High-suspicion proxy,1,High-suspicion proxy,0.4795966,0.52040344,0.52040344,True,Correct
+9,1,High-suspicion proxy,1,High-suspicion proxy,0.4866443,0.51335573,0.51335573,True,Correct
+10,0,Low-suspicion proxy,1,High-suspicion proxy,0.48176265,0.51823735,0.51823735,False,False Positive
+11,1,High-suspicion proxy,1,High-suspicion proxy,0.4547795,0.54522043,0.54522043,True,Correct
+12,1,High-suspicion proxy,1,High-suspicion proxy,0.4718673,0.5281327,0.5281327,True,Correct
+13,1,High-suspicion proxy,1,High-suspicion proxy,0.45607904,0.54392093,0.54392093,True,Correct
+14,1,High-suspicion proxy,1,High-suspicion proxy,0.48646653,0.51353353,0.51353353,True,Correct
+15,1,High-suspicion proxy,0,Low-suspicion proxy,0.5175186,0.4824814,0.5175186,False,False Negative
+16,0,Low-suspicion proxy,1,High-suspicion proxy,0.46980655,0.5301935,0.5301935,False,False Positive
+17,1,High-suspicion proxy,1,High-suspicion proxy,0.48936826,0.51063174,0.51063174,True,Correct
+18,0,Low-suspicion proxy,1,High-suspicion proxy,0.48764718,0.5123528,0.5123528,False,False Positive
+19,0,Low-suspicion proxy,1,High-suspicion proxy,0.48987186,0.51012814,0.51012814,False,False Positive
+20,0,Low-suspicion proxy,1,High-suspicion proxy,0.47161737,0.52838254,0.52838254,False,False Positive
+21,0,Low-suspicion proxy,1,High-suspicion proxy,0.48395288,0.5160471,0.5160471,False,False Positive
+22,0,Low-suspicion proxy,1,High-suspicion proxy,0.47196433,0.52803576,0.52803576,False,False Positive
+23,1,High-suspicion proxy,1,High-suspicion proxy,0.48902574,0.5109742,0.5109742,True,Correct
+24,0,Low-suspicion proxy,0,Low-suspicion proxy,0.50750357,0.49249646,0.50750357,True,Correct
+25,1,High-suspicion proxy,0,Low-suspicion proxy,0.5067157,0.49328429,0.5067157,False,False Negative
+26,0,Low-suspicion proxy,1,High-suspicion proxy,0.49266806,0.5073319,0.5073319,False,False Positive
+27,0,Low-suspicion proxy,1,High-suspicion proxy,0.4995604,0.5004396,0.5004396,False,False Positive
+28,1,High-suspicion proxy,1,High-suspicion proxy,0.45855016,0.5414498,0.5414498,True,Correct
+29,1,High-suspicion proxy,1,High-suspicion proxy,0.47931865,0.5206813,0.5206813,True,Correct
+30,0,Low-suspicion proxy,0,Low-suspicion proxy,0.507828,0.49217197,0.507828,True,Correct
+31,0,Low-suspicion proxy,0,Low-suspicion proxy,0.5423657,0.4576343,0.5423657,True,Correct
+32,1,High-suspicion proxy,1,High-suspicion proxy,0.4717742,0.52822584,0.52822584,True,Correct
+33,0,Low-suspicion proxy,1,High-suspicion proxy,0.48144498,0.51855505,0.51855505,False,False Positive
+34,1,High-suspicion proxy,1,High-suspicion proxy,0.4797745,0.5202254,0.5202254,True,Correct
+35,1,High-suspicion proxy,1,High-suspicion proxy,0.46105447,0.5389455,0.5389455,True,Correct
+36,0,Low-suspicion proxy,1,High-suspicion proxy,0.48681566,0.51318437,0.51318437,False,False Positive
+37,0,Low-suspicion proxy,0,Low-suspicion proxy,0.5680807,0.43191925,0.5680807,True,Correct
+38,1,High-suspicion proxy,1,High-suspicion proxy,0.47832853,0.5216714,0.5216714,True,Correct
+39,0,Low-suspicion proxy,1,High-suspicion proxy,0.49678513,0.5032149,0.5032149,False,False Positive
+40,1,High-suspicion proxy,1,High-suspicion proxy,0.48062518,0.51937485,0.51937485,True,Correct
+41,0,Low-suspicion proxy,1,High-suspicion proxy,0.45493102,0.54506904,0.54506904,False,False Positive
+42,0,Low-suspicion proxy,1,High-suspicion proxy,0.48198158,0.5180185,0.5180185,False,False Positive
+43,0,Low-suspicion proxy,1,High-suspicion proxy,0.47323063,0.5267694,0.5267694,False,False Positive
+44,0,Low-suspicion proxy,1,High-suspicion proxy,0.48407903,0.515921,0.515921,False,False Positive
+45,0,Low-suspicion proxy,1,High-suspicion proxy,0.49332535,0.50667465,0.50667465,False,False Positive
+46,1,High-suspicion proxy,1,High-suspicion proxy,0.46627864,0.5337213,0.5337213,True,Correct
+47,1,High-suspicion proxy,0,Low-suspicion proxy,0.5086611,0.4913389,0.5086611,False,False Negative
+48,0,Low-suspicion proxy,0,Low-suspicion proxy,0.50368947,0.49631044,0.50368947,True,Correct
+49,0,Low-suspicion proxy,1,High-suspicion proxy,0.46869254,0.5313075,0.5313075,False,False Positive
+50,0,Low-suspicion proxy,1,High-suspicion proxy,0.4922256,0.5077744,0.5077744,False,False Positive
+51,1,High-suspicion proxy,1,High-suspicion proxy,0.4675461,0.5324539,0.5324539,True,Correct
+52,1,High-suspicion proxy,1,High-suspicion proxy,0.49033418,0.5096659,0.5096659,True,Correct
+53,1,High-suspicion proxy,0,Low-suspicion proxy,0.5037176,0.49628243,0.5037176,False,False Negative
+54,0,Low-suspicion proxy,1,High-suspicion proxy,0.4681653,0.5318347,0.5318347,False,False Positive
+55,1,High-suspicion proxy,1,High-suspicion proxy,0.488442,0.511558,0.511558,True,Correct
+56,1,High-suspicion proxy,1,High-suspicion proxy,0.4606694,0.53933054,0.53933054,True,Correct
+57,0,Low-suspicion proxy,1,High-suspicion proxy,0.48899475,0.51100516,0.51100516,False,False Positive
+58,0,Low-suspicion proxy,1,High-suspicion proxy,0.49397004,0.50602996,0.50602996,False,False Positive
+59,1,High-suspicion proxy,1,High-suspicion proxy,0.4884417,0.5115583,0.5115583,True,Correct
+60,1,High-suspicion proxy,1,High-suspicion proxy,0.4891743,0.5108257,0.5108257,True,Correct
+61,1,High-suspicion proxy,1,High-suspicion proxy,0.44282925,0.5571707,0.5571707,True,Correct
+62,1,High-suspicion proxy,1,High-suspicion proxy,0.4393004,0.56069964,0.56069964,True,Correct
+63,1,High-suspicion proxy,1,High-suspicion proxy,0.46225476,0.5377453,0.5377453,True,Correct
+64,1,High-suspicion proxy,0,Low-suspicion proxy,0.5013361,0.49866396,0.5013361,False,False Negative
+65,0,Low-suspicion proxy,1,High-suspicion proxy,0.49151382,0.50848615,0.50848615,False,False Positive
+66,1,High-suspicion proxy,1,High-suspicion proxy,0.4517844,0.5482156,0.5482156,True,Correct
+67,1,High-suspicion proxy,1,High-suspicion proxy,0.47565135,0.5243486,0.5243486,True,Correct
+68,1,High-suspicion proxy,1,High-suspicion proxy,0.4530541,0.5469459,0.5469459,True,Correct
+69,0,Low-suspicion proxy,1,High-suspicion proxy,0.45358962,0.54641044,0.54641044,False,False Positive

@@ -40,15 +40,15 @@ def read_binary_metrics(path: Path) -> dict:
 def build_verified_summary() -> pd.DataFrame:
     rows = []
 
-    # 1. Binary QuCNet tumor classifier
+    # 1. Binary QuCNet TI-RADS-derived proxy classifier
     binary = read_binary_metrics(RESULTS / "metrics.txt")
     rows.append({
-        "experiment": "QuCNet Tumor Classifier",
+        "experiment": "QuCNet Proxy-Label Classifier",
         "phase": "Binary baseline",
-        "task": "Benign vs Malignant",
+        "task": "TI-RADS-derived low- vs high-suspicion proxy",
         "evaluation_unit": "Image",
         "input": "64x64x4 quantum-inspired feature maps",
-        "split_protocol": "Train/test split used in original reproduction",
+        "split_protocol": "Historical validation-selected holdout protocol",
         "accuracy": binary["accuracy"],
         "balanced_accuracy": np.nan,
         "precision": binary["precision"],
@@ -56,8 +56,8 @@ def build_verified_summary() -> pd.DataFrame:
         "f1_score": binary["f1_score"],
         "status": "Completed binary experiment",
         "interpretation": (
-            "Best overall accuracy among completed experiments, with high "
-            "malignant recall but weak benign specificity."
+            "Best overall accuracy among completed experiments, with "
+            "high-suspicion-proxy recall but weak low-suspicion-proxy specificity."
         ),
     })
 
@@ -304,7 +304,7 @@ def write_research_interpretation(df: pd.DataFrame) -> None:
             "directly interchangeable."
         ),
         "",
-        "1. Binary QuCNet tumor classification",
+        "1. Binary QuCNet TI-RADS-derived proxy classification",
         "-" * 78,
         f"Accuracy               : {binary['accuracy_percent']:.2f}%",
         f"Precision              : {binary['precision_percent']:.2f}%",
@@ -312,8 +312,8 @@ def write_research_interpretation(df: pd.DataFrame) -> None:
         f"F1 score               : {binary['f1_score_percent']:.2f}%",
         (
             "Interpretation          : The binary experiment achieved the "
-            "highest accuracy and strong malignant recall, but produced many "
-            "false-positive malignant predictions."
+            "highest accuracy and strong high-suspicion-proxy recall, but produced many "
+            "false-positive high-suspicion-proxy predictions."
         ),
         "",
         "2. Six-class TI-RADS comparison",
@@ -353,7 +353,7 @@ def write_research_interpretation(df: pd.DataFrame) -> None:
         (
             "The reproduction does not support one universal project "
             "accuracy. It supports a task-specific set of results: 54.29% "
-            "for binary tumor classification, 18.57% versus 24.29% in the "
+            "for TI-RADS-derived binary proxy classification, 18.57% versus 24.29% in the "
             "matched quantum-versus-classical TI-RADS comparison, and "
             "12.50% ROI / 11.36% case accuracy for the strict leakage-free "
             "six-class baseline."

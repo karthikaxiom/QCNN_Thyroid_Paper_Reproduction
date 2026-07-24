@@ -77,7 +77,7 @@ def save_gallery(
                 f"Sample {sample_index}\n"
                 f"True: {row['true_label']} | "
                 f"Pred: {row['predicted_label']}\n"
-                f"P(Malignant): "
+                f"P(high-suspicion proxy): "
                 f"{float(row['probability_malignant']):.3f}"
             ),
             fontsize=9,
@@ -135,7 +135,7 @@ def save_combined_gallery(
                 f"Sample {sample_index}\n"
                 f"True: {row['true_label']} | "
                 f"Pred: {row['predicted_label']}\n"
-                f"P(Malignant): "
+                f"P(high-suspicion proxy): "
                 f"{float(row['probability_malignant']):.3f}"
             ),
             fontsize=8.5,
@@ -166,17 +166,17 @@ def save_error_summary(
         {
             "error_type": "False Positive",
             "count": int(len(false_positives)),
-            "meaning": "Benign image predicted as malignant",
+            "meaning": "TI-RADS-derived low-suspicion proxy image predicted as high-suspicion proxy",
             "clinical_effect": (
-                "May increase unnecessary follow-up or biopsy recommendations"
+                "No direct clinical consequence can be inferred because these are TI-RADS-derived proxy labels, not pathology-confirmed diagnoses."
             ),
         },
         {
             "error_type": "False Negative",
             "count": int(len(false_negatives)),
-            "meaning": "Malignant image predicted as benign",
+            "meaning": "TI-RADS-derived high-suspicion proxy image predicted as low-suspicion proxy",
             "clinical_effect": (
-                "May delay detection of a potentially malignant nodule"
+                "No direct clinical consequence can be inferred because these are TI-RADS-derived proxy labels, not pathology-confirmed diagnoses."
             ),
         },
     ]
@@ -238,14 +238,14 @@ def main() -> None:
         images=images,
         rows_df=false_positives,
         output_path=OUT / "false_positive_gallery.png",
-        title="False Positives: Benign Predicted as Malignant",
+        title="False Positives: Low-Suspicion Proxy Predicted as High-Suspicion Proxy",
     )
 
     save_gallery(
         images=images,
         rows_df=false_negatives,
         output_path=OUT / "false_negative_gallery.png",
-        title="False Negatives: Malignant Predicted as Benign",
+        title="False Negatives: High-Suspicion Proxy Predicted as Low-Suspicion Proxy",
     )
 
     save_combined_gallery(

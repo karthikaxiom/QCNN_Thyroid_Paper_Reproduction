@@ -1,5 +1,5 @@
 Experiment,Task,Input,Balancing,Classes,Evaluation unit,Split protocol,Model
-Binary QuCNet,Benign vs Malignant,64x64x4 quantum-inspired maps,SMOTE,2,Image,Original reproduction split,Flatten + Dense 128 + Dense 64 + Softmax
+Binary QuCNet proxy-label experiment,TI-RADS-derived low- vs high-suspicion proxy,64x64x4 quantum-inspired maps,SMOTE,2,Image,Historical validation-selected holdout,Flatten + Dense 128 + Dense 64 + Softmax
 Phase 8 TI-RADS,Six-class TI-RADS,Prepared TI-RADS image features,None / baseline,6,Image,Earlier image-level split,TI-RADS baseline model
 Phase 9 Quantum TI-RADS,Weighted six-class TI-RADS,Quantum-inspired representation,Class weights,6,Image,Earlier image-level split,Quantum-inspired TI-RADS model
 Phase 10 Classical TI-RADS,Weighted six-class TI-RADS,Classical representation,Class weights,6,Image,Earlier image-level split,Classical CNN

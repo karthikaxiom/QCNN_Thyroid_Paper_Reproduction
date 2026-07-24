@@ -37,7 +37,7 @@ Y_TEST_PATH = ROOT / "06_Models" / "y_test.npy"
 OUT = ROOT / "07_Results" / "phase16_binary_qucnet_evaluation"
 OUT.mkdir(parents=True, exist_ok=True)
 
-CLASS_NAMES = ["Benign", "Malignant"]
+CLASS_NAMES = ["Low-suspicion proxy", "High-suspicion proxy"]
 
 
 def require(path: Path) -> None:
@@ -53,7 +53,7 @@ def save_plot(path: Path) -> None:
 
 def main() -> None:
     print("=" * 78)
-    print("PHASE 16 : BINARY QUCNET FINAL EVALUATION")
+    print("PHASE 16 : BINARY QUCNET PROXY-LABEL RE-EVALUATION")
     print("=" * 78)
 
     for path in [MODEL_PATH, X_TEST_PATH, Y_TEST_PATH]:
@@ -259,17 +259,17 @@ def main() -> None:
 
     print("[6/6] Writing concise scientific summary...")
     lines = [
-        "PHASE 16 - BINARY QUCNET FINAL EVALUATION",
+        "PHASE 16 - BINARY QUCNET PROXY-LABEL RE-EVALUATION",
         "=" * 78,
         "",
         f"Test samples                         : {len(y_true)}",
-        f"Benign / Malignant                  : {np.sum(y_true == 0)} / {np.sum(y_true == 1)}",
+        f"Low- / high-suspicion proxy samples : {np.sum(y_true == 0)} / {np.sum(y_true == 1)}",
         f"Accuracy                            : {accuracy:.4f} ({accuracy * 100:.2f}%)",
-        f"Precision (Malignant)               : {precision:.4f} ({precision * 100:.2f}%)",
-        f"Sensitivity / Recall (Malignant)    : {sensitivity:.4f} ({sensitivity * 100:.2f}%)",
-        f"Specificity (Benign)                : {specificity:.4f} ({specificity * 100:.2f}%)",
+        f"Precision (high-suspicion proxy)     : {precision:.4f} ({precision * 100:.2f}%)",
+        f"Recall (high-suspicion proxy)        : {sensitivity:.4f} ({sensitivity * 100:.2f}%)",
+        f"Specificity (low-suspicion proxy)   : {specificity:.4f} ({specificity * 100:.2f}%)",
         f"Negative predictive value           : {npv:.4f} ({npv * 100:.2f}%)",
-        f"F1 score (Malignant)                : {f1:.4f} ({f1 * 100:.2f}%)",
+        f"F1 score (high-suspicion proxy)     : {f1:.4f} ({f1 * 100:.2f}%)",
         f"Matthews correlation coefficient    : {mcc:.4f}",
         f"Cohen kappa                         : {kappa:.4f}",
         f"ROC-AUC                             : {roc_auc:.4f}",
@@ -285,7 +285,7 @@ def main() -> None:
         "Interpretation",
         "-" * 78,
         (
-            "The model prioritizes malignant-case detection, producing high "
+            "The model prioritizes high-suspicion-proxy detection, producing high "
             "sensitivity but low specificity. The ROC-AUC and average precision "
             "must be reported together with the threshold-dependent confusion "
             "matrix metrics."

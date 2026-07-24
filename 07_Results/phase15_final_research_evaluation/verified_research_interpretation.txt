@@ -5,13 +5,13 @@ Important reporting rule
 ------------------------------------------------------------------------------
 The experiments below solve different tasks and use different evaluation units. Their accuracy values must not be presented as directly interchangeable.
 
-1. Binary QuCNet tumor classification
+1. Binary QuCNet TI-RADS-derived proxy classification
 ------------------------------------------------------------------------------
 Accuracy               : 54.29%
 Precision              : 56.14%
 Recall                 : 82.05%
 F1 score               : 66.67%
-Interpretation          : The binary experiment achieved the highest accuracy and strong malignant recall, but produced many false-positive malignant predictions.
+Interpretation          : The binary experiment achieved the highest accuracy and strong high-suspicion-proxy recall, but produced many false-positive high-suspicion-proxy predictions.
 
 2. Six-class TI-RADS comparison
 ------------------------------------------------------------------------------
@@ -27,5 +27,5 @@ Interpretation          : The six-class CNN collapsed to a single class under th
 
 Final scientific conclusion
 ------------------------------------------------------------------------------
-The reproduction does not support one universal project accuracy. It supports a task-specific set of results: 54.29% for binary tumor classification, 18.57% versus 24.29% in the matched quantum-versus-classical TI-RADS comparison, and 12.50% ROI / 11.36% case accuracy for the strict leakage-free six-class baseline.
+The reproduction does not support one universal project accuracy. It supports a task-specific set of results: 54.29% for TI-RADS-derived binary proxy classification, 18.57% versus 24.29% in the matched quantum-versus-classical TI-RADS comparison, and 12.50% ROI / 11.36% case accuracy for the strict leakage-free six-class baseline.
 The central research contribution is the discovery that stricter case-level and ROI-level evaluation substantially reduces the optimistic performance observed in earlier image-level experiments.

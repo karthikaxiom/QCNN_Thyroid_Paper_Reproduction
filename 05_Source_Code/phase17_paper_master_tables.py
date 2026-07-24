@@ -143,13 +143,13 @@ def create_experiment_configuration_table() -> pd.DataFrame:
 
     rows = [
         {
-            "Experiment": "Binary QuCNet",
-            "Task": "Benign vs Malignant",
+            "Experiment": "Binary QuCNet proxy-label experiment",
+            "Task": "TI-RADS-derived low- vs high-suspicion proxy",
             "Input": "64x64x4 quantum-inspired maps",
             "Balancing": "SMOTE",
             "Classes": 2,
             "Evaluation unit": "Image",
-            "Split protocol": "Original reproduction split",
+            "Split protocol": "Historical validation-selected holdout",
             "Model": "Flatten + Dense 128 + Dense 64 + Softmax",
         },
         {
