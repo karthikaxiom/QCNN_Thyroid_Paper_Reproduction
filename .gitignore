@@ -1,14 +1,3 @@
-# Raw Dataset
-02_Dataset_Raw/
-
-# Processed Dataset
-03_Dataset_Processed/
-
-# Models
-06_Models/
-
-# Output Images
-09_Output_images/
 
 # Python Cache
 __pycache__/

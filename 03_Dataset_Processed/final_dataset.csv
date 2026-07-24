@@ -1,0 +1,481 @@
+case_id,xml_file,image_name,image_number,image_path,age,sex,composition,echogenicity,margins,calcifications,tirads,diagnosis
+1,1.xml,1_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\1_1.jpg,,,,,,,,
+1,1.xml,1_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\1_2.jpg,,,,,,,,
+10,10.xml,10_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\10_1.jpg,74.0,F,solid,hyperechogenicity,spiculated,microcalcifications,4b,Malignant
+100,100.xml,100_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\100_1.jpg,39.0,F,predominantly solid,isoechogenicity,well defined,macrocalcifications,4a,Benign
+101,101.xml,101_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\101_1.jpg,40.0,M,solid,hypoechogenicity,well defined,microcalcifications,5,Malignant
+102,102.xml,102_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\102_1.jpg,28.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+103,103.xml,103_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\103_1.jpg,60.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+104,104.xml,104_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\104_1.jpg,,,,,,,,
+105,105.xml,105_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\105_1.jpg,82.0,F,solid,hyperechogenicity,well defined,non,4a,Benign
+106,106.xml,106_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\106_1.jpg,,,,,,,,
+106,106.xml,106_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\106_2.jpg,,,,,,,,
+106,106.xml,106_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\106_3.jpg,,,,,,,,
+106,106.xml,106_4.jpg,4,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\106_4.jpg,,,,,,,,
+107,107.xml,107_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\107_1.jpg,41.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+108,108.xml,108_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\108_1.jpg,73.0,F,predominantly cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+109,109.xml,109_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\109_1.jpg,50.0,F,predominantly cystic,hypoechogenicity,well defined,microcalcifications,4b,Malignant
+11,11.xml,11_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\11_1.jpg,30.0,F,solid,marked hypoechogenicity,spiculated,microcalcifications,5,Malignant
+110,110.xml,110_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\110_1.jpg,56.0,F,predominantly solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+111,111.xml,111_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\111_1.jpg,34.0,u,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+112,112.xml,112_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\112_1.jpg,36.0,F,solid,hypoechogenicity,ill defined,microcalcifications,4c,Malignant
+113,113.xml,113_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\113_1.jpg,27.0,u,spongiform,isoechogenicity,well defined,non,4a,Benign
+114,114.xml,114_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\114_2.jpg,,,,,,,,
+115,115.xml,115_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\115_1.jpg,76.0,F,solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+116,116.xml,116_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\116_1.jpg,,,,,,,,
+117,117.xml,117_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\117_1.jpg,,,,,,,,
+118,118.xml,118_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\118_1.jpg,64.0,F,solid,isoechogenicity,microlobulated,microcalcifications,4b,Malignant
+119,119.xml,119_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\119_1.jpg,60.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+12,12.xml,12_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\12_1.jpg,45.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+120,120.xml,120_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\120_1.jpg,,,,,,,,
+121,121.xml,121_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\121_1.jpg,77.0,F,solid,hyperechogenicity,macrolobulated,microcalcifications,4b,Malignant
+122,122.xml,122_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\122_1.jpg,80.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+122,122.xml,122_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\122_2.jpg,80.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+123,123.xml,123_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\123_1.jpg,47.0,F,solid,hyperechogenicity,ill defined,microcalcifications,4c,Malignant
+124,124.xml,124_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\124_1.jpg,,,,,,,,
+125,125.xml,125_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\125_1.jpg,44.0,M,solid,hypoechogenicity,well defined,macrocalcifications,4c,Malignant
+126,126.xml,126_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\126_1.jpg,49.0,F,solid,isoechogenicity,microlobulated,microcalcifications,4b,Malignant
+127,127.xml,127_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\127_1.jpg,67.0,F,solid,hyperechogenicity,ill defined,microcalcifications,2,Benign
+128,128.xml,128_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\128_1.jpg,73.0,F,solid,hyperechogenicity,ill defined,microcalcifications,4c,Malignant
+129,129.xml,129_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\129_1.jpg,49.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+129,129.xml,129_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\129_2.jpg,49.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+13,13.xml,13_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\13_1.jpg,29.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+130,130.xml,130_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\130_1.jpg,44.0,F,,,well defined smooth,non,2,Benign
+130,130.xml,130_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\130_2.jpg,44.0,F,,,well defined smooth,non,2,Benign
+131,131.xml,131_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\131_1.jpg,49.0,F,solid,isoechogenicity,well defined,non,4a,Benign
+132,132.xml,132_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\132_1.jpg,,,,,,,,
+132,132.xml,132_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\132_2.jpg,,,,,,,,
+133,133.xml,133_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\133_1.jpg,,,,,,,,
+134,134.xml,134_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\134_1.jpg,57.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+135,135.xml,135_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\135_1.jpg,51.0,F,solid,marked hypoechogenicity,well defined,non,4b,Malignant
+136,136.xml,136_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\136_1.jpg,,,,,,,,
+137,137.xml,137_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\137_1.jpg,67.0,u,solid,isoechogenicity,well defined,macrocalcifications,4c,Malignant
+138,138.xml,138_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\138_1.jpg,,,,,,,,
+138,138.xml,138_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\138_2.jpg,,,,,,,,
+139,139.xml,139_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\139_1.jpg,,,,,,,,
+139,139.xml,139_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\139_2.jpg,,,,,,,,
+139,139.xml,139_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\139_3.jpg,,,,,,,,
+14,14.xml,14_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\14_1.jpg,42.0,F,solid,hyperechogenicity,microlobulated,non,2,Benign
+140,140.xml,140_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\140_1.jpg,58.0,u,solid,marked hypoechogenicity,well defined,macrocalcifications,,
+141,141.xml,141_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\141_1.jpg,47.0,u,predominantly solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+142,142.xml,142_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\142_1.jpg,52.0,F,solid,marked hypoechogenicity,macrolobulated,microcalcifications,4c,Malignant
+142,142.xml,142_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\142_2.jpg,52.0,F,solid,marked hypoechogenicity,macrolobulated,microcalcifications,4c,Malignant
+143,143.xml,143_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\143_1.jpg,32.0,u,solid,hypoechogenicity,well defined,non,4a,Benign
+144,144.xml,144_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\144_1.jpg,30.0,F,predominantly cystic,isoechogenicity,well defined,microcalcifications,4b,Malignant
+145,145.xml,145_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\145_1.jpg,,F,,,,,,
+146,146.xml,146_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\146_1.jpg,,,,,,,,
+146,146.xml,146_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\146_2.jpg,,,,,,,,
+147,147.xml,147_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\147_1.jpg,,,,,,,,
+148,148.xml,148_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\148_1.jpg,37.0,F,solid,hypoechogenicity,well defined,non,4b,Malignant
+149,149.xml,149_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\149_1.jpg,78.0,M,,,,,,
+15,15.xml,15_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\15_1.jpg,38.0,F,predominantly solid,isoechogenicity,microlobulated,microcalcifications,4c,Malignant
+150,150.xml,150_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\150_1.jpg,,,,,,,,
+151,151.xml,151_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\151_1.jpg,51.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+152,152.xml,152_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\152_1.jpg,,,,,,,,
+153,153.xml,153_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\153_1.jpg,46.0,F,solid,hypoechogenicity,well defined,non,4b,Malignant
+154,154.xml,154_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\154_1.jpg,61.0,F,predominantly solid,isoechogenicity,ill defined,microcalcifications,4b,Malignant
+155,155.xml,155_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\155_1.jpg,56.0,M,solid,hypoechogenicity,microlobulated,microcalcifications,4c,Malignant
+156,156.xml,156_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\156_1.jpg,75.0,F,solid,isoechogenicity,ill defined,microcalcifications,4c,Malignant
+156,156.xml,156_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\156_2.jpg,75.0,F,solid,isoechogenicity,ill defined,microcalcifications,4c,Malignant
+157,157.xml,157_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\157_1.jpg,,,,,,,,
+157,157.xml,157_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\157_2.jpg,,,,,,,,
+158,158.xml,158_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\158_1.jpg,,,,,,,,
+158,158.xml,158_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\158_2.jpg,,,,,,,,
+158,158.xml,158_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\158_3.jpg,,,,,,,,
+159,159.xml,159_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\159_1.jpg,,,,,,,,
+16,16.xml,16_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\16_1.jpg,67.0,F,spongiform,isoechogenicity,well defined,non,3,Benign
+160,160.xml,160_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\160_1.jpg,78.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+161,161.xml,161_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\161_1.jpg,,,,,,,,
+162,162.xml,162_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\162_1.jpg,40.0,F,solid,hypoechogenicity,ill defined,non,4c,Malignant
+163,163.xml,163_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\163_1.jpg,,,,,,,,
+163,163.xml,163_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\163_2.jpg,,,,,,,,
+164,164.xml,164_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\164_1.jpg,54.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+165,165.xml,165_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\165_1.jpg,,,,,,,,
+166,166.xml,166_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\166_1.jpg,14.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+167,167.xml,167_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\167_1.jpg,22.0,F,dense,isoechogenicity,well defined,microcalcifications,4b,Malignant
+168,168.xml,168_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\168_1.jpg,25.0,F,solid,marked hypoechogenicity,microlobulated,microcalcifications,4c,Malignant
+169,169.xml,169_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\169_1.jpg,,,,,,,,
+17,17.xml,17_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\17_1.jpg,40.0,F,solid,hypoechogenicity,well defined,microcalcifications,2,Benign
+170,170.xml,170_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\170_1.jpg,55.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+171,171.xml,171_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\171_1.jpg,57.0,F,solid,hyperechogenicity,well defined,macrocalcifications,4b,Malignant
+172,172.xml,172_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\172_1.jpg,36.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+173,173.xml,173_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\173_1.jpg,,,,,,,,
+173,173.xml,173_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\173_2.jpg,,,,,,,,
+174,174.xml,174_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\174_1.jpg,58.0,u,predominantly cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+175,175.xml,175_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\175_1.jpg,,,,,,,,
+175,175.xml,175_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\175_2.jpg,,,,,,,,
+176,176.xml,176_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\176_1.jpg,35.0,F,spongiform,hyperechogenicity,well defined,macrocalcifications,4b,Malignant
+177,177.xml,177_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\177_1.jpg,74.0,u,solid,hypoechogenicity,well defined,macrocalcifications,4c,Malignant
+177,177.xml,177_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\177_2.jpg,74.0,u,solid,hypoechogenicity,well defined,macrocalcifications,4c,Malignant
+178,178.xml,178_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\178_1.jpg,19.0,F,solid,hypoechogenicity,well defined,non,4a,Benign
+179,179.xml,179_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\179_1.jpg,43.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+18,18.xml,18_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\18_1.jpg,77.0,F,solid,hypoechogenicity,well defined,non,4a,Benign
+180,180.xml,180_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\180_1.jpg,43.0,F,solid,hypoechogenicity,spiculated,macrocalcifications,5,Malignant
+181,181.xml,181_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\181_1.jpg,,,,,,,,
+182,182.xml,182_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\182_1.jpg,,,,,,,,
+183,183.xml,183_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\183_1.jpg,,,,,,,,
+183,183.xml,183_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\183_2.jpg,,,,,,,,
+184,184.xml,184_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\184_1.jpg,79.0,F,spongiform,hyperechogenicity,well defined,microcalcifications,4a,Benign
+185,185.xml,185_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\185_1.jpg,68.0,F,solid,hyperechogenicity,well defined,non,4a,Benign
+186,186.xml,186_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\186_1.jpg,36.0,M,solid,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+187,187.xml,187_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\187_1.jpg,59.0,F,solid,hyperechogenicity,well defined,microcalcifications,4b,Malignant
+188,188.xml,188_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\188_1.jpg,,,,,,,,
+189,189.xml,189_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\189_1.jpg,,,,,,,,
+189,189.xml,189_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\189_2.jpg,,,,,,,,
+19,19.xml,19_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\19_1.jpg,56.0,F,solid,marked hypoechogenicity,well defined,macrocalcifications,5,Malignant
+190,190.xml,190_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\190_1.jpg,43.0,F,solid,hyperechogenicity,ill defined,non,2,Benign
+192,192.xml,192_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\192_1.jpg,56.0,M,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+193,193.xml,193_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\193_1.jpg,38.0,F,solid,hypoechogenicity,ill defined,microcalcifications,2,Benign
+194,194.xml,194_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\194_1.jpg,41.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+195,195.xml,195_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\195_1.jpg,86.0,F,solid,hyperechogenicity,well defined,microcalcifications,4b,Malignant
+196,196.xml,196_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\196_1.jpg,81.0,M,,,,,,
+197,197.xml,197_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\197_1.jpg,68.0,M,predominantly cystic,isoechogenicity,well defined,non,4a,Benign
+198,198.xml,198_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\198_1.jpg,65.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+198,198.xml,198_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\198_2.jpg,65.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+199,199.xml,199_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\199_1.jpg,,,,,,,,
+2,2.xml,2_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\2_1.jpg,49.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+20,20.xml,20_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\20_1.jpg,63.0,M,solid,hypoechogenicity,microlobulated,non,4b,Malignant
+200,200.xml,200_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\200_1.jpg,,,,,,,,
+201,201.xml,201_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\201_1.jpg,68.0,F,solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+202,202.xml,202_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\202_1.jpg,44.0,F,predominantly solid,hypoechogenicity,well defined,macrocalcifications,4c,Malignant
+203,203.xml,203_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\203_1.jpg,64.0,F,solid,hypoechogenicity,well defined,non,4b,Malignant
+204,204.xml,204_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\204_1.jpg,51.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+205,205.xml,205_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\205_1.jpg,52.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+206,206.xml,206_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\206_1.jpg,68.0,M,solid,hypoechogenicity,spiculated,macrocalcifications,4c,Malignant
+207,207.xml,207_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\207_1.jpg,46.0,F,dense,marked hypoechogenicity,well defined,macrocalcifications,5,Malignant
+208,208.xml,208_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\208_1.jpg,,,,,,,,
+209,209.xml,209_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\209_1.jpg,31.0,F,predominantly solid,hypoechogenicity,macrolobulated,macrocalcifications,4a,Benign
+209,209.xml,209_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\209_2.jpg,31.0,F,predominantly solid,hypoechogenicity,macrolobulated,macrocalcifications,4a,Benign
+21,21.xml,21_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\21_1.jpg,74.0,F,solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+210,210.xml,210_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\210_1.jpg,,,,,,,,
+210,210.xml,210_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\210_2.jpg,,,,,,,,
+210,210.xml,210_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\210_3.jpg,,,,,,,,
+211,211.xml,211_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\211_1.jpg,84.0,M,predominantly solid,hypoechogenicity,ill defined,macrocalcifications,5,Malignant
+212,212.xml,212_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\212_1.jpg,32.0,F,predominantly cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+213,213.xml,213_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\213_1.jpg,,,,,,,,
+213,213.xml,213_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\213_2.jpg,,,,,,,,
+213,213.xml,213_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\213_3.jpg,,,,,,,,
+214,214.xml,214_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\214_1.jpg,50.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+215,215.xml,215_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\215_1.jpg,59.0,F,solid,isoechogenicity,ill defined,macrocalcifications,4c,Malignant
+216,216.xml,216_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\216_1.jpg,50.0,F,solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+217,217.xml,217_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\217_1.jpg,50.0,F,solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+219,219.xml,219_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\219_1.jpg,48.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+22,22.xml,22_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\22_1.jpg,33.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+220,220.xml,220_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\220_1.jpg,75.0,F,solid,hypoechogenicity,ill defined,macrocalcifications,5,Malignant
+221,221.xml,221_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\221_1.jpg,49.0,F,predominantly cystic,isoechogenicity,well defined,microcalcifications,4b,Malignant
+222,222.xml,222_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\222_1.jpg,,,,,,,,
+223,223.xml,223_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\223_1.jpg,47.0,M,,,,,,
+224,224.xml,224_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\224_1.jpg,39.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+225,225.xml,225_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\225_1.jpg,50.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+225,225.xml,225_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\225_2.jpg,50.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+226,226.xml,226_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\226_1.jpg,,,,,,,,
+227,227.xml,227_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\227_1.jpg,36.0,F,solid,hypoechogenicity,spiculated,macrocalcifications,5,Malignant
+227,227.xml,227_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\227_2.jpg,36.0,F,solid,hypoechogenicity,spiculated,macrocalcifications,5,Malignant
+228,228.xml,228_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\228_1.jpg,45.0,F,dense,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+229,229.xml,229_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\229_1.jpg,,,,,,,,
+23,23.xml,23_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\23_1.jpg,31.0,F,solid,hyperechogenicity,well defined,non,4a,Benign
+230,230.xml,230_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\230_1.jpg,,,,,,,,
+230,230.xml,230_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\230_2.jpg,,,,,,,,
+231,231.xml,231_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\231_1.jpg,76.0,M,solid,isoechogenicity,macrolobulated,non,4a,Benign
+232,232.xml,232_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\232_1.jpg,,,,,,,,
+233,233.xml,233_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\233_1.jpg,23.0,F,,,well defined smooth,microcalcification,4b,Malignant
+233,233.xml,233_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\233_2.jpg,23.0,F,,,well defined smooth,microcalcification,4b,Malignant
+234,234.xml,234_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\234_1.jpg,,,,,,,,
+234,234.xml,234_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\234_2.jpg,,,,,,,,
+234,234.xml,234_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\234_3.jpg,,,,,,,,
+235,235.xml,235_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\235_1.jpg,,,,,,,,
+236,236.xml,236_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\236_1.jpg,80.0,F,solid,isoechogenicity,well defined,macrocalcifications,4c,Malignant
+237,237.xml,237_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\237_1.jpg,,,,,,,,
+238,238.xml,238_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\238_1.jpg,,,,,,,,
+239,239.xml,239_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\239_1.jpg,,,,,,,,
+24,24.xml,24_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\24_1.jpg,63.0,F,solid,hyperechogenicity,well defined,microcalcifications,4b,Malignant
+240,240.xml,240_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\240_1.jpg,,,,,,,,
+241,241.xml,241_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\241_1.jpg,,,,,,,,
+242,242.xml,242_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\242_1.jpg,63.0,F,solid,isoechogenicity,well defined,macrocalcifications,4b,Malignant
+243,243.xml,243_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\243_1.jpg,47.0,F,solid,hypoechogenicity,microlobulated,non,4c,Malignant
+244,244.xml,244_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\244_1.jpg,41.0,F,solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+245,245.xml,245_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\245_1.jpg,,,,,,,,
+246,246.xml,246_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\246_1.jpg,47.0,F,solid,marked hypoechogenicity,spiculated,microcalcifications,5,Malignant
+247,247.xml,247_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\247_1.jpg,52.0,F,solid,hyperechogenicity,ill defined,non,2,Benign
+248,248.xml,248_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\248_1.jpg,65.0,M,solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+249,249.xml,249_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\249_1.jpg,,,,,,,,
+25,25.xml,25_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\25_1.jpg,22.0,F,solid,hyperechogenicity,well defined,non,3,Benign
+250,250.xml,250_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\250_1.jpg,,F,,,,,,
+251,251.xml,251_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\251_1.jpg,73.0,F,solid,hyperechogenicity,well defined,microcalcifications,4b,Malignant
+252,252.xml,252_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\252_1.jpg,29.0,u,dense,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+253,253.xml,253_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\253_1.jpg,,,,,,,,
+254,254.xml,254_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\254_1.jpg,,,,,,,,
+255,255.xml,255_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\255_1.jpg,49.0,F,solid,isoechogenicity,well defined,non,4a,Benign
+256,256.xml,256_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\256_1.jpg,,,,,,,,
+257,257.xml,257_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\257_1.jpg,57.0,,solid,hyperechogenicity,well defined,non,4a,Benign
+258,258.xml,258_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\258_1.jpg,47.0,F,solid,hypoechogenicity,well defined,macrocalcifications,4c,Malignant
+259,259.xml,259_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\259_1.jpg,27.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+26,26.xml,26_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\26_1.jpg,52.0,F,solid,hypoechogenicity,well defined,microcalcifications,4a,Benign
+260,260.xml,260_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\260_1.jpg,,,,,,,,
+261,261.xml,261_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\261_1.jpg,74.0,F,solid,isoechogenicity,well defined,macrocalcifications,4b,Malignant
+262,262.xml,262_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\262_1.jpg,,,,,,,,
+263,263.xml,263_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\263_1.jpg,55.0,F,predominantly solid,isoechogenicity,well defined,macrocalcifications,4b,Malignant
+264,264.xml,264_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\264_1.jpg,81.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+265,265.xml,265_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\265_1.jpg,76.0,F,predominantly cystic,isoechogenicity,well defined,macrocalcifications,4b,Malignant
+266,266.xml,266_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\266_1.jpg,,,,,,,,
+266,266.xml,266_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\266_2.jpg,,,,,,,,
+267,267.xml,267_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\267_1.jpg,49.0,F,predominantly solid,hypoechogenicity,well defined,microcalcifications,4b,Malignant
+268,268.xml,268_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\268_1.jpg,36.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+269,269.xml,269_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\269_1.jpg,59.0,u,predominantly solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+27,27.xml,27_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\27_1.jpg,68.0,F,solid,hypoechogenicity,well defined,microcalcifications,4b,Malignant
+270,270.xml,270_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\270_1.jpg,69.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+271,271.xml,271_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\271_1.jpg,62.0,F,solid,hypoechogenicity,well defined,macrocalcifications,4c,Malignant
+272,272.xml,272_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\272_1.jpg,72.0,F,predominantly cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+273,273.xml,273_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\273_1.jpg,,,,,,,,
+274,274.xml,274_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\274_1.jpg,,,,,,,,
+275,275.xml,275_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\275_1.jpg,47.0,F,predominantly solid,isoechogenicity,macrolobulated,microcalcifications,4b,Malignant
+276,276.xml,276_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\276_1.jpg,,,,,,,,
+277,277.xml,277_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\277_1.jpg,56.0,F,solid,hypoechogenicity,well defined,macrocalcifications,4b,Malignant
+278,278.xml,278_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\278_1.jpg,38.0,F,predominantly solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+279,279.xml,279_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\279_1.jpg,60.0,F,cystic,isoechogenicity,well defined,microcalcifications,4b,Malignant
+28,28.xml,28_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\28_1.jpg,65.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4b,Malignant
+280,280.xml,280_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\280_1.jpg,,,,,,,,
+281,281.xml,281_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\281_1.jpg,50.0,F,solid,marked hypoechogenicity,microlobulated,microcalcifications,4c,Malignant
+282,282.xml,282_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\282_1.jpg,68.0,F,predominantly solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+283,283.xml,283_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\283_1.jpg,67.0,F,solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+284,284.xml,284_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\284_1.jpg,50.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+285,285.xml,285_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\285_1.jpg,70.0,F,solid,hyperechogenicity,well defined,microcalcifications,2,Benign
+286,286.xml,286_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\286_1.jpg,35.0,u,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+287,287.xml,287_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\287_1.jpg,,,,,,,,
+288,288.xml,288_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\288_1.jpg,57.0,F,,,well defined smooth,microcalcification,4c,Malignant
+289,289.xml,289_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\289_1.jpg,77.0,F,,,well defined smooth,microcalcification,4a,Benign
+29,29.xml,29_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\29_1.jpg,33.0,F,solid,marked hypoechogenicity,ill defined,microcalcifications,5,Malignant
+290,290.xml,290_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\290_1.jpg,80.0,F,,,ill- defined,macrocalcification,5,Malignant
+291,291.xml,291_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\291_1.jpg,78.0,F,,,well defined smooth,microcalcification,4b,Malignant
+292,292.xml,292_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\292_1.jpg,78.0,F,,,well defined smooth,non,3,Benign
+293,293.xml,293_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\293_1.jpg,55.0,M,,,well defined smooth,non,4a,Benign
+294,294.xml,294_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\294_1.jpg,55.0,F,,,ill- defined,microcalcification,5,Malignant
+294,294.xml,294_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\294_2.jpg,55.0,F,,,ill- defined,microcalcification,5,Malignant
+294,294.xml,294_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\294_3.jpg,55.0,F,,,ill- defined,microcalcification,5,Malignant
+295,295.xml,295_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\295_1.jpg,56.0,F,,,well defined smooth,microcalcification,4a,Benign
+296,296.xml,296_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\296_1.jpg,58.0,F,,,ill- defined,microcalcification,5,Malignant
+296,296.xml,296_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\296_2.jpg,58.0,F,,,ill- defined,microcalcification,5,Malignant
+296,296.xml,296_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\296_3.jpg,58.0,F,,,ill- defined,microcalcification,5,Malignant
+296,296.xml,296_4.jpg,4,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\296_4.jpg,58.0,F,,,ill- defined,microcalcification,5,Malignant
+296,296.xml,296_5.jpg,5,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\296_5.jpg,58.0,F,,,ill- defined,microcalcification,5,Malignant
+297,297.xml,297_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\297_1.jpg,54.0,F,,,microlobulated,microcalcification,4c,Malignant
+298,298.xml,298_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\298_1.jpg,71.0,F,,,well defined smooth,macrocalcification,4a,Benign
+299,299.xml,299_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\299_1.jpg,54.0,F,,,microlobulated,microcalcification,4a,Benign
+3,3.xml,3_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\3_1.jpg,31.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+30,30.xml,30_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\30_1.jpg,50.0,F,solid,marked hypoechogenicity,ill defined,microcalcifications,4c,Malignant
+300,300.xml,300_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\300_1.jpg,58.0,F,,,well defined smooth,microcalcification,4a,Benign
+301,301.xml,301_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\301_1.jpg,52.0,F,,,well defined smooth,microcalcification,4a,Benign
+302,302.xml,302_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\302_1.jpg,64.0,F,,,microlobulated,non,4b,Malignant
+303,303.xml,303_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\303_1.jpg,63.0,F,,,well defined smooth,non,2,Benign
+304,304.xml,304_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\304_1.jpg,58.0,F,,,well defined smooth,microcalcification,4c,Malignant
+305,305.xml,305_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\305_1.jpg,54.0,F,,,well defined smooth,non,2,Benign
+306,306.xml,306_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\306_1.jpg,53.0,F,,,well defined smooth,microcalcification,4a,Benign
+307,307.xml,307_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\307_1.jpg,52.0,F,,,well defined smooth,microcalcification,4a,Benign
+308,308.xml,308_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\308_1.jpg,48.0,F,,,well defined smooth,microcalcification,4a,Benign
+309,309.xml,309_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\309_1.jpg,47.0,F,,,well defined smooth,non,3,Benign
+31,31.xml,31_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\31_1.jpg,42.0,F,solid,hyperechogenicity,well defined,non,3,Benign
+310,310.xml,310_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\310_1.jpg,49.0,F,,,microlobulated,non,2,Benign
+311,311.xml,311_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\311_1.jpg,44.0,F,,,well defined smooth,microcalcification,4b,Malignant
+312,312.xml,312_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\312_1.jpg,,,,,,,,
+313,313.xml,313_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\313_1.jpg,40.0,F,,,well defined smooth,non,4c,Malignant
+313,313.xml,313_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\313_2.jpg,40.0,F,,,well defined smooth,non,4c,Malignant
+314,314.xml,314_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\314_1.jpg,38.0,F,,,well defined smooth,microcalcification,4a,Benign
+315,315.xml,315_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\315_1.jpg,38.0,F,,,ill- defined,microcalcification,5,Malignant
+315,315.xml,315_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\315_2.jpg,38.0,F,,,ill- defined,microcalcification,5,Malignant
+316,316.xml,316_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\316_1.jpg,35.0,F,,,well defined smooth,non,4b,Malignant
+317,317.xml,317_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\317_1.jpg,34.0,F,,,spiculated,non,4c,Malignant
+317,317.xml,317_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\317_2.jpg,34.0,F,,,spiculated,non,4c,Malignant
+318,318.xml,318_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\318_1.jpg,31.0,F,,,well defined smooth,non,4c,Malignant
+318,318.xml,318_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\318_2.jpg,31.0,F,,,well defined smooth,non,4c,Malignant
+319,319.xml,319_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\319_1.jpg,31.0,F,,,ill- defined,microcalcification,4c,Malignant
+319,319.xml,319_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\319_2.jpg,31.0,F,,,ill- defined,microcalcification,4c,Malignant
+32,32.xml,32_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\32_1.jpg,42.0,F,solid,hyperechogenicity,well defined,non,4a,Benign
+320,320.xml,320_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\320_1.jpg,28.0,F,,,well defined smooth,non,4b,Malignant
+321,321.xml,321_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\321_1.jpg,35.0,M,,,microlobulated,microcalcification,4c,Malignant
+323,323.xml,323_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\323_1.jpg,,,,,,,,
+326,326.xml,326_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\326_1.jpg,,,,,,,,
+329,329.xml,329_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\329_1.jpg,81.0,M,,,well defined smooth,non,2,Benign
+33,33.xml,33_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\33_1.jpg,79.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+330,330.xml,330_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\330_1.jpg,72.0,F,,,ill- defined,microcalcification,5,Malignant
+330,330.xml,330_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\330_2.jpg,72.0,F,,,ill- defined,microcalcification,5,Malignant
+331,331.xml,331_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\331_1.jpg,48.0,F,,,well defined smooth,non,2,Benign
+332,332.xml,332_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\332_1.jpg,,,,,,,,
+333,333.xml,333_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\333_1.jpg,69.0,F,,,well defined smooth,non,2,Benign
+334,334.xml,334_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\334_1.jpg,38.0,F,,,well defined smooth,non,3,Benign
+334,334.xml,334_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\334_2.jpg,38.0,F,,,well defined smooth,non,3,Benign
+335,335.xml,335_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\335_1.jpg,20.0,F,,,well defined smooth,non,2,Benign
+335,335.xml,335_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\335_2.jpg,20.0,F,,,well defined smooth,non,2,Benign
+336,336.xml,336_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\336_2.jpg,47.0,F,,,well defined smooth,non,2,Benign
+337,337.xml,337_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\337_1.jpg,64.0,F,,,well defined smooth,microcalcification,5,Malignant
+337,337.xml,337_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\337_2.jpg,64.0,F,,,well defined smooth,microcalcification,5,Malignant
+337,337.xml,337_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\337_3.jpg,64.0,F,,,well defined smooth,microcalcification,5,Malignant
+338,338.xml,338_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\338_1.jpg,78.0,F,,,ill- defined,microcalcification,4c,Malignant
+338,338.xml,338_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\338_2.jpg,78.0,F,,,ill- defined,microcalcification,4c,Malignant
+339,339.xml,339_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\339_1.jpg,73.0,F,,,well defined smooth,non,2,Benign
+34,34.xml,34_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\34_1.jpg,46.0,F,solid,hypoechogenicity,spiculated,microcalcifications,4c,Malignant
+340,340.xml,340_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\340_1.jpg,65.0,F,,,spiculated,microcalcification,5,Malignant
+341,341.xml,341_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\341_1.jpg,41.0,F,,,ill- defined,microcalcification,4c,Malignant
+342,342.xml,342_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\342_1.jpg,23.0,M,,,ill- defined,non,4c,Malignant
+343,343.xml,343_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\343_1.jpg,29.0,M,,,well defined smooth,microcalcification,4b,Malignant
+344,344.xml,344_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\344_1.jpg,55.0,F,,,well defined smooth,microcalcification,4a,Benign
+345,345.xml,345_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\345_1.jpg,43.0,F,,,ill- defined,microcalcification,5,Malignant
+346,346.xml,346_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\346_1.jpg,73.0,F,,,well defined smooth,non,3,Benign
+347,347.xml,347_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\347_1.jpg,54.0,F,,,well defined smooth,non,3,Benign
+347,347.xml,347_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\347_2.jpg,54.0,F,,,well defined smooth,non,3,Benign
+348,348.xml,348_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\348_1.jpg,70.0,F,,,well defined smooth,microcalcification,4a,Benign
+349,349.xml,349_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\349_1.jpg,,,,,,,,
+35,35.xml,35_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\35_1.jpg,55.0,F,solid,hypoechogenicity,well defined,microcalcifications,4b,Malignant
+350,350.xml,350_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\350_1.jpg,56.0,F,,,well defined smooth,microcalcification,4a,Benign
+350,350.xml,350_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\350_2.jpg,56.0,F,,,well defined smooth,microcalcification,4a,Benign
+351,351.xml,351_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\351_1.jpg,65.0,F,,,ill- defined,microcalcification,5,Malignant
+351,351.xml,351_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\351_2.jpg,65.0,F,,,ill- defined,microcalcification,5,Malignant
+352,352.xml,352_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\352_1.jpg,59.0,F,,,microlobulated,non,4b,Malignant
+353,353.xml,353_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\353_1.jpg,78.0,F,,,well defined smooth,macrocalcification,4a,Benign
+353,353.xml,353_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\353_2.jpg,78.0,F,,,well defined smooth,macrocalcification,4a,Benign
+354,354.xml,354_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\354_1.jpg,52.0,M,,,well defined smooth,non,4b,Malignant
+355,355.xml,355_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\355_1.jpg,84.0,F,,,well defined smooth,microcalcification,4b,Malignant
+356,356.xml,356_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\356_1.jpg,46.0,F,,,well defined smooth,non,2,Benign
+357,357.xml,357_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\357_1.jpg,69.0,F,,,well defined smooth,macrocalcification,4b,Malignant
+358,358.xml,358_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\358_1.jpg,27.0,F,,,well defined smooth,microcalcification,4a,Benign
+358,358.xml,358_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\358_2.jpg,27.0,F,,,well defined smooth,microcalcification,4a,Benign
+359,359.xml,359_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\359_1.jpg,50.0,F,,,,non,2,Benign
+359,359.xml,359_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\359_2.jpg,50.0,F,,,,non,2,Benign
+36,36.xml,36_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\36_1.jpg,54.0,F,dense,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+360,360.xml,360_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\360_1.jpg,61.0,F,,,well defined smooth,microcalcification,4a,Benign
+360,360.xml,360_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\360_2.jpg,61.0,F,,,well defined smooth,microcalcification,4a,Benign
+361,361.xml,361_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\361_1.jpg,63.0,F,,,well defined smooth,non,2,Benign
+362,362.xml,362_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\362_1.jpg,65.0,M,,,well defined smooth,non,2,Benign
+363,363.xml,363_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\363_1.jpg,55.0,F,,,well defined smooth,non,4b,Malignant
+364,364.xml,364_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\364_1.jpg,82.0,F,,,well defined smooth,non,2,Benign
+365,365.xml,365_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\365_1.jpg,44.0,F,,,well defined smooth,non,2,Benign
+366,366.xml,366_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\366_1.jpg,47.0,F,,,well defined smooth,non,3,Benign
+366,366.xml,366_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\366_2.jpg,47.0,F,,,well defined smooth,non,3,Benign
+366,366.xml,366_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\366_3.jpg,47.0,F,,,well defined smooth,non,3,Benign
+367,367.xml,367_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\367_1.jpg,51.0,F,,,microlobulated,microcalcification,4c,Malignant
+367,367.xml,367_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\367_2.jpg,51.0,F,,,microlobulated,microcalcification,4c,Malignant
+368,368.xml,368_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\368_1.jpg,70.0,F,,,spiculated,non,4b,Malignant
+369,369.xml,369_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\369_1.jpg,60.0,F,,,well defined smooth,non,2,Benign
+370,370.xml,370_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\370_1.jpg,61.0,F,,,ill- defined,microcalcification,4c,Malignant
+371,371.xml,371_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\371_1.jpg,63.0,F,,,microlobulated,non,4c,Malignant
+371,371.xml,371_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\371_2.jpg,63.0,F,,,microlobulated,non,4c,Malignant
+372,372.xml,372_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\372_1.jpg,46.0,F,,,well defined smooth,microcalcification,4b,Malignant
+373,373.xml,373_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\373_1.jpg,23.0,F,,,well defined smooth,non,3,Benign
+373,373.xml,373_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\373_2.jpg,23.0,F,,,well defined smooth,non,3,Benign
+374,374.xml,374_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\374_1.jpg,60.0,F,,,ill- defined,microcalcification,5,Malignant
+375,375.xml,375_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\375_1.jpg,44.0,F,,,well defined smooth,non,3,Benign
+376,376.xml,376_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\376_1.jpg,46.0,M,,,well defined smooth,non,3,Benign
+377,377.xml,377_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\377_1.jpg,76.0,F,,,well defined smooth,microcalcification,2,Benign
+378,378.xml,378_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\378_1.jpg,24.0,M,,,well defined smooth,non,2,Benign
+379,379.xml,379_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\379_1.jpg,74.0,F,,,well defined smooth,microcalcification,4c,Malignant
+38,38.xml,38_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\38_1.jpg,33.0,F,spongiform,hypoechogenicity,well defined,microcalcifications,4b,Malignant
+380,380.xml,380_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\380_1.jpg,82.0,F,,,well defined smooth,non,3,Benign
+381,381.xml,381_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\381_1.jpg,40.0,F,,,ill- defined,microcalcification,4c,Malignant
+381,381.xml,381_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\381_2.jpg,40.0,F,,,ill- defined,microcalcification,4c,Malignant
+382,382.xml,382_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\382_1.jpg,70.0,M,,,well defined smooth,non,3,Benign
+383,383.xml,383_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\383_1.jpg,81.0,u,predominantly solid,marked hypoechogenicity,microlobulated,macrocalcifications,4c,Malignant
+384,384.xml,384_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\384_1.jpg,69.0,M,,,well defined smooth,microcalcification,4a,Benign
+386,386.xml,386_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\386_1.jpg,57.0,F,,,well defined smooth,non,2,Benign
+387,387.xml,387_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\387_1.jpg,64.0,F,,,microlobulated,microcalcification,4c,Malignant
+387,387.xml,387_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\387_2.jpg,64.0,F,,,microlobulated,microcalcification,4c,Malignant
+388,388.xml,388_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\388_1.jpg,,,,,,,,
+389,389.xml,389_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\389_1.jpg,,,,,,,,
+39,39.xml,39_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\39_1.jpg,57.0,F,cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+390,390.xml,390_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\390_1.jpg,82.0,F,,,well defined smooth,microcalcification,4c,Malignant
+391,391.xml,391_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\391_1.jpg,33.0,F,,,well defined smooth,non,2,Benign
+391,391.xml,391_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\391_2.jpg,33.0,F,,,well defined smooth,non,2,Benign
+392,392.xml,392_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\392_1.jpg,40.0,F,,,ill- defined,microcalcification,4c,Malignant
+394,394.xml,394_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\394_1.jpg,50.0,F,,,ill- defined,microcalcification,5,Malignant
+395,395.xml,395_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\395_1.jpg,24.0,F,,,well defined smooth,microcalcification,4a,Benign
+395,395.xml,395_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\395_2.jpg,24.0,F,,,well defined smooth,microcalcification,4a,Benign
+396,396.xml,396_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\396_1.jpg,,,,,,,,
+397,397.xml,397_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\397_1.jpg,39.0,F,,,well defined smooth,non,2,Benign
+398,398.xml,398_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\398_1.jpg,70.0,F,,,spiculated,non,4b,Malignant
+399,399.xml,399_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\399_1.jpg,62.0,M,,,well defined smooth,macrocalcification,4b,Malignant
+4,4.xml,4_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\4_1.jpg,37.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+40,40.xml,40_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\40_1.jpg,57.0,F,solid,isoechogenicity,ill defined,macrocalcifications,4a,Benign
+400,400.xml,400_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\400_1.jpg,63.0,F,,,well defined smooth,microcalcification,4a,Benign
+41,41.xml,41_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\41_1.jpg,78.0,F,solid,hypoechogenicity,well defined,microcalcifications,4b,Malignant
+42,42.xml,42_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\42_1.jpg,55.0,F,solid,isoechogenicity,well defined,macrocalcifications,4b,Malignant
+43,43.xml,43_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\43_1.jpg,35.0,F,dense,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+44,44.xml,44_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\44_1.jpg,53.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+45,45.xml,45_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\45_1.jpg,74.0,F,solid,hypoechogenicity,well defined,macrocalcifications,4b,Malignant
+46,46.xml,46_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\46_1.jpg,56.0,F,dense,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+47,47.xml,47_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\47_1.jpg,91.0,F,solid,hypoechogenicity,well defined,non,4a,Benign
+48,48.xml,48_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\48_1.jpg,63.0,F,solid,isoechogenicity,,microcalcifications,4b,Malignant
+49,49.xml,49_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\49_1.jpg,58.0,F,predominantly cystic,hypoechogenicity,well defined,microcalcifications,4a,Benign
+5,5.xml,5_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\5_1.jpg,47.0,F,solid,hypoechogenicity,ill defined,microcalcifications,5,Malignant
+50,50.xml,50_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\50_1.jpg,62.0,F,predominantly solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+51,51.xml,51_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\51_1.jpg,48.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+52,52.xml,52_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\52_1.jpg,45.0,M,solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+53,53.xml,53_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\53_1.jpg,61.0,F,dense,hypoechogenicity,ill defined,microcalcifications,4c,Malignant
+54,54.xml,54_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\54_1.jpg,73.0,F,dense,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+55,55.xml,55_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\55_1.jpg,52.0,F,solid,hypoechogenicity,ill defined,microcalcifications,4b,Malignant
+56,56.xml,56_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\56_1.jpg,67.0,F,predominantly solid,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+57,57.xml,57_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\57_1.jpg,75.0,F,spongiform,hypoechogenicity,well defined,macrocalcifications,4b,Malignant
+58,58.xml,58_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\58_1.jpg,,,,,,,,
+58,58.xml,58_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\58_2.jpg,,,,,,,,
+59,59.xml,59_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\59_1.jpg,76.0,F,,,,,,
+6,6.xml,6_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\6_1.jpg,60.0,M,spongiform,isoechogenicity,ill defined,microcalcifications,4b,Malignant
+60,60.xml,60_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\60_1.jpg,,,,,,,,
+61,61.xml,61_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\61_1.jpg,51.0,F,solid,hyperechogenicity,well defined,non,2,Benign
+62,62.xml,62_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\62_1.jpg,,,,,,,,
+62,62.xml,62_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\62_2.jpg,,,,,,,,
+62,62.xml,62_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\62_3.jpg,,,,,,,,
+63,63.xml,63_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\63_1.jpg,,,,,,,,
+64,64.xml,64_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\64_1.jpg,,,,,,,,
+64,64.xml,64_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\64_2.jpg,,,,,,,,
+64,64.xml,64_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\64_3.jpg,,,,,,,,
+65,65.xml,65_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\65_1.jpg,58.0,F,predominantly solid,isoechogenicity,well defined,macrocalcifications,4a,Benign
+65,65.xml,65_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\65_2.jpg,58.0,F,predominantly solid,isoechogenicity,well defined,macrocalcifications,4a,Benign
+66,66.xml,66_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\66_1.jpg,60.0,F,solid,marked hypoechogenicity,well defined,non,2,Benign
+67,67.xml,67_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\67_1.jpg,59.0,F,solid,marked hypoechogenicity,well defined,non,4b,Malignant
+68,68.xml,68_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\68_1.jpg,48.0,F,predominantly solid,isoechogenicity,ill defined,macrocalcifications,4b,Malignant
+69,69.xml,69_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\69_1.jpg,,,,,,,,
+69,69.xml,69_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\69_2.jpg,,,,,,,,
+69,69.xml,69_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\69_3.jpg,,,,,,,,
+7,7.xml,7_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\7_1.jpg,62.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+70,70.xml,70_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\70_1.jpg,68.0,F,predominantly solid,isoechogenicity,ill defined,non,4a,Benign
+71,71.xml,71_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\71_1.jpg,,,,,,,,
+72,72.xml,72_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\72_1.jpg,,,,,,,,
+73,73.xml,73_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\73_1.jpg,62.0,u,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+74,74.xml,74_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\74_1.jpg,57.0,F,solid,hypoechogenicity,ill defined,microcalcifications,4c,Malignant
+75,75.xml,75_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\75_1.jpg,,,,,,,,
+75,75.xml,75_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\75_2.jpg,,,,,,,,
+76,76.xml,76_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\76_1.jpg,20.0,M,predominantly solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+77,77.xml,77_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\77_1.jpg,,,,,,,,
+78,78.xml,78_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\78_1.jpg,53.0,F,predominantly cystic,isoechogenicity,well defined,microcalcifications,4b,Malignant
+79,79.xml,79_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\79_1.jpg,50.0,F,solid,hypoechogenicity,spiculated,non,4b,Malignant
+8,8.xml,8_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\8_1.jpg,55.0,F,dense,hypoechogenicity,well defined,non,4c,Malignant
+80,80.xml,80_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\80_1.jpg,60.0,M,solid,marked hypoechogenicity,macrolobulated,macrocalcifications,5,Malignant
+80,80.xml,80_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\80_2.jpg,60.0,M,solid,marked hypoechogenicity,macrolobulated,macrocalcifications,5,Malignant
+81,81.xml,81_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\81_1.jpg,48.0,F,solid,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+81,81.xml,81_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\81_2.jpg,48.0,F,solid,hypoechogenicity,spiculated,microcalcifications,5,Malignant
+82,82.xml,82_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\82_1.jpg,56.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+83,83.xml,83_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\83_1.jpg,53.0,F,spongiform,isoechogenicity,well defined,microcalcifications,4a,Benign
+84,84.xml,84_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\84_1.jpg,,,,,,,,
+85,85.xml,85_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\85_1.jpg,30.0,F,solid,marked hypoechogenicity,ill defined,non,5,Malignant
+85,85.xml,85_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\85_2.jpg,30.0,F,solid,marked hypoechogenicity,ill defined,non,5,Malignant
+86,86.xml,86_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\86_1.jpg,28.0,F,predominantly cystic,isoechogenicity,well defined,non,4a,Benign
+87,87.xml,87_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\87_1.jpg,,,,,,,,
+88,88.xml,88_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\88_1.jpg,56.0,M,predominantly cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+88,88.xml,88_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\88_2.jpg,56.0,M,predominantly cystic,isoechogenicity,well defined,microcalcifications,4a,Benign
+89,89.xml,89_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\89_1.jpg,63.0,F,solid,isoechogenicity,well defined,microcalcifications,4b,Malignant
+9,9.xml,9_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\9_1.jpg,41.0,F,predominantly solid,hyperechogenicity,well defined,non,4b,Malignant
+90,90.xml,90_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\90_1.jpg,58.0,F,predominantly solid,isoechogenicity,well defined,non,4b,Malignant
+90,90.xml,90_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\90_2.jpg,58.0,F,predominantly solid,isoechogenicity,well defined,non,4b,Malignant
+91,91.xml,91_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\91_1.jpg,34.0,F,solid,hypoechogenicity,well defined,microcalcifications,4c,Malignant
+92,92.xml,92_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\92_1.jpg,,,,,,,,
+92,92.xml,92_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\92_2.jpg,,,,,,,,
+92,92.xml,92_3.jpg,3,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\92_3.jpg,,,,,,,,
+92,92.xml,92_4.jpg,4,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\92_4.jpg,,,,,,,,
+93,93.xml,93_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\93_1.jpg,70.0,F,solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+93,93.xml,93_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\93_2.jpg,70.0,F,solid,hyperechogenicity,well defined,microcalcifications,4a,Benign
+94,94.xml,94_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\94_1.jpg,74.0,u,solid,isoechogenicity,well defined,non,4a,Benign
+95,95.xml,95_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\95_1.jpg,41.0,u,solid,isoechogenicity,well defined,microcalcifications,4a,Benign
+96,96.xml,96_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\96_1.jpg,,,,,,,,
+96,96.xml,96_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\96_2.jpg,,,,,,,,
+97,97.xml,97_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\97_1.jpg,77.0,M,,,,,,
+97,97.xml,97_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\97_2.jpg,77.0,M,,,,,,
+98,98.xml,98_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\98_1.jpg,62.0,F,solid,hyperechogenicity,well defined,non,4a,Benign
+99,99.xml,99_1.jpg,1,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\99_1.jpg,,,,,,,,
+99,99.xml,99_2.jpg,2,D:\QCNN_Thyroid_Paper_Reproduction\02_Dataset_Raw\archive\99_2.jpg,,,,,,,,
