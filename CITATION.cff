@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the citation below."
+
+title: "Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification"
+
+type: software
+
+authors:
+  - family-names: "B. R."
+    given-names: "Karthik"
+
+version: "1.0.0"
+
+date-released: 2026-07-24
+
+repository-code: "https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction"
+
+url: "https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction"
+
+license: MIT
+
+keywords:
+  - quantum-inspired convolutional neural network
+  - thyroid nodule classification
+  - medical image analysis
+  - thyroid ultrasound
+  - DDTI
+  - QuCNet
+  - reproducibility
+  - methodological audit
+  - deep learning
+  - computer vision
+
+abstract: >
+  An independent reproduction and methodological audit of the QuCNet
+  quantum-inspired convolutional neural network for thyroid nodule
+  classification using the Digital Database of Thyroid Ultrasound Images.
+  The repository documents dataset verification, XML parsing, quantum-inspired
+  feature reconstruction, classical comparisons, annotation auditing,
+  leakage-free patient-level splitting, lesion ROI preparation, and final
+  ROI-level and case-level evaluation.
+
+references:
+  - type: article
+    title: "QuCNet: Quantum-Inspired Convolutional Neural Networks for Optimized Thyroid Nodule Classification"
+    authors:
+      - family-names: "Swathi"
+        given-names: "Gunti"
+      - family-names: "Altalbe"
+        given-names: "Ali"
+      - family-names: "Kumar"
+        given-names: "R. Prasanna"
+    journal: "IEEE Access"
+    volume: "12"
+    start: 27829
+    end: 27842
+    year: 2024
+    doi: "10.1109/ACCESS.2024.3367806"
