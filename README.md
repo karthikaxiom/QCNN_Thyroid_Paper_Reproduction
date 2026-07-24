@@ -2340,7 +2340,7 @@ Outputs: `07_Results/phase18_binary_error_analysis/`
 
 # Audited Repository Status
 
-Current tagged historical release: **v1.1.0**
+Current audited release: **v1.2.0**
 
 The pre-audit results remain preserved through Git history and chronological
 project-log entries. The current final documentation uses the deduplicated
