@@ -1334,6 +1334,13 @@ Any future architecture, ordinal-learning method or performance-improvement stud
 
 ## Citing This Repository
 
+GitHub provides machine-readable citation metadata through the repository's
+[`CITATION.cff`](CITATION.cff) file.
+
+After the file is available on the default branch, GitHub will display a
+**Cite this repository** option in the repository sidebar.
+[Reference Paper DOI](https://doi.org/10.1109/ACCESS.2024.3367806)
+
 This repository is part of an academic reproduction study conducted for postgraduate research.
 
 Until a formal thesis or associated research article is published, the repository may be cited as:
