@@ -5,7 +5,7 @@
 
 ### A Systematic Reproduction Study of Quantum-Inspired Deep Learning for Thyroid Ultrasound Classification Using the Public DDTI Dataset
 <p align="center">
-  <img src="assets/qucnet_banner.png"
+  <img src="assets/https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/blob/main/qucnet_banner.png"
        alt="QuCNet Thyroid Nodule Classification Project Banner"
        width="100%">
 </p>
