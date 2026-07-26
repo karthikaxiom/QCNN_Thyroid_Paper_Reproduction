@@ -4,7 +4,11 @@
 # Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification
 
 ### A Systematic Reproduction Study of Quantum-Inspired Deep Learning for Thyroid Ultrasound Classification Using the Public DDTI Dataset
-
+<p align="center">
+  <img src="assets/qucnet_banner.png"
+       alt="QuCNet Thyroid Nodule Classification Project Banner"
+       width="100%">
+</p>
 ---
 
 ![Research](https://img.shields.io/badge/Research-Reproducibility%20Study-success)
