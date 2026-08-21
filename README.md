@@ -22,7 +22,7 @@
 
 ---
 
-# Research Summary
+# Research Summary.
 
 Artificial Intelligence has demonstrated remarkable success in medical image classification. Recently, Quantum Machine Learning (QML) has emerged as a promising research direction by combining concepts from quantum computing with deep learning architectures. One such work is **QuCNet**, a quantum-inspired convolutional framework proposed by Swathi, Altalbe and Kumar for thyroid nodule classification using ultrasound images [[1]](#references).
 
