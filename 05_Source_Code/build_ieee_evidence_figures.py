@@ -139,8 +139,8 @@ def style() -> None:
 
 def matched_comparison(models: dict):
     # Exactly 7.16 inches wide: near 516 pt IEEE two-column planning width.
-    fig, axes = plt.subplots(1, 3, figsize=(7.16, 3.36))
-    fig.subplots_adjust(left=.185, right=.983, top=.76, bottom=.20, wspace=.17)
+    fig, axes = plt.subplots(1, 3, figsize=(7.16, 3.56))
+    fig.subplots_adjust(left=.185, right=.983, top=.65, bottom=.19, wspace=.17)
     fig.suptitle("Matched six-class classifier comparison", y=.965,
                  fontsize=10.5, fontweight="semibold")
     ys = list(range(3, -1, -1))
@@ -186,8 +186,8 @@ def matched_comparison(models: dict):
 
 def fold_stability(rows: list[dict]):
     by = {(int(r["fold_seed"]),r["model"]):r for r in rows}
-    fig, axes = plt.subplots(1, 2, figsize=(7.16, 3.25), sharey=True)
-    fig.subplots_adjust(left=.095,right=.982,top=.75,bottom=.23,wspace=.08)
+    fig, axes = plt.subplots(1, 2, figsize=(7.16, 3.47), sharey=True)
+    fig.subplots_adjust(left=.095,right=.982,top=.64,bottom=.21,wspace=.08)
     fig.suptitle("Sensitivity to recorded case-fold assignment", y=.962,
                  fontsize=10.5, fontweight="semibold")
     for j, (clf, title) in enumerate(
