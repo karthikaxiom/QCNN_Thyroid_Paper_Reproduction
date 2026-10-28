@@ -2,7 +2,7 @@
 
 **Status (2026-10-28): EMPIRICAL EXPERIMENTS COMPLETED; final manuscript readiness checks still open.**
 
-This file is a research verification artifact, **not a manuscript draft**. It supplements — and does not replace — the established \`README.md\`, \`Project_Log.txt\`, historical phases or model files. No further exploratory model training is planned unless a demonstrable correctness error requires it.
+This file is a research verification artifact, **not a manuscript draft**. It supplements — and does not replace — the established `README.md`, `Project_Log.txt`, historical phases or model files. No further exploratory model training is planned unless a demonstrable correctness error requires it.
 
 ## Evidence hierarchy and evaluation scope
 
@@ -27,7 +27,7 @@ This file is a research verification artifact, **not a manuscript draft**. It su
 | EXT-DUPLICATE-001 | 480 raw images, 471 unique byte contents | Six exact-duplicate groups, two across case IDs | No exact-byte groups cross two assigned splits |
 | EXT-NEARDUP-001 | 114,847 different-case file pairs screened | 23 perceptual candidates, three assigned cross-split | Three raw-image pairs visually inspected, no identical frames confirmed; cannot rule out same patient across distinct images |
 
-**Data backed by the repository:** \`07_Results/exp_fusion_001\`, \`exp_fusion_001_statistics\`, \`exp_preproc_001\`, \`exp_padding_001\`, \`exp_padlink_001\`, \`exp_duplicate_001\`, \`exp_neardup_001\`, \`exp_qmap_001\`, and \`Research_Extension/verification\`. Original source files have not been overwritten.
+**Data backed by the repository:** `07_Results/exp_fusion_001`, `exp_fusion_001_statistics`, `exp_preproc_001`, `exp_padding_001`, `exp_padlink_001`, `exp_duplicate_001`, `exp_neardup_001`, `exp_qmap_001`, and `Research_Extension/verification`. Original source files have not been overwritten.
 
 ## Mathematical definitions and dimensional checks
 
@@ -49,7 +49,7 @@ For 6×6 confusion matrix C with rows as true TI-RADS categories and columns as 
 2. Reshape 8×8 into a 4×4 grid of disjoint 2×2 patches: 16 patches × 4 input intensities per ROI.
 3. The *fixed simulated* four-wire circuit has RX encoding on each wire, two layers of four fixed RY rotations and four CNOT-ring gates (eight RY angles and eight CNOTs per patch total). The output is four Pauli-Z expectation values per patch. Thus 16 × 4 = 64 quantum features per ROI.
 4. Across 311 training ROIs, 311 × 16 = **4,976 fixed-patch simulation evaluations**. This is not 4,976 independent patients, training examples or learned quantum circuits.
-5. Cross-check against \`utilities/quantum_utils.py\` gave max absolute expectation-value discrepancy **1.2571526930571508×10⁻⁸**, below the 10⁻⁶ acceptance threshold. Circuit weights are fixed from seed 42 and *not* gradient-trained.
+5. Cross-check against `utilities/quantum_utils.py` gave max absolute expectation-value discrepancy **1.2571526930571508×10⁻⁸**, below the 10⁻⁶ acceptance threshold. Circuit weights are fixed from seed 42 and *not* gradient-trained.
 6. This four-qubit simulation is not evidence of quantum computational speedup; features and network families differ from a full QuCNet classifier.
 
 ## Image-integrity visual review
@@ -60,16 +60,16 @@ The three cross-assigned-split candidates were inspected from their original raw
 - Train 177_1 versus test 313_1: distinct anatomy and framing. The full raw 313_1 frame contains burned-in "TI-RADS 4C" text **below** the recorded Phase13 ROI: recorded crop ends at y=190 in a height-360 raw image.
 - Test 305_1 versus train 34_1: different lesion appearance and placement.
 
-These observations reduce the case for exact source-frame duplication among those *flagged pairs*, not proof of different patients or absence of any unflagged duplicates. Do not publish review contact sheets before permissions and potentially identifying markings have been checked. Source review is logged in \`Research_Extension/verification/near_duplicate_visual_review.json\`.
+These observations reduce the case for exact source-frame duplication among those *flagged pairs*, not proof of different patients or absence of any unflagged duplicates. Do not publish review contact sheets before permissions and potentially identifying markings have been checked. Source review is logged in `Research_Extension/verification/near_duplicate_visual_review.json`.
 
 ## Figure quality control
 
 Visually reviewed the stored PNG versions of the four plots below, with the same SVG/PDF source export families available for publication. Text, metric units, grayscale contrasts, legends and category labels are present; no bar-chart axis exceeds its stated units.
 
-- \`07_Results/exp_qmap_001/fixed_feature_map_case_comparison.png\`
-- \`07_Results/exp_preproc_001/preprocessing_case_metrics.png\`
-- \`07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.png\`
-- \`07_Results/exp_fusion_001_statistics/paired_accuracy_differences.png\`
+- `07_Results/exp_qmap_001/fixed_feature_map_case_comparison.png`
+- `07_Results/exp_preproc_001/preprocessing_case_metrics.png`
+- `07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.png`
+- `07_Results/exp_fusion_001_statistics/paired_accuracy_differences.png`
 
 **Open:** All figures have not yet been individually verified at final IEEE one-column printed size. PNG plots with y-axis 0–100 appropriately show absolute percentage scale but visually compress modest between-model differences; pairwise interval figures must accompany any discussion of superiority. PNG inspection does not independently prove vector PDF/SVG rendering quality.
 
