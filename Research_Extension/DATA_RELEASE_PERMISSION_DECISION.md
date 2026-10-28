@@ -8,6 +8,8 @@ The original thyroid-ultrasound dataset is attributed to CIM@LAB / DDTI. Its ava
 
 This repository's historical Git objects contain raw images; the .gitignore rule does **not** retroactively make already-tracked files private. Merely deleting files in the latest commit would not remove them from accessible prior commits. No automated deletion, history rewrite, visibility change or public release should occur without explicit owner authorization and an appropriate backup/recovery plan.
 
+**Automated XML update:** A [verified XML-only GitHub Actions screen](DDTI_XML_AUTOMATED_TRIAGE_RESULT.md) independently parsed 390/390 source XMLs and flagged **2 of 21** populated clinical-text entries for further review, without exposing content. The remaining 19 had no configured pattern match, not proof of de-identification. This supplants the now-unnecessary interactive 21-prompt triage, but image overlays, medical privacy clearance and redistribution permission remain outstanding.
+
 ## Permission questions to send to the source maintainer
 
 1. May this dataset be used for independent academic reproduction and methodological analysis, with appropriate original-source attribution?
