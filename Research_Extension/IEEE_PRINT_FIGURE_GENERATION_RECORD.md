@@ -4,7 +4,7 @@
 **Stage:** Pre-manuscript figure preparation; article writing remains deferred.  
 **Source branch:** `research/bn-recalibration-audit`  
 **Figure generator:** `05_Source_Code/build_ieee_evidence_figures.py`  
-**GitHub Actions:** [successful run 40669270722](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669270722)  
+**GitHub Actions:** [successful run 40669696948](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669696948)  
 **Downloadable Actions artifact:** `qucnet-ieee-double-column-figure-candidates` (six figure files and `figure_manifest.json`). GitHub's 30-day artifact expiry means this ZIP is a convenience, **not permanent archival storage**; the code and numeric source data remain tracked for regeneration.
 
 ## What was actually produced
@@ -28,7 +28,7 @@ The generator checks the **203-case denominator**, all eight saved six-class con
 
 The GitHub workflow `.github/workflows/ieee-source-figure-build.yml` runs in a new Linux environment and **sparsely checks out only the figure code and three saved numeric sources**. It installs Matplotlib **3.10.7**, generates figures, checks that **all six exports** exist and their SHA-256 hashes/byte lengths agree with `figure_manifest.json`, and uploads the derived ZIP.
 
-Successful build log (28 October 2026, run 40669270722) confirmed:
+Successful build log (28 October 2026, run 40669696948) confirmed:
 
 - **PASS:** two source-derived double-column figure candidates.
 - **PASS:** six SVG/PDF/PNG files and a SHA-256 manifest.
@@ -69,3 +69,10 @@ The current GitHub Actions artifact also supplies the exact outputs already buil
 - **IEEE manuscript writing is still reserved for last**, consistent with the researcher's direction.
 
 **Gate disposition:** Primary wide-chart *regeneration* demonstrated, independently rerunnable and available as artifact. **True-size final template proof remains open.**
+
+
+## Visual proof of corrected candidate exports — 28 October 2026
+
+The initial generated PNGs were downloaded and visually inspected. **They showed an overlap between the legend and subplot headings**; passing numeric/structural CI alone was not sufficient. The figure code was therefore revised (commit `cdf4b808`) to give the legends and subplot titles separate vertical bands, preserving the same evidence and 7.16-inch export width. **Corrected build [40669696948](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669696948) passed**, and the corrected ZIP was inspected directly. Its two PNGs now show unobstructed headings, legends, plot markers, axes and warning footers at the exported preview size. All six final output files matched the SHA-256 manifest in the downloaded ZIP. The corrected artifact's ID is `12807882024` (not the earlier `12807013414`).
+
+**Scientific and production boundary:** This checks exported visual layout and numerical integrity. It is **not a printed proof in the final compiled IEEE template**, which remains the final step before article submission. The original research figures and input result files were not overwritten.
