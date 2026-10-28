@@ -1,12 +1,12 @@
 [![Cite this repository](https://img.shields.io/badge/Cite-CITATION.cff-blue.svg)](CITATION.cff)
 <div align="center">
 
-# Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification
+# QuCNet Revisited: An Independent Reconstruction and Methodological Audit of Thyroid Ultrasound Classification
 
 > **Scientific and data-release scope:** Evaluations described as *case-separated* ensure no repeated **recorded case ID** across their respective folds/partitions; the archive does **not** establish distinct patient identities. Earlier phase titles using “leakage-free” refer to case-ID grouping only and must not be read as proof of patient-level independence. The source data remain subject to the unresolved redistribution assessment linked below. The verified empirical research and publication-readiness evidence are integrated into the default `main` branch; the [research extension branch](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/tree/research/bn-recalibration-audit) remains available for traceability. This does not resolve the original source data's redistribution/privacy questions.
 
 
-### A Systematic Reproduction Study of Quantum-Inspired Deep Learning for Thyroid Ultrasound Classification Using the Public DDTI Dataset
+### Source-backed reconstruction and reproducibility investigation using the public DDTI dataset
 <p align="center">
   <img src="https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/blob/main/qucnet_banner.png"
        alt="QuCNet Thyroid Nodule Classification Project Banner"
@@ -25,9 +25,17 @@
 
 ---
 
+### Manuscript and repository claim alignment
+
+The **working manuscript title** is the repository heading above. The archival `CITATION.cff` remains a **2026-07-24 software-release citation**, not a citation for an already published manuscript. The earlier Phase 0–18 headings and results below are retained as historical research stages; later dated audits determine the authoritative interpretation.
+
+**Abstract-level evidence boundary:** The public snapshot contains **480 source JPG files, 390 XML records and 349 six-category TI-RADS-labeled images**. The strict annotated subset is **440 distinct ROI geometries associated with 291 recorded case IDs**. The **203 training case IDs** support *development-only* grouped out-of-fold comparisons; **four classifier families across two feature maps** were compared at seed 42, while **only logistic regression and random forest** were repeated at five fold-assignment seeds. Mean random-forest case accuracy across those seeds was **27.49% classical** versus **29.36% fixed simulated quantum**, with **0/10 TI-RADS 3 recall for both forests at every seed**. A separate **historical** ROI-CNN test predicted only one category and correctly classified **2/44 recorded cases**. These protocols must not be combined or represented as independent clinical testing.
+
+**Claims not established:** exact implementation of the source authors' pipeline; pathology-confirmed benign/malignant endpoints; independent unique-patient linkage; causal explanations for model failure; overall quantum superiority; multicenter/external clinical validation; or unrestricted onward redistribution of the tracked raw medical JPG/XML. For source file paths and the reviewed numerical evidence, use the [research-to-manuscript handoff](Research_Extension/RESEARCH_TO_MANUSCRIPT_HANDOFF.md) and [final research verification matrix](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md).
+
 ## Research closeout — writing phase (28 October 2026)
 
-**The experimental and evidence-verification phase is complete at the documented methodological scope.** The current task is to write and defend an independent **QuCNet reproduction and evaluation-reliability manuscript**, not to tune model accuracy or claim clinical deployment. The authoritative [research-to-manuscript handoff](Research_Extension/RESEARCH_TO_MANUSCRIPT_HANDOFF.md) gives the complete verified result ledger, publication figure sources, exact original-paper citation, planned IEEE sections, and the research claims we must avoid. The historical [Project_Log.txt](Project_Log.txt) now includes a dated **28 October 2026** addendum documenting the actual extension experiments, checked results, privacy/rights limitations, corrected figure exports, GitHub merge and imported IEEE Access Overleaf template. Its June-July entries remain untouched.
+**The experimental and evidence-verification phase is complete at the documented methodological scope.** The current task is to write and defend an independent **QuCNet reconstruction and methodological reliability manuscript**, not to tune model accuracy or claim clinical deployment. The authoritative [research-to-manuscript handoff](Research_Extension/RESEARCH_TO_MANUSCRIPT_HANDOFF.md) gives the complete verified result ledger, publication figure sources, exact original-paper citation, planned IEEE sections, and the research claims we must avoid. The historical [Project_Log.txt](Project_Log.txt) now includes a dated **28 October 2026** addendum documenting the actual extension experiments, checked results, privacy/rights limitations, corrected figure exports, GitHub merge and imported IEEE Access Overleaf template. Its June-July entries remain untouched.
 
 - **Evidence:** fivefold recorded-case-ID-grouped out-of-fold comparisons on **203 original training cases**, all saved model and case-level checks, five-seed stability, calibration and label/split provenance. Frozen 291 recorded case IDs / 440 strict ROIs are documented; distinct patients are **not** independently verified.
 - **Numerical publication candidates:** source-generated double-column figures of eight matched classifier arms and five-seed fold sensitivity; [passing independent build](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669696948), with SVG/vector PDF/PNG and verified hashes.
@@ -1008,7 +1016,7 @@ The following principles were followed:
 - Every case appears in exactly one partition
 - Every ROI inherits the split assignment of its parent case
 - Validation data is used only for model selection
-- Test data remains untouched until final evaluation
+- The frozen test partition was reserved until its original evaluation; it has subsequently been inspected and is not a fresh untouched test set for later extension experiments
 - Case assignments are frozen before model training
 - No case is moved after observing performance
 - Case-ID separation is prioritized over perfect class balance; patient uniqueness remains unverified
@@ -1218,7 +1226,7 @@ This experiment was intentionally designed as a compact and transparent baseline
 
 The main question was:
 
-> **Can a conventional CNN learn a useful six-class TI-RADS decision boundary from the audited lesion-level dataset under a strict patient-independent evaluation protocol?**
+> **Can a conventional CNN learn a useful six-class TI-RADS decision boundary from the audited lesion-level dataset under a strict recorded-case-ID-separated evaluation protocol?**
 
 ---
 
@@ -1249,7 +1257,7 @@ The final experiment used:
 - Early stopping
 - Learning-rate reduction
 - Validation-based checkpoint selection
-- Untouched final test evaluation
+- Historical Phase 14 test-partition evaluation (the partition was subsequently inspected and is not an untouched test for later extension experiments)
 - ROI-level and case-level metrics
 
 ---
@@ -1453,7 +1461,7 @@ The paper did not provide enough information to reconstruct the exact patient-le
 
 An image-level split may introduce case leakage when several images belong to one patient.
 
-The final reproduction therefore used a stricter patient-independent split, which may be more difficult but is methodologically safer.
+The later case/ROI evaluation therefore used a stricter recorded-case-ID-separated split. This protects against repeated recorded case IDs across partitions but does not establish independence of distinct patients.
 
 ---
 
