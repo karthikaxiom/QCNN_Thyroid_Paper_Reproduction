@@ -24,7 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "02_Dataset_Raw" / "archive"
 SPLITS = ROOT / "07_Results" / "phase12_case_level_split" / "split_case_assignments.csv"
-OUT = ROOT / "07_Results" / "exp_duplicate_001"
+OUT = ROOT / "07_Results" / "exp_duplicate_001" / "local_sha256"
 FILE_PATTERN = re.compile(r"^(?P<case>\d+)_(?P<image>\d+)\.(?:jpg|jpeg|png)$", re.I)
 ALLOWED_SPLITS = {"train", "validation", "test"}
 
