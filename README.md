@@ -28,7 +28,7 @@ Artificial Intelligence has demonstrated remarkable success in medical image cla
 
 The reference study reported high classification performance for both tumour classification and multi-class TI-RADS prediction [[1]](#references) using quantum-inspired feature extraction on the Digital Database of Thyroid Ultrasound Images (DDTI). However, reproducing published research is often challenging because many implementation details, preprocessing decisions, dataset versions and experimental settings are not fully disclosed.
 
-This repository presents a **complete independent reproduction and methodological audit** of the QuCNet framework using the publicly available DDTI dataset.
+This repository presents an **independent reconstruction and methodological audit** of a QuCNet-style pipeline using the publicly available DDTI dataset.
 
 Unlike a conventional implementation project, the primary objective of this work was **not to maximize classification accuracy**, but to answer a more fundamental scientific question:
 
@@ -36,9 +36,11 @@ Unlike a conventional implementation project, the primary objective of this work
 
 To answer this question, the complete pipeline was reconstructed from scratch, including dataset verification, XML parsing, metadata extraction, preprocessing, quantum-inspired feature generation, classical and quantum baselines, annotation auditing, patient-level leakage analysis, lesion-level ROI extraction, and a final leakage-free evaluation protocol.
 
-The study successfully reconstructed the entire experimental workflow and identified several important reproducibility challenges, including missing pathology labels, incomplete methodological specifications, annotation-level ambiguities, and patient-level data leakage risks.
+The study reconstructed and audited the available experimental workflow and identified several important reproducibility challenges, including missing pathology labels, incomplete methodological specifications, annotation-level ambiguities, and patient-level data leakage risks.
 
 Although the complete implementation pipeline was successfully executed, the reported performance of the original publication could **not** be independently reproduced using the publicly available resources.
+
+These experiments do not reproduce the authors' exact test sets or label provenance; comparisons with the published accuracy figures are therefore methodological rather than like-for-like performance tests.
 
 Rather than treating this as a failure, the project preserves these findings as a transparent and scientifically valuable reproducibility study.
 
@@ -111,7 +113,7 @@ This repository provides:
 - Classical CNN and Quantum-inspired CNN implementations.
 - Controlled experimental comparisons.
 - Annotation-level and patient-level dataset auditing.
-- Leakage-free case-level train-validation-test splitting.
+- Case-ID-disjoint train-validation-test splitting, with patient identity uniqueness unverified.
 - Lesion ROI dataset generation using expert annotations.
 - ROI-level and Case-level performance evaluation.
 - Complete research log documenting every development stage.
@@ -134,14 +136,14 @@ This repository provides:
 | Case-Level Leakage Audit | ✅ Completed |
 | Frozen Dataset Split | ✅ Completed |
 | ROI Dataset Generation | ✅ Completed |
-| Final Leakage-Free Evaluation | ✅ Completed |
+| Final Case-Separated Evaluation | ✅ Completed |
 | Research Documentation | ✅ Completed |
 
 ---
 
 > **Project Outcome**
 >
-> The complete QuCNet methodology was successfully reconstructed and evaluated.
+> A QuCNet-style workflow was reconstructed, implemented, and evaluated under documented experimental choices.
 > However, the high classification performance reported in the original publication could not be independently reproduced using the publicly available DDTI dataset and the methodological details disclosed in the paper.
 >
 > The repository therefore serves as a **complete reproducibility study**, documenting both the implementation process and the scientific challenges encountered during independent verification.
@@ -220,8 +222,8 @@ The quantum circuit is used as a feature-transformation stage. Final classificat
 | Six-Class Quantum-Feature QuCNet | Six TI-RADS classes; quantum-transformed features | Controlled image-level comparison | **18.57%** |
 | Six-Class Classical CNN | Six TI-RADS classes; grayscale images | Matched controlled comparison | **24.29%** |
 | Majority-Class Baseline | Six TI-RADS classes | Same controlled task | **27.14%** |
-| Strict ROI CNN | Six TI-RADS classes; deduplicated lesion ROIs | Case-separated untouched test set | **5.63%** |
-| Strict Case Aggregation | Mean aggregation of strict ROI probabilities | Case-separated untouched test set | **4.55%** |
+| Strict ROI CNN | Six TI-RADS classes; deduplicated lesion ROIs | Fixed historical case-separated test partition | **5.63%** |
+| Strict Case Aggregation | Mean aggregation of strict ROI probabilities | Fixed historical case-separated test partition | **4.55%** |
 
 ![Recorded accuracy across experimental protocols](09_Output_images/README/fig_01_experiment_accuracy_comparison.png)
 
@@ -234,6 +236,7 @@ The quantum circuit is used as a feature-transformation stage. Final classificat
 - Phase 14 is a separate strict classical ROI baseline.
 - The Phase 14 model predicted TI-RADS 3 for all 71 test ROIs and all 44 test cases.
 - Therefore, 5.63% ROI and 4.55% case are not the overall project accuracy.
+- The [training-only extension study](#extension-study-reproducibility-and-model-sensitivity) adds controlled preprocessing, data-integrity and fixed quantum/classical feature-map checks.
 
 ---
 
@@ -420,7 +423,7 @@ The complete reproduction was performed through a structured multi-phase workflo
          Complete Annotation & Case-Level Audit
                               │
                               ▼
-        Leakage-Free Patient-Level Dataset Split
+        Frozen Case-ID-Disjoint Dataset Split
                               │
                               ▼
             Lesion ROI Dataset Construction
@@ -511,7 +514,7 @@ Following the complete annotation and patient-level audit performed during the l
 
 | Component | Count |
 |-----------|------:|
-| Valid Patient Cases | 291 |
+| Valid Case IDs | 291 |
 | Unique Valid ROI Geometries | 440 |
 | Invalid Annotation Records | Documented Separately |
 
@@ -574,7 +577,7 @@ The major challenges included:
 - Recovering the quantum-inspired feature generation procedure.
 - Reconstructing the reported model architecture.
 - Managing severe class imbalance across TI-RADS categories.
-- Detecting and eliminating patient-level data leakage.
+- Detecting and preventing overlap of the same recorded case IDs across dataset partitions.
 - Designing a clinically meaningful ROI-level evaluation protocol.
 - Preserving complete reproducibility throughout every phase of development.
 
@@ -587,7 +590,7 @@ The reproduction was carried out using a structured, phase-wise methodology. Rat
 
 This approach ensured that implementation errors, dataset inconsistencies and methodological assumptions could be identified early without affecting later experimental stages.
 
-The complete workflow evolved through fourteen major phases, beginning with dataset verification and concluding with a leakage-free patient-level evaluation protocol.
+The complete workflow evolved through fourteen major phases, beginning with dataset verification and concluding with a frozen case-ID-separated evaluation protocol.
 
 ---
 
@@ -910,7 +913,7 @@ For every annotation record, the script extracted and verified:
 
 | Audit Component | Count |
 |---|---:|
-| Valid Patient Cases | 291 |
+| Valid Case IDs | 291 |
 | Unique Valid ROI Geometries | 440 |
 | Invalid or Incomplete Records | Preserved Separately |
 
@@ -969,13 +972,13 @@ including:
 
 # Phase 12 — Leakage-Free Case-Level Split
 
-The objective of Phase 12 was to create a patient-independent train-validation-test split.
+The objective of Phase 12 was to create a train-validation-test split with disjoint recorded case IDs. Unique patient identities across different case IDs could not be confirmed from the available metadata.
 
 Instead of splitting individual images or ROI samples, the dataset was divided using unique case IDs.
 
 All images and lesion regions belonging to the same case were assigned to only one partition.
 
-This ensured that no patient information was shared between training, validation and testing datasets.
+This prevented the same recorded case ID from appearing in multiple partitions; it does not prove patient independence across different case identifiers.
 
 ---
 
@@ -991,7 +994,7 @@ The following principles were followed:
 - Test data remains untouched until final evaluation
 - Case assignments are frozen before model training
 - No case is moved after observing performance
-- Patient-level independence is prioritized over perfect class balance
+- Case-ID separation is prioritized over perfect class balance; patient uniqueness remains unverified
 
 ---
 
@@ -1253,7 +1256,7 @@ For every patient case:
 3. Select the highest-probability TI-RADS class
 4. Compare the aggregated prediction with the case label
 
-This produced a more clinically meaningful patient-level result.
+This produced a case-level evaluation without counting multiple ROIs of one recorded case as independent cases.
 
 ---
 
@@ -1522,7 +1525,7 @@ However, the high classification performance reported in the original publicatio
 >
 > Under controlled comparison, quantum-transformed features did not outperform original grayscale ultrasound images.
 >
-> Under the final leakage-free patient-level protocol, the six-class model failed to generalize to unseen cases.
+> Under the final case-separated protocol, the six-class model performed poorly on held-out case IDs.
 >
 > These results are preserved as a transparent negative reproduction finding rather than hidden through repeated model tuning.
 
@@ -2316,7 +2319,7 @@ The recorded final evaluation produced:
 
 After completing the final pipeline, verify the following:
 
-- [ ] 291 valid patient cases are present
+- [ ] 291 valid case IDs are present
 - [ ] 440 unique ROI geometries are present
 - [ ] Training split contains 203 cases
 - [ ] Validation split contains 44 cases
@@ -2544,6 +2547,30 @@ Source labels represent **TI-RADS 2, 3, 4a, 4b, 4c and 5**. Historical binary la
 | Classical 64-feature map | 54 | 26.60% | 25.22% | 24.26% |
 | Fixed simulated quantum 64-feature map | 43 | 21.18% | 21.91% | 20.68% |
 
+## Extension Visual Evidence
+
+The plots below reproduce the saved training-fold results. All comparisons are exploratory and use case-level predictions; no new test-set benchmark was introduced.
+
+<table>
+<tr>
+<td align="center"><b>Fixed Quantum vs Classical Features</b></td>
+<td align="center"><b>ROI Preprocessing Sensitivity</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/exp_qmap_001/fixed_feature_map_case_comparison.png" alt="Training-only fixed four-qubit versus classical feature comparison" width="430"></td>
+<td><img src="07_Results/exp_preproc_001/preprocessing_case_metrics.png" alt="Case-level preprocessing sensitivity comparison" width="430"></td>
+</tr>
+<tr>
+<td align="center"><b>Padding and Predictive Log-Loss</b></td>
+<td align="center"><b>Paired Fusion Accuracy Differences</b></td>
+</tr>
+<tr>
+<td><img src="07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.png" alt="Case padding fraction versus log-loss improvement" width="430"></td>
+<td><img src="07_Results/exp_fusion_001_statistics/paired_accuracy_differences.png" alt="Paired accuracy differences and exploratory bootstrap intervals" width="430"></td>
+</tr>
+</table>
+
+
 Rows belong to different **exploratory** controlled comparisons and must not be treated as confirmatory ranking over an independent test set. The matched feature-map comparison gave a quantum-minus-classical case accuracy difference of **−5.42 percentage points** (case-bootstrap 95% interval **−10.84 to 0.00** percentage points; exact McNemar **p = 0.0708**). Its four-qubit, two-layer circuit was a *fixed* simulated map, not an optimized end-to-end quantum CNN.
 
 The original median-filled ROI preprocessing was reconstructed with **zero pixel discrepancy**. Median theoretical square-padding area was **25.6%** across the training ROIs. Alternative reflection padding and anisotropic direct resizing changed accuracy and class-balanced metrics, without a statistically established paired improvement. Padding fraction was not meaningfully associated with predictive log-loss gain. Direct resizing distorts lesion aspect ratio.
@@ -2556,7 +2583,7 @@ The original median-filled ROI preprocessing was reconstructed with **zero pixel
 - The published paper's 128×128 original-image quantum input, data inventory, augmentation and image-level split differ from the strict 64×64 ROI case-level audit. The extension is **not an exact numerical reproduction** of the original reported 127-image or 98-image tests.
 - A separate audit of the historical quantum patch cache found **no key collisions in the original-image training arrays**, but identified lossy reuse of quantized keys for **2.30%** of binary-SMOTE and **11.60%** of TI-RADS-SMOTE patch occurrences. These are cache-key mismatches, not directly measured Pauli expectation or accuracy errors. The original model results have not been overwritten; the [full cache audit](07_Results/exp_cache_001/quantum_cache_key_audit.json) records the exact inputs and counts.
 
-The primary source-backed metric inventory is [MASTER_VERIFIED_RESULTS.csv](Research_Extension/MASTER_VERIFIED_RESULTS.csv). Full independent calculations and limitations are in [FINAL_RESEARCH_VERIFICATION_MATRIX.md](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md); the original-paper comparison and figure production checks are in [ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md](Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md) and [IEEE_FIGURE_PREFLIGHT.md](Research_Extension/IEEE_FIGURE_PREFLIGHT.md). Executable experiment sources and generated evidence remain under \`05_Source_Code/exp_*.py\` and \`07_Results/exp_*/\`.
+The primary source-backed metric inventory is [MASTER_VERIFIED_RESULTS.csv](Research_Extension/MASTER_VERIFIED_RESULTS.csv). Full independent calculations and limitations are in [FINAL_RESEARCH_VERIFICATION_MATRIX.md](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md); the original-paper comparison and figure production checks are in [ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md](Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md) and [IEEE_FIGURE_PREFLIGHT.md](Research_Extension/IEEE_FIGURE_PREFLIGHT.md). Executable experiment sources and generated evidence remain under `05_Source_Code/exp_*.py` and `07_Results/exp_*/`.
 
 The results support analysis of reproducibility limitations, not pathology-confirmed diagnosis, clinical validation, quantum computational advantage, or a definitive model-superiority claim. Reuse of raw medical images is separate from publication of source-backed derived numerical results.
 
@@ -2566,4 +2593,3 @@ M.Tech Information Technology
 University Visvesvaraya College of Engineering  
 Bengaluru, India
 
-</div>
