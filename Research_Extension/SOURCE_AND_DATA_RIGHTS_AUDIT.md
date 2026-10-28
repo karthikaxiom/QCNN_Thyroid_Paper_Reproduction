@@ -1,6 +1,6 @@
 # Source-paper identity and dataset reuse rights — verification checkpoint
 
-**Date:** 2026-10-28. **Status:** bibliography verified against independent records; full-paper methods and raw-image redistribution rights require final review. This is research metadata, not manuscript copy.
+**Date:** 2026-10-28. **Status:** bibliography and full-paper methods verified in separate artifacts; raw-image/XML redistribution rights are still unconfirmed. This is research metadata, not manuscript copy.
 
 ## Original QuCNet source — verified bibliography
 
@@ -13,7 +13,7 @@
 
 The institutional abstract reports **97.63%** tumor-classification accuracy on **127 test images** and **93.87%** suspicious-level accuracy on **98 test images**. Those are **authors' reported results**, not independently replicated in our experiment. Our historical 70-image six-class evaluation and strict Phase13 case-separated 44-case evaluation are **different datasets/partitions/protocols**; do not use the source-paper figures as directly comparable estimates.
 
-**Methodology gap:** The above bibliographic and abstract sources cannot independently verify the exact convolutional widths, qubit layout, learning rate, data splitting, patient independence, all figures, or all equations in the full article. Before manuscript drafting, inspect the actual stored base paper PDF page by page and explicitly separate paper-defined choices from implementation assumptions already documented in historical Phase9 scripts.
+**Full-paper methods independently inspected:** The available 14-page `01_Paper/Main_Paper.pdf` was reviewed against stored code. Details, page anchors, reported test denominators and unrecoverable exact hyperparameters are documented in `Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md`; the remaining uncertainty is not a lack of reading, but incomplete or ambiguous reproduction parameters in the source and differences between protocols.
 
 ## DDTI source and public copies
 
@@ -33,4 +33,4 @@ Our machine-readable original source fields contain six TI-RADS risk categories.
 
 These third-party sources are used for scientific context, identity and permissions only. They were not used to select classification models or train/test partitions. The previously inspected held-out splits remain historical evidence, not a new independent holdout.
 
-**Status:** Citation metadata verified. Raw-image permissions, identifying overlays, exact full-text methodological comparison and final figure permissions remain manuscript-readiness gates.
+**Status:** Citation and full-text method comparisons documented; raw-image/XML rights and potentially identifying overlays remain unresolved for public-release decisions. A non-destructive permission/notice checklist is in `Research_Extension/DATA_RELEASE_PERMISSION_DECISION.md`. The selected scientific figures use derived statistical evidence and do not require raw source images.
