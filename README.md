@@ -2549,7 +2549,7 @@ Source labels represent **TI-RADS 2, 3, 4a, 4b, 4c and 5**. Historical binary la
 
 ## Extension Visual Evidence
 
-The plots below reproduce the saved training-fold results. All comparisons are exploratory and use case-level predictions; no new test-set benchmark was introduced.
+These colour vector figures reproduce the saved training-fold results. They use case-level predictions and exploratory intervals; none represents a new independent test-set benchmark. The original grayscale experimental exports remain unchanged in `07_Results/`.
 
 <table>
 <tr>
@@ -2557,16 +2557,16 @@ The plots below reproduce the saved training-fold results. All comparisons are e
 <td align="center"><b>ROI Preprocessing Sensitivity</b></td>
 </tr>
 <tr>
-<td><img src="07_Results/exp_qmap_001/fixed_feature_map_case_comparison.png" alt="Training-only fixed four-qubit versus classical feature comparison" width="430"></td>
-<td><img src="07_Results/exp_preproc_001/preprocessing_case_metrics.png" alt="Case-level preprocessing sensitivity comparison" width="430"></td>
+<td><img src="09_Output_images/README/fig_04_extension_fixed_maps_color.svg" alt="Training-only fixed four-qubit versus classical feature comparison" width="430"></td>
+<td><img src="09_Output_images/README/fig_05_extension_preprocessing_color.svg" alt="Case-level preprocessing sensitivity comparison" width="430"></td>
 </tr>
 <tr>
 <td align="center"><b>Padding and Predictive Log-Loss</b></td>
 <td align="center"><b>Paired Fusion Accuracy Differences</b></td>
 </tr>
 <tr>
-<td><img src="07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.png" alt="Case padding fraction versus log-loss improvement" width="430"></td>
-<td><img src="07_Results/exp_fusion_001_statistics/paired_accuracy_differences.png" alt="Paired accuracy differences and exploratory bootstrap intervals" width="430"></td>
+<td><img src="09_Output_images/README/fig_06_extension_padding_logloss_color.svg" alt="Case padding fraction versus log-loss improvement" width="430"></td>
+<td><img src="09_Output_images/README/fig_07_extension_fusion_ci_color.svg" alt="Paired accuracy differences and exploratory bootstrap intervals" width="430"></td>
 </tr>
 </table>
 
