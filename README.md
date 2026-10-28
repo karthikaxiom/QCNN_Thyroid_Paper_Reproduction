@@ -2632,6 +2632,25 @@ Class-level performance remains weak. Despite predicting all six categories, the
 
 These are exploratory, multiple, training-only cross-validated comparisons—not a new patient-independent holdout or a full trainable quantum CNN evaluation. Source-backed [confusion matrices and paired results](07_Results/exp_models_001/metrics.json), [case-level probabilities](07_Results/exp_models_001/case_predictions.csv) and [ROI-level probabilities](07_Results/exp_models_001/oof_predictions.csv) are preserved for independent review.
 
+## Repeated Case-Fold Stability (EXT-STABILITY-001)
+
+The earlier eight-classifier result used one fivefold case assignment (seed 42). To examine how much the observed classical/quantum ranking depended on that assignment, a **predeclared five-seed stability audit** repeated the *same* case-stratified fivefold protocol with seeds **42, 101, 202, 303 and 404**. It used only the same **203 training case IDs / 311 ROIs**, two existing fixed 64-dimensional feature representations and two prespecified classifier families (logistic regression and random forest). Classifier settings and simulated quantum filter remained fixed; only the case-fold assignment changed. This is **not** another model-tuning exercise.
+
+| Case-level model | Accuracy, five-seed mean ± SD | Mean six-class balanced accuracy | Mean macro-F1 |
+| --- | ---: | ---: | ---: |
+| Classical logistic | 24.53% ± 2.42 pp | 23.23% | 22.07% |
+| Fixed quantum logistic | 23.55% ± 1.61 pp | 23.64% | 22.08% |
+| Classical random forest | 27.49% ± 2.71 pp | 20.42% | 19.62% |
+| Fixed quantum random forest | **29.36% ± 1.58 pp** | 22.50% | 22.30% |
+
+<p align="center"><img src="07_Results/exp_stability_001/case_fold_stability.svg" alt="Full-colour five-seed case-level balanced accuracy curves comparing pooled grayscale and fixed four-qubit features under logistic regression and random forest" width="960"></p>
+
+The fixed-quantum forest was **not** ahead on every partition: quantum-minus-classical random-forest accuracy differed by **+4.43, −1.48, +2.46, +2.96 and +0.99 percentage points**, respectively. The mean difference was **+1.87 points**. For logistic regression, the quantum-minus-classical accuracy difference also changed sign across seeds (mean **−0.99 points**). These are descriptive averages across repeated folds of the **same cases**, not independent-replication estimates or confirmatory evidence of quantum superiority.
+
+An independent read-back audit checked all **4,060 out-of-fold case prediction records** across 20 model/seed combinations and recomputed accuracy, balanced accuracy, macro-F1 and confusion matrices with **zero discrepancies**. All **812 seed-42 case-probability vectors** matched the archived classifier record within a maximum absolute difference of **1.11 × 10⁻¹⁶**. The executable [stability experiment](05_Source_Code/exp_stability_001_repeated_casecv.py), [full result metrics](07_Results/exp_stability_001/metrics.json), [per-seed score table](07_Results/exp_stability_001/seed_metrics.csv), and [case-level probabilities](07_Results/exp_stability_001/case_oof_predictions.csv) are available for inspection.
+
+**Interpretation:** Reassigning folds changes model ranking. Random-forest overall accuracy remains low, with limited class-balanced performance. All reported observations are exploratory on training-case folds; the five seed estimates are correlated, the circuit is fixed and simulated, and case-ID separation does not establish patient identity. No untouched patient-level clinical test or cross-dataset validation was performed, and no result establishes a quantum computational or diagnostic advantage.
+
 The primary source-backed metric inventory is [MASTER_VERIFIED_RESULTS.csv](Research_Extension/MASTER_VERIFIED_RESULTS.csv). Full independent calculations and limitations are in [FINAL_RESEARCH_VERIFICATION_MATRIX.md](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md); the original-paper comparison and figure production checks are in [ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md](Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md) and [IEEE_FIGURE_PREFLIGHT.md](Research_Extension/IEEE_FIGURE_PREFLIGHT.md). Executable experiment sources and generated evidence remain under `05_Source_Code/exp_*.py` and `07_Results/exp_*/`.
 
 The results support analysis of reproducibility limitations, not pathology-confirmed diagnosis, clinical validation, quantum computational advantage, or a definitive model-superiority claim. Reuse of raw medical images is separate from publication of source-backed derived numerical results.
