@@ -1,6 +1,6 @@
 # DDTI publication and repository-release decision protocol
 
-**Status: permission not established — publication/repository distribution decision pending owner approval.** This is research-governance material, not a paper draft or legal opinion.
+**Status after Gate 3 review (28 October 2026): scientific research access confirmed; unrestricted raw JPG/XML redistribution permission NOT independently established.** Full primary-source analysis, actual public-archive counts, sampled XML field names and publication decision tree are in [DDTI_DATA_RIGHTS_AND_PRIVACY_GATE.md](DDTI_DATA_RIGHTS_AND_PRIVACY_GATE.md). An offline XML field scanner exists at `05_Source_Code/audit_ddti_xml_fields_local.py`; only its **synthetic** self-test has been executed in CI. A real whole-archive structural scan and human source-image privacy review remain open. This is research-governance material, not a paper draft or legal opinion.
 
 ## Why this decision is needed
 
