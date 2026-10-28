@@ -106,3 +106,6 @@ credentials.json
 # ============================================================
 !07_Results/**
 !09_Output_images/**
+
+# Local-only ultrasound near-duplicate contact sheets: avoid accidental public upload
+07_Results/exp_neardup_001/review_local/
