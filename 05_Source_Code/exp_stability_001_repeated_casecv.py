@@ -94,7 +94,7 @@ def reference_probabilities():
     return data, hash_path(path)
 
 
-def one_partition(seed, values, y, case_ids, cases, case_y):
+def one_partition(seed, y, case_ids, cases, case_y):
     if len(cases) != 203 or len(y) != 311:
         raise RuntimeError("Unexpected original train sizes")
     splitter = StratifiedKFold(
@@ -174,7 +174,7 @@ def main():
     predictions = {}
     for seed in SPLIT_SEEDS:
         split, held_fold = one_partition(
-            seed, features, y, case_ids, cases, case_y)
+            seed, y, case_ids, cases, case_y)
         for rep in FEATURES:
             for model_name in CLASSIFIERS:
                 key = f"{rep}__{model_name}"
