@@ -1,6 +1,6 @@
 # Research extension — execution and verification register
 
-**Status:** Development experiments in progress; the final manuscript is deferred.
+**Status (2026-10-28):** Prespecified empirical experiments complete; independent scientific, figure and citation closeout ongoing. Manuscript preparation remains deferred.
 
 This register complements the existing `README.md` and `Project_Log.txt`. It does not replace or revise the historical Phase 0–18 record.
 
@@ -171,7 +171,7 @@ Code: `05_Source_Code/exp_neardup_001_integrity.py`, committed after result sync
 
 After its outputs are preserved, the only planned new model investigation is a bounded, matched feature-map audit involving the existing simulated four-qubit filter and a classical comparator, on the same training-only case folds. The final paper remains deferred until the methods, figures and results are verified.
 
-## Final bounded experiment — EXT-QMAP-001 (source committed; execution pending)
+## Final bounded experiment — EXT-QMAP-001 (completed; independently verified)
 
 Code: `05_Source_Code/exp_qmap_001_fixed_feature_compare.py`.
 
@@ -193,4 +193,23 @@ All three satisfy the inclusive **boundary** of the primary pHash criterion (dis
 
 Local-only figure generator: `05_Source_Code/exp_neardup_001_review_sheet.py`; it creates a three-row contact sheet under `07_Results/exp_neardup_001/review_local/`, to be reviewed visually before any confirmation. Avoid uploading raw review images until identifying annotations and redistribution terms have been checked.
 
-The quantum/classical feature-map audit and visual resolution of flagged candidate pairs are the last prespecified empirical items. Afterward, conduct a final numerical, methodological, figure, citation and publication-readiness review, and only then begin the final manuscript.
+The quantum/classical feature-map audit was completed and the three flagged cross-split raw-frame pairs were visually inspected. This is not a patient-identity audit. Continue final mathematical, methodological, figure, citation and publication-readiness review; manuscript work remains deferred.
+
+## EXPERIMENTAL CLOSEOUT — EXT-QMAP-001 and visual review
+
+`EXT-QMAP-001` real training-only paired study was completed and pushed as commit `0868955`. I independently reconstructed the 203 case predictions by averaging six class probabilities from each of the 311 ROI out-of-fold rows per model; all stored case-level confusion matrices, accuracies, balanced accuracies and macro-F1 values matched.
+
+- Equal-dimensional 64-feature classical pooled image: **54/203 cases (26.60099%)**; balanced accuracy 25.22328%; macro-F1 24.26322%.
+- Existing fixed four-qubit quantum simulation on sixteen pooled 2×2 patches: **43/203 cases (21.18227%)**; balanced accuracy 21.90883%; macro-F1 20.67882%.
+- Quantum-minus-classical case accuracy = **−11/203 (−5.4187 percentage points)**; classical-only correct 21, quantum-only correct 10, both correct 33, both wrong 139; exact two-sided McNemar p = **0.0707555**. Exploratory paired case-bootstrap interval [−10.84, 0.00] percentage points; no confirmatory superiority claim.
+- Fixed quantum circuit checked against original reference `utilities/quantum_utils.py` (maximum expectation-value disagreement 1.2572×10⁻⁸). This is **not** training a quantum circuit and cannot demonstrate quantum speedup.
+
+Evidence `07_Results/exp_qmap_001/metrics.json`, `07_Results/exp_qmap_001/oof_predictions.csv`, and independent read-only verification `Research_Extension/verification/exp_qmap_001_independent_metrics.json`.
+
+I reviewed the three pre-flagged cross-assigned-split raw ultrasound pairs directly. None appeared to be an identical raw frame. The case/patient identity question cannot be resolved from imagery alone; maintain this limitation. One full raw test image (`313_1.jpg`) has visible TI-RADS 4C text in its bottom border, outside the saved cropped test ROI y-range 12–190. Raw-overlay effects cannot be generalized from this one inspection. Evidence `Research_Extension/verification/near_duplicate_visual_review.json`. No raw ultrasound image has been republished in the research register.
+
+**Figure and arithmetic checkpoint:** Four stored PNG figure exports were visually checked for labels, axes and legibility at native display size (fixed-feature comparison, preprocessing sensitivity, padding/log-loss relationship, and paired fusion intervals); all have corresponding vector-source exports. IEEE final printed-column rendering, permissions/citations and source-paper equation correspondence remain to be checked.
+
+**Consolidated closeout document:** `Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md`.
+
+**Current decision: empirical experiment gate CLOSED; manuscript gate NOT YET OPEN** until the final publication-readiness checks documented in that matrix pass. The historical README, original checkpoints, and prior result records remain unmodified.
