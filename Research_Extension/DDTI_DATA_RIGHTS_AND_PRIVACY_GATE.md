@@ -5,6 +5,8 @@
 **Stage:** Pre-publication research governance, **not manuscript text or legal advice**  
 **Scientific status:** Research use and derived-statistics analysis can continue. **The rights to redistribute original JPEG/XML files remain unverified, and full patient-data/image privacy review is not complete.**
 
+**Local XML screen update (researcher report, 28 October 2026):** The researcher ran the committed scanner locally after synchronizing to `b68f58b`. It parsed **390/390 XML files**, with **0 parser errors**, **0 oversize files**, age and sex each present in **390 field occurrences**, **0 identifier-like XML field names flagged**, **21 nonempty narrative fields**, and **0 email/phone pattern matches**. Exact aggregate evidence and limits are preserved in [the local XML screening record](DDTI_XML_LOCAL_PRIVACY_SCREEN_RESULT.md). **This was not run against the actual XMLs in CI**, nor does it establish de-identification, image privacy or redistribution rights.
+
 ## 1. What I verified from primary and secondary sources
 
 1. **Original producer:** Universidad Nacional de Colombia's CIM@LAB lists [DDTI as an open-access thyroid ultrasound image project](https://cimalab.unal.edu.co/projects/detail/20/) and lists the [Thyroid Digital Image Database](https://cimalab.unal.edu.co/software/detail/2) with a download route. The site's public listing, as retrieved for this review, did **not** supply an explicit Creative Commons, public-domain, or comparable unrestricted source-image/XML redistribution grant.
@@ -38,7 +40,7 @@ Risk boundaries:
 - Age and sex alone do not necessarily identify someone, but their combinations with clinical records or date/context require care.
 - Text in radiology reports, source-file paths, annotations and image overlays could contain additional information; **absence of direct-identification tags in a few samples does not clear the archive**.
 - The public images have **not** undergone a documented complete image-by-image human privacy inspection in this gate. OCR is not a substitute for clinical/privacy review.
-- I created `05_Source_Code/audit_ddti_xml_fields_local.py` for a local, **non-disclosing aggregate screen** of all XMLs. It does not print original field values, person identifiers, individual case IDs or images and has a synthetic-data `--self-test`. Its real-dataset scan remains **pending execution on the researcher's local copy**, followed by a human review where necessary. Even a clean scan is not a declaration of anonymity or consent.
+- I created `05_Source_Code/audit_ddti_xml_fields_local.py` for a local, **non-disclosing aggregate screen** of all XMLs. It does not print original field values, person identifiers, individual case IDs or images and has a synthetic-data `--self-test`. Its real-data structural run has now been **completed locally and reported by the researcher**: all 390 XMLs parsed without errors, with 21 populated narrative fields requiring focused local review. See the [aggregate result](DDTI_XML_LOCAL_PRIVACY_SCREEN_RESULT.md). This does not independently check source images or actual identity risk. Even a clean scan is not a declaration of anonymity or consent.
 
 ## 4. Scientific publication and release decisions by content type
 
@@ -66,7 +68,7 @@ Risk boundaries:
 
 ## 6. Specific steps left open
 
-1. **Run the full local XML structural screen:** `python 05_Source_Code/audit_ddti_xml_fields_local.py`. Only aggregate counts should be shared; don't paste raw medical XML values. The CI runs the synthetic fixture only and does not read actual source files.
+1. **Local XML screen: COMPLETE (researcher-reported).** All 390 XMLs parsed with no parser errors; no identifier-like field names or email/phone patterns flagged. The 21 nonempty free-text field occurrences require a separate human local review. The CI runs only a synthetic fixture and cannot certify the actual medical files.
 2. **Human image privacy pass** over source frames that would be redistributed or used in figures, including any burned-in identifiers, accession numbers, dates or recognizable annotations. Mark reviewed counts and reviewer role; do not copy screenshots/contact sheets into public Git.
 3. **Record legal/ethical basis** of academic use versus raw-file redistribution. The prepared [provider clarification request](DDTI_PERMISSION_REQUEST_TEMPLATE.md) can be used if no license text is identified. Keep replies private unless explicitly shareable.
 4. **Record data provenance** in the publication package: original Pedraza et al. citation and DOI, primary source project, exact Kaggle mirror, dataset version/download date if known, original archive size and checksums already preserved, and deviations from source paper.
