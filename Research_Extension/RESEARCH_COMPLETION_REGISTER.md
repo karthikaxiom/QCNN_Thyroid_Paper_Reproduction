@@ -53,7 +53,7 @@ Evidence: `07_Results/exp_duplicate_001/remote_git_blob_audit.json`. A separate,
 
 **Limitation:** Git blob hashes establish exact file-byte equality. They do not detect near-duplicates after re-encoding and do not establish patient identity. The raw image hashes of test-assigned cases were checked for integrity only; no raw images were decoded, test predictions consulted, or models selected using test data.
 
-**Pending:** Real-data `EXT-FUSION-001`, paired statistics and historical integrity audit outputs were executed locally and reported in terminal logs, but the generated files have not yet been pushed to GitHub. Preserve and synchronize these outputs before treating them as repository-backed research artifacts.
+**Synchronized:** The real-data EXT-FUSION-001 CV, case-level paired statistical results, EXT-INTEGRITY-001, local SHA-256 duplicate audit and paired historical figures were committed and pushed as `3c615cb`. All 29 evidence files are repository-backed. Original Phase 0–18 records remain unchanged.
 
 ## EXT-PAIR-001 — historical quantum/classical matched predictions
 
@@ -62,3 +62,33 @@ Read-only recomputation of stored Phase 9 quantum and Phase 10 classical six-cla
 The quantum softmax entropy averaged 1.791524 nats versus the uniform-six-class maximum of ln(6) = 1.791759; classical averaged 1.747455 nats. These scores do not establish calibrated uncertainty.
 
 Sources: `Research_Extension/verification/phase9_phase10_paired_historical.json` (remote result) and `05_Source_Code/exp_pair_001_historical.py` (independent locally executable figure/report script). The historical image-level protocol retained case overlap and does not support a new case- or patient-independent evaluation claim.
+
+## EXT-FUSION-001 — verified development comparison
+
+Real 5-fold case-separated CV on 203 training cases (311 ROIs) gave the following **case-level** results:
+
+| Model | Accuracy | Balanced accuracy | Macro-F1 |
+| --- | ---: | ---: | ---: |
+| Majority | 0.28079 | 0.16667 | 0.07308 |
+| Image-feature logistic regression | 0.22167 | 0.20102 | 0.19748 |
+| Geometry-only logistic regression | 0.19212 | 0.22703 | 0.17845 |
+| Image + geometry fusion | 0.22660 | 0.21169 | 0.20411 |
+
+For fusion versus image-only, paired case accuracy improved by only 1/203 = 0.49 percentage points; the exploratory 95% paired-case bootstrap interval was −2.46 to +3.94 percentage points, and exact McNemar p = 1.00. No reliable fusion advantage is established. Full source: `07_Results/exp_fusion_001/metrics.json` and `07_Results/exp_fusion_001_statistics/statistical_audit.json`. These are training-only development comparisons, not untouched test results.
+
+The independently computed historical metrics check was passed by all four available prediction tables: `07_Results/exp_integrity_001/historical_metrics_audit.json`.
+
+## EXT-PADDING-001 — training ROI square-padding geometry
+
+The Phase 13 source `05_Source_Code/phase13_prepare_roi_dataset.py` squares each rectangular ROI using a **median-intensity constant fill**, then downsamples to 64 × 64. A zero-pixel count is therefore **not** a padding-area estimate.
+
+A read-only, source-metadata calculation for 311 training ROIs (203 cases) found:
+
+- Median theoretical pre-resize padding fraction: **25.6%**; mean **25.58%**.
+- **309/311 ROIs** require nonzero square padding; **157/311** have >25% padded area and **16/311** have >50%.
+- Case-level median-of-ROI padding was **26.60%** across the 203 cases.
+- TI-RADS category median ROI padding fractions range from **22.73%** (5) to **29.38%** (4a).
+
+These quantities follow `1-min(width,height)/max(width,height)` and describe geometric area **before** resizing; they do not identify exact interpolated pixels or prove causal effects on classifier performance. Evidence: `07_Results/exp_padding_001/remote_metadata_precheck.json`. The independent local statistics-and-figure script is `05_Source_Code/exp_padding_001_metadata.py`; execution on local training metadata is pending.
+
+**Research decision:** Do not infer that padding was absent from zero-valued-pixel counts. Prioritize one controlled, training-only preprocessing comparison before considering a further expensive quantum architecture run.
