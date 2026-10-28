@@ -341,3 +341,36 @@ Phase9 configuration records 223 training and 56 validation images from its 279 
 These are **candidate future tasks, not completed experiments or evidence of improved accuracy**. Do not launch all exploratory arms in a search for a favorable p-value. If time is limited, prioritize fully checked interpretation, external validation feasibility and a concise, reproducible comparative matrix over accumulating weakly identified models.
 
 **Writing gate:** IEEE/Overleaf manuscript preparation begins only on the researcher's explicit instruction. The eventual paper should be an independent methodological audit with precise equations, paper-versus-code deviations, all adverse results, and reviewer-auditable files. No result is represented as a new clinical benchmark or quantum computational advantage.
+
+## Final research extensions — calibration and fold stability
+
+The guide's requirements for multiple matched model families, classwise sensitivity/specificity and ROC curves, visible architecture paths, hyperparameter comparisons and failure analysis have been addressed using the previously saved model probabilities. The original case-separated Phase14 failure and historical test records remain preserved. The updated full-colour README includes three model-path diagrams, all eight development model comparisons, ROC/class-recall figures and one probability-reliability figure.
+
+### EXT-CALIB-001 — completed, source-backed reliability analysis
+
+Eight sets of 203 saved **case-level out-of-fold** probabilities were verified for class order, normalization and case count. Without rerunning models, the audit computed the multiclass Brier score, negative log likelihood, mean maximum prediction probability, predictive entropy and ten-bin expected calibration error (ECE). Exact records: `07_Results/exp_calib_001/calibration_metrics.json` and `calibration_bins.csv`, derived from `exp_models_001/case_predictions.csv`.
+
+| Model | Multiclass Brier (lower better) | Negative log likelihood (lower better) | Ten-bin ECE |
+| --- | ---: | ---: | ---: |
+| Classical logistic regression | 0.831 | 1.766 | 0.109 |
+| Classical RBF SVM | 0.784 | 1.628 | 0.034 |
+| Classical random forest | 0.786 | 1.637 | 0.057 |
+| Classical kNN | 0.847 | 6.764 | 0.163 |
+| Fixed quantum logistic regression | 0.836 | 1.777 | 0.148 |
+| Fixed quantum RBF SVM | 0.785 | 1.635 | 0.051 |
+| Fixed quantum random forest | **0.783** | 1.636 | 0.081 |
+| Fixed quantum kNN | 0.856 | 6.322 | 0.166 |
+
+The relatively large kNN negative log likelihood arises because some held-out cases receive extremely small probability for their true category. At a maximum-predicted-class-confidence threshold of 0.50, classical kNN incorrectly classified **40/63** high-confidence cases and quantum kNN **34/46**. These counts do not support patient-facing confidence claims. Equal-width ECE is descriptive and sensitive to the small sample and binning convention. No calibration model was trained or selected using held-out case outcomes.
+
+### EXT-STABILITY-001 — protocol and source ready, local results pending
+
+The new script `05_Source_Code/exp_stability_001_repeated_casecv.py` examines only **fold-assignment sensitivity**, not a new high-accuracy model search. Five case-stratified fivefold assignments use seeds **42, 101, 202, 303, 404** on the same 203 training cases and 311 ROIs. Two pre-existing 64-feature representations (classical pooled intensity and fixed simulated four-qubit expectation) are compared under two fixed classifiers (balanced logistic regression C=0.1 and 300-tree random forest). Classifier RNG remains at seed42; **only the case fold assignment varies**. The fixed circuit is simulated once, checked against the original PennyLane filter, and reused across seeds. All 20 model/fold-seed combinations (100 fold fits) are retained.
+
+The script verifies source-input SHA256 checksums and **requires every seed42 case-probability vector to reproduce the saved EXT-MODELS-001 rows (4 × 203 cases)** before writing results. Output is isolated to `07_Results/exp_stability_001/`, with per-seed probability tables, full six-class metrics, descriptive across-seed standard deviations/ranges and a colour figure. No historical validation/test data or checkpoints are accessed or modified. It refuses to overwrite an existing result directory.
+
+**Statistical interpretation:** repeated folds over the same cases are correlated development-set estimates; five fold seeds are **not five independent patient cohorts**, and their SD or min/max is not a confirmatory test confidence interval. A favorable seed must not be chosen for the paper. No new result can be claimed before the local experiment is completed and independently verified.
+
+**Remaining external dependency:** clinically independent or genuine cross-dataset conclusions cannot be made without a separate appropriately labeled dataset, patient-linkage information and prospective/untouched evaluation design. No such external dataset has been adopted or evaluated. Do not advertise cross-dataset generalization.
+
+**Writing gate:** no manuscript or Overleaf work starts until expressly authorized. After the stability output is checked, the guide-directed bounded empirical research can be frozen for paper preparation without running further speculative models.
