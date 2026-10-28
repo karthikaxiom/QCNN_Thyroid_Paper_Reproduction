@@ -40,3 +40,17 @@ Exploratory McNemar comparisons operate on paired case correctness, and case-boo
 ## Continuation procedure
 
 At each live session verify the branch head, current commits, saved experimental results and outstanding gates. The next actionable task is to execute the already committed `05_Source_Code/exp_fusion_001.py` on the user's local data. No unscheduled background work or later notification is implied.
+
+## EXT-DUPLICATE-001 — exact raw image duplication audit
+
+The raw image Git-object audit found **480 files but 471 unique byte contents**. Six exact-duplicate groups contain 15 files (nine redundant copies); two groups span different case IDs. No exact-byte duplicate group spans two of the assigned train/validation/test partitions.
+
+- Five identical files: cases 150, 233, 323, 326, 349; only case 233 belongs to the strict Phase 12 training split.
+- Two identical files: cases 353 and 396; only case 353 belongs to the strict Phase 12 training split.
+- The source CSV provides TI-RADS for the assigned training cases, while the non-assigned copies in these groups lack TI-RADS values. This is a provenance issue, not a demonstrated conflicting class-label pair.
+
+Evidence: `07_Results/exp_duplicate_001/remote_git_blob_audit.json`. A separate, independently reproducible local SHA-256 audit script is `05_Source_Code/exp_duplicate_001_raw_image_audit.py`, with outputs under `07_Results/exp_duplicate_001/local_sha256/`.
+
+**Limitation:** Git blob hashes establish exact file-byte equality. They do not detect near-duplicates after re-encoding and do not establish patient identity. The raw image hashes of test-assigned cases were checked for integrity only; no raw images were decoded, test predictions consulted, or models selected using test data.
+
+**Pending:** Real-data `EXT-FUSION-001`, paired statistics and historical integrity audit outputs were executed locally and reported in terminal logs, but the generated files have not yet been pushed to GitHub. Preserve and synchronize these outputs before treating them as repository-backed research artifacts.
