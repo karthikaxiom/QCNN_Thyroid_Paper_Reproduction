@@ -6,6 +6,9 @@ on:
       - research/bn-recalibration-audit
     paths:
       - '05_Source_Code/verify_stability_artifacts.py'
+      - '05_Source_Code/verify_calibration_artifacts.py'
+      - '07_Results/exp_calib_001/**'
+      - '07_Results/exp_models_001/metrics.json'
       - '07_Results/exp_models_001/case_predictions.csv'
       - '07_Results/exp_stability_001/**'
       - '.github/workflows/saved-evidence-audit.yml'
@@ -26,9 +29,15 @@ jobs:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             05_Source_Code/verify_stability_artifacts.py
+            05_Source_Code/verify_calibration_artifacts.py
+            07_Results/exp_models_001/metrics.json
+            07_Results/exp_calib_001/calibration_metrics.json
+            07_Results/exp_calib_001/calibration_bins.csv
             07_Results/exp_models_001/case_predictions.csv
             07_Results/exp_stability_001/metrics.json
             07_Results/exp_stability_001/seed_metrics.csv
             07_Results/exp_stability_001/case_oof_predictions.csv
       - name: Audit stored out-of-fold evidence without loading raw medical images
-        run: python3 05_Source_Code/verify_stability_artifacts.py
+        run: |
+          python3 05_Source_Code/verify_stability_artifacts.py
+          python3 05_Source_Code/verify_calibration_artifacts.py
