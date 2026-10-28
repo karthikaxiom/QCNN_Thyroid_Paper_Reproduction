@@ -2583,6 +2583,25 @@ The original median-filled ROI preprocessing was reconstructed with **zero pixel
 - The published paper's 128×128 original-image quantum input, data inventory, augmentation and image-level split differ from the strict 64×64 ROI case-level audit. The extension is **not an exact numerical reproduction** of the original reported 127-image or 98-image tests.
 - A separate audit of the historical quantum patch cache found **no key collisions in the original-image training arrays**, but identified lossy reuse of quantized keys for **2.30%** of binary-SMOTE and **11.60%** of TI-RADS-SMOTE patch occurrences. These are cache-key mismatches, not directly measured Pauli expectation or accuracy errors. The original model results have not been overwritten; the [full cache audit](07_Results/exp_cache_001/quantum_cache_key_audit.json) records the exact inputs and counts.
 
+## Matched Classifier-Family Comparison
+
+To investigate the near-single-class output of the historical Phase 14 CNN, an additional **training-only**, case-stratified comparison examined four fixed classifier families on each of two 64-feature representations. The original Phase 14 matrices and test results remain unchanged. Both representation arms used the same 203 training case IDs and five folds, and the archived logistic-regression predictions were reproduced before accepting the new results.
+
+| Classifier | Classical case accuracy | Fixed-quantum case accuracy |
+| --- | ---: | ---: |
+| Logistic regression | 26.60% (54/203) | 21.18% (43/203) |
+| RBF SVM | 28.08% (57/203) | 26.60% (54/203) |
+| Random forest | 26.60% (54/203) | **31.03% (63/203)** |
+| 7-nearest neighbors | 28.57% (58/203) | 29.06% (59/203) |
+
+<p align="center"><img src="09_Output_images/README/fig_08_matched_classifier_families_color.svg" alt="Colour comparison of accuracy, balanced accuracy and macro-F1 across four classifiers and matched classical versus fixed quantum features" width="950"></p>
+
+The quantum-feature random forest achieved the highest **observed accuracy** but was only **6/203 cases** above the 57/203 majority-class accuracy reference. The exploratory paired exact McNemar test for quantum random forest versus the majority predictor gives **p = 0.5504**. Compared with the *classical random forest*, its accuracy difference was +4.43 percentage points, with a paired case-bootstrap 95% interval of −1.00 to +9.85 points and exact McNemar **p = 0.1755**. Neither comparison establishes superiority.
+
+Class-level performance remains weak. Despite predicting all six categories, the quantum random forest correctly identified **0/10 TI-RADS 3 cases**. Classical logistic regression yielded the highest observed balanced accuracy (25.22%) and macro-F1 (24.26%) in this comparison. The two SVM variants predicted only four of the six categories. **Predicted-class coverage alone does not establish reliable classification.**
+
+These are exploratory, multiple, training-only cross-validated comparisons—not a new patient-independent holdout or a full trainable quantum CNN evaluation. Source-backed [confusion matrices and paired results](07_Results/exp_models_001/metrics.json), [case-level probabilities](07_Results/exp_models_001/case_predictions.csv) and [ROI-level probabilities](07_Results/exp_models_001/oof_predictions.csv) are preserved for independent review.
+
 The primary source-backed metric inventory is [MASTER_VERIFIED_RESULTS.csv](Research_Extension/MASTER_VERIFIED_RESULTS.csv). Full independent calculations and limitations are in [FINAL_RESEARCH_VERIFICATION_MATRIX.md](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md); the original-paper comparison and figure production checks are in [ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md](Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md) and [IEEE_FIGURE_PREFLIGHT.md](Research_Extension/IEEE_FIGURE_PREFLIGHT.md). Executable experiment sources and generated evidence remain under `05_Source_Code/exp_*.py` and `07_Results/exp_*/`.
 
 The results support analysis of reproducibility limitations, not pathology-confirmed diagnosis, clinical validation, quantum computational advantage, or a definitive model-superiority claim. Reuse of raw medical images is separate from publication of source-backed derived numerical results.
