@@ -54,3 +54,11 @@ Evidence: `07_Results/exp_duplicate_001/remote_git_blob_audit.json`. A separate,
 **Limitation:** Git blob hashes establish exact file-byte equality. They do not detect near-duplicates after re-encoding and do not establish patient identity. The raw image hashes of test-assigned cases were checked for integrity only; no raw images were decoded, test predictions consulted, or models selected using test data.
 
 **Pending:** Real-data `EXT-FUSION-001`, paired statistics and historical integrity audit outputs were executed locally and reported in terminal logs, but the generated files have not yet been pushed to GitHub. Preserve and synchronize these outputs before treating them as repository-backed research artifacts.
+
+## EXT-PAIR-001 — historical quantum/classical matched predictions
+
+Read-only recomputation of stored Phase 9 quantum and Phase 10 classical six-class image-level predictions (70 aligned samples) found 13/70 and 17/70 correct respectively. Both were correct for 4 samples, quantum-only for 9, classical-only for 13 and both wrong for 44. The paired accuracy difference was +5.71 percentage points for classical, with exploratory exact McNemar two-sided p = 0.5235. There is **no supported claim of superiority**.
+
+The quantum softmax entropy averaged 1.791524 nats versus the uniform-six-class maximum of ln(6) = 1.791759; classical averaged 1.747455 nats. These scores do not establish calibrated uncertainty.
+
+Sources: `Research_Extension/verification/phase9_phase10_paired_historical.json` (remote result) and `05_Source_Code/exp_pair_001_historical.py` (independent locally executable figure/report script). The historical image-level protocol retained case overlap and does not support a new case- or patient-independent evaluation claim.
