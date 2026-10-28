@@ -108,3 +108,27 @@ Before fitting, the script reconstructs every reference ROI from its raw trainin
 **Interpretation guardrail:** Even a difference in these exploratory comparisons would not prove that padding caused the Phase 14 CNN collapse; the architecture, representation and training objective differ. No new test set is available for confirmatory claims.
 
 **Pending local commands:** Run `exp_padding_001_metadata.py` (if its outputs are absent), then `exp_preproc_001_ablation.py`. Preserve results as separate committed experiment evidence. The intentional two-file supporting-paper cleanup should be committed separately from research experiments.
+
+## EXT-PREPROC-001 — initial real-data execution (pending result synchronization)
+
+On 203 training cases, fivefold case-separated out-of-fold results reported from the local experiment:
+
+| Preprocessing | Case correct / 203 | Accuracy | Balanced accuracy | Macro-F1 |
+| --- | ---: | ---: | ---: | ---: |
+| Phase 13 median constant fill | 45 | 0.22167 | 0.20102 | 0.19748 |
+| Reflection padding | 51 | 0.25123 | 0.2276 | 0.2230 |
+| Direct anisotropic stretching | 57 | 0.28079 | 0.2753 | 0.2683 |
+
+All 311 original padded ROIs reconstructed **exactly** (max pixel error 0.0); the original image-only OOF predictions also matched the committed prior experiment.
+
+Relative to median padding, reflection changed case accuracy by +6/203 = +2.96 percentage points (exploratory case-bootstrap 95% CI −2.46 to +8.37, exact McNemar p = 0.392). Direct stretch changed accuracy by +12/203 = +5.91 percentage points (exploratory 95% CI −0.49 to +12.32, exact McNemar p = 0.104). Neither comparison establishes a statistically reliable advantage. The 57/203 overall accuracy for direct stretching equals the training-CV majority-class accuracy but exceeds it on balanced accuracy and macro-F1.
+
+**Evidence caveat:** The above numbers were obtained from the user's local terminal output. Until `07_Results/exp_preproc_001/` and `07_Results/exp_padding_001/local/` are committed and pushed, they are not yet independently rechecked against the underlying GitHub prediction tables. Do not call this a model-selection result on an untouched test partition. Direct stretching changes aspect ratios and is not an automatically safe medical imaging method.
+
+## EXT-PADLINK-001 — controlled descriptive follow-up (execution pending)
+
+Code: `05_Source_Code/exp_padlink_001_association.py`. This performs **no training**. It joins existing EXT-PREPROC-001 out-of-fold case predictions with Phase 13 training-only ROI metadata, computes median square-padding fraction per case, then examines paired true-label log-loss change and accuracy change for reflection padding and direct stretch versus the original median fill. The analysis includes case-bootstrap intervals, exploratory Spearman associations and TI-RADS counts in padding quartiles, with source-hashed outputs and vector figures.
+
+The purpose is to determine whether greater original padding is associated with a greater benefit from alternative preprocessing. Any observed association could still be confounded by lesion morphology, case composition, ROI sizes, acquisition and annotation practices. This is a hypothesis-generating analysis, not proof of a mechanism. No test or validation inputs are accessed.
+
+**Remaining workflow:** Synchronize remote scripts, save/push both local Phase 13 padding and preprocessing-ablation evidence, run the associative read-only audit, then decide whether another controlled model experiment is justified. Keep the intentional duplicate-paper deletions as a separate housekeeping commit and preserve the original README.
