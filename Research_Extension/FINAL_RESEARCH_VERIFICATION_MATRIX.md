@@ -75,10 +75,18 @@ Visually reviewed the stored PNG versions of the four plots below, with the same
 
 ## Remaining closeout gates — NOT READY FOR MANUSCRIPT YET
 
-1. Confirm the precise original-paper methodological claims, figure/equation correspondence, and bibliographic metadata from the source paper; distinguish unavailable architectural details from independently chosen implementations.
-2. Confirm DDTI dataset attribution, permissions, and rules for publishing raw ultrasound example images or annotator-supplied details; screen any publication figures for potentially identifying burned-in material.
+1. **Bibliography verified:** QuCNet is IEEE Access 12 (2024), pp. 27829–27842, DOI 10.1109/ACCESS.2024.3367806; institutional abstract performance pertains to 127 and 98 images, **not** our historical 70-image evaluation. Full-paper methodological claims, figure/equation correspondence and the original source PDF still require final direct page-by-page inspection.
+2. **Dataset provenance located but rights unresolved:** original CIM@LAB listing and Kaggle DDTI mirror verified; mirror license is 'Other (specified in description)', not an explicit unrestricted redistribution grant. Confirm permissions and screen raw images/XML and publication figures for identifying/burned-in material before reusing them.
 3. Check all final selected figure exports at IEEE column width, and make sure every displayed quantity can be recreated from stored CSV or JSON data. Continue preserving original experiment charts unchanged.
 4. Final consistency review of the experiment table, frozen-split counts, optional patient-ID uncertainty, publication ethics, negative findings and explicit limitations. Confirm manuscript outline only after these checks.
 5. The public research branch and the historical result records should be reconciled into the README by a **narrow, additive, reviewed update** only when approved for final handoff. Do not overwrite its existing historical text.
 
 **Scientific bottom line:** Fixed quantum image features did not outperform equally dimensioned classical inputs here; no result in this repository establishes clinical TI-RADS accuracy, pathology-confirmed malignancy classification, quantum advantage, or a definitive superiority comparison. This is valuable negative / reproducibility evidence when accurately scoped.
+
+## External source verification
+
+Bibliographic identity and reported source-paper abstract metrics were checked against DBLP and the authors' institutional publication record. DDTI attribution and the unclear redistribution language were checked against the original CIM@LAB listing and the Kaggle mirror metadata. Links, caveats and proposed responsible handling are saved in `Research_Extension/SOURCE_AND_DATA_RIGHTS_AUDIT.md`.
+
+A machine-readable **13-row consolidated results inventory** was generated directly from the repository's verified metrics JSON, distinguishing unit/partition/evidence level: `Research_Extension/MASTER_VERIFIED_RESULTS.csv`.
+
+**No new empirical trials are needed by default.** Manuscript readiness remains blocked by the full paper-method comparison, source-data permissions, and final print-scale/figure checks. These are disclosure and documentation issues; they do not justify further untargeted model searches.
