@@ -1,6 +1,8 @@
 # QuCNet reproducibility study — research extension protocol
 
-**Status:** Experimental investigation in progress. The final submission manuscript is deliberately deferred.
+**Status as of 28 October 2026: HISTORICAL PRESPECIFICATION / COMPLETED EMPIRICAL GATES.** The extension experiments in this original planning document have subsequently been executed, audited and archived. Its old "execution pending" entries below are historical checkpoints, **not active instructions**. Current evidence is in [RESEARCH_COMPLETION_REGISTER.md](RESEARCH_COMPLETION_REGISTER.md) and [FINAL_RESEARCH_VERIFICATION_MATRIX.md](FINAL_RESEARCH_VERIFICATION_MATRIX.md).
+
+**Current automated closeout:** four read-only Python verification scripts now audit all 21 master inventory results, 4,060 repeated-fold case predictions, 1,624 eight-model probability records, 80 calibration bins, and the frozen 291-case/440-ROI split metadata without fetching raw medical images. The current CI proof is [GitHub Actions: saved evidence audit](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/workflows/saved-evidence-audit.yml). These verify recorded artifacts, **not** independently trained models or unique patient identity. The final submission manuscript remains deferred until the researcher authorizes it.
 
 This protocol complements the existing README, Project Log, and extension completion register. It does not replace or rewrite the historical Phase 0–18 research record.
 
@@ -87,4 +89,4 @@ Prepare source-backed visuals covering dataset flow, label provenance, train/val
 
 At the end of each active session record the repository branch/commit, last verified results, outputs still to run, and the single next executable action. No experiment is performed asynchronously while the chat is inactive.
 
-**Next local execution:** synchronize the research branch, then run the fusion CV. After it creates real prediction files, run the fusion statistical audit and historical metrics verification scripts.
+**Original next local execution (now historical and completed):** synchronize the research branch and run fusion CV and statistical audits. Those tasks have already completed; do **not** rerun or overwrite archived outputs. The next current action is guide review of the frozen evidence and external governance issues, rather than an unbounded model search.
