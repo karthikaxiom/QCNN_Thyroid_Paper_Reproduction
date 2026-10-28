@@ -61,3 +61,9 @@ Before any illustration is allowed into the article:
 **Gate 4 evidence and figure *structure* audit: PASS.** All predefined figures are present and checked automatically. **Gate 4 final printable layout: OPEN** (needs a real IEEE template with chosen figure widths, corrected primary wide charts, and visual true-size proof). Do not mark article figures "submission ready" until this is done.
 
 No manuscript is authorized yet. The next reviewer-ready package should contain the selected figure/table register with the exact source paths and finalized caption assertions, after which manuscript composition and actual final-scale proof can proceed. The real local XML privacy scan also remains open until its aggregate terminal output is available.
+
+## Follow-up — reproducible full-width exports produced
+
+The previously identified too-wide outputs from `exp_models_001` (891.34 pt) and `exp_stability_001` (726.64 pt) have **not** been overwritten. Two redesigned **7.16-inch** IEEE double-column candidates, `qucnet_ieee_matched_classifiers` and `qucnet_ieee_casefold_stability`, were instead generated from archived source metrics by [`build_ieee_evidence_figures.py`](../05_Source_Code/build_ieee_evidence_figures.py). A separate [passing GitHub Actions build](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669270722) provides six SVG/vector-PDF/300-dpi PNG exports, plus a hashed `figure_manifest.json` in its time-limited artifact. The source-to-plot checks preserve the eight original classifier and 20 repeated-fold values. See [the complete figure generation record](IEEE_PRINT_FIGURE_GENERATION_RECORD.md).
+
+**Remaining:** Human visual assessment at *actual* IEEE template placement, appropriate caption-level review and final source-linked figure/table selection. This step does **not** claim a compiled manuscript already exists.
