@@ -44,3 +44,17 @@ The scanner's documented scope is `02_Dataset_Raw/archive/*.xml`, producing **ag
 **Status of this sub-gate:** **390/390 XML structures screened; 0 parser errors; no flagged identifier field names; 21 narrative fields still need a human review.** This is a useful screening milestone, **not** a clean privacy certificate.
 
 **Release rule:** Do not mark the overarching Gate 3 raw medical data permission/privacy decision as cleared on the strength of this automated scan. The original Git history was not altered or purged.
+
+## Optional confidential local narrative triage — prepared, not executed
+
+A separate read-only terminal tool is available at `05_Source_Code/review_ddti_xml_narratives_local.py`. Its parser was exercised **only on synthetic input** in GitHub Actions; it has not yet been used to review the 21 actual narrative fields.
+
+On an authorized local machine:
+
+```powershell
+& .\.venv\Scripts\python.exe .\05_Source_Code\review_ddti_xml_narratives_local.py
+```
+
+This script **prints original clinical narrative text only in the researcher's local console** for individual review and prompts `c` (no obvious identifier in the displayed field), `f` (flag for qualified reviewer), or `q` (stop). It saves no outputs or labels, makes no network requests and ends with an aggregate count. **Never paste, screenshot, upload or commit the individual narrative display.** Share only the final block headed `SAFE AGGREGATE SUMMARY`. A `c` is preliminary triage only, not a privacy clearance; a specialist/institutional review may still be required.
+
+The original 390-XML structural scan result above is preserved as reported. All future human-review counts are separate evidence and must not be described as completed until received.
