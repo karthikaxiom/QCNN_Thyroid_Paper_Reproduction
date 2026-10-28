@@ -100,3 +100,13 @@ I independently inspected the complete 14-page original Main_Paper.pdf (not only
 Selected vector figures and accompanying data are accounted for. Existing wide SVGs must be placed as double-column figures; they are too small when blindly scaled into a single IEEE column. See IEEE_FIGURE_PREFLIGHT.md.
 
 **Remaining decision external to machine learning experiments:** obtain explicit documented DDTI raw image/XML re-publication authority or refrain from distributing raw medical images and annotate the dataset source and limits. The publicly tracked raw files are an existing repository-release concern; do not rewrite or delete original Git history without the owner's express instructions. No image copy is required to present the numeric experiments in the article.
+
+## Final source-implementation integrity checkpoint — 2026-10-28
+
+The historical reproduction was reviewed using six explicit checkpoints (genuine quantum simulation, dataset/split fidelity, architecture, optimization settings, metric comparability and approximation disclosure). The **judgment-based original-protocol fidelity score is 55/100**, documented in `Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md`. This percentage is not model accuracy or an indicator of the rigor of the subsequent case-separated audit.
+
+A previously underemphasized potential numerical approximation was found in `05_Source_Code/utilities/dataset_transformer.py`: cached quantum features are indexed by a quantized 8-bit representation of each float patch, so two distinct float inputs can share a key. A read-only training-input check `05_Source_Code/exp_cache_001_quantization_audit.py` is now committed and awaiting execution on the historical local .npy arrays. The presence or magnitude of collisions is **not yet known**; no historical outputs have been changed.
+
+The recovered DDTI image inventory, labels, and original reported test denominators are not identical; without the authors' exact source-image IDs and actual pathology labels, complete one-to-one reconstruction cannot be certified. These are data provenance limits, not matters that arbitrary further tuning can resolve. The methodologically distinct case-stratified study remains complete and valid as an exploratory audit.
+
+**User-controlled manuscript boundary:** No IEEE manuscript or Overleaf authoring is authorized yet. Preparation may proceed through audit notes and numeric checks only; paper drafting starts only upon express instruction.
