@@ -10,6 +10,9 @@ on:
       - '05_Source_Code/verify_master_inventory.py'
       - '05_Source_Code/verify_frozen_case_splits.py'
       - '05_Source_Code/audit_ddti_xml_fields_local.py'
+      - '05_Source_Code/verify_svg_figure_assets.py'
+      - '07_Results/**/*.svg'
+      - '09_Output_images/README/*.svg'
       - '07_Results/phase12_case_level_split/split_case_assignments.csv'
       - '03_Dataset_Processed/phase13_roi_dataset/**'
       - 'Research_Extension/MASTER_VERIFIED_RESULTS.csv'
@@ -43,6 +46,61 @@ jobs:
             05_Source_Code/verify_master_inventory.py
             05_Source_Code/verify_frozen_case_splits.py
             05_Source_Code/audit_ddti_xml_fields_local.py
+            05_Source_Code/verify_svg_figure_assets.py
+            07_Results/exp_fusion_001_statistics/case_confusion_fusion.svg
+            07_Results/exp_fusion_001_statistics/case_confusion_fusion.png
+            07_Results/exp_fusion_001_statistics/case_confusion_fusion.pdf
+            07_Results/exp_fusion_001_statistics/case_confusion_geometry.svg
+            07_Results/exp_fusion_001_statistics/case_confusion_geometry.png
+            07_Results/exp_fusion_001_statistics/case_confusion_geometry.pdf
+            07_Results/exp_fusion_001_statistics/case_confusion_image.svg
+            07_Results/exp_fusion_001_statistics/case_confusion_image.png
+            07_Results/exp_fusion_001_statistics/case_confusion_image.pdf
+            07_Results/exp_fusion_001_statistics/case_confusion_majority.svg
+            07_Results/exp_fusion_001_statistics/case_confusion_majority.png
+            07_Results/exp_fusion_001_statistics/case_confusion_majority.pdf
+            07_Results/exp_fusion_001_statistics/case_cv_metrics.svg
+            07_Results/exp_fusion_001_statistics/case_cv_metrics.png
+            07_Results/exp_fusion_001_statistics/case_cv_metrics.pdf
+            07_Results/exp_fusion_001_statistics/paired_accuracy_differences.svg
+            07_Results/exp_fusion_001_statistics/paired_accuracy_differences.png
+            07_Results/exp_fusion_001_statistics/paired_accuracy_differences.pdf
+            07_Results/exp_models_001/matched_classifier_comparison.svg
+            07_Results/exp_models_001/matched_classifier_comparison.png
+            07_Results/exp_models_001/matched_classifier_comparison.pdf
+            07_Results/exp_padding_001/local/padding_fraction_by_tirads.svg
+            07_Results/exp_padding_001/local/padding_fraction_by_tirads.png
+            07_Results/exp_padding_001/local/padding_fraction_by_tirads.pdf
+            07_Results/exp_padding_001/local/padding_fraction_distribution.svg
+            07_Results/exp_padding_001/local/padding_fraction_distribution.png
+            07_Results/exp_padding_001/local/padding_fraction_distribution.pdf
+            07_Results/exp_padlink_001/accuracy_delta_by_padding_quartile.svg
+            07_Results/exp_padlink_001/accuracy_delta_by_padding_quartile.png
+            07_Results/exp_padlink_001/accuracy_delta_by_padding_quartile.pdf
+            07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.svg
+            07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.png
+            07_Results/exp_padlink_001/case_padding_vs_log_loss_gain.pdf
+            07_Results/exp_pair_001/historical_paired_correctness.svg
+            07_Results/exp_pair_001/historical_paired_correctness.png
+            07_Results/exp_pair_001/historical_paired_correctness.pdf
+            07_Results/exp_preproc_001/preprocessing_case_metrics.svg
+            07_Results/exp_preproc_001/preprocessing_case_metrics.png
+            07_Results/exp_preproc_001/preprocessing_case_metrics.pdf
+            07_Results/exp_qmap_001/fixed_feature_map_case_comparison.svg
+            07_Results/exp_qmap_001/fixed_feature_map_case_comparison.png
+            07_Results/exp_qmap_001/fixed_feature_map_case_comparison.pdf
+            07_Results/exp_stability_001/case_fold_stability.svg
+            07_Results/exp_stability_001/case_fold_stability.png
+            07_Results/exp_stability_001/case_fold_stability.pdf
+            09_Output_images/README/fig_04_extension_fixed_maps_color.svg
+            09_Output_images/README/fig_05_extension_preprocessing_color.svg
+            09_Output_images/README/fig_06_extension_padding_logloss_color.svg
+            09_Output_images/README/fig_07_extension_fusion_ci_color.svg
+            09_Output_images/README/fig_08_matched_classifier_families_color.svg
+            09_Output_images/README/fig_09_sixclass_ovr_roc_color.svg
+            09_Output_images/README/fig_10_classwise_sensitivity_color.svg
+            09_Output_images/README/fig_11_model_pipeline_comparison_color.svg
+            09_Output_images/README/fig_12_multiclass_calibration_color.svg
             07_Results/phase12_case_level_split/split_case_assignments.csv
             03_Dataset_Processed/phase13_roi_dataset/train_roi_metadata.csv
             03_Dataset_Processed/phase13_roi_dataset/validation_roi_metadata.csv
@@ -66,3 +124,4 @@ jobs:
           python3 05_Source_Code/verify_master_inventory.py
           python3 05_Source_Code/verify_frozen_case_splits.py
           python3 05_Source_Code/audit_ddti_xml_fields_local.py --self-test
+          python3 05_Source_Code/verify_svg_figure_assets.py
