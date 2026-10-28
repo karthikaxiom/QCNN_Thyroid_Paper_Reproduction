@@ -1,0 +1,58 @@
+name: Build IEEE-scale derived figure candidates
+
+on:
+  push:
+    branches:
+      - research/bn-recalibration-audit
+    paths:
+      - '05_Source_Code/build_ieee_evidence_figures.py'
+      - '07_Results/exp_models_001/metrics.json'
+      - '07_Results/exp_stability_001/metrics.json'
+      - '07_Results/exp_stability_001/seed_metrics.csv'
+      - '.github/workflows/ieee-source-figure-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout only figure generator and archived numeric evidence
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            05_Source_Code/build_ieee_evidence_figures.py
+            07_Results/exp_models_001/metrics.json
+            07_Results/exp_stability_001/metrics.json
+            07_Results/exp_stability_001/seed_metrics.csv
+      - name: Install plotting dependency
+        run: python3 -m pip install --user matplotlib==3.10.7
+      - name: Produce six figure exports from verified saved numbers
+        run: python3 05_Source_Code/build_ieee_evidence_figures.py --outdir paper_figures
+      - name: Verify manifest and figure files
+        run: |
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          p=Path("paper_figures")
+          doc=json.loads((p/"figure_manifest.json").read_text())
+          assert len(doc["figures"])==6
+          for name,record in doc["figures"].items():
+              b=(p/name).read_bytes()
+              assert len(b)==record["bytes"]
+              assert hashlib.sha256(b).hexdigest()==record["sha256"]
+          assert len([x for x in doc["figures"] if x.endswith(".pdf")])==2
+          print("PASS: six candidate figure exports match SHA256 manifest.")
+          PY
+      - name: Upload derived figure candidates only
+        uses: actions/upload-artifact@v4
+        with:
+          name: qucnet-ieee-double-column-figure-candidates
+          path: paper_figures/
+          if-no-files-found: error
+          retention-days: 30
