@@ -2521,6 +2521,46 @@ This sequence provides both the scientific motivation and the complete experimen
 
 ---
 
+# Extension Study: Reproducibility and Model Sensitivity
+
+The strict case-separated Phase 12–14 evaluation was extended through training-only experiments examining feature representation, preprocessing sensitivity, fixed quantum feature maps, and dataset integrity. These extensions leave the original data splits, saved models, historical results, and original repository log unchanged.
+
+## Data and Evaluation Scope
+
+The extension uses **311 ultrasound ROIs from 203 case IDs** and fivefold case-stratified cross-validation. All ROIs from a case remain within one fold; preprocessing and classification are fitted on each fold's training partition only. Case predictions are obtained from the mean of the ROI class probabilities.
+
+Source labels represent **TI-RADS 2, 3, 4a, 4b, 4c and 5**. Historical binary labels are derived *suspicion proxies*, not independently verified histopathology outcomes. Case-ID separation does not prove patient identity uniqueness. Historical test findings were already inspected and were not reused for extension model selection.
+
+## Verified Case-Level Results
+
+| Development comparison | Correct / 203 cases | Accuracy | Balanced accuracy | Macro-F1 |
+| --- | ---: | ---: | ---: | ---: |
+| Majority-class baseline | 57 | 28.08% | 16.67% | 7.31% |
+| Image features | 45 | 22.17% | 20.10% | 19.75% |
+| ROI geometry features | 39 | 19.21% | 22.70% | 17.84% |
+| Image + geometry fusion | 46 | 22.66% | 21.17% | 20.41% |
+| Reflection-padded image features | 51 | 25.12% | 22.76% | 22.30% |
+| Direct-resized image features | 57 | 28.08% | 27.53% | 26.83% |
+| Classical 64-feature map | 54 | 26.60% | 25.22% | 24.26% |
+| Fixed simulated quantum 64-feature map | 43 | 21.18% | 21.91% | 20.68% |
+
+Rows belong to different **exploratory** controlled comparisons and must not be treated as confirmatory ranking over an independent test set. The matched feature-map comparison gave a quantum-minus-classical case accuracy difference of **−5.42 percentage points** (case-bootstrap 95% interval **−10.84 to 0.00** percentage points; exact McNemar **p = 0.0708**). Its four-qubit, two-layer circuit was a *fixed* simulated map, not an optimized end-to-end quantum CNN.
+
+The original median-filled ROI preprocessing was reconstructed with **zero pixel discrepancy**. Median theoretical square-padding area was **25.6%** across the training ROIs. Alternative reflection padding and anisotropic direct resizing changed accuracy and class-balanced metrics, without a statistically established paired improvement. Padding fraction was not meaningfully associated with predictive log-loss gain. Direct resizing distorts lesion aspect ratio.
+
+## Integrity and Method-Fidelity Findings
+
+- All four independently recomputed historical metric checks agreed with stored prediction records.
+- The 480 raw images contain 471 distinct exact-file contents; no exact file duplicate was found crossing two assigned split partitions.
+- Perceptual screening flagged three different-split image pairs. Visual inspection found no identical frames in these pairs, but images alone cannot verify distinct patients.
+- The published paper's 128×128 original-image quantum input, data inventory, augmentation and image-level split differ from the strict 64×64 ROI case-level audit. The extension is **not an exact numerical reproduction** of the original reported 127-image or 98-image tests.
+
+The primary source-backed metric inventory is [MASTER_VERIFIED_RESULTS.csv](Research_Extension/MASTER_VERIFIED_RESULTS.csv). Full independent calculations and limitations are in [FINAL_RESEARCH_VERIFICATION_MATRIX.md](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md); the original-paper comparison and figure production checks are in [ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md](Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md) and [IEEE_FIGURE_PREFLIGHT.md](Research_Extension/IEEE_FIGURE_PREFLIGHT.md). Executable experiment sources and generated evidence remain under \`05_Source_Code/exp_*.py\` and \`07_Results/exp_*/\`.
+
+The results support analysis of reproducibility limitations, not pathology-confirmed diagnosis, clinical validation, quantum computational advantage, or a definitive model-superiority claim. Reuse of raw medical images is separate from publication of source-backed derived numerical results.
+
+---
+
 M.Tech Information Technology  
 University Visvesvaraya College of Engineering  
 Bengaluru, India
