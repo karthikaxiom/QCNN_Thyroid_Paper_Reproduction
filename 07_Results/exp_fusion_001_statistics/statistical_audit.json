@@ -1,0 +1,338 @@
+{
+  "experiment": "EXT-FUSION-001-STATISTICS",
+  "source_experiment": "EXT-FUSION-001",
+  "evidence_level": "Exploratory, training-set out-of-fold; not an independent test",
+  "case_count": 203,
+  "bootstrap_seed": 20261028,
+  "bootstrap_repetitions": 5000,
+  "method": "Case-resampled nonparametric percentile intervals",
+  "limitations": [
+    "Case bootstrap does not capture training/partition uncertainty of fitted CV models.",
+    "Multiple exploratory contrasts are not corrected for multiplicity.",
+    "No claim of independent patient identity, pathology labels or clinical utility."
+  ],
+  "source_hashes": {
+    "metrics.json": "2843d22d2e03cca92a81d089ad1f4a783d520f57d3829dbaddef1facbcbac4ab",
+    "oof_predictions.csv": "daa2061996b918ca832dc387f2fb8df65b09ad8ea86d6494246ac3bea8b6d16b"
+  },
+  "models": {
+    "majority": {
+      "case_metrics": {
+        "accuracy": 0.28078817733990147,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_f1": 0.07307692307692308
+      },
+      "case_accuracy_bootstrap_95_percentile_ci": [
+        0.22167487684729065,
+        0.3399014778325123
+      ],
+      "case_confusion_matrix": [
+        [
+          0,
+          0,
+          26,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          57,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          51,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          38,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          21,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "image": {
+      "case_metrics": {
+        "accuracy": 0.22167487684729065,
+        "balanced_accuracy": 0.20102102919440382,
+        "macro_f1": 0.19748405685905687
+      },
+      "case_accuracy_bootstrap_95_percentile_ci": [
+        0.1625615763546798,
+        0.28078817733990147
+      ],
+      "case_confusion_matrix": [
+        [
+          3,
+          4,
+          6,
+          8,
+          5,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          2,
+          3,
+          1
+        ],
+        [
+          12,
+          1,
+          16,
+          12,
+          14,
+          2
+        ],
+        [
+          13,
+          4,
+          9,
+          13,
+          6,
+          6
+        ],
+        [
+          7,
+          4,
+          12,
+          4,
+          3,
+          8
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          5,
+          10
+        ]
+      ]
+    },
+    "geometry": {
+      "case_metrics": {
+        "accuracy": 0.1921182266009852,
+        "balanced_accuracy": 0.22703005628702222,
+        "macro_f1": 0.17844965912829758
+      },
+      "case_accuracy_bootstrap_95_percentile_ci": [
+        0.13793103448275862,
+        0.24630541871921183
+      ],
+      "case_confusion_matrix": [
+        [
+          2,
+          12,
+          8,
+          1,
+          1,
+          2
+        ],
+        [
+          4,
+          3,
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          11,
+          13,
+          15,
+          12,
+          2,
+          4
+        ],
+        [
+          9,
+          12,
+          14,
+          5,
+          1,
+          10
+        ],
+        [
+          2,
+          10,
+          11,
+          4,
+          2,
+          9
+        ],
+        [
+          2,
+          5,
+          1,
+          0,
+          1,
+          12
+        ]
+      ]
+    },
+    "fusion": {
+      "case_metrics": {
+        "accuracy": 0.22660098522167488,
+        "balanced_accuracy": 0.211691559214779,
+        "macro_f1": 0.20410992026105826
+      },
+      "case_accuracy_bootstrap_95_percentile_ci": [
+        0.16748768472906403,
+        0.2857142857142857
+      ],
+      "case_confusion_matrix": [
+        [
+          5,
+          4,
+          7,
+          4,
+          6,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          2,
+          3,
+          1
+        ],
+        [
+          13,
+          2,
+          16,
+          12,
+          12,
+          2
+        ],
+        [
+          11,
+          2,
+          12,
+          11,
+          7,
+          8
+        ],
+        [
+          9,
+          4,
+          9,
+          5,
+          4,
+          7
+        ],
+        [
+          1,
+          2,
+          2,
+          1,
+          5,
+          10
+        ]
+      ]
+    }
+  },
+  "paired_case_comparisons": {
+    "image_to_fusion": {
+      "accuracy": {
+        "estimate": 0.0049261083743842304,
+        "bootstrap_95_percentile_ci": [
+          -0.024630541871921208,
+          0.03940886699507387
+        ]
+      },
+      "paired_correctness": {
+        "left_only_correct": 5,
+        "right_only_correct": 6,
+        "both_correct": 40,
+        "both_wrong": 152,
+        "discordant_count": 11,
+        "exact_mcnemar_two_sided_p": 1.0,
+        "delta_accuracy_right_minus_left": 0.0049261083743842304
+      }
+    },
+    "geometry_to_fusion": {
+      "accuracy": {
+        "estimate": 0.03448275862068967,
+        "bootstrap_95_percentile_ci": [
+          -0.03940886699507387,
+          0.10344827586206898
+        ]
+      },
+      "paired_correctness": {
+        "left_only_correct": 23,
+        "right_only_correct": 30,
+        "both_correct": 16,
+        "both_wrong": 134,
+        "discordant_count": 53,
+        "exact_mcnemar_two_sided_p": 0.4101027163746913,
+        "delta_accuracy_right_minus_left": 0.03448275862068967
+      }
+    },
+    "majority_to_fusion": {
+      "accuracy": {
+        "estimate": -0.05418719211822659,
+        "bootstrap_95_percentile_ci": [
+          -0.1330049261083744,
+          0.02463054187192118
+        ]
+      },
+      "paired_correctness": {
+        "left_only_correct": 41,
+        "right_only_correct": 30,
+        "both_correct": 16,
+        "both_wrong": 116,
+        "discordant_count": 71,
+        "exact_mcnemar_two_sided_p": 0.23509756240834187,
+        "delta_accuracy_right_minus_left": -0.05418719211822659
+      }
+    },
+    "image_to_geometry": {
+      "accuracy": {
+        "estimate": -0.029556650246305438,
+        "bootstrap_95_percentile_ci": [
+          -0.09852216748768472,
+          0.0394088669950739
+        ]
+      },
+      "paired_correctness": {
+        "left_only_correct": 29,
+        "right_only_correct": 23,
+        "both_correct": 16,
+        "both_wrong": 135,
+        "discordant_count": 52,
+        "exact_mcnemar_two_sided_p": 0.48845566937989204,
+        "delta_accuracy_right_minus_left": -0.029556650246305438
+      }
+    }
+  }
+}

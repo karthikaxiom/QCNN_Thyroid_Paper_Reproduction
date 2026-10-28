@@ -1,0 +1,164 @@
+{
+  "experiment": "EXT-PAIR-001",
+  "comparison": "Previously evaluated Phase 9 quantum and Phase 10 classical",
+  "evaluation_unit": "Image",
+  "paired_images": 70,
+  "historical_evaluation_only": true,
+  "independent_case_or_patient_holdout": false,
+  "clinical_interpretation_allowed": false,
+  "uniform_six_class_softmax_entropy_nats": 1.791759469228055,
+  "limitations": [
+    "Case IDs overlapped historical image-level train/held-out partitions.",
+    "No independence-adjusted uncertainty interval is claimed.",
+    "Exact McNemar p-value is exploratory; no superiority conclusion is warranted.",
+    "Softmax confidence is not evidence of calibrated probability.",
+    "Reconstruction is not the original authors' undisclosed implementation."
+  ],
+  "source_sha256": {
+    "quantum": "e20df15011c2d1f4eba82a9be8e0c107e13cfef42e672651e1b1f2f2b5463566",
+    "classical": "3265f34512527d78c917a8e2f914a1bac358074662942fbc3c4c0088b2afc824"
+  },
+  "models": {
+    "quantum": {
+      "correct": 13,
+      "accuracy": 0.18571428571428572,
+      "balanced_accuracy": 0.15162907268170425,
+      "macro_f1": 0.06715506715506715,
+      "predicted_counts": [
+        0,
+        0,
+        2,
+        0,
+        64,
+        4
+      ],
+      "mean_max_softmax_probability": 0.17146587414400916,
+      "mean_softmax_entropy_nats": 1.7915244282605953,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          13,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          12,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      ]
+    },
+    "classical": {
+      "correct": 17,
+      "accuracy": 0.24285714285714285,
+      "balanced_accuracy": 0.2809280144806461,
+      "macro_f1": 0.23184168149843207,
+      "predicted_counts": [
+        10,
+        14,
+        4,
+        22,
+        10,
+        10
+      ],
+      "mean_max_softmax_probability": 0.2332350764955793,
+      "mean_softmax_entropy_nats": 1.7474552808241564,
+      "confusion_matrix": [
+        [
+          2,
+          3,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          6,
+          1,
+          6,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          6,
+          2,
+          4
+        ],
+        [
+          0,
+          1,
+          1,
+          6,
+          4,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          3,
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "paired_correctness": {
+    "both_correct": 4,
+    "both_incorrect": 44,
+    "quantum_only_correct": 9,
+    "classical_only_correct": 13,
+    "discordant": 22,
+    "classical_minus_quantum_accuracy": 0.057142857142857134,
+    "mcnemar_exact_two_sided_p": 0.5234670639038086
+  }
+}
