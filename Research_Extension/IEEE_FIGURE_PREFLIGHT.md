@@ -29,3 +29,16 @@ For the final IEEE LaTeX manuscript, use the vector PDF file in a two-column-spa
 - Confusion: exp_fusion_001_statistics source CSV + original OOF predictions.
 
 **Outcome:** Scientific figure content and vector assets are prepared. The last true-size inspection must occur on the compiled IEEE article layout; do not claim final one-column print readability. No new training is required.
+
+## Gate 4 extension — automated structural check and critical source-plot widths
+
+The [full Gate 4 figure evidence and placement register](IEEE_FIGURE_EVIDENCE_AND_PLACEMENT_GATE.md) is the current review. The added read-only `05_Source_Code/verify_svg_figure_assets.py` checks **24 complete vector SVG files** (15 experiment plots, 9 README figures), including valid SVG metadata and absence of externally linked resources; **each of the 15 experimental SVGs has a PNG and PDF companion**. The [sparse-checkout GitHub Actions run](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40666066419) **passed** without the raw DDTI medical images.
+
+Two central experimental exports need specific action before placement in a two-column paper:
+
+| Plot | Original SVG width | Width multiplier at 516 pt | Assessment |
+| --- | ---: | ---: | --- |
+| `exp_models_001/matched_classifier_comparison.svg` | **891.34 pt** | **0.579** | Redesign / regenerate for readable double-column plot; estimated 10 pt labels become about 5.8 pt when merely scaled |
+| `exp_stability_001/case_fold_stability.svg` | **726.64 pt** | **0.710** | Rework title / legend or enlarge typography, then proof at actual 516 pt; estimated 10 pt text becomes about 7.1 pt |
+
+These are source-SVG geometric inspections, **not visual approval of paper-size captions, axes or contrast**. The nine editorial SVG widths are in pixel-like numeric units and require final layout/proof rather than direct point-unit comparison. A successful structural check is not a data-point-by-data-point graph audit. No source figures or archived results were overwritten. The original final-layout proof gate remains open until an actual IEEE manuscript template is used.
