@@ -34,3 +34,8 @@ Our machine-readable original source fields contain six TI-RADS risk categories.
 These third-party sources are used for scientific context, identity and permissions only. They were not used to select classification models or train/test partitions. The previously inspected held-out splits remain historical evidence, not a new independent holdout.
 
 **Status:** Citation and full-text method comparisons documented; raw-image/XML rights and potentially identifying overlays remain unresolved for public-release decisions. A non-destructive permission/notice checklist is in `Research_Extension/DATA_RELEASE_PERMISSION_DECISION.md`. The selected scientific figures use derived statistical evidence and do not require raw source images.
+
+
+## Gate 3 follow-up (28 October 2026)
+
+The [source-data rights and privacy gate](DDTI_DATA_RIGHTS_AND_PRIVACY_GATE.md) verifies the primary university listing, Kaggle ‘Other (specified in description)’ license category, dataset-original Pedraza et al. citation (DOI 10.1117/12.2073532), and 480 tracked JPG + 390 tracked XML files. Four sampled original XMLs included age and sex field names; **this does not establish that any person is identified**, nor clear the other 386 XMLs or the raw image overlays. The local aggregate-only XML scanner was synthetic-tested on GitHub Actions; full-source scan remains open. Source research access is supported while blanket GitHub medical-data redistribution permission is still unconfirmed.
