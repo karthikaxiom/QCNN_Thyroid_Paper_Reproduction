@@ -10,6 +10,7 @@ on:
       - '05_Source_Code/verify_master_inventory.py'
       - '05_Source_Code/verify_frozen_case_splits.py'
       - '05_Source_Code/audit_ddti_xml_fields_local.py'
+      - '05_Source_Code/review_ddti_xml_narratives_local.py'
       - '05_Source_Code/verify_svg_figure_assets.py'
       - '07_Results/**/*.svg'
       - '09_Output_images/README/*.svg'
@@ -46,6 +47,7 @@ jobs:
             05_Source_Code/verify_master_inventory.py
             05_Source_Code/verify_frozen_case_splits.py
             05_Source_Code/audit_ddti_xml_fields_local.py
+            05_Source_Code/review_ddti_xml_narratives_local.py
             05_Source_Code/verify_svg_figure_assets.py
             07_Results/exp_fusion_001_statistics/case_confusion_fusion.svg
             07_Results/exp_fusion_001_statistics/case_confusion_fusion.png
@@ -124,4 +126,5 @@ jobs:
           python3 05_Source_Code/verify_master_inventory.py
           python3 05_Source_Code/verify_frozen_case_splits.py
           python3 05_Source_Code/audit_ddti_xml_fields_local.py --self-test
+          python3 05_Source_Code/review_ddti_xml_narratives_local.py --self-test
           python3 05_Source_Code/verify_svg_figure_assets.py
