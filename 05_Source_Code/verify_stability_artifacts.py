@@ -194,6 +194,34 @@ def verify() -> None:
         require(all(d < 0 for d in diffs) == recorded["all_seeds_negative"],
                 f"Incorrect negativity assertion: {clf}")
 
+    # Verify the previously obscured minority-class failure pattern directly
+    # from recorded held-out cases, without counting repeated seeds as
+    # independent patients. Class index 1 is TI-RADS 3.
+    class3_cases = {case_id for case_id, label in truths.items() if label == 1}
+    require(len(class3_cases) == 10, "Archived TI-RADS 3 support changed")
+    for rep in ("classical_64", "fixed_quantum_64"):
+        model = rep + "__random_forest"
+        for seed in SEEDS:
+            selected = [row for row in groups[(seed, model)]
+                        if row["case_id"] in class3_cases]
+            require(len(selected) == 10, f"Class-3 case support changed: {seed}/{model}")
+            hits = sum(int(row["predicted_class"]) == 1 for row in selected)
+            require(hits == 0, f"Published zero-class-3-recall claim changed: {seed}/{model}")
+
+    # Majority-class reference (57/203) is based on the actual archived case
+    # labels; compare descriptive RF accuracy for every seed, not only the
+    # most favorable partition.
+    majority = max(sum(t == cl for t in truths.values()) for cl in CLASSES)
+    require(majority == 57, "Majority reference count changed")
+    quantum_rf = "fixed_quantum_64__random_forest"
+    below_majority = [seed for seed in SEEDS
+                      if scores[(seed, quantum_rf)]["correct_cases"] < majority]
+    require(below_majority == [202],
+            f"Published majority comparison changed: {below_majority}")
+    print("Classwise audit: TI-RADS 3 recall = 0/10 for BOTH RF models in")
+    print("  EACH of five seeds (same 10 cases repeated; no new patient cohorts).")
+    print("Majority baseline = 57/203; fixed-quantum RF below it at seed 202.")
+
     print("PASS: 4,060 stability case rows, 20 confusion matrices and metric sets,")
     print("      all five-seed summaries, paired deltas, and 812 frozen seed-42 vectors.")
     print("Scope: stored artifacts only; NOT an independent training replication,")
