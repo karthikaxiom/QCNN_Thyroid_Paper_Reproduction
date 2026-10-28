@@ -89,11 +89,13 @@ def read_data() -> tuple[dict, dict, list[dict]]:
             ensure(math.isfinite(metric) and 0 <= metric <= 1,
                    "Non-finite or impossible saved metric")
         summary = stability["individual_per_seed"][model]
-        ensure(str(seed) in summary or seed in summary, "Seed missing from saved metrics")
-        saved = summary.get(str(seed), summary.get(seed))
-        # Saved JSON uses per-seed objects, distinct from CSV ordering.
+        ensure(len(summary) == len(SEEDS) and
+               tuple(entry["seed"] for entry in summary) == SEEDS,
+               "Unexpected per-seed JSON archive order")
+        saved = summary[SEEDS.index(seed)]
+        # Saved JSON uses an ordered list with a case_metrics member.
         for key, _ in METRICS:
-            target = saved["case"][key] if "case" in saved else saved[key]
+            target = saved["case_metrics"][key]
             ensure(math.isclose(float(row[key]), float(target),
                                 rel_tol=0, abs_tol=TOL),
                    f"CSV/JSON metric mismatch: {model}, {seed}, {key}")
