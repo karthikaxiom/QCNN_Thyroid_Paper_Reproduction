@@ -3,6 +3,9 @@
 
 # Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification
 
+> **Scientific and data-release scope:** Evaluations described as *case-separated* ensure no repeated **recorded case ID** across their respective folds/partitions; the archive does **not** establish distinct patient identities. Earlier phase titles using “leakage-free” refer to case-ID grouping only and must not be read as proof of patient-level independence. The source data remain subject to the unresolved redistribution assessment linked below. The [research extension branch](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/tree/research/bn-recalibration-audit) contains the current audit; the default `main` branch preserves earlier historical work.
+
+
 ### A Systematic Reproduction Study of Quantum-Inspired Deep Learning for Thyroid Ultrasound Classification Using the Public DDTI Dataset
 <p align="center">
   <img src="https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/blob/main/qucnet_banner.png"
@@ -1909,7 +1912,7 @@ python -c "import sklearn; print(sklearn.__version__)"
 
 # Dataset Preparation
 
-The original DDTI dataset is not redistributed directly through this repository.
+**Dataset-release correction (28 October 2026):** This public repository **currently includes 480 tracked ultrasound JPGs and 390 XML files** under `02_Dataset_Raw/archive/`. The earlier claim that the raw DDTI dataset was not redistributed was incorrect. Source-data redistribution permission and any identifying content in images/XML remain unverified. The repository's MIT software license **does not establish** rights over third-party clinical data. See [release decision](Research_Extension/DATA_RELEASE_PERMISSION_DECISION.md) before reusing or sharing the source files. `.gitignore` does not remove files from the history; no destructive change has been made.
 
 Users must obtain the dataset separately and place it inside the expected raw-data directory.
 
