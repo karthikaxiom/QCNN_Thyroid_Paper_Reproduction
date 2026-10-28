@@ -61,7 +61,7 @@ These were directly recomputed from saved predictions on the research branch. Di
 | 3. Classical architecture | 20 | **13** | Binary Phase 6 follows flatten + dense + two outputs; early six-class Phase 8 was dense-only, not the source-described two-convolution classifier. Corrected Phase 9 uses Conv2D(16,3x3), pool(2x2), Conv2D(32,3x3), pool(2x2), flatten, dense(128), dense(64), six-way softmax. Widths/kernels are not uniquely recoverable from article. |
 | 4. Training configuration | 15 | **8** | Adam and appropriate cross-entropy objectives are present. Binary Phase 6: LR 0.001, batch 16, 50 epochs, EarlyStopping patience 3 and ReduceLR patience 4. Six-class Phase 9: LR 0.0001, batch 16, 120 epochs, EarlyStopping patience 15 and ReduceLR patience 6, differing from the source suspicious-level experiment (100 epochs and original callbacks). |
 | 5. Metrics and baseline comparisons | 15 | **7** | Historic metrics re-derived correctly. Local six-class quantum 13/70 = 18.57% and historical binary suspicion-proxy 38/70 = 54.29%, whereas source reports 93.87% on 98 six-category samples and 97.63% on 127 binary samples. Different labels, cases, splits, and test exposure prohibit a causal interpretation of this gap. |
-| 6. Shortcuts and transparent audits | 10 | **8** | Split limitations, TI-RADS proxy provenance, normalization and model choices are now disclosed. However, original quantum caching hashes patches via 8-bit quantized values, potentially reusing a quantum result for a different floating-point patch, especially with SMOTE-generated images; collision frequency is not verified. |
+| 6. Shortcuts and transparent audits | 10 | **8** | Split limitations, TI-RADS proxy provenance, normalization and model choices are disclosed. EXT-CACHE-001 subsequently confirmed lossy 8-bit cache-key collisions in both SMOTE-expanded training arrays, but none in the two original-image training arrays; the effect on previously saved quantum expectations and accuracy has not been calculated. |
 | **Total** | **100** | **55** | **Approximate original-protocol fidelity: 55/100**, not a measured model-performance metric. |
 
 ### Concrete code-level verification
@@ -78,7 +78,7 @@ These were directly recomputed from saved predictions on the research branch. Di
 
 - **P0: Target provenance.** Establish source-verified benign/malignant outcomes distinct from TI-RADS risk categories. Otherwise retain the explicit term *binary suspicion proxy*, never pathology-confirmed tumor detection.
 - **P0: Matched original image inventory.** Identify precisely the author's 127 and 98 test samples and source train/test membership. Without these IDs or a verified equivalent subset, no code adjustment can establish one-to-one numerical reproduction.
-- **P0: Quantum cache collision audit.** Measure distinct floating-patch values that map to identical 8-bit cache keys; if collisions exist, create a new versioned no-cache reference test rather than overwriting historical outputs.
+- **P0: Quantum cache collision audit completed for training inputs.** The compressed 8-bit cache key demonstrably collides on SMOTE-generated images; original-only inputs produced zero collisions. If source-exact numerical comparison is pursued later, version a targeted no-cache quantum-reference check instead of overwriting previously saved arrays. The current audit paper does not require retraining to report this limitation.
 - **P0: Independent test protocol.** Do not describe Phase 6 test-as-validation or historically inspected held-out scores as untouched independent test results. Preserve the strict case-separated experiments as a separate methodological audit.
 - **P1: Source-compatible processing.** Document actual mean/std normalization, augmentation (zoom 0.99–1.01, brightness 0.8–1.2, horizontal flip), train-only SMOTE and 128x128 full-image pipeline. Do not impose these choices on the case-separated ROI audit simply to raise apparent fidelity.
 - **P1: Circuit and classifier parameters.** State the uncertainty in quantum rotation scaling (source descriptions differ), Qiskit/PennyLane backend differences, source-unspecified CNN widths, learning rate and optimizer conventions. Use Phase 9, not the earlier Phase 8 flatten-only network, as the historical paper-structured TI-RADS architecture.
@@ -86,3 +86,24 @@ These were directly recomputed from saved predictions on the research branch. Di
 - **P2: Reproducibility metadata.** Preserve actual environment, random seeds, source hashes, fold assignments, training/validation selection, original results and all adverse findings.
 
 **Decision:** The existing evidence supports a submission centered on an *independent reproduction and methodological audit*. It does not support an exact-match QuCNet reproduction, clinical diagnosis claims, a proven source-paper error, or a claim of quantum advantage. This technical review is not authorization to create a manuscript; paper drafting and Overleaf remain explicitly deferred until requested.
+
+### EXT-CACHE-001: observed key collisions in historical training arrays
+
+The read-only training-input script `05_Source_Code/exp_cache_001_quantization_audit.py` completed locally on 28 October 2026. Its output file is `07_Results/exp_cache_001/quantum_cache_key_audit.json` (local report, pending GitHub synchronization). Each image contributes 4096 2×2 patches; a collision is counted when a later patch differs numerically from the first patch associated with the same historical 8-bit key.
+
+| Input array | Images | Patches | Distinct keys with differing float patches | Mismatching subsequent patch occurrences |
+| --- | ---: | ---: | ---: | ---: |
+| `X_train.npy` | 279 | 1,142,784 | **0** | **0 (0%)** |
+| `X_train_smote.npy` | 306 | 1,253,376 | **17,535** | **28,766 (2.30%)** |
+| `X_tirads_train.npy` | 279 | 1,142,784 | **0** | **0 (0%)** |
+| `X_tirads_train_smote.npy` | 462 | 1,892,352 | **84,657** | **219,533 (11.60%)** |
+
+**What the evidence establishes:** the original dataset transformer used lossy memoization on float-valued SMOTE patches and could return an expectation vector computed for a different input patch. This is a measured implementation discrepancy, not a hypothetical possibility. A cache-key collision is **not equivalent** to a measured numerical error in all four expectation values; the exact output discrepancies and downstream accuracy changes were not quantified.
+
+**Relation to historical Phase 9:** `07_Results/phase9_reproduction_audit/audit_report.txt` explicitly confirms that the 279 original TI-RADS images and labels were preserved as the prefix of the SMOTE-expanded 462-image tensor, and that the 279 corresponding original quantum maps were extracted successfully. The original-only input has no observed key collisions; assuming the saved transformation was performed sequentially from a clean cache, the subsequent synthetic-input collisions would not retroactively affect that original-image prefix. This reduces, but does not completely eliminate, concern for the corrected Phase 9 original-only evaluation. Original full-array source-hash and saved-output comparison are required to prove bitwise correspondence.
+
+**Relation to early SMOTE experiments:** historical branches that consumed the full synthetic 306- or 462-image quantum maps require a caveat: some synthetic patch expectations may reflect cached values for numerically different input patches. The magnitude of this effect on the model predictions has not been determined. All historical checkpoints and predictions remain unchanged.
+
+The harmless Python `SyntaxWarning` from a backslash in the script's explanatory docstring was corrected on the research branch without altering computation.
+
+**Decision:** treat the experiment as a quantitative fidelity limitation, not an instruction to regenerate all multi-million quantum patches, tune a model against exposed tests, or claim that the cache alone caused the accuracy shortfall.
