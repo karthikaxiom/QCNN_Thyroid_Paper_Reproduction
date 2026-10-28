@@ -2575,6 +2575,27 @@ Rows belong to different **exploratory** controlled comparisons and must not be 
 
 The original median-filled ROI preprocessing was reconstructed with **zero pixel discrepancy**. Median theoretical square-padding area was **25.6%** across the training ROIs. Alternative reflection padding and anisotropic direct resizing changed accuracy and class-balanced metrics, without a statistically established paired improvement. Padding fraction was not meaningfully associated with predictive log-loss gain. Direct resizing distorts lesion aspect ratio.
 
+## Architecture and Class-Level Evaluation
+
+The models below use distinct input representations and evaluation protocols. The architecture diagram separates the historical full-image quantum CNN, the strict cropped-ROI CNN, and the later matched case-fold comparisons; their accuracies should not be ranked as if they shared one test set.
+
+<p align="center"><img src="09_Output_images/README/fig_11_model_pipeline_comparison_color.svg" alt="Colour diagram distinguishing Phase 9 quantum CNN, Phase 14 strict ROI CNN, and matched case-fold classical and fixed quantum model families" width="1000"></p>
+
+The source-backed ROC-AUC analysis uses **six TI-RADS one-versus-rest classification tasks** on out-of-fold case probabilities. It is not a benign/malignant diagnosis ROC or an independent clinical test. For the classical logistic and fixed quantum random-forest models, macro one-versus-rest AUC was **0.592** and **0.607**, respectively. The random forest's higher overall accuracy masks **0% sensitivity for TI-RADS 3 (0/10 cases)**.
+
+<table>
+<tr>
+<td align="center"><b>One-vs-rest ROC curves by TI-RADS category</b></td>
+<td align="center"><b>Sensitivity by TI-RADS category</b></td>
+</tr>
+<tr>
+<td><img src="09_Output_images/README/fig_09_sixclass_ovr_roc_color.svg" alt="Six colour-coded one versus rest ROC curves for two development-only model families" width="510"></td>
+<td><img src="09_Output_images/README/fig_10_classwise_sensitivity_color.svg" alt="Class-by-class recall comparison showing TI-RADS 3 failure despite nonzero overall accuracy" width="510"></td>
+</tr>
+</table>
+
+Detailed [per-class sensitivity, specificity and ROC-AUC](07_Results/exp_eval_001/class_sensitivity_specificity.csv) and the [full eight-model calculation record](07_Results/exp_eval_001/guide_metrics.json) are preserved. All curves are descriptive training-fold analyses, not confirmatory independent validation.
+
 ## Integrity and Method-Fidelity Findings
 
 - All four independently recomputed historical metric checks agreed with stored prediction records.
