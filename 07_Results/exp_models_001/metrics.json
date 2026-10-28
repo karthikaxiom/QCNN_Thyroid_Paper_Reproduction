@@ -1,0 +1,1809 @@
+{
+  "experiment": "EXT-MODELS-001",
+  "protocol": {
+    "protocol": "exploratory, fivefold case-stratified OOF using Phase13 TRAIN only",
+    "case_fold_seed": 42,
+    "classifiers": {
+      "linear_logistic": {
+        "C": 0.1,
+        "class_weight": "balanced",
+        "max_iter": 1500
+      },
+      "rbf_svm": {
+        "C": 1.0,
+        "gamma": "scale",
+        "class_weight": "balanced",
+        "probability": true,
+        "random_state": 42
+      },
+      "random_forest": {
+        "n_estimators": 300,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt",
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": -1
+      },
+      "knn_7": {
+        "n_neighbors": 7,
+        "weights": "distance"
+      }
+    },
+    "paired_bootstrap_resamples": 5000,
+    "paired_bootstrap_seed": 20261028,
+    "no_hyperparameter_search": true
+  },
+  "evidence_level": "Exploratory train-only out-of-fold cross-validation",
+  "training_rois": 311,
+  "training_cases": 203,
+  "case_class_labels": [
+    "2",
+    "3",
+    "4a",
+    "4b",
+    "4c",
+    "5"
+  ],
+  "dataset": "Phase13 frozen TRAIN only",
+  "original_validation_accessed": false,
+  "original_test_accessed": false,
+  "original_models_or_results_modified": false,
+  "reference_lr_roi_predictions_verified": true,
+  "quantum_reference_discrepancy": 1.2571526930571508e-08,
+  "input_sha256": {
+    "training_images": "568378f5be77ce1f0f53306e32124d1d7d7b809a3718437d815103e491dc5c36",
+    "training_labels": "dfbf611bbc2f2bb8edf72ce561847909052181f97bbfa45306b078d631d7cafe",
+    "training_case_ids": "569c00ca502462f5a2c4896dfca4848fee53bb873953abf11409100c5dbba228",
+    "training_roi_ids": "1d71e8d8527883db06edc2d74ba9a30c5178811cdc33add8eb7342c68e316a6d",
+    "training_metadata": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+    "reference_quantum_utils": "fb5a9cb1cfb26dd1e8a77021a56c451ce5c96a979a23b63aeb3accb0dc12f42a"
+  },
+  "reference_metrics_sha256": "2deedb2b8b9398130fc051b1ef157e2a98ca2e80ba4a259a197cfd80a817bb51",
+  "reference_predictions_sha256": "db34da4e7b3c448c201e2135d952c186855aecdf3b7d22e3799fb31d6cad7bf1",
+  "versions": {
+    "numpy": "2.5.0",
+    "sklearn": "1.9.0"
+  },
+  "models": {
+    "classical_64__linear_logistic": {
+      "roi": {
+        "accuracy": 0.24115755627009647,
+        "balanced_accuracy": 0.2388792421999253,
+        "macro_f1": 0.22521623372344637,
+        "confusion_matrix": [
+          [
+            3,
+            8,
+            10,
+            4,
+            6,
+            2
+          ],
+          [
+            3,
+            3,
+            2,
+            1,
+            4,
+            1
+          ],
+          [
+            19,
+            8,
+            21,
+            22,
+            15,
+            6
+          ],
+          [
+            13,
+            6,
+            20,
+            20,
+            7,
+            11
+          ],
+          [
+            8,
+            15,
+            8,
+            8,
+            14,
+            9
+          ],
+          [
+            3,
+            5,
+            2,
+            1,
+            9,
+            14
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.2660098522167488,
+        "balanced_accuracy": 0.2522327689510352,
+        "macro_f1": 0.24263224917095574,
+        "confusion_matrix": [
+          [
+            2,
+            6,
+            8,
+            2,
+            6,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            10,
+            5,
+            17,
+            13,
+            8,
+            4
+          ],
+          [
+            8,
+            4,
+            11,
+            15,
+            6,
+            7
+          ],
+          [
+            4,
+            8,
+            8,
+            3,
+            10,
+            5
+          ],
+          [
+            2,
+            5,
+            2,
+            1,
+            3,
+            8
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        29,
+        30,
+        47,
+        35,
+        35,
+        27
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 6,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "classical_64__rbf_svm": {
+      "roi": {
+        "accuracy": 0.2861736334405145,
+        "balanced_accuracy": 0.17844805415962908,
+        "macro_f1": 0.13948049911436877,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            25,
+            4,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            10,
+            1,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            72,
+            12,
+            6,
+            1
+          ],
+          [
+            0,
+            0,
+            57,
+            11,
+            5,
+            4
+          ],
+          [
+            0,
+            0,
+            44,
+            12,
+            3,
+            3
+          ],
+          [
+            0,
+            0,
+            14,
+            5,
+            12,
+            3
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.28078817733990147,
+        "balanced_accuracy": 0.18090569561157796,
+        "macro_f1": 0.13793565172610767,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            22,
+            2,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            7,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            46,
+            8,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            37,
+            8,
+            3,
+            3
+          ],
+          [
+            0,
+            0,
+            26,
+            10,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            9,
+            3,
+            7,
+            2
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        0,
+        0,
+        147,
+        32,
+        18,
+        6
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 4,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "classical_64__random_forest": {
+      "roi": {
+        "accuracy": 0.2508038585209003,
+        "balanced_accuracy": 0.1768225976005862,
+        "macro_f1": 0.17063195229893666,
+        "confusion_matrix": [
+          [
+            1,
+            1,
+            19,
+            5,
+            7,
+            0
+          ],
+          [
+            1,
+            0,
+            5,
+            3,
+            5,
+            0
+          ],
+          [
+            2,
+            0,
+            45,
+            25,
+            17,
+            2
+          ],
+          [
+            4,
+            1,
+            38,
+            19,
+            10,
+            5
+          ],
+          [
+            2,
+            1,
+            35,
+            12,
+            7,
+            5
+          ],
+          [
+            0,
+            0,
+            7,
+            7,
+            14,
+            6
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.2660098522167488,
+        "balanced_accuracy": 0.18923250811795703,
+        "macro_f1": 0.1786198526186937,
+        "confusion_matrix": [
+          [
+            1,
+            1,
+            16,
+            3,
+            5,
+            0
+          ],
+          [
+            1,
+            0,
+            3,
+            3,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            29,
+            18,
+            8,
+            1
+          ],
+          [
+            1,
+            0,
+            24,
+            16,
+            6,
+            4
+          ],
+          [
+            1,
+            0,
+            22,
+            7,
+            5,
+            3
+          ],
+          [
+            0,
+            0,
+            7,
+            4,
+            7,
+            3
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        5,
+        1,
+        101,
+        51,
+        34,
+        11
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 6,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "classical_64__knn_7": {
+      "roi": {
+        "accuracy": 0.2829581993569132,
+        "balanced_accuracy": 0.2061256264292317,
+        "macro_f1": 0.2053590846767196,
+        "confusion_matrix": [
+          [
+            3,
+            1,
+            22,
+            6,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            6,
+            3,
+            3,
+            0
+          ],
+          [
+            10,
+            0,
+            49,
+            17,
+            14,
+            1
+          ],
+          [
+            5,
+            1,
+            31,
+            26,
+            10,
+            4
+          ],
+          [
+            4,
+            2,
+            37,
+            12,
+            5,
+            2
+          ],
+          [
+            2,
+            0,
+            12,
+            5,
+            11,
+            4
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.2857142857142857,
+        "balanced_accuracy": 0.19284164408003415,
+        "macro_f1": 0.17633244446588728,
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            19,
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            3,
+            2,
+            0
+          ],
+          [
+            4,
+            0,
+            32,
+            12,
+            9,
+            0
+          ],
+          [
+            2,
+            1,
+            16,
+            20,
+            9,
+            3
+          ],
+          [
+            3,
+            0,
+            22,
+            9,
+            3,
+            1
+          ],
+          [
+            0,
+            0,
+            11,
+            3,
+            6,
+            1
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        11,
+        1,
+        105,
+        52,
+        29,
+        5
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 6,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "fixed_quantum_64__linear_logistic": {
+      "roi": {
+        "accuracy": 0.22186495176848875,
+        "balanced_accuracy": 0.22791634888409082,
+        "macro_f1": 0.21295227664940927,
+        "confusion_matrix": [
+          [
+            4,
+            10,
+            7,
+            2,
+            9,
+            1
+          ],
+          [
+            4,
+            2,
+            2,
+            2,
+            3,
+            1
+          ],
+          [
+            18,
+            14,
+            19,
+            16,
+            19,
+            5
+          ],
+          [
+            14,
+            7,
+            19,
+            13,
+            12,
+            12
+          ],
+          [
+            15,
+            10,
+            4,
+            8,
+            14,
+            11
+          ],
+          [
+            2,
+            5,
+            2,
+            2,
+            6,
+            17
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.21182266009852216,
+        "balanced_accuracy": 0.21908825608516014,
+        "macro_f1": 0.20678818850369404,
+        "confusion_matrix": [
+          [
+            3,
+            7,
+            6,
+            2,
+            7,
+            1
+          ],
+          [
+            4,
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            14,
+            8,
+            10,
+            9,
+            12,
+            4
+          ],
+          [
+            8,
+            4,
+            12,
+            11,
+            8,
+            8
+          ],
+          [
+            8,
+            6,
+            5,
+            7,
+            7,
+            5
+          ],
+          [
+            1,
+            3,
+            2,
+            2,
+            2,
+            11
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        38,
+        29,
+        36,
+        32,
+        38,
+        30
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 6,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "fixed_quantum_64__rbf_svm": {
+      "roi": {
+        "accuracy": 0.26366559485530544,
+        "balanced_accuracy": 0.16429554000711497,
+        "macro_f1": 0.12322814168590229,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            31,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            13,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            69,
+            13,
+            5,
+            4
+          ],
+          [
+            0,
+            0,
+            64,
+            7,
+            4,
+            2
+          ],
+          [
+            1,
+            0,
+            50,
+            4,
+            3,
+            4
+          ],
+          [
+            0,
+            0,
+            21,
+            6,
+            4,
+            3
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.2660098522167488,
+        "balanced_accuracy": 0.1729077595950661,
+        "macro_f1": 0.1318691051299747,
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            25,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            10,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            44,
+            7,
+            3,
+            3
+          ],
+          [
+            0,
+            0,
+            42,
+            6,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            33,
+            2,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            14,
+            3,
+            2,
+            2
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        0,
+        0,
+        168,
+        18,
+        10,
+        7
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 4,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "fixed_quantum_64__random_forest": {
+      "roi": {
+        "accuracy": 0.3054662379421222,
+        "balanced_accuracy": 0.23293420684312524,
+        "macro_f1": 0.23533534206194626,
+        "confusion_matrix": [
+          [
+            3,
+            2,
+            16,
+            5,
+            7,
+            0
+          ],
+          [
+            1,
+            0,
+            5,
+            4,
+            4,
+            0
+          ],
+          [
+            9,
+            0,
+            40,
+            20,
+            18,
+            4
+          ],
+          [
+            6,
+            0,
+            30,
+            29,
+            8,
+            4
+          ],
+          [
+            3,
+            1,
+            32,
+            8,
+            14,
+            4
+          ],
+          [
+            0,
+            0,
+            9,
+            6,
+            10,
+            9
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.3103448275862069,
+        "balanced_accuracy": 0.23544532522860695,
+        "macro_f1": 0.2335028202292362,
+        "confusion_matrix": [
+          [
+            3,
+            1,
+            14,
+            4,
+            4,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            5,
+            3,
+            0
+          ],
+          [
+            5,
+            0,
+            25,
+            15,
+            9,
+            3
+          ],
+          [
+            3,
+            0,
+            18,
+            22,
+            5,
+            3
+          ],
+          [
+            2,
+            0,
+            19,
+            6,
+            9,
+            2
+          ],
+          [
+            0,
+            0,
+            7,
+            5,
+            5,
+            4
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        14,
+        1,
+        84,
+        57,
+        35,
+        12
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 6,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    },
+    "fixed_quantum_64__knn_7": {
+      "roi": {
+        "accuracy": 0.26688102893890675,
+        "balanced_accuracy": 0.18966175085719675,
+        "macro_f1": 0.18432555160608707,
+        "confusion_matrix": [
+          [
+            4,
+            0,
+            21,
+            3,
+            5,
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            8,
+            3,
+            0
+          ],
+          [
+            8,
+            1,
+            45,
+            23,
+            13,
+            1
+          ],
+          [
+            5,
+            1,
+            32,
+            21,
+            14,
+            4
+          ],
+          [
+            5,
+            1,
+            33,
+            10,
+            10,
+            3
+          ],
+          [
+            1,
+            1,
+            10,
+            11,
+            8,
+            3
+          ]
+        ]
+      },
+      "case": {
+        "accuracy": 0.29064039408866993,
+        "balanced_accuracy": 0.2041538612746043,
+        "macro_f1": 0.19069268242058604,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            19,
+            1,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            6,
+            2,
+            0
+          ],
+          [
+            6,
+            1,
+            34,
+            11,
+            4,
+            1
+          ],
+          [
+            1,
+            0,
+            23,
+            13,
+            12,
+            2
+          ],
+          [
+            2,
+            0,
+            23,
+            3,
+            8,
+            2
+          ],
+          [
+            1,
+            0,
+            8,
+            7,
+            4,
+            1
+          ]
+        ]
+      },
+      "predicted_case_counts": [
+        14,
+        1,
+        108,
+        41,
+        33,
+        6
+      ],
+      "true_case_counts": [
+        26,
+        10,
+        57,
+        51,
+        38,
+        21
+      ],
+      "predicted_class_diversity": 6,
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_class_support": [
+            5,
+            2,
+            20,
+            14,
+            15,
+            6
+          ]
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_class_support": [
+            6,
+            4,
+            21,
+            14,
+            14,
+            4
+          ]
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_class_support": [
+            8,
+            2,
+            16,
+            15,
+            12,
+            5
+          ]
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_class_support": [
+            8,
+            4,
+            20,
+            16,
+            10,
+            8
+          ]
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_class_support": [
+            6,
+            2,
+            14,
+            18,
+            11,
+            11
+          ]
+        }
+      ]
+    }
+  },
+  "paired_exploratory_comparisons": {
+    "quantum_vs_classical__linear_logistic": {
+      "both_correct": 33,
+      "both_wrong": 139,
+      "left_only_correct": 21,
+      "right_only_correct": 10,
+      "delta_accuracy_right_minus_left": -0.05418719211822662,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.10837438423645321,
+        0.0
+      ],
+      "exact_mcnemar_p": 0.07075554598122835
+    },
+    "quantum_vs_classical__rbf_svm": {
+      "both_correct": 47,
+      "both_wrong": 139,
+      "left_only_correct": 10,
+      "right_only_correct": 7,
+      "delta_accuracy_right_minus_left": -0.014778325123152691,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.05418719211822659,
+        0.02463054187192118
+      ],
+      "exact_mcnemar_p": 0.629058837890625
+    },
+    "quantum_vs_classical__random_forest": {
+      "both_correct": 41,
+      "both_wrong": 127,
+      "left_only_correct": 13,
+      "right_only_correct": 22,
+      "delta_accuracy_right_minus_left": 0.04433497536945813,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.009975369458128078,
+        0.09852216748768475
+      ],
+      "exact_mcnemar_p": 0.175465248990804
+    },
+    "quantum_vs_classical__knn_7": {
+      "both_correct": 38,
+      "both_wrong": 124,
+      "left_only_correct": 20,
+      "right_only_correct": 21,
+      "delta_accuracy_right_minus_left": 0.0049261083743842304,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.05911330049261082,
+        0.0640394088669951
+      ],
+      "exact_mcnemar_p": 1.0
+    },
+    "classical_64__rbf_svm_vs_linear_logistic": {
+      "both_correct": 23,
+      "both_wrong": 115,
+      "left_only_correct": 31,
+      "right_only_correct": 34,
+      "delta_accuracy_right_minus_left": 0.014778325123152691,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.06403940886699508,
+        0.08866995073891626
+      ],
+      "exact_mcnemar_p": 0.8043170001933984
+    },
+    "classical_64__random_forest_vs_linear_logistic": {
+      "both_correct": 23,
+      "both_wrong": 118,
+      "left_only_correct": 31,
+      "right_only_correct": 31,
+      "delta_accuracy_right_minus_left": 0.0,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.07389162561576351,
+        0.07881773399014777
+      ],
+      "exact_mcnemar_p": 1.0
+    },
+    "classical_64__knn_7_vs_linear_logistic": {
+      "both_correct": 18,
+      "both_wrong": 109,
+      "left_only_correct": 36,
+      "right_only_correct": 40,
+      "delta_accuracy_right_minus_left": 0.019704433497536922,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.06403940886699505,
+        0.10344827586206895
+      ],
+      "exact_mcnemar_p": 0.7310088822226056
+    },
+    "fixed_quantum_64__rbf_svm_vs_linear_logistic": {
+      "both_correct": 15,
+      "both_wrong": 121,
+      "left_only_correct": 28,
+      "right_only_correct": 39,
+      "delta_accuracy_right_minus_left": 0.05418719211822662,
+      "paired_case_bootstrap_95_percentile_ci": [
+        -0.02463054187192118,
+        0.13300492610837436
+      ],
+      "exact_mcnemar_p": 0.22154872964481104
+    },
+    "fixed_quantum_64__random_forest_vs_linear_logistic": {
+      "both_correct": 26,
+      "both_wrong": 123,
+      "left_only_correct": 17,
+      "right_only_correct": 37,
+      "delta_accuracy_right_minus_left": 0.09852216748768475,
+      "paired_case_bootstrap_95_percentile_ci": [
+        0.03448275862068961,
+        0.16748768472906406
+      ],
+      "exact_mcnemar_p": 0.009073340339587174
+    },
+    "fixed_quantum_64__knn_7_vs_linear_logistic": {
+      "both_correct": 15,
+      "both_wrong": 116,
+      "left_only_correct": 28,
+      "right_only_correct": 44,
+      "delta_accuracy_right_minus_left": 0.07881773399014777,
+      "paired_case_bootstrap_95_percentile_ci": [
+        0.0,
+        0.1576354679802956
+      ],
+      "exact_mcnemar_p": 0.07636915467183139
+    }
+  },
+  "limitations": [
+    "Exploratory, not independent patient-unique test evaluation.",
+    "Eight configurations and multiple comparisons without multiplicity correction.",
+    "Model hyperparameters are fixed engineering choices, not tuned for highest score.",
+    "The historical collapsed CNN is not retrained or directly matched in parameter count.",
+    "The four-qubit circuit is simulated and fixed, not end-to-end trained.",
+    "SVC internal probability calibration is not independently case-grouped, but uses only the outer fold's training data.",
+    "The source labels are TI-RADS categories, not histopathology-confirmed malignancy.",
+    "Paired bootstrap intervals omit retraining and fold-assignment uncertainty."
+  ]
+}
