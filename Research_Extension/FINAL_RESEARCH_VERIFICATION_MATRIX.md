@@ -110,3 +110,21 @@ The original quantum transformer caches expectation values under 8-bit quantized
 The recovered DDTI image inventory, labels, and original reported test denominators are not identical; without the authors' exact source-image IDs and actual pathology labels, complete one-to-one reconstruction cannot be certified. These are data provenance limits, not matters that arbitrary further tuning can resolve. The methodologically distinct case-stratified study remains complete and valid as an exploratory audit.
 
 **User-controlled manuscript boundary:** No IEEE manuscript or Overleaf authoring is authorized yet. Preparation may proceed through audit notes and numeric checks only; paper drafting starts only upon express instruction.
+
+## EXT-MODELS-001 eight-classifier verification — 2026-10-28
+
+**Guide-motivated follow-up, separate from the historical strict Phase14 CNN:** Four fixed classifier families (logistic regression, RBF SVM, random forest and 7-neighbor kNN) were applied to **each of two fixed 64-feature maps** (pooled grayscale and PennyLane four-qubit expectations), all on the same 203 Phase13 **training** cases grouped into five out-of-fold partitions. The earlier collapsed CNN, its test cases and its confusion matrices were not changed or refitted.
+
+**Independent numerical checks:** reconstructed 203 case predictions for each of the eight arms from 311 ROI OOF probability records; all **1,624 case rows** and **2,488 ROI rows** validated for unique identities, six normalized class probabilities, case-level averaging, predicted labels and matching confusion matrices/metrics. The script independently checked that both logistic OOF arrays match the earlier EXT-QMAP-001 reference probabilities.
+
+**Key results:** classical logistic 54/203, balanced accuracy .2522, macro-F1 .2426; classical RBF SVM 57/203, .1809/.1379; classical RF 54/203, .1892/.1786; classical kNN 58/203, .1928/.1763. Fixed quantum logistic 43/203, .2191/.2068; fixed quantum SVM 54/203, .1729/.1319; quantum RF **63/203**, .2354/.2335; quantum kNN 59/203, .2042/.1907.
+
+Quantum RF compared with matched classical RF: paired delta **+9/203 (+4.43 percentage points)**, case-bootstrap exploratory 95% CI **[−1.00, +9.85]** points, exact McNemar **p=.1755**. Quantum RF compared with case-majority reference (57/203): +6/203, two-sided McNemar **p=.5504**; baseline-only correct 32, quantum-RF-only correct 38. The highest observed balanced accuracy and macro-F1 among eight configurations were attained by **classical logistic regression**, despite quantum RF's highest raw accuracy.
+
+**Crucial class-level finding:** quantum RF outputs include all six predicted labels, but its TI-RADS 3 confusion-matrix diagonal is **0/10** (it predicts TI-RADS 3 for only one case). Both SVM variants predict only four categories. Retaining all zero confusion cells and class-level counts is scientifically necessary; a chart that simply removes zeros would misrepresent the data.
+
+**Inference and limitations:** model-family comparisons were chosen for exploratory follow-up after guide feedback, without multiplicity adjustment or a new untouched holdout. The within-quantum RF-versus-logistic comparison has unadjusted p=.0091, but this does not demonstrate general superiority after multiple comparisons and does not establish a quantum advantage. Internal SVM(probability=True) calibration was performed inside outer training folds, though its internal folds were not case-grouped; scikit-learn 1.9 reports future deprecation. No clinical, patient-level, or pathology-ground-truth inference follows.
+
+Committed source: `05_Source_Code/exp_models_001_matched_classifiers.py`. Saved results: `07_Results/exp_models_001/`. Public colour figure is source-backed in `09_Output_images/README/fig_08_matched_classifier_families_color.svg`. The `MASTER_VERIFIED_RESULTS.csv` inventory now includes all eight rows. All original models, historical charts and data remain untouched.
+
+**Readiness:** This closes the guide-requested bounded comparison. Further unconstrained classifier tuning would weaken the inferential value of these already-inspected development predictions. Manuscript work remains deliberately deferred until requested.
