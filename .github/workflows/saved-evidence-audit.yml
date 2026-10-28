@@ -1,0 +1,34 @@
+name: Verify published research evidence
+
+on:
+  push:
+    branches:
+      - research/bn-recalibration-audit
+    paths:
+      - '05_Source_Code/verify_stability_artifacts.py'
+      - '07_Results/exp_models_001/case_predictions.csv'
+      - '07_Results/exp_stability_001/**'
+      - '.github/workflows/saved-evidence-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-stability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout only code and derived prediction tables
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            05_Source_Code/verify_stability_artifacts.py
+            07_Results/exp_models_001/case_predictions.csv
+            07_Results/exp_stability_001/metrics.json
+            07_Results/exp_stability_001/seed_metrics.csv
+            07_Results/exp_stability_001/case_oof_predictions.csv
+      - name: Audit stored out-of-fold evidence without loading raw medical images
+        run: python3 05_Source_Code/verify_stability_artifacts.py
