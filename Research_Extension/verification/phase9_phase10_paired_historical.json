@@ -1,0 +1,154 @@
+{
+  "experiment": "EXT-PAIR-001 (remote saved-prediction recalculation)",
+  "method": "Read-only aligned historical prediction rows; exact binomial McNemar",
+  "sample_count": 70,
+  "reference_git_blob_shas": {
+    "07_Results/phase9_paper_tirads_class_weighted/test_predictions.csv": "ce366b3746744d5b8af31ab2b4bd302ddd7727c6",
+    "07_Results/phase10_classical_tirads_class_weighted/test_predictions.csv": "8f015c514d7a21657a904e60c01cd115667fecf9"
+  },
+  "models": {
+    "quantum": {
+      "correct": 13,
+      "accuracy": 0.18571428571428572,
+      "predicted_counts": [
+        0,
+        0,
+        2,
+        0,
+        64,
+        4
+      ],
+      "mean_top_probability": 0.17146587414400918,
+      "mean_entropy_nats": 1.7915244282605955,
+      "confusion": [
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          18,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          13,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          12,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      ]
+    },
+    "classical": {
+      "correct": 17,
+      "accuracy": 0.24285714285714285,
+      "predicted_counts": [
+        10,
+        14,
+        4,
+        22,
+        10,
+        10
+      ],
+      "mean_top_probability": 0.2332350764955793,
+      "mean_entropy_nats": 1.747455280824156,
+      "confusion": [
+        [
+          2,
+          3,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          6,
+          1,
+          6,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          6,
+          2,
+          4
+        ],
+        [
+          0,
+          1,
+          1,
+          6,
+          4,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          3,
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "paired": {
+    "both_correct": 4,
+    "both_wrong": 44,
+    "quantum_only_correct": 9,
+    "classical_only_correct": 13,
+    "accuracy_delta_classical_minus_quantum": 0.05714285714285714,
+    "exact_mcnemar_two_sided_p": 0.5234670639038086
+  },
+  "uniform_six_class_entropy_nats": 1.791759469228055,
+  "interpretation": "This is exploratory historic image-level paired evaluation with case-overlap risks, not a new case-independent experiment or a claim of classical superiority.",
+  "limitations": [
+    "Split-level case overlap existed in earlier image-level protocols; paired image samples are not independently sampled patients.",
+    "Softmax entropy near log(6) indicates near-uniform output scores, not calibrated uncertainty.",
+    "No re-fitting, new data use or model selection was performed."
+  ]
+}
