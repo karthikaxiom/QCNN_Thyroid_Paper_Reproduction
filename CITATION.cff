@@ -55,4 +55,24 @@ references:
     end: 27842
     year: 2024
     doi: "10.1109/ACCESS.2024.3367806"
-
+  - type: conference-paper
+    title: "An open access thyroid ultrasound-image database"
+    authors:
+      - family-names: Pedraza
+        given-names: Lina
+      - family-names: Vargas
+        given-names: Carlos
+      - family-names: Narvaez
+        given-names: Fabian
+      - family-names: Duran
+        given-names: Oscar
+      - family-names: Munoz
+        given-names: Emma
+      - family-names: Romero
+        given-names: Eduardo
+    conference:
+      name: "10th International Symposium on Medical Information Processing and Analysis"
+    volume: "9287"
+    year: 2015
+    doi: "10.1117/12.2073532"
+    url: "https://doi.org/10.1117/12.2073532"
