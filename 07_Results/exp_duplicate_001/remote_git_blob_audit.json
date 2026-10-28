@@ -1,0 +1,157 @@
+{
+  "experiment": "EXT-DUPLICATE-001 (remote Git-object verification)",
+  "source_tree_ref": "5f2787364d2f7c894b00cb7d729e8ca4f435a3bb",
+  "method": "Identical Git blob object SHA-1 for byte-identical raw image files; not perceptual hashing",
+  "counts": {
+    "raw_image_files": 480,
+    "distinct_raw_git_blob_hashes": 471,
+    "duplicate_groups": 6,
+    "files_in_duplicate_groups": 15,
+    "redundant_copies": 9,
+    "cross_case_duplicate_groups": 2,
+    "cross_assigned_split_duplicate_groups": 0
+  },
+  "scope": "Raw 480 ultrasound images (including images outside the strict split)",
+  "split_reference": "07_Results/phase12_case_level_split/split_case_assignments.csv",
+  "split_reference_git_blob": "55118c113ed18fa9c927b4c48f428fe2f72deffb",
+  "limitations": [
+    "Zero assigned-split overlap applies to exact-byte raw duplicates only; no image decoding or perceptual comparison performed.",
+    "Identical raw files across case IDs do not independently prove identical patients.",
+    "Unassigned or excluded files should not be treated as part of model training or test evaluation.",
+    "The frozen test-case images were not decoded or used for model selection; their Git object hashes were inspected for data integrity."
+  ],
+  "duplicate_groups": [
+    {
+      "git_blob_sha1": "1975ef3cd1502f1a58ac53031d04a1dac02e397f",
+      "files": [
+        {
+          "path": "02_Dataset_Raw/archive/230_1.jpg",
+          "case_id": "230",
+          "split": "outside_strict_split",
+          "size_bytes": 26691
+        },
+        {
+          "path": "02_Dataset_Raw/archive/230_2.jpg",
+          "case_id": "230",
+          "split": "outside_strict_split",
+          "size_bytes": 26691
+        }
+      ],
+      "cross_case": false,
+      "cross_assigned_split": false
+    },
+    {
+      "git_blob_sha1": "24f0d24d967ec75053df0d497b132e87b22a47c9",
+      "files": [
+        {
+          "path": "02_Dataset_Raw/archive/213_1.jpg",
+          "case_id": "213",
+          "split": "outside_strict_split",
+          "size_bytes": 44924
+        },
+        {
+          "path": "02_Dataset_Raw/archive/213_2.jpg",
+          "case_id": "213",
+          "split": "outside_strict_split",
+          "size_bytes": 44924
+        }
+      ],
+      "cross_case": false,
+      "cross_assigned_split": false
+    },
+    {
+      "git_blob_sha1": "258b2760604db70eae33909baa557fc8e57ee0e1",
+      "files": [
+        {
+          "path": "02_Dataset_Raw/archive/150_1.jpg",
+          "case_id": "150",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        },
+        {
+          "path": "02_Dataset_Raw/archive/233_2.jpg",
+          "case_id": "233",
+          "split": "train",
+          "size_bytes": 33556
+        },
+        {
+          "path": "02_Dataset_Raw/archive/323_1.jpg",
+          "case_id": "323",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        },
+        {
+          "path": "02_Dataset_Raw/archive/326_1.jpg",
+          "case_id": "326",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        },
+        {
+          "path": "02_Dataset_Raw/archive/349_1.jpg",
+          "case_id": "349",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        }
+      ],
+      "cross_case": true,
+      "cross_assigned_split": false
+    },
+    {
+      "git_blob_sha1": "36650dfad1899bdcd061ebb608bbd9fb014b2ec3",
+      "files": [
+        {
+          "path": "02_Dataset_Raw/archive/1_1.jpg",
+          "case_id": "1",
+          "split": "outside_strict_split",
+          "size_bytes": 29865
+        },
+        {
+          "path": "02_Dataset_Raw/archive/1_2.jpg",
+          "case_id": "1",
+          "split": "outside_strict_split",
+          "size_bytes": 29865
+        }
+      ],
+      "cross_case": false,
+      "cross_assigned_split": false
+    },
+    {
+      "git_blob_sha1": "b17433969c8b4afdd5dd3a0fb7384ce59e3c67a8",
+      "files": [
+        {
+          "path": "02_Dataset_Raw/archive/92_3.jpg",
+          "case_id": "92",
+          "split": "outside_strict_split",
+          "size_bytes": 36633
+        },
+        {
+          "path": "02_Dataset_Raw/archive/92_4.jpg",
+          "case_id": "92",
+          "split": "outside_strict_split",
+          "size_bytes": 36633
+        }
+      ],
+      "cross_case": false,
+      "cross_assigned_split": false
+    },
+    {
+      "git_blob_sha1": "f6dff5d503472be0df0d358a95001830056ebe3d",
+      "files": [
+        {
+          "path": "02_Dataset_Raw/archive/353_2.jpg",
+          "case_id": "353",
+          "split": "train",
+          "size_bytes": 34167
+        },
+        {
+          "path": "02_Dataset_Raw/archive/396_1.jpg",
+          "case_id": "396",
+          "split": "outside_strict_split",
+          "size_bytes": 34167
+        }
+      ],
+      "cross_case": true,
+      "cross_assigned_split": false
+    }
+  ]
+}
