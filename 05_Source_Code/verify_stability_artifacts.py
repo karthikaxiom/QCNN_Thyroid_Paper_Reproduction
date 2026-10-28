@@ -85,9 +85,18 @@ def verify() -> None:
     require(report["training_only_rois"] == 311, "Unexpected source ROI count")
     require(report["seed42_reference_probabilities_match"] is True,
             "Archived seed 42 check not affirmed")
-    require(hashlib.sha256(REF.read_bytes()).hexdigest()
-            == report["reference_case_predictions_sha256"],
-            "Frozen reference file hash differs")
+    # The original checksum was recorded on Windows. Git may check out a
+    # text CSV with LF rather than CRLF bytes on Linux. Accept only the saved
+    # exact hash or its *line-ending-only* CRLF equivalent; every seed-42
+    # numerical probability and case ID is also compared below.
+    raw_ref = REF.read_bytes()
+    canonical_lf = raw_ref.replace(b"\r\n", b"\n")
+    possible_hashes = {
+        hashlib.sha256(raw_ref).hexdigest(),
+        hashlib.sha256(canonical_lf.replace(b"\n", b"\r\n")).hexdigest(),
+    }
+    require(report["reference_case_predictions_sha256"] in possible_hashes,
+            "Frozen reference differs beyond permitted LF/CRLF normalization")
 
     baseline = rows(REF)
     require(len(baseline) == 8 * 203, "Expected eight archived 203-case classifier arms")
