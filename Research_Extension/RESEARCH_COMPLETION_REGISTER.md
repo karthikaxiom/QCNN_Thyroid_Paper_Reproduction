@@ -269,3 +269,50 @@ The quantum random forest exceeded the matched classical random forest by 9/203 
 **SVM technical note:** scikit-learn 1.9 emitted a FutureWarning that SVC(probability=True) is deprecated and will be removed in version 1.11. The warnings are not failed experiments. Replacing its internal probability calculation with CalibratedClassifierCV would change the model definition; any future such change must be separately versioned rather than quietly retroactively altering these saved results.
 
 **Decision:** Do not launch an unbounded accuracy search or treat the maximum of eight exploratory models as a new deployment/clinical benchmark. The remaining tasks are presentation of the full model-family comparison, candid class-level analysis, and guide review—not repeat training.
+
+## Guide-method alignment and hyperparameter closure
+
+This checkpoint addresses the guide's notes: dataset counts and class grouping, three distinct architectures, separate architecture diagrams, paper-versus-implementation differences, learning rate and optimizer settings, model size, multiple comparative baselines, sensitivity/specificity/ROC, software and hardware provenance, and a technically justified discussion of failures. **It is a research pre-submission audit, not a manuscript draft.**
+
+### Requested evidence and completion
+
+| Guide expectation | Verified status |
+| --- | --- |
+| Problem statement and objectives | Study objective is reproducibility and sensitivity of QuCNet-style TI-RADS classification; not confirmed tumor diagnosis |
+| Dataset size, source and classes | 480 raw images, 349 with recovered TI-RADS labels; Phase13 has 440 ROIs/291 case IDs, partitioned as 311/58/71 ROI and 203/44/44 case IDs |
+| Architecture diagram for each model | New colour figure distinguishes historic Phase9 QFT-CNN, strict Phase14 ROI CNN, and eight matched development configurations; the pathways are not equivalent |
+| Base paper versus reconstructed code | Full-text fidelity audit documents 128x128 full-image source, 64x64x4 four-wire features, processing and test-set mismatches |
+| Hyperparameters and model sizes | See the source-backed table below; parameters and data partitions are not estimated |
+| Fair comparison and adverse results | Eight same-fold development configurations; original collapsed Phase14 result preserved; majority-class comparison and class-coverage failure disclosed |
+| Sensitivity, specificity, ROC/AUC | Eight models × six TI-RADS one-vs-rest categories independently calculated from saved case probabilities, 48 class-model records; colour ROC and recall figures |
+| Software, hardware, and computational cost | Software/library versions and historical parameter counts available; local CPU/GPU, measured runtime, GFLOPs and energy consumption remain unverified and will not be invented |
+| Discussion and future work | Evidence and limitations documented; final paper writing deferred until authorized |
+
+### Source-backed model and hyperparameter table
+
+| Model family | Architecture and actual input | Learning method and settings | Parameters |
+| --- | --- | --- | ---: |
+| Original QuCNet article | 128x128 original input; four quantum feature channels at 64x64; Conv/Pool and dense classifier | Adam; 80/20 image split, mean/std scaling, augmentation and SMOTE described | Exact widths, counts and random filter gate parameters not fully recoverable |
+| Phase6 binary suspicion proxy | 64x64x4 QFT → Flatten → Dense128 → Dense64 → softmax2 | Adam LR 0.001; batch16; max50 epochs; EarlyStopping patience3; LR plateau patience4 | **2,105,666** |
+| Phase9 paper-structured six-class | 64x64x4 QFT → Conv16(3x3) → Pool2 → Conv32(3x3) → Pool2 → Flatten → Dense128 → Dense64 → softmax6 | Adam LR **1e-4**; batch16; max120 epochs; early stop15; LR plateau patience6; class weights/no SMOTE | **1,062,582** |
+| Phase14 strict classical ROI CNN | 64x64x1 median-padded lesion ROI → Conv32/64/64/96+BatchNorm/ReLU → global average pooling → Dense64 → softmax6 | Adam LR **0.001**; batch16; max100 epochs; early stop18; LR plateau patience7, factor0.5, min1e-6; class weights/no SMOTE | **134,742** |
+| Development logistic regression, either feature map | Each of 64 pooled intensities or 64 fixed four-qubit expectations → fold-local StandardScaler → logistic6 | Balanced, C=0.1, max_iter=1500, seed42, five case-stratified training folds | Not a CNN; no epoch/kernel |
+| Development RBF SVM, either feature map | 64 features → fold-local StandardScaler → RBF SVM | C=1, gamma=scale, balanced, probability=True; same case folds | Support-vector count not saved |
+| Development random forest, either feature map | 64 features → 300-tree ensemble | Min samples leaf=2, max_features=sqrt, balanced_subsample, seed42 | Tree/node count not saved |
+| Development kNN, either feature map | 64 features → fold-local StandardScaler → distance-weighted kNN | k=7, distance weighting; same case folds | No trainable CNN weights |
+
+Phase9 configuration records 223 training and 56 validation images from its 279 original input-side images. The Phase14 frozen partitions are 311/58/71 ROIs and 203/44/44 case IDs. Across the later model-family study, the **same 203 case IDs** provide all out-of-fold evaluations.
+
+**Software provenance:** PennyLane 0.45.1, scikit-learn 1.9.0 and NumPy 2.5.0 in fixed-feature audit records; TensorFlow 2.21.0 and NumPy 2.5.0 in Phase14 training configuration. The quantum model uses the classically simulated PennyLane default.qubit. Local hardware model, reproducible wall time, GFLOPs and energy are not established by saved records.
+
+### Why proposed automatic fixes must not be applied untested
+
+1. **No cross-dataset domain-generalization result exists.** Both source paper and reproduction are associated with DDTI, albeit different or incompletely recovered source image inventories. No second external cohort was used.
+2. **The hypothesis that 53% accuracy proves quantum saturation is unsupported.** Historical binary suspicion-proxy accuracy was 38/70 = 54.29% (balanced accuracy 50.70%), while the six-category tasks have different chance/majority baselines. Neither result identifies its own failure mechanism.
+3. **RX input angle scaling is a model choice, not an automatic repair.** The saved quantum filter uses input intensities in [0,1] radians. Expanding to [0,pi] changes the circuit and would require a new predeclared ablation. It cannot be asserted to improve results. Pauli-Z output expectations, not gate input angles, lie within [-1,1].
+4. **Do not rewrite historic splits.** Phase12 assigns disjoint case IDs before Phase13 ROI extraction. Division by the constant 255 does not estimate train/test population statistics. Later StandardScaler fitting is inside each CV fold. Cross-ID patient identity remains unknown. Earlier historical test/validation reuse and SMOTE pipeline limitations are disclosed.
+5. **Cache collision evidence is numerical, not a causal accuracy result.** Distinct synthetic float patches reused 8-bit cache keys for 2.30% of binary SMOTE and 11.60% of TI-RADS SMOTE patch occurrences; original-array training inputs showed no collisions. Quantum output/accuracy effects were not independently measured.
+6. **The highest development accuracy is not a proven advantage.** Quantum random forest obtained 63/203 (31.03%), compared with classical random forest 54/203 (26.60%) and majority-class 57/203 (28.08%). Quantum RF minus classical RF paired CI includes zero, p=.1755; its TI-RADS 3 sensitivity remains 0/10.
+7. **Guide-specific diagnostics added without retraining.** The eight-model macro one-vs-rest AUCs range from 0.5353 to 0.6069, and full sensitivity, specificity, precision, NPV and ROC data are saved under exp_eval_001. These are descriptive training-only TI-RADS ROC curves, not clinical binary cancer diagnostic ROC curves.
+
+**Scope decision:** The bounded experiments and methodological audits support research discussion with the guide. Any new data processing, gate encoding or model architecture requires a specific testable question and a separately versioned experiment; indefinite accuracy searching is not justified. **Manuscript and Overleaf drafting remain on hold until explicitly requested.**
