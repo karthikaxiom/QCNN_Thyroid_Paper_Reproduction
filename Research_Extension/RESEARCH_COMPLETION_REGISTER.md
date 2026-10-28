@@ -2,7 +2,7 @@
 
 > **Current-status rule (28 October 2026):** This is a chronological research log. Some historical section headings and interim notes still say “pending” to document progress at that point in time. They are **not** current execution instructions. The latest experiment status is found in the updated summary above, the completed EXT-STABILITY-001 section below, and `FINAL_RESEARCH_VERIFICATION_MATRIX.md`. Do not rerun completed experiments or overwrite saved results.
 
-**Status (2026-10-28):** Prespecified empirical experiments complete; independent scientific, figure and citation closeout ongoing. Manuscript preparation remains deferred.
+**Status (2026-10-28, final closeout):** Prespecified empirical experiments and source-backed numerical/figure checks complete. **Manuscript drafting is now authorized** by the researcher. The authoritative [research-to-manuscript handoff](RESEARCH_TO_MANUSCRIPT_HANDOFF.md) distinguishes verified empirical work from unresolved guide, venue, raw-data/privacy and final article-layout obligations; later historical 'pending' lines in this register must not be treated as new training instructions.
 
 This register complements the existing `README.md` and `Project_Log.txt`. It does not replace or revise the historical Phase 0–18 record.
 
