@@ -8,7 +8,7 @@ EXT-PREPROC-001,reflection_padding,case,203,51,0.251231527,0.227623168,0.2229525
 EXT-PREPROC-001,direct_stretch,case,203,57,0.280788177,0.275300431,0.268312764,training-only exploratory case-fold OOF,07_Results/exp_preproc_001/metrics.json
 EXT-QMAP-001,classical_64,case,203,54,0.266009852,0.252232769,0.242632249,training-only exploratory case-fold OOF,07_Results/exp_qmap_001/metrics.json
 EXT-QMAP-001,fixed_quantum_64,case,203,43,0.211822660,0.219088256,0.206788189,training-only exploratory case-fold OOF,07_Results/exp_qmap_001/metrics.json
-EXT-INTEGRITY-001,phase14_roi,image_or_roi,71,4,0.056338028,0.166666667,0.017777778,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-INTEGRITY-001,phase14_roi,roi,71,4,0.056338028,0.166666667,0.017777778,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
 EXT-INTEGRITY-001,phase14_case,case,44,2,0.045454545,0.166666667,0.014492754,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
-EXT-INTEGRITY-001,phase16_binary_proxy,image_or_roi,70,38,0.542857143,0.507030604,0.469696970,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
-EXT-INTEGRITY-001,phase9_quantum_sixclass,image_or_roi,70,13,0.185714286,0.151629073,0.067155067,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-INTEGRITY-001,phase16_binary_proxy,image,70,38,0.542857143,0.507030604,0.469696970,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-INTEGRITY-001,phase9_quantum_sixclass,image,70,13,0.185714286,0.151629073,0.067155067,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
