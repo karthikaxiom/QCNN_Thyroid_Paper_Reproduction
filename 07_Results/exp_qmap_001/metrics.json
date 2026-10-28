@@ -1,0 +1,955 @@
+{
+  "experiment": "EXT-QMAP-001",
+  "task": "Frozen feature-map comparison, six-class TI-RADS categories",
+  "protocol": "Fivefold training-only case-stratified out-of-fold logistic regression",
+  "evidence_level": "Exploratory fixed mapping, not full QuCNet replication",
+  "training_roi_count": 311,
+  "training_case_count": 203,
+  "feature_dimensions": {
+    "classical": 64,
+    "fixed_quantum": 64
+  },
+  "filter_configuration": {
+    "n_qubits": 4,
+    "layers": 2,
+    "encoding": "RX(pixel_intensity_radians) on four wires",
+    "ansatz": "Fixed seeded RY rotations and CNOT ring 0-1, 1-2, 2-3, 3-0 each layer",
+    "measurements": "Expectation value of Pauli-Z on each of four wires",
+    "quantum_weights_seed": 42,
+    "classifier_seed": 42,
+    "cv_folds": 5,
+    "C": 0.1,
+    "class_weight": "balanced",
+    "max_iter": 1500,
+    "quantum_batch_size": 128,
+    "bootstrap_seed": 20261028,
+    "bootstrap_case_resamples": 5000
+  },
+  "quantum_backend": "PennyLane default.qubit (shots=None)",
+  "quantum_filter_crosscheck": {
+    "n_circuit_evaluations": 4976,
+    "n_unique_patches": 4976,
+    "reference_single_patch_check_max_abs_error": 1.2571526930571508e-08,
+    "quantum_weights": [
+      [
+        2.353304971691044,
+        5.9735141613602165,
+        4.599253580133889,
+        3.761482191925223
+      ],
+      [
+        0.980294029274052,
+        0.9801424781769557,
+        0.3649500985631483,
+        5.442345232562516
+      ]
+    ],
+    "quantum_feature_std_min": 0.02305719088143973,
+    "quantum_feature_std_max": 0.04512690712143838
+  },
+  "dependencies": {
+    "pennylane": "0.45.1",
+    "sklearn": "1.9.0",
+    "numpy": "2.5.0"
+  },
+  "input_sha256": {
+    "training_images": "568378f5be77ce1f0f53306e32124d1d7d7b809a3718437d815103e491dc5c36",
+    "training_labels": "dfbf611bbc2f2bb8edf72ce561847909052181f97bbfa45306b078d631d7cafe",
+    "training_case_ids": "569c00ca502462f5a2c4896dfca4848fee53bb873953abf11409100c5dbba228",
+    "training_roi_ids": "1d71e8d8527883db06edc2d74ba9a30c5178811cdc33add8eb7342c68e316a6d",
+    "training_metadata": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+    "reference_quantum_utils": "fb5a9cb1cfb26dd1e8a77021a56c451ce5c96a979a23b63aeb3accb0dc12f42a"
+  },
+  "validation_accessed": false,
+  "test_accessed": false,
+  "original_checkpoints_modified": false,
+  "models": {
+    "classical_64": {
+      "pooled_roi": {
+        "accuracy": 0.24115755627009647,
+        "balanced_accuracy": 0.2388792421999253,
+        "macro_f1": 0.22521623372344637,
+        "confusion_matrix": [
+          [
+            3,
+            8,
+            10,
+            4,
+            6,
+            2
+          ],
+          [
+            3,
+            3,
+            2,
+            1,
+            4,
+            1
+          ],
+          [
+            19,
+            8,
+            21,
+            22,
+            15,
+            6
+          ],
+          [
+            13,
+            6,
+            20,
+            20,
+            7,
+            11
+          ],
+          [
+            8,
+            15,
+            8,
+            8,
+            14,
+            9
+          ],
+          [
+            3,
+            5,
+            2,
+            1,
+            9,
+            14
+          ]
+        ]
+      },
+      "pooled_case": {
+        "accuracy": 0.2660098522167488,
+        "balanced_accuracy": 0.2522327689510352,
+        "macro_f1": 0.24263224917095574,
+        "confusion_matrix": [
+          [
+            2,
+            6,
+            8,
+            2,
+            6,
+            2
+          ],
+          [
+            3,
+            2,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            10,
+            5,
+            17,
+            13,
+            8,
+            4
+          ],
+          [
+            8,
+            4,
+            11,
+            15,
+            6,
+            7
+          ],
+          [
+            4,
+            8,
+            8,
+            3,
+            10,
+            5
+          ],
+          [
+            2,
+            5,
+            2,
+            1,
+            3,
+            8
+          ]
+        ]
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_roi_metrics": {
+            "accuracy": 0.22580645161290322,
+            "balanced_accuracy": 0.2623015873015873,
+            "macro_f1": 0.21275416042150322,
+            "confusion_matrix": [
+              [
+                1,
+                2,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                6,
+                3,
+                3,
+                2,
+                5,
+                1
+              ],
+              [
+                2,
+                1,
+                3,
+                5,
+                0,
+                3
+              ],
+              [
+                1,
+                6,
+                1,
+                1,
+                3,
+                3
+              ],
+              [
+                2,
+                0,
+                0,
+                0,
+                3,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_roi_metrics": {
+            "accuracy": 0.31746031746031744,
+            "balanced_accuracy": 0.29563492063492064,
+            "macro_f1": 0.2554742293399281,
+            "confusion_matrix": [
+              [
+                0,
+                2,
+                3,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0
+              ],
+              [
+                4,
+                1,
+                8,
+                5,
+                1,
+                2
+              ],
+              [
+                1,
+                1,
+                3,
+                7,
+                1,
+                1
+              ],
+              [
+                0,
+                3,
+                3,
+                2,
+                2,
+                4
+              ],
+              [
+                0,
+                1,
+                1,
+                0,
+                0,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_roi_metrics": {
+            "accuracy": 0.1896551724137931,
+            "balanced_accuracy": 0.14722222222222223,
+            "macro_f1": 0.14785536524666962,
+            "confusion_matrix": [
+              [
+                2,
+                0,
+                1,
+                2,
+                3,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                4,
+                5,
+                4,
+                1
+              ],
+              [
+                6,
+                2,
+                3,
+                2,
+                0,
+                2
+              ],
+              [
+                3,
+                3,
+                1,
+                2,
+                3,
+                0
+              ],
+              [
+                0,
+                2,
+                1,
+                1,
+                1,
+                0
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_roi_metrics": {
+            "accuracy": 0.15151515151515152,
+            "balanced_accuracy": 0.1625,
+            "macro_f1": 0.1548076923076923,
+            "confusion_matrix": [
+              [
+                0,
+                2,
+                3,
+                2,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                3,
+                1,
+                2,
+                8,
+                4,
+                2
+              ],
+              [
+                2,
+                2,
+                5,
+                4,
+                2,
+                1
+              ],
+              [
+                3,
+                2,
+                2,
+                2,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                0,
+                0,
+                3,
+                3
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_roi_metrics": {
+            "accuracy": 0.3225806451612903,
+            "balanced_accuracy": 0.27825877825877826,
+            "macro_f1": 0.26385730211817165,
+            "confusion_matrix": [
+              [
+                0,
+                2,
+                1,
+                0,
+                2,
+                1
+              ],
+              [
+                2,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                3,
+                4,
+                2,
+                1,
+                0
+              ],
+              [
+                2,
+                0,
+                6,
+                2,
+                4,
+                4
+              ],
+              [
+                1,
+                1,
+                1,
+                1,
+                6,
+                1
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                2,
+                8
+              ]
+            ]
+          }
+        }
+      ],
+      "feature_dimension": 64,
+      "feature_variability": {
+        "min_feature_std": 0.07418240377826145,
+        "median_feature_std": 0.08637507725623468,
+        "max_feature_std": 0.13553727671619084
+      },
+      "predicted_case_counts": [
+        29,
+        30,
+        47,
+        35,
+        35,
+        27
+      ]
+    },
+    "fixed_quantum_64": {
+      "pooled_roi": {
+        "accuracy": 0.22186495176848875,
+        "balanced_accuracy": 0.22791634888409082,
+        "macro_f1": 0.21295227664940927,
+        "confusion_matrix": [
+          [
+            4,
+            10,
+            7,
+            2,
+            9,
+            1
+          ],
+          [
+            4,
+            2,
+            2,
+            2,
+            3,
+            1
+          ],
+          [
+            18,
+            14,
+            19,
+            16,
+            19,
+            5
+          ],
+          [
+            14,
+            7,
+            19,
+            13,
+            12,
+            12
+          ],
+          [
+            15,
+            10,
+            4,
+            8,
+            14,
+            11
+          ],
+          [
+            2,
+            5,
+            2,
+            2,
+            6,
+            17
+          ]
+        ]
+      },
+      "pooled_case": {
+        "accuracy": 0.21182266009852216,
+        "balanced_accuracy": 0.21908825608516014,
+        "macro_f1": 0.20678818850369404,
+        "confusion_matrix": [
+          [
+            3,
+            7,
+            6,
+            2,
+            7,
+            1
+          ],
+          [
+            4,
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            14,
+            8,
+            10,
+            9,
+            12,
+            4
+          ],
+          [
+            8,
+            4,
+            12,
+            11,
+            8,
+            8
+          ],
+          [
+            8,
+            6,
+            5,
+            7,
+            7,
+            5
+          ],
+          [
+            1,
+            3,
+            2,
+            2,
+            2,
+            11
+          ]
+        ]
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_roi_metrics": {
+            "accuracy": 0.1774193548387097,
+            "balanced_accuracy": 0.2043650793650794,
+            "macro_f1": 0.15847638200579375,
+            "confusion_matrix": [
+              [
+                0,
+                2,
+                1,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                4,
+                4,
+                3,
+                2,
+                5,
+                2
+              ],
+              [
+                4,
+                1,
+                3,
+                2,
+                2,
+                2
+              ],
+              [
+                2,
+                2,
+                0,
+                2,
+                4,
+                5
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                2,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 2,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_roi_metrics": {
+            "accuracy": 0.25396825396825395,
+            "balanced_accuracy": 0.22619047619047616,
+            "macro_f1": 0.21530321530321528,
+            "confusion_matrix": [
+              [
+                0,
+                4,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                2,
+                0,
+                0
+              ],
+              [
+                4,
+                3,
+                6,
+                4,
+                2,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                6,
+                0,
+                2
+              ],
+              [
+                2,
+                3,
+                2,
+                2,
+                2,
+                3
+              ],
+              [
+                0,
+                1,
+                1,
+                0,
+                0,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 3,
+          "train_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_roi_metrics": {
+            "accuracy": 0.1896551724137931,
+            "balanced_accuracy": 0.16666666666666666,
+            "macro_f1": 0.17779503105590058,
+            "confusion_matrix": [
+              [
+                2,
+                1,
+                2,
+                1,
+                2,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                1,
+                4,
+                3,
+                4,
+                0
+              ],
+              [
+                5,
+                2,
+                3,
+                2,
+                1,
+                2
+              ],
+              [
+                4,
+                4,
+                1,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                2,
+                1,
+                1,
+                0,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 4,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_roi_metrics": {
+            "accuracy": 0.21212121212121213,
+            "balanced_accuracy": 0.24583333333333335,
+            "macro_f1": 0.2248507321191567,
+            "confusion_matrix": [
+              [
+                0,
+                2,
+                2,
+                1,
+                3,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                2,
+                4,
+                3,
+                6,
+                5,
+                0
+              ],
+              [
+                2,
+                2,
+                3,
+                2,
+                5,
+                2
+              ],
+              [
+                4,
+                1,
+                0,
+                2,
+                2,
+                1
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                1,
+                6
+              ]
+            ]
+          }
+        },
+        {
+          "fold": 5,
+          "train_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_roi_metrics": {
+            "accuracy": 0.27419354838709675,
+            "balanced_accuracy": 0.2671957671957672,
+            "macro_f1": 0.23008704096423394,
+            "confusion_matrix": [
+              [
+                2,
+                1,
+                0,
+                0,
+                2,
+                1
+              ],
+              [
+                2,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                2,
+                3,
+                1,
+                3,
+                1
+              ],
+              [
+                2,
+                0,
+                7,
+                1,
+                4,
+                4
+              ],
+              [
+                3,
+                0,
+                1,
+                1,
+                4,
+                2
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                3,
+                7
+              ]
+            ]
+          }
+        }
+      ],
+      "feature_dimension": 64,
+      "feature_variability": {
+        "min_feature_std": 0.017944926599713844,
+        "median_feature_std": 0.033964278746585363,
+        "max_feature_std": 0.04982213885250862
+      },
+      "predicted_case_counts": [
+        38,
+        29,
+        36,
+        32,
+        38,
+        30
+      ]
+    }
+  },
+  "paired_case_comparison": {
+    "both_correct": 33,
+    "both_wrong": 139,
+    "classical_only_correct": 21,
+    "quantum_only_correct": 10,
+    "delta_accuracy_quantum_minus_classical": -0.05418719211822662,
+    "paired_case_bootstrap_95_percentile_ci": [
+      -0.10837438423645321,
+      0.0
+    ],
+    "exact_mcnemar_two_sided_p": 0.07075554598122835
+  },
+  "limitations": [
+    "Feature-map experiment; no trainable quantum-circuit parameters or full QuCNet CNN.",
+    "Quantum filter is a fixed random RY ansatz, not optimized by classification labels.",
+    "The 8x8 image-pooling approach differs from the 64x64 original quantum map.",
+    "The 64 classical intensities and 64 quantum expectations are equally sized but differ in nonlinear expressivity.",
+    "The sample is small, case IDs are not confirmed patient-unique, and categories are not pathology labels.",
+    "Case-bootstrap uncertainty does not include model refitting and CV-split variation.",
+    "Previously inspected test predictions are not used for model selection or new evaluation."
+  ]
+}
