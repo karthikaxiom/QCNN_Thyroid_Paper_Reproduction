@@ -1,5 +1,7 @@
 # Research extension — execution and verification register
 
+> **Current-status rule (28 October 2026):** This is a chronological research log. Some historical section headings and interim notes still say “pending” to document progress at that point in time. They are **not** current execution instructions. The latest experiment status is found in the updated summary above, the completed EXT-STABILITY-001 section below, and `FINAL_RESEARCH_VERIFICATION_MATRIX.md`. Do not rerun completed experiments or overwrite saved results.
+
 **Status (2026-10-28):** Prespecified empirical experiments complete; independent scientific, figure and citation closeout ongoing. Manuscript preparation remains deferred.
 
 This register complements the existing `README.md` and `Project_Log.txt`. It does not replace or revise the historical Phase 0–18 record.
@@ -20,7 +22,7 @@ This register complements the existing `README.md` and `Project_Log.txt`. It doe
 | EXT-DEV-001 | Can simple ultrasound intensity/gradient features classify six TI-RADS categories? | Completed; training-only fivefold case-stratified CV. Pooled case accuracy 22.17%; majority baseline 28.08%. |
 | EXT-DATA-001 | What is the provenance of binary labels and the case-ID integrity? | Completed locally; 349 TI-RADS-labeled images and 131 unlabeled; zero case-ID overlap across frozen partitions; binary labels are derived proxies. Check whether its local files were committed before attempting synchronization. |
 | EXT-META-001 | How much categorical information resides in ROI annotation geometry? | Completed; training-only CV; pooled case accuracy 19.21% and balanced accuracy 22.70%. |
-| EXT-FUSION-001 | Do image and annotation-geometry features provide complementary information? | Script committed; **real-data run pending**. |
+| EXT-FUSION-001 | Do image and annotation-geometry features provide complementary information? | **Completed**; 203 training cases, fusion 46/203 versus image-only 45/203, with no reliable advantage. Independent paired audit and full outputs committed. |
 
 ## Remaining research gates
 
