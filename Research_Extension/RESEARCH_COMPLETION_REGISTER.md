@@ -213,3 +213,18 @@ The three pre-flagged cross-split raw ultrasound pairs were reviewed directly. N
 **Consolidated closeout document:** `Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md`.
 
 **Current decision: empirical experiment gate CLOSED; manuscript gate NOT YET OPEN** until the final publication-readiness checks documented in that matrix pass. The historical README, original checkpoints, and prior result records remain unmodified.
+
+## EXT-CACHE-001 — completed numerical cache-key audit
+
+The local read-only audit completed successfully on 28 October 2026 against four training inputs, using the historical 8-bit patch-key operation in `utilities/dataset_transformer.py`.
+
+| Source | Images | Distinct colliding cache keys | Later patches differing from first input / total |
+| --- | ---: | ---: | ---: |
+| Original binary training | 279 | 0 | 0 / 1,142,784 (0%) |
+| SMOTE-expanded binary training | 306 | 17,535 | 28,766 / 1,253,376 (2.30%) |
+| Original TI-RADS training | 279 | 0 | 0 / 1,142,784 (0%) |
+| SMOTE-expanded TI-RADS training | 462 | 84,657 | 219,533 / 1,892,352 (11.60%) |
+
+The source report was generated locally as `07_Results/exp_cache_001/quantum_cache_key_audit.json` and awaits synchronization. Numeric collisions are confirmed for synthetic patches, but neither a per-circuit expectation-value error nor a model-accuracy effect has been measured. The 279 original TI-RADS images form the verified prefix of the historical 462-image SMOTE tensor (`07_Results/phase9_reproduction_audit/audit_report.txt`); no original-only collisions were detected. Under a fresh sequential cache pass, synthetic collisions after that prefix would not retroactively affect its original images. Avoid asserting exact saved-output equivalence without a corresponding hash/feature comparison.
+
+This finding changes the interpretation of the early SMOTE pipelines, not their frozen stored results. Further full training, source-data changes and manuscript preparation remain outside the current scope. The cache audit is covered in `Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md` and `FINAL_RESEARCH_VERIFICATION_MATRIX.md`.
