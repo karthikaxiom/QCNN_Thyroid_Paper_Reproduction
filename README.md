@@ -1914,6 +1914,8 @@ python -c "import sklearn; print(sklearn.__version__)"
 
 # Dataset Preparation
 
+**Local XML audit update (28 October 2026, researcher-reported):** The complete structural scanner processed **390/390 XMLs** (0 parsing errors, 0 skipped for size), found `age` and `sex` field occurrences in all 390, flagged **no identifier-like field names, email-pattern matches or phone-pattern matches**, and counted **21 populated clinical free-text fields**. The exact [aggregate-only screening record](Research_Extension/DDTI_XML_LOCAL_PRIVACY_SCREEN_RESULT.md) includes the command and limitations. The remaining steps are reviewing those narrative entries privately on the local machine and checking source JPG overlays before claiming privacy clearance. This does not settle third-party raw-image/XML redistribution terms or establish patient anonymity.
+
 **Dataset-release correction (28 October 2026):** This public repository **currently includes 480 tracked ultrasound JPGs and 390 XML files** under `02_Dataset_Raw/archive/`. The earlier claim that the raw DDTI dataset was not redistributed was incorrect. Source-data redistribution permission and any identifying content in images/XML remain unverified. The repository's MIT software license **does not establish** rights over third-party clinical data. See [release decision](Research_Extension/DATA_RELEASE_PERMISSION_DECISION.md) before reusing or sharing the source files. `.gitignore` does not remove files from the history; no destructive change has been made.
 
 Users must obtain the dataset separately and place it inside the expected raw-data directory.
