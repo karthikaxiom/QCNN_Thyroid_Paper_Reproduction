@@ -1,0 +1,404 @@
+{
+  "experiment": "EXT-BN-001",
+  "purpose": "Training-only BN statistics diagnostic; not independent model validation",
+  "partitions_used": [
+    "train",
+    "validation"
+  ],
+  "test_data_accessed": false,
+  "learned_weights_updated": false,
+  "checkpoint_sha256": "3beb16e985a3ec1f66c0d54d50078d6079541f5b4b09bed5796613d3bd40f5a1",
+  "input_sha256": {
+    "X_train": "568378f5be77ce1f0f53306e32124d1d7d7b809a3718437d815103e491dc5c36",
+    "y_train": "dfbf611bbc2f2bb8edf72ce561847909052181f97bbfa45306b078d631d7cafe",
+    "X_validation": "b2a0605babe382dfe4e38096345382d15e4eebf1ab26ad555dda9de6f3847cb8",
+    "y_validation": "843a1467711868d57e6494b29defd88f1e125025c13a90d6009ef8fd8b2a8ddf"
+  },
+  "restoration_max_difference": 0.0,
+  "bn_statistics": [
+    {
+      "layer": "batch_normalization",
+      "number": 1,
+      "original_median_variance": 0.8181313276290894,
+      "recalibrated_median_variance": 0.001403558570012975
+    },
+    {
+      "layer": "batch_normalization_1",
+      "number": 2,
+      "original_median_variance": 0.8483493328094482,
+      "recalibrated_median_variance": 0.18293259347991658
+    },
+    {
+      "layer": "batch_normalization_2",
+      "number": 3,
+      "original_median_variance": 0.8849278688430786,
+      "recalibrated_median_variance": 0.3543711789045417
+    },
+    {
+      "layer": "batch_normalization_3",
+      "number": 4,
+      "original_median_variance": 0.8783087730407715,
+      "recalibrated_median_variance": 0.32771362303322904
+    },
+    {
+      "layer": "batch_normalization_4",
+      "number": 5,
+      "original_median_variance": 0.9270948767662048,
+      "recalibrated_median_variance": 0.45209391987388825
+    },
+    {
+      "layer": "batch_normalization_5",
+      "number": 6,
+      "original_median_variance": 0.8796074390411377,
+      "recalibrated_median_variance": 0.36412162182950997
+    },
+    {
+      "layer": "batch_normalization_6",
+      "number": 7,
+      "original_median_variance": 0.9608824253082275,
+      "recalibrated_median_variance": 0.5621094438425469
+    }
+  ],
+  "evaluations": [
+    {
+      "condition": "original",
+      "partition": "train",
+      "samples": 311,
+      "accuracy": 0.04501607717041801,
+      "balanced_accuracy": 0.16666666666666666,
+      "macro_f1": 0.014358974358974359,
+      "majority_baseline_accuracy": 0.29260450160771706,
+      "true_counts": [
+        33,
+        14,
+        91,
+        77,
+        62,
+        34
+      ],
+      "predicted_counts": [
+        0,
+        311,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_max_probability": 0.18859922885894775,
+      "mean_entropy": 1.7894086837768555,
+      "per_class_probability_std": [
+        0.00018365618598181754,
+        0.00038985212449915707,
+        0.0007540659862570465,
+        0.0007052923901937902,
+        0.00011591660586418584,
+        0.0005373464082367718
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          33,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          91,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          77,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          62,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          34,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "condition": "original",
+      "partition": "validation",
+      "samples": 58,
+      "accuracy": 0.034482758620689655,
+      "balanced_accuracy": 0.16666666666666666,
+      "macro_f1": 0.011111111111111112,
+      "majority_baseline_accuracy": 0.29310344827586204,
+      "true_counts": [
+        7,
+        2,
+        17,
+        14,
+        9,
+        9
+      ],
+      "predicted_counts": [
+        0,
+        58,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_max_probability": 0.1886451542377472,
+      "mean_entropy": 1.789405345916748,
+      "per_class_probability_std": [
+        0.00014501270197797567,
+        0.0003567364765331149,
+        0.0006500594899989665,
+        0.0006125802756287158,
+        9.095789573621005e-05,
+        0.00045580120058730245
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "condition": "recalibrated",
+      "partition": "train",
+      "samples": 311,
+      "accuracy": 0.2057877813504823,
+      "balanced_accuracy": 0.24191531639349476,
+      "macro_f1": 0.19118047796817572,
+      "majority_baseline_accuracy": 0.29260450160771706,
+      "true_counts": [
+        33,
+        14,
+        91,
+        77,
+        62,
+        34
+      ],
+      "predicted_counts": [
+        66,
+        59,
+        88,
+        45,
+        18,
+        35
+      ],
+      "mean_max_probability": 0.24157525599002838,
+      "mean_entropy": 1.7413721084594727,
+      "per_class_probability_std": [
+        0.0323481485247612,
+        0.06540494412183762,
+        0.06306875497102737,
+        0.05282111093401909,
+        0.029669025912880898,
+        0.04362975060939789
+      ],
+      "confusion_matrix": [
+        [
+          7,
+          11,
+          6,
+          4,
+          1,
+          4
+        ],
+        [
+          2,
+          7,
+          4,
+          0,
+          0,
+          1
+        ],
+        [
+          20,
+          15,
+          27,
+          16,
+          7,
+          6
+        ],
+        [
+          17,
+          6,
+          29,
+          11,
+          4,
+          10
+        ],
+        [
+          17,
+          11,
+          17,
+          7,
+          4,
+          6
+        ],
+        [
+          3,
+          9,
+          5,
+          7,
+          2,
+          8
+        ]
+      ]
+    },
+    {
+      "condition": "recalibrated",
+      "partition": "validation",
+      "samples": 58,
+      "accuracy": 0.1896551724137931,
+      "balanced_accuracy": 0.18471833177715533,
+      "macro_f1": 0.17407407407407405,
+      "majority_baseline_accuracy": 0.29310344827586204,
+      "true_counts": [
+        7,
+        2,
+        17,
+        14,
+        9,
+        9
+      ],
+      "predicted_counts": [
+        11,
+        19,
+        13,
+        4,
+        2,
+        9
+      ],
+      "mean_max_probability": 0.24039728939533234,
+      "mean_entropy": 1.7454867362976074,
+      "per_class_probability_std": [
+        0.028399605304002762,
+        0.06724503636360168,
+        0.0672784149646759,
+        0.04441775009036064,
+        0.029379483312368393,
+        0.04446741193532944
+      ],
+      "confusion_matrix": [
+        [
+          3,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          4,
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          3,
+          4,
+          0,
+          0,
+          4
+        ],
+        [
+          3,
+          3,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          2,
+          0,
+          0,
+          4
+        ]
+      ]
+    }
+  ]
+}
