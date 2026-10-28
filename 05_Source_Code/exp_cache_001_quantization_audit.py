@@ -1,4 +1,4 @@
-"""EXT-CACHE-001: read-only historical quantum cache-key collision audit.
+r"""EXT-CACHE-001: read-only historical quantum cache-key collision audit.
 
 The historical dataset transformer memoizes quantum-circuit outputs using
     (patch * 255).astype(np.uint8).tobytes().
