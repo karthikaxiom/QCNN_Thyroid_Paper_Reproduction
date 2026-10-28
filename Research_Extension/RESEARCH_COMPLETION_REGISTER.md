@@ -154,3 +154,19 @@ Only two targeted gates remain before manuscript readiness assessment:
 2. **Matched quantum-vs-classical study:** A prespecified, affordable training-only case-stratified comparison of the *existing fixed, simulated four-qubit quantum feature mapping* against appropriately matched classical features on identical cases/folds. Explicitly distinguish this feature-map study from full original QuCNet reproduction. Do not choose a model via previously inspected test data.
 
 After these, close the experimental register, finish mathematical/figure/limitations checks, improve the existing README only where verified, and prepare the manuscript. Avoid open-ended model searches.
+
+## Independent rederivation of EXT-PREPROC-001
+
+The uploaded `07_Results/exp_preproc_001/oof_predictions.csv` contains 311 out-of-fold ROI predictions **per model**, aligned to 203 unique case IDs. I independently re-aggregated the six predicted probabilities to cases by mean, obtained argmax labels, constructed each 6×6 confusion matrix and recalculated accuracy, balanced accuracy and macro-F1. All nine resulting scores match `07_Results/exp_preproc_001/metrics.json` to numerical precision:
+
+- Median-original: 45/203, accuracy 0.221675, balanced 0.201021, macro-F1 0.197484.
+- Reflection: 51/203, accuracy 0.251232, balanced 0.227623, macro-F1 0.222953.
+- Direct stretch: 57/203, accuracy 0.280788, balanced 0.275300, macro-F1 0.268313.
+
+This confirms metric/data consistency, not improvement significance or external validity.
+
+## EXT-NEARDUP-001 — prespecified perceptual candidate screen (pending local run)
+
+Code: `05_Source_Code/exp_neardup_001_integrity.py`, committed after result synchronization. It checks 480 raw files using deterministic 64-bit pHash and dHash measurements with frozen candidate thresholds and reports candidate pairs, exact same-byte indicators and whether candidate files span different assigned Phase 12 splits. This scan **decodes raw images from all splits, including test, solely for data-integrity screening**. It does not access predictions or train models. Do not interpret a flagged candidate as confirmed patient duplication, and manually review any cross-split candidates before drawing a leakage conclusion. Resizing, crop changes and shadows can cause perceptual false positives/negatives.
+
+After its outputs are preserved, the only planned new model investigation is a bounded, matched feature-map audit involving the existing simulated four-qubit filter and a classical comparator, on the same training-only case folds. The final paper remains deferred until the methods, figures and results are verified.
