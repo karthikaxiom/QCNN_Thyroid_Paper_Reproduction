@@ -1523,3 +1523,272 @@ README documentation         : COMPLETED
 Chronological project log    : COMPLETED
 Original reproduction scope  : CLOSED
 Next formal deliverable      : RESEARCH PAPER
+
+===============================================================
+Date: 28-10-2026
+
+RESEARCH EXTENSION CLOSEOUT AND IEEE MANUSCRIPT HANDOFF - 28-10-2026
+===============================================================
+
+Objective
+---------
+Today I consolidated and verified the independent QuCNet reproduction
+and methodological reliability investigation, organized the evidence
+for publication, and prepared the working IEEE Access LaTeX project.
+
+This is a dated addendum to the original June-July project journal.
+I did not erase or rewrite historical entries, even where subsequent
+audits corrected their interpretation. The extension experiments are
+tracked using distinct EXT-* names and repository result folders.
+I have NOT introduced a "Phase 19" reproduction-model experiment.
+
+1. Original source paper and scientific scope
+---------------------------------------------
+Source: Gunti Swathi, Ali Altalbe and R. Prasanna Kumar,
+"QuCNet: Quantum-Inspired Convolutional Neural Networks for Optimized
+Thyroid Nodule Classification", IEEE Access 12 (2024),
+pp. 27829-27842, DOI 10.1109/ACCESS.2024.3367806.
+
+I examined the original paper against the recovered DDTI data and
+saved implementation, including the circuit specification, image
+geometry, preprocessing, evaluation tasks, model architecture,
+training details and test denominators. This is a method-fidelity
+audit, not an exact reconstruction of unavailable source parameters.
+
+The original paper reports 97.63% for tumor classification and
+93.87% for the suspicious-level task. These are not directly matched
+estimates against this project's six-category case-fold results.
+The historical binary label mapping in this repository is derived
+from TI-RADS suspicion categories, not verified pathology diagnoses.
+
+2. Authoritative dataset and split evidence
+-------------------------------------------
+Raw JPG images                       : 480
+Raw XML annotations                  : 390
+Images with usable six-class labels  : 349
+Strict unique ROI geometries         : 440
+Distinct RECORDED case IDs           : 291
+
+Frozen train                          : 311 ROIs / 203 case IDs
+Frozen validation                     : 58 ROIs / 44 case IDs
+Historical test                       : 71 ROIs / 44 case IDs
+
+No case ID is shared across these three recorded partitions.
+However, case IDs were not independently proven to identify unique
+patients. All study tables and paper text must preserve this limit.
+
+Six available source categories are TI-RADS 2, 3, 4a, 4b, 4c, 5.
+
+Corrected historical strict Phase 14 test:
+ROI accuracy                          : 4/71 = 5.63%
+Case-ID aggregated accuracy           : 2/44 = 4.55%
+Observed model behavior               : TI-RADS 3-only predictions
+
+This old test was previously consulted. It must not be called a
+new untouched evaluation for the later exploratory extensions.
+The older 449-ROI results remain part of the historical log.
+
+3. Completed methodological extension investigations
+----------------------------------------------------
+I retained named, source-backed results for:
+- Original CNN/BatchNorm running-statistics and inference behavior;
+- image, XML, label, case, annotation and ROI data provenance;
+- exact and perceptual near-duplicate image investigation;
+- ROI preprocessing, square padding, direct resizing and distortion;
+- annotation geometry and image/geometry feature fusion;
+- padding extent versus observed predictive log loss;
+- quantum feature-map cache integrity and finite-precision effects;
+- matched classical and fixed simulated quantum feature extraction;
+- logistic regression, random forest, SVM and KNN comparisons;
+- five seed-dependent case-stratified fold assignments;
+- six-class recall, confusion matrices, predicted probabilities
+  and calibration/reliability analysis.
+
+The quantum feature control is a fixed, simulated four-qubit
+PennyLane RX/RY/CNOT/Pauli-Z feature map, not a trainable end-to-end
+quantum convolutional network and not physical quantum hardware.
+No quantum computational advantage or clinical deployment is claimed.
+
+All routine empirical extensions are finished at the archived scope.
+No additional accuracy-seeking model experiments were performed for
+today's paper-preparation work.
+
+4. Selected results and appropriate denominators
+------------------------------------------------
+Development analysis uses 203 original train case IDs in
+case-stratified out-of-fold predictions. These 203 IDs are reused
+across model families and repeated fold-assignment seeds.
+
+Majority-class reference             : 57/203 = 28.08%
+Classical 64-feature logistic        : 54/203 = 26.60%
+Fixed-quantum 64-feature logistic    : 43/203 = 21.18%
+Classical 64-feature random forest   : 54/203 = 26.60%
+Fixed-quantum 64-feature forest      : 63/203 = 31.03%
+
+Forest accuracy means across the five recorded split seeds:
+Classical                              : 27.49%
+Fixed quantum                          : 29.36%
+
+The random-forest ranking reverses under one seed, and both RF
+variants recover none of the same 10 TI-RADS 3 cases across every
+seed. The apparent single-seed quantum forest increase is not
+confirmed robust superiority. Exploratory paired McNemar tests,
+bootstrap uncertainty and probability analyses were documented
+without claiming clinical or out-of-sample proof.
+
+The 55/100 approximate implementation-fidelity score in the
+paper-to-code report is a rubric score, NOT classification accuracy.
+There is NO one universal percentage for this research project.
+
+5. Reproducibility and audit automation
+---------------------------------------
+Independent standard-library checks were added for:
+- all master source-backed metrics and confusion matrices;
+- 4,060 repeated-fold case prediction records;
+- 1,624 saved prediction/probability records across eight models;
+- 80 multiclass calibration bins;
+- 291 recorded case IDs and 440 ROI metadata entries;
+- the saved experimental figure and vector export inventory.
+
+GitHub Actions saved-evidence verification:
+https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40667327897
+Status: successful.
+
+These checks recompute recorded outputs; they do not assert that a
+new end-to-end training run occurred or that patients are unique.
+
+6. Dataset permissions and privacy screening
+---------------------------------------------
+The source JPG and XML files were already publicly tracked in the
+repository's historical Git record. The project's MIT software
+license does not automatically authorize redistribution of the
+original dataset. The university source and Kaggle listing were
+reviewed, but an unrestricted source-data redistribution grant
+has not been independently established.
+
+The initial local read-only XML structural scanner successfully
+parsed 390/390 XML files, with zero parse/oversize errors and
+21 populated clinical narrative fields. It printed aggregate counts
+only. A more conservative independent CI pattern screening then
+processed all 390 tracked XML records and flagged:
+Narrative field occurrences             : 21
+Potential date/year                     : 1
+Unusually long narrative                : 1
+Other fields with no configured flag     : 19
+Email/phone or identifier phrase matches: 0
+Parsing errors                          : 0
+
+Verified CI run:
+https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40668545283
+
+The two flags require qualified follow-up before a privacy-clear
+claim. A zero regex match is not a de-identification certificate.
+Full original-image overlays, consents and redistribution permissions
+are NOT certified. No private clinical-text values are reproduced
+in this log. The old interactive 21-prompt exercise was superseded
+by the aggregate-only scan.
+
+7. Publication figures and source consistency
+----------------------------------------------
+I audited 24 committed SVG vector files and matched 15 original
+experiment SVG/PNG/PDF export triplets without retraining models.
+
+I then prepared two separate source-derived publication candidates:
+A. eight-model classical/fixed-quantum classifier comparison:
+   accuracy, six-class balanced accuracy and macro-F1.
+B. five-seed logistic/forest case-fold sensitivity comparison:
+   both feature mappings and majority-class reference.
+
+The reproducible figure script validates original JSON and CSV
+results before producing two SVG, two vector PDF and two 300-dpi
+PNG files with a SHA-256 evidence manifest. I inspected the exports,
+noticed an overlapping legend problem, corrected the plotting
+layout, and checked both final PNG and rendered PDF previews.
+Original historical plots and numerical results were not overwritten.
+
+Corrected independent figure build:
+https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669696948
+
+The export proofs do not replace placement and visual review in
+the actual compiled IEEE paper template.
+
+8. Novelty, validation and source-governance decisions
+-----------------------------------------------------
+The related-work and contribution review positions this as a
+QuCNet-specific reproducibility and evaluation-reliability study.
+Its contribution is the combined source-protocol audit, DDTI
+provenance, case/ROI evaluation, fixed quantum-versus-classical
+comparison and model failure/reliability analysis.
+
+Possible external thyroid datasets were screened. None had yet
+been shown to provide an immediately compatible, independently
+accessible six-class endpoint with the same original categories.
+Therefore, NO external clinical dataset was tested, and no
+independent multi-institutional validation is claimed.
+
+Publication-ready documentation records the remaining decisions:
+- the guide/editor must judge the scientific contribution and venue;
+- confirmed author order, affiliations, funding and disclosures;
+- source-data privacy and raw-file redistribution decisions;
+- complete article citations and IEEE requirements;
+- final figure sizing, PDF compile, and manuscript proof.
+
+These are SUBMISSION requirements, not unfinished model training.
+
+9. GitHub consolidation and manuscript handoff
+----------------------------------------------
+The repository's 185 additional research commits and 148 changed
+files were compared with main before integration. No historical raw
+archive, source-paper or saved-model directory files were changed
+by the extension branch comparison.
+
+A pull request integrated the research extension into main,
+preserving the research branch and earlier commit history:
+Pull Request                            : #1
+Verified main merge SHA                 : 8b5556c4ef4c18ea89c75decbeaf06234166c484
+
+The default README now links the current evidence, scripts,
+numerical results, figures and the research-to-manuscript handoff:
+Research_Extension/RESEARCH_TO_MANUSCRIPT_HANDOFF.md
+Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md
+Research_Extension/SCIENTIFIC_CONTRIBUTION_AND_NOVELTY_REVIEW.md
+Research_Extension/IEEE_PRINT_FIGURE_GENERATION_RECORD.md
+
+10. IEEE ACCESS OVERLEAF PROJECT VERIFIED BY SCREENSHOT
+------------------------------------------------------
+I opened the imported official IEEE Access paper preparation
+template in Overleaf. The screenshot shows the access.tex editor,
+documentclass{ieeeaccess}, and the template compiled into an
+eight-page example PDF. This establishes that the template
+workspace is available and visually rendering. The journal's
+example article text has NOT yet been replaced with this study.
+
+The upcoming paper must be written from verified source evidence,
+one section at a time, with mathematical definitions aligned to
+the code and clear distinctions among image/ROI/case/patient,
+published source performance and independently re-evaluated results.
+No raw clinical JPG or XML is needed in the Overleaf project.
+
+Research status at today's close
+--------------------------------
+Original Phases 0-18                : PRESERVED
+Empirical EXT-* investigations     : COMPLETED AT DOCUMENTED SCOPE
+Independent evidence verification  : PASSED
+Dataset rights/full privacy review : OPEN FOR SUBMISSION
+External clinical validation       : NOT ESTABLISHED
+Guide/venue judgment               : OPEN
+Publication figure candidates      : PREPARED
+Official IEEE Access workspace     : IMPORTED AND COMPILED
+Manuscript writing                 : NEXT PHASE, NOT YET STARTED
+Routine retraining                 : NOT PLANNED
+
+Final research decision
+-----------------------
+I am retaining the full chronology of the work, including weaker
+results and corrected assumptions, and will use the audited
+evidence rather than any invented performance or causal claim.
+The next deliverable is a defensible IEEE-style research manuscript.
+New analyses will be introduced only if a real correctness issue
+is demonstrated; otherwise the research is frozen for writing.
+
+===============================================================
