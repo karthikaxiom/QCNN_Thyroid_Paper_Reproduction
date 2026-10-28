@@ -7,6 +7,12 @@ on:
     paths:
       - '05_Source_Code/verify_stability_artifacts.py'
       - '05_Source_Code/verify_calibration_artifacts.py'
+      - '05_Source_Code/verify_master_inventory.py'
+      - 'Research_Extension/MASTER_VERIFIED_RESULTS.csv'
+      - '07_Results/exp_fusion_001/metrics.json'
+      - '07_Results/exp_preproc_001/metrics.json'
+      - '07_Results/exp_qmap_001/metrics.json'
+      - '07_Results/exp_integrity_001/historical_metrics_audit.json'
       - '07_Results/exp_calib_001/**'
       - '07_Results/exp_models_001/metrics.json'
       - '07_Results/exp_models_001/case_predictions.csv'
@@ -30,6 +36,12 @@ jobs:
           sparse-checkout: |
             05_Source_Code/verify_stability_artifacts.py
             05_Source_Code/verify_calibration_artifacts.py
+            05_Source_Code/verify_master_inventory.py
+            Research_Extension/MASTER_VERIFIED_RESULTS.csv
+            07_Results/exp_fusion_001/metrics.json
+            07_Results/exp_preproc_001/metrics.json
+            07_Results/exp_qmap_001/metrics.json
+            07_Results/exp_integrity_001/historical_metrics_audit.json
             07_Results/exp_models_001/metrics.json
             07_Results/exp_calib_001/calibration_metrics.json
             07_Results/exp_calib_001/calibration_bins.csv
@@ -41,3 +53,4 @@ jobs:
         run: |
           python3 05_Source_Code/verify_stability_artifacts.py
           python3 05_Source_Code/verify_calibration_artifacts.py
+          python3 05_Source_Code/verify_master_inventory.py
