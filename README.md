@@ -3,7 +3,7 @@
 
 # Reproduction and Methodological Audit of QuCNet for Thyroid Nodule Classification
 
-> **Scientific and data-release scope:** Evaluations described as *case-separated* ensure no repeated **recorded case ID** across their respective folds/partitions; the archive does **not** establish distinct patient identities. Earlier phase titles using “leakage-free” refer to case-ID grouping only and must not be read as proof of patient-level independence. The source data remain subject to the unresolved redistribution assessment linked below. The [research extension branch](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/tree/research/bn-recalibration-audit) contains the current audit; the default `main` branch preserves earlier historical work.
+> **Scientific and data-release scope:** Evaluations described as *case-separated* ensure no repeated **recorded case ID** across their respective folds/partitions; the archive does **not** establish distinct patient identities. Earlier phase titles using “leakage-free” refer to case-ID grouping only and must not be read as proof of patient-level independence. The source data remain subject to the unresolved redistribution assessment linked below. The verified empirical research and publication-readiness evidence are integrated into the default `main` branch; the [research extension branch](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/tree/research/bn-recalibration-audit) remains available for traceability. This does not resolve the original source data's redistribution/privacy questions.
 
 
 ### A Systematic Reproduction Study of Quantum-Inspired Deep Learning for Thyroid Ultrasound Classification Using the Public DDTI Dataset
@@ -22,6 +22,18 @@
 ![Quantum Backend](https://img.shields.io/badge/Quantum%20Backend-PennyLane%200.45.1-7B2CBF)
 
 </div>
+
+---
+
+## Research closeout — writing phase (28 October 2026)
+
+**The experimental and evidence-verification phase is complete at the documented methodological scope.** The current task is to write and defend an independent **QuCNet reproduction and evaluation-reliability manuscript**, not to tune model accuracy or claim clinical deployment. The authoritative [research-to-manuscript handoff](Research_Extension/RESEARCH_TO_MANUSCRIPT_HANDOFF.md) gives the complete verified result ledger, publication figure sources, exact original-paper citation, planned IEEE sections, and the research claims we must avoid.
+
+- **Evidence:** fivefold recorded-case-ID-grouped out-of-fold comparisons on **203 original training cases**, all saved model and case-level checks, five-seed stability, calibration and label/split provenance. Frozen 291 recorded case IDs / 440 strict ROIs are documented; distinct patients are **not** independently verified.
+- **Numerical publication candidates:** source-generated double-column figures of eight matched classifier arms and five-seed fold sensitivity; [passing independent build](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669696948), with SVG/vector PDF/PNG and verified hashes.
+- **No external clinical validation claimed.** Original QuCNet performance and these evaluation protocols are **not directly interchangeable**. All six labels are recorded TI-RADS categories, not pathology-confirmed ground truth.
+- **Still open for submission:** academic guide/coauthor approval of novelty, source JPG/XML rights/privacy decision (including image overlays), chosen journal requirements, authorship and applicable disclosures, and final IEEE layout proof. These are disclosed constraints, not invitations to invent test results.
+- **Writing rule:** do not overwrite archived empirical artifacts, conduct repeated exploratory retraining or copy source medical images/XML into Overleaf. Start the official IEEE LaTeX template and draft one source-checked section at a time.
 
 ---
 
