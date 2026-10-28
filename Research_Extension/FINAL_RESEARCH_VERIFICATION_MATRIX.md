@@ -143,6 +143,10 @@ Committed source: `05_Source_Code/exp_models_001_matched_classifiers.py`. Saved 
 
 ## Targeted related-work and contribution audit — 2026-10-28
 
+**Gate 1 update:** The newer, more comprehensive [scientific contribution and novelty review](SCIENTIFIC_CONTRIBUTION_AND_NOVELTY_REVIEW.md) also examines **two directly relevant 2026 quantum-inspired thyroid-ultrasound studies** (Behuria et al., DOI 10.36922/AIH026050007; Raghaw et al., DOI 10.1002/ima.70428), plus close 2025–2026 medical QML reproducibility papers. It records a precise claim/evidence matrix and reviewer objections. Our novelty is a **QuCNet/DDTI-specific reproducibility audit**, not first-of-kind quantum thyroid classification or an original QCNN. Suitability for a particular journal remains a guide/editor judgment.
+
+
+
 This is a **research-positioning note, not manuscript prose**. The following publicly published works were checked against the proposed contribution; they do not validate our dataset or outcomes.
 
 | Prior work (verified source) | Existing contribution | What is / is not distinctive here |
