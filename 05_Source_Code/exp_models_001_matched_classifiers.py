@@ -1,4 +1,4 @@
-"""EXT-MODELS-001: controlled multi-classifier comparison on identical case folds.
+r"""EXT-MODELS-001: controlled multi-classifier comparison on identical case folds.
 
 This is an exploratory follow-up motivated by the single-class collapse of
 the historical Phase 14 CNN. It does NOT replace or repair historical scores.
@@ -334,10 +334,10 @@ def main():
                             va="center", fontsize=8)
         ax.set_xlim(0, 100)
         ax.set_yticks(ys, [name.replace("_", " ").upper() for name in MODELS])
-        ax.invert_yaxis()
         ax.set_title("Case-level " + metric.replace("_", " "), fontsize=12)
         ax.set_xlabel("Percentage (absolute scale)")
         ax.grid(axis="x", alpha=.25)
+    a0.invert_yaxis()
     a0.legend(loc="lower right", fontsize=8)
     fig.suptitle("Matched classifier families on the same 203 training cases",
                  fontsize=14)
