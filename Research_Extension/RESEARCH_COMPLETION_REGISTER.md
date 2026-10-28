@@ -170,3 +170,27 @@ This confirms metric/data consistency, not improvement significance or external 
 Code: `05_Source_Code/exp_neardup_001_integrity.py`, committed after result synchronization. It checks 480 raw files using deterministic 64-bit pHash and dHash measurements with frozen candidate thresholds and reports candidate pairs, exact same-byte indicators and whether candidate files span different assigned Phase 12 splits. This scan **decodes raw images from all splits, including test, solely for data-integrity screening**. It does not access predictions or train models. Do not interpret a flagged candidate as confirmed patient duplication, and manually review any cross-split candidates before drawing a leakage conclusion. Resizing, crop changes and shadows can cause perceptual false positives/negatives.
 
 After its outputs are preserved, the only planned new model investigation is a bounded, matched feature-map audit involving the existing simulated four-qubit filter and a classical comparator, on the same training-only case folds. The final paper remains deferred until the methods, figures and results are verified.
+
+## Final bounded experiment — EXT-QMAP-001 (source committed; execution pending)
+
+Code: `05_Source_Code/exp_qmap_001_fixed_feature_compare.py`.
+
+A fixed feature-map comparison reproduces the **existing reference** four-qubit, two-layer, seeded RX/RY/CNOT-ring/Pauli-Z circuit from `utilities/quantum_utils.py`. The circuit is simulated on `default.qubit`, with no learned quantum parameters or hardware claims. For speed, it is applied to sixteen 2×2 patches of the **same 8×8 grayscale-pooled** training ROI used by the classical input, yielding 64 fixed quantum expectation values per ROI; the classical arm uses the 64 corresponding input intensities. The script cross-checks batched PennyLane outputs against three calls of the original single-patch filter and aborts if they differ.
+
+Both arms receive the exact 311 ROI records, 203 cases, identical fivefold case-stratified partitions and logistic regression with `C=0.1`, `class_weight=balanced`, with scaling fitted per fold. Source hashes, full OOF class probabilities, six-class confusion matrices, paired bootstrap interval, exact McNemar test and vector/raster comparison charts are saved.
+
+**Scope:** A matched *fixed mapping* audit, not a claim of optimized quantum learning, quantum advantage, reproduction of the original high-resolution QuCNet feature map, or patient-independent clinical validation. Historical validation and test sets remain untouched. Results must be judged against a no-information baseline and their paired uncertainty, not only overall accuracy. The classical and quantum representations have equal feature dimension but different nonlinear transformations, so fair dimension matching does not eliminate all representational confounds.
+
+## Visual review of unresolved near-duplicates
+
+From `07_Results/exp_neardup_001/candidate_pairs.csv`, 23 cross-case pairs were flagged, including **three** crossing different assigned splits (none exactly identical):
+
+- `277_1.jpg` [validation] versus `348_1.jpg` [train]: pHash 8, dHash 9, normalized correlation 0.8625.
+- `177_1.jpg` [train] versus `313_1.jpg` [test]: pHash 8, dHash 12, normalized correlation 0.8228.
+- `305_1.jpg` [test] versus `34_1.jpg` [train]: pHash 8, dHash 12, normalized correlation 0.6880.
+
+All three satisfy the inclusive **boundary** of the primary pHash criterion (distance 8). The evidence does not confirm duplicates, leakage or common patient identity. Stored verification file: `Research_Extension/verification/near_duplicate_cross_split_candidates.json`.
+
+Local-only figure generator: `05_Source_Code/exp_neardup_001_review_sheet.py`; it creates a three-row contact sheet under `07_Results/exp_neardup_001/review_local/`, to be reviewed visually before any confirmation. Avoid uploading raw review images until identifying annotations and redistribution terms have been checked.
+
+The quantum/classical feature-map audit and visual resolution of flagged candidate pairs are the last prespecified empirical items. Afterward, conduct a final numerical, methodological, figure, citation and publication-readiness review, and only then begin the final manuscript.
