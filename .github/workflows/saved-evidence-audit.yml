@@ -9,6 +9,7 @@ on:
       - '05_Source_Code/verify_calibration_artifacts.py'
       - '05_Source_Code/verify_master_inventory.py'
       - '05_Source_Code/verify_frozen_case_splits.py'
+      - '05_Source_Code/audit_ddti_xml_fields_local.py'
       - '07_Results/phase12_case_level_split/split_case_assignments.csv'
       - '03_Dataset_Processed/phase13_roi_dataset/**'
       - 'Research_Extension/MASTER_VERIFIED_RESULTS.csv'
@@ -41,6 +42,7 @@ jobs:
             05_Source_Code/verify_calibration_artifacts.py
             05_Source_Code/verify_master_inventory.py
             05_Source_Code/verify_frozen_case_splits.py
+            05_Source_Code/audit_ddti_xml_fields_local.py
             07_Results/phase12_case_level_split/split_case_assignments.csv
             03_Dataset_Processed/phase13_roi_dataset/train_roi_metadata.csv
             03_Dataset_Processed/phase13_roi_dataset/validation_roi_metadata.csv
@@ -63,3 +65,4 @@ jobs:
           python3 05_Source_Code/verify_calibration_artifacts.py
           python3 05_Source_Code/verify_master_inventory.py
           python3 05_Source_Code/verify_frozen_case_splits.py
+          python3 05_Source_Code/audit_ddti_xml_fields_local.py --self-test
