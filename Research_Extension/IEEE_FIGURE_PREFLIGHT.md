@@ -42,3 +42,11 @@ Two central experimental exports need specific action before placement in a two-
 | `exp_stability_001/case_fold_stability.svg` | **726.64 pt** | **0.710** | Rework title / legend or enlarge typography, then proof at actual 516 pt; estimated 10 pt text becomes about 7.1 pt |
 
 These are source-SVG geometric inspections, **not visual approval of paper-size captions, axes or contrast**. The nine editorial SVG widths are in pixel-like numeric units and require final layout/proof rather than direct point-unit comparison. A successful structural check is not a data-point-by-data-point graph audit. No source figures or archived results were overwritten. The original final-layout proof gate remains open until an actual IEEE manuscript template is used.
+
+## New derived IEEE-width figure exports — CI verified
+
+The original overly wide classifier and fold-stability SVGs remain intact. Rather than scaling them into illegibility, `05_Source_Code/build_ieee_evidence_figures.py` now **generates separate 7.16-inch-wide paper candidates** from the existing `exp_models_001/metrics.json`, `exp_stability_001/metrics.json` and `seed_metrics.csv`.
+
+The generator validates all eight classifier confusions, 20 seed/model metrics and source agreement before exporting **two SVG, two vector PDF and two 300-dpi PNG** files. An independent GitHub Actions run **passed** ([run 40669270722](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40669270722)), and the outputs are available under the run's artifact `qucnet-ieee-double-column-figure-candidates` with a SHA-256 manifest. Details, scholarly caption boundaries and regeneration instructions are in [IEEE_PRINT_FIGURE_GENERATION_RECORD.md](IEEE_PRINT_FIGURE_GENERATION_RECORD.md).
+
+**Status adjustment:** The two major charts now have distinct, source-generated **full-width candidates**, without altering original figures. They are still **not final journal-layout proofed**: check placed scale, font/legend readability and captions inside the compiled target IEEE article, and adjust the plotting source if necessary.
