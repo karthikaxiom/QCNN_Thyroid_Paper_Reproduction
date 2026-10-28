@@ -241,4 +241,31 @@ Motivation: the historical Phase 14 CNN collapsed to TI-RADS 3 predictions acros
 
 **Limitations:** training-only exploratory multi-comparison; at most eight configuration arms, no correction for multiple contrasts, no new unseen external holdout, no verified patient linkage, no pathology-confirmed tumor endpoint, no optimized quantum circuit. No predicted performance improvement is promised. Results will be assessed regardless of whether any classifier surpasses the 28.08% majority-class accuracy reference.
 
-**Status:** experiment source committed; local execution and result verification pending. The historical Phase 14 result, original README figures, datasets, checkpoints and other outputs must remain unchanged. An extension comparison figure may be added to the existing colour README **only after** numerical verification, with its training-only evidence level explicit.
+**Status:** EXT-MODELS-001 completed locally and committed as `0313b44`; all 1,624 case prediction rows and 2,488 ROI prediction rows were independently reaggregated and their eight six-class confusion matrices, accuracies, balanced accuracies, macro-F1 scores, and class coverage matched the saved `metrics.json`. Historical Phase 14 results and images remain unchanged.
+
+### EXT-MODELS-001 numerical closure — eight matched configurations
+
+The four classifiers were applied to **each** of two equal-dimensional fixed representations (64 classical pooled-intensity features and 64 fixed four-qubit expectation features), using the same five case-stratified out-of-fold partitions from the 203 original training case IDs. The output is exploratory and does not reclassify previously inspected test cases.
+
+| Model | Correct cases / 203 | Accuracy | Balanced accuracy | Macro-F1 | Predicted categories |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Classical logistic regression | 54 | 26.60% | 25.22% | 24.26% | 6/6 |
+| Classical RBF SVM | 57 | 28.08% | 18.09% | 13.79% | 4/6 |
+| Classical random forest | 54 | 26.60% | 18.92% | 17.86% | 6/6 |
+| Classical kNN (k=7) | 58 | 28.57% | 19.28% | 17.63% | 6/6 |
+| Fixed quantum logistic regression | 43 | 21.18% | 21.91% | 20.68% | 6/6 |
+| Fixed quantum RBF SVM | 54 | 26.60% | 17.29% | 13.19% | 4/6 |
+| Fixed quantum random forest | **63** | **31.03%** | 23.54% | 23.35% | 6/6 |
+| Fixed quantum kNN (k=7) | 59 | 29.06% | 20.42% | 19.07% | 6/6 |
+
+**Primary interpretation:** The fixed quantum random forest achieved the largest observed case accuracy, 63/203, but only **six cases above** the 57/203 majority-class accuracy reference (+2.96 percentage points). Its paired correctness versus the majority predictor was: 25 both correct; 32 majority-only correct; 38 random-forest-only correct; 108 both wrong. The two-sided exact McNemar p-value computed independently for that descriptive contrast is **0.5504**, with no evidence for a confirmatory advantage.
+
+The quantum random forest exceeded the matched classical random forest by 9/203 cases (+4.43 percentage points), but the **saved paired 95% case-bootstrap interval [−1.00, +9.85] percentage points includes zero**, and exact paired McNemar p = **0.1755**. The fixed-quantum random forest versus its own fixed-quantum logistic counterpart differs by +20/203 (+9.85 points), exploratory interval [3.45, 16.75] points and unadjusted p = 0.0091. This last finding is an **exploratory within-representation model-family contrast**, not proof of quantum advantage or a multiplicity-adjusted confirmatory result.
+
+**Class coverage is not the same as class success.** The quantum random forest predicted all six labels but predicted TI-RADS 3 for only **one case**, and correctly classified **zero of the ten genuine TI-RADS 3 cases** (recall 0%). The RBF SVM outputs predicted just four of six labels. Across models, balanced accuracy and macro-F1 remain weak; the highest observed balanced accuracy and macro-F1 were achieved by **classical logistic regression** (25.22%, 24.26%). The historical Phase 14 near-single-class confusion matrices must be shown as original observations, alongside the newer balanced-feature comparison, rather than being cosmetically altered.
+
+**Independent record verification:** all 1,624 case-level rows, 2,488 ROI-level rows, the expected case identifiers, six probability columns, case-averaging identity and eight full 6×6 confusion matrices agreed with the pushed metrics JSON. The logistic-regression rows also matched the frozen EXT-QMAP-001 reference OOF predictions at experiment runtime. Source: `07_Results/exp_models_001/metrics.json`, `case_predictions.csv`, `oof_predictions.csv`, `matched_classifier_comparison.{png,pdf,svg}` (commit `0313b44`). No observed test/validation partition was accessed and no original experiments were modified.
+
+**SVM technical note:** scikit-learn 1.9 emitted a FutureWarning that SVC(probability=True) is deprecated and will be removed in version 1.11. The warnings are not failed experiments. Replacing its internal probability calculation with CalibratedClassifierCV would change the model definition; any future such change must be separately versioned rather than quietly retroactively altering these saved results.
+
+**Decision:** Do not launch an unbounded accuracy search or treat the maximum of eight exploratory models as a new deployment/clinical benchmark. The remaining tasks are presentation of the full model-family comparison, candid class-level analysis, and guide review—not repeat training.
