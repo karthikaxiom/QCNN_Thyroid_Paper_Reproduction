@@ -2596,6 +2596,15 @@ The source-backed ROC-AUC analysis uses **six TI-RADS one-versus-rest classifica
 
 Detailed [per-class sensitivity, specificity and ROC-AUC](07_Results/exp_eval_001/class_sensitivity_specificity.csv) and the [full eight-model calculation record](07_Results/exp_eval_001/guide_metrics.json) are preserved. All curves are descriptive training-fold analyses, not confirmatory independent validation.
 
+### Prediction Confidence and Reliability
+
+Beyond accuracy and ROC discrimination, an independent audit examined predicted-probability quality across all eight matched configurations. The fixed-quantum random forest had a multiclass Brier score of **0.783** and mean negative log-likelihood of **1.636** on the 203 development cases. Both kNN variants showed much larger log losses (**6.764** classical, **6.322** fixed quantum), reflecting very low probabilities assigned to some correct labels. This is relevant to model reliability but does not establish clinical calibration.
+
+<p align="center"><img src="09_Output_images/README/fig_12_multiclass_calibration_color.svg" alt="Colour chart comparing multiclass Brier and ten-bin calibration error for eight training-only classical and quantum feature classifiers" width="1000"></p>
+
+The [saved probability-reliability metrics](07_Results/exp_calib_001/calibration_metrics.json) and [ten-bin calibration records](07_Results/exp_calib_001/calibration_bins.csv) are computed from the frozen case-level out-of-fold predictions, without new training. These results are descriptive: neither model selection nor confidence calibration has been validated on an independent patient cohort.
+
+
 ## Integrity and Method-Fidelity Findings
 
 - All four independently recomputed historical metric checks agreed with stored prediction records.
