@@ -89,7 +89,7 @@ These were directly recomputed from saved predictions on the research branch. Di
 
 ### EXT-CACHE-001: observed key collisions in historical training arrays
 
-The read-only training-input script `05_Source_Code/exp_cache_001_quantization_audit.py` completed locally on 28 October 2026. Its output file is `07_Results/exp_cache_001/quantum_cache_key_audit.json` (local report, pending GitHub synchronization). Each image contributes 4096 2×2 patches; a collision is counted when a later patch differs numerically from the first patch associated with the same historical 8-bit key.
+The read-only training-input script `05_Source_Code/exp_cache_001_quantization_audit.py` completed locally on 28 October 2026. Its output file is committed as `07_Results/exp_cache_001/quantum_cache_key_audit.json` in commit `571ebcb`; the four dataset measurements were independently rechecked against that file. Each image contributes 4096 2×2 patches; a collision is counted when a later patch differs numerically from the first patch associated with the same historical 8-bit key.
 
 | Input array | Images | Patches | Distinct keys with differing float patches | Mismatching subsequent patch occurrences |
 | --- | ---: | ---: | ---: | ---: |
