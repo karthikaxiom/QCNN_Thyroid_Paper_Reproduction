@@ -2666,6 +2666,16 @@ python 05_Source_Code/verify_stability_artifacts.py
 
 This read-only verifier checks **4,060 saved case-level OOF records**, all 20 confusion matrices and score sets, paired feature-map differences, across-seed summaries, and **812 seed-42 probability vectors** against the earlier saved classifier results. It rejects inconsistent data rather than recreating outputs. The [research-only GitHub Actions workflow](.github/workflows/saved-evidence-audit.yml) uses sparse checkout to avoid collecting source medical images; its [passing independent runner audit](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40659551185) confirms that the archived evidence can be checked in a fresh Linux environment. It does **not** reproduce the model training, establish patient identity, or validate clinical claims.
 
+For complete numeric and split-integrity review, the same dependency-free checks also include:
+
+```bash
+python 05_Source_Code/verify_calibration_artifacts.py
+python 05_Source_Code/verify_master_inventory.py
+python 05_Source_Code/verify_frozen_case_splits.py
+```
+
+The [successful integrated GitHub Actions audit](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40663165948) verified **all 21 consolidated metric rows** against five original results archives, the **291 distinct recorded case IDs and 440 processed ROI metadata records** across frozen train/validation/test partitions, all eight classifiers' probability-calibration summaries, and five-seed stability metrics. No original ultrasound JPG/XML is downloaded by this sparse-checkout audit. This establishes integrity of *saved* evidence and case-ID partitions, not independent patient identities, clinical validity, data-use permission, or end-to-end retraining reproducibility.
+
 The primary source-backed metric inventory is [MASTER_VERIFIED_RESULTS.csv](Research_Extension/MASTER_VERIFIED_RESULTS.csv). Full independent calculations and limitations are in [FINAL_RESEARCH_VERIFICATION_MATRIX.md](Research_Extension/FINAL_RESEARCH_VERIFICATION_MATRIX.md); the original-paper comparison and figure production checks are in [ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md](Research_Extension/ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md) and [IEEE_FIGURE_PREFLIGHT.md](Research_Extension/IEEE_FIGURE_PREFLIGHT.md). Executable experiment sources and generated evidence remain under `05_Source_Code/exp_*.py` and `07_Results/exp_*/`.
 
 The results support analysis of reproducibility limitations, not pathology-confirmed diagnosis, clinical validation, quantum computational advantage, or a definitive model-superiority claim. Reuse of raw medical images is separate from publication of source-backed derived numerical results.
