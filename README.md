@@ -37,7 +37,7 @@ Unlike a conventional implementation project, the primary objective of this work
 
 > **Can the performance reported in the original QuCNet paper be independently reproduced using the publicly recoverable dataset and the implementation details described in the publication?**
 
-To answer this question, the complete pipeline was reconstructed from scratch, including dataset verification, XML parsing, metadata extraction, preprocessing, quantum-inspired feature generation, classical and quantum baselines, annotation auditing, patient-level leakage analysis, lesion-level ROI extraction, and a final leakage-free evaluation protocol.
+To answer this question, the complete pipeline was reconstructed from scratch, including dataset verification, XML parsing, metadata extraction, preprocessing, quantum-inspired feature generation, classical and quantum baselines, annotation auditing, recorded-case-ID leakage analysis (without independently verifying patient identity), lesion-level ROI extraction, and a final leakage-free evaluation protocol.
 
 The study reconstructed and audited the available experimental workflow and identified several important reproducibility challenges, including missing pathology labels, incomplete methodological specifications, annotation-level ambiguities, and patient-level data leakage risks.
 
@@ -99,7 +99,7 @@ The objectives of this work were:
 - Compare quantum-inspired features against conventional grayscale image representations.
 - Evaluate both binary and multi-class TI-RADS classification tasks.
 - Investigate the effect of annotation quality, dataset structure and patient-level data leakage.
-- Build a leakage-free lesion-level evaluation protocol using expert-marked ROI annotations.
+- Build a case-ID-disjoint lesion-level evaluation protocol using expert-marked ROI annotations.
 - Document every phase of the reproduction process in chronological order.
 - Preserve both successful implementations and negative experimental findings for future reproducibility research.
 
@@ -115,7 +115,7 @@ This repository provides:
 - Quantum-inspired feature generation pipeline.
 - Classical CNN and Quantum-inspired CNN implementations.
 - Controlled experimental comparisons.
-- Annotation-level and patient-level dataset auditing.
+- Annotation-level and recorded-case-ID auditing; patient linkage remains unverified.
 - Case-ID-disjoint train-validation-test splitting, with patient identity uniqueness unverified.
 - Lesion ROI dataset generation using expert annotations.
 - ROI-level and Case-level performance evaluation.
@@ -513,7 +513,7 @@ During the reproduction process, the complete dataset was independently verified
 
 ## Audited Dataset Statistics
 
-Following the complete annotation and patient-level audit performed during the later stages of this research, the validated dataset consisted of:
+Following the annotation and recorded-case-ID audit performed during the later stages of this research, the retained dataset consisted of (patient uniqueness was not independently verified):
 
 | Component | Count |
 |-----------|------:|
@@ -584,7 +584,7 @@ The major challenges included:
 - Designing a clinically meaningful ROI-level evaluation protocol.
 - Preserving complete reproducibility throughout every phase of development.
 
-These challenges significantly influenced the final experimental design and motivated the later annotation audit and leakage-free evaluation protocol.
+These challenges significantly influenced the final experimental design and motivated the later annotation audit and recorded-case-ID-disjoint evaluation protocol.
 
 ---
 # Methodology
@@ -936,7 +936,7 @@ Multiple images or regions originating from the same case could potentially be a
 
 The earlier experiments remain scientifically useful because they document the initial reproduction attempt and the controlled comparison between quantum and classical feature representations.
 
-However, they are not used as the final leakage-free evidence.
+However, they are not used as the final case-ID-separated evaluation evidence.
 
 ---
 
@@ -1513,7 +1513,7 @@ The research successfully produced:
 - A quantum-inspired feature-generation workflow
 - Classical and quantum model comparisons
 - A complete annotation audit
-- A leakage-free case-level split
+- A recorded-case-ID-disjoint split
 - An expert-annotation-based ROI dataset
 - ROI-level and case-level evaluation
 - Complete reports, predictions and metrics
@@ -1546,7 +1546,7 @@ Therefore:
 
 - The original-paper reproduction is considered complete
 - The negative findings are preserved
-- The leakage-free result is treated as the final reproduction evidence
+- The case-ID-separated result is retained as the strict historical evaluation, not a source-exact numerical reproduction
 - Earlier image-level experiments remain part of the historical research record
 - Future improvements will be presented separately as extension work
 - No further model will be presented as part of the original QuCNet reproduction
@@ -1563,7 +1563,7 @@ The purpose of retaining the complete experimental history is to make clear:
 - Which details required interpretation
 - Which dataset limitations affected the study
 - Which earlier experiments contained methodological risks
-- Which final results were produced under the leakage-free protocol
+- Which final results were produced under the recorded-case-ID-separated protocol
 - Why the reported performance could not be independently verified
 
 No experiment has been removed solely because it produced low accuracy.
@@ -1659,7 +1659,7 @@ My contribution covered the complete research lifecycle, including:
 - Quantum-inspired feature reconstruction
 - Classical and quantum model implementation
 - Binary and multi-class experimentation
-- Annotation and patient-level leakage auditing
+- Annotation and recorded-case-ID leakage auditing; patient identity remains unverified
 - Case-independent dataset splitting
 - Lesion ROI construction
 - ROI-level and case-level evaluation
