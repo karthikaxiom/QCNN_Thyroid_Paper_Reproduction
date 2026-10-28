@@ -123,12 +123,34 @@ All 311 original padded ROIs reconstructed **exactly** (max pixel error 0.0); th
 
 Relative to median padding, reflection changed case accuracy by +6/203 = +2.96 percentage points (exploratory case-bootstrap 95% CI −2.46 to +8.37, exact McNemar p = 0.392). Direct stretch changed accuracy by +12/203 = +5.91 percentage points (exploratory 95% CI −0.49 to +12.32, exact McNemar p = 0.104). Neither comparison establishes a statistically reliable advantage. The 57/203 overall accuracy for direct stretching equals the training-CV majority-class accuracy but exceeds it on balanced accuracy and macro-F1.
 
-**Evidence caveat:** The above numbers were obtained from the user's local terminal output. Until `07_Results/exp_preproc_001/` and `07_Results/exp_padding_001/local/` are committed and pushed, they are not yet independently rechecked against the underlying GitHub prediction tables. Do not call this a model-selection result on an untouched test partition. Direct stretching changes aspect ratios and is not an automatically safe medical imaging method.
+**Evidence status:** The complete results, out-of-fold prediction tables and vector figures were committed in `180917e` and independently verified against the uploaded JSON on GitHub. These are exploratory development CV findings, not results from an untouched test partition. Direct stretching changes aspect ratios and is not an automatically safe medical imaging method.
 
-## EXT-PADLINK-001 — controlled descriptive follow-up (execution pending)
+## EXT-PADLINK-001 — controlled descriptive follow-up (completed)
 
 Code: `05_Source_Code/exp_padlink_001_association.py`. This performs **no training**. It joins existing EXT-PREPROC-001 out-of-fold case predictions with Phase 13 training-only ROI metadata, computes median square-padding fraction per case, then examines paired true-label log-loss change and accuracy change for reflection padding and direct stretch versus the original median fill. The analysis includes case-bootstrap intervals, exploratory Spearman associations and TI-RADS counts in padding quartiles, with source-hashed outputs and vector figures.
 
 The purpose is to determine whether greater original padding is associated with a greater benefit from alternative preprocessing. Any observed association could still be confounded by lesion morphology, case composition, ROI sizes, acquisition and annotation practices. This is a hypothesis-generating analysis, not proof of a mechanism. No test or validation inputs are accessed.
 
-**Remaining workflow:** Synchronize remote scripts, save/push both local Phase 13 padding and preprocessing-ablation evidence, run the associative read-only audit, then decide whether another controlled model experiment is justified. Keep the intentional duplicate-paper deletions as a separate housekeeping commit and preserve the original README.
+**Evidence status:** Complete association outputs and figures committed in `180917e`; the intentional supporting-paper duplicates were removed in a distinct commit `a0baf20`, preserving the remaining base and supporting paper.
+
+## EXT-PADLINK-001 — association results and interpretation (verified)
+
+Real training-only case-level out-of-fold association results were verified from `07_Results/exp_padlink_001/association_metrics.json` (203 cases). Median original-padding amount did **not** show a detectable monotonic relationship with log-loss improvement:
+
+| Alternative preprocessing | Mean case log-loss gain (positive = better) | Exploratory case-bootstrap 95% CI | Spearman ρ: padding vs gain | p-value |
+| --- | ---: | ---: | ---: | ---: |
+| Reflection | −0.05944 | [−0.14323, +0.02674] | +0.07163 | 0.30983 |
+| Direct stretch | +0.01221 | [−0.08941, +0.11624] | −0.01070 | 0.87960 |
+
+Mean case-level log losses were median original 1.88514, reflection 1.94458, direct stretch 1.87293. Although alternative preprocessing changed case accuracy in the original fivefold OOF experiment, neither the paired accuracy confidence intervals nor the log-loss-gain intervals exclude zero. Reflection had *worse* mean case log loss despite improved classification accuracy.
+
+No evidence currently demonstrates that the **amount** of median-filled padding caused the classification failure. Multiple exploratory tests were conducted without multiplicity correction. These claims are about training-partition OOF predictions, not about an untouched patient-independent test set.
+
+## Bounded remaining empirical work
+
+Only two targeted gates remain before manuscript readiness assessment:
+
+1. **Dataset integrity:** Candidate near-duplicate scan across raw files using deterministic perceptual hashes and independent comparison statistics. Treat matches as flagged candidates for manual review, not proof of leakage/patient overlap. Preserve all frozen train/validation/test partitions.
+2. **Matched quantum-vs-classical study:** A prespecified, affordable training-only case-stratified comparison of the *existing fixed, simulated four-qubit quantum feature mapping* against appropriately matched classical features on identical cases/folds. Explicitly distinguish this feature-map study from full original QuCNet reproduction. Do not choose a model via previously inspected test data.
+
+After these, close the experimental register, finish mathematical/figure/limitations checks, improve the existing README only where verified, and prepare the manuscript. Avoid open-ended model searches.
