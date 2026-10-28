@@ -182,6 +182,8 @@ The independent `05_Source_Code/verify_calibration_artifacts.py` now recalculate
 
 ## Independent thyroid validation feasibility — public sources checked 2026-10-28
 
+**Gate 2 decision — current six-class task: NO-GO for direct external testing on screened cohorts.** See the [full external-validation compatibility review](EXTERNAL_VALIDATION_FEASIBILITY_GATE.md) for primary-source comparisons across ThyroidXL, Stanford cine-clips, TN3K and TN-SCUI2020, access/governance distinctions, and a separate conditional prospective study protocol. The main scientific obstacle is incompatible target taxonomies: source labels 2/3/4a/4b/4c/5 are **not directly interchangeable** with ACR TR1–TR5 or pathology-confirmed binary diagnosis. The public ThyroidXL dataset card also contains internally contradictory patient/image counts, which must be reconciled from an authorized version before any new experiment. **No external data were downloaded, no model externally evaluated, and no external accuracy is claimed.**
+
 This is **source screening only**. No data were downloaded, no model trained, no outside ground truth was inspected, and no external validation result can yet be reported.
 
 | Potential data source | Verified resource and benefit | Critical compatibility/rights gate |
