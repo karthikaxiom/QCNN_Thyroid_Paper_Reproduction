@@ -37,3 +37,7 @@ The text above is **not yet approved for publication**. Revise after source perm
 - Never run `git filter-repo`, `git push --force`, visibility changes, or bulk deletes solely to make a clean paper; these have downstream impacts.
 - Continue excluding local raw-ultrasound review-sheet composites and avoid staging `07_Results/exp_neardup_001/review_local/`.
 - This governance gate is separate from experimentally completed research; the open rights decision should be disclosed as a restriction on public release rather than hidden.
+
+## Local XML screen status — 28 October 2026
+
+The researcher reports running the committed non-disclosing structural scanner locally after fast-forwarding the research branch. All **390/390 DDTI XML files parsed**, with zero parsing or oversize errors; `age` and `sex` occurred 390 times each; zero identifier-like field names and zero email/phone regex matches were flagged; and **21 populated narrative field occurrences** remain for manual local inspection. See [DDTI_XML_LOCAL_PRIVACY_SCREEN_RESULT.md](DDTI_XML_LOCAL_PRIVACY_SCREEN_RESULT.md) for the precise report and limits. This is **researcher-reported execution**, distinct from the synthetic GitHub Actions test. It is not confirmation of de-identification, consent, or an unrestricted right to mirror medical JPG/XML. No raw medical content or local field values were uploaded as part of this update.
