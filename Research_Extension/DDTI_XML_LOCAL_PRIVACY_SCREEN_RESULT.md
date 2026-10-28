@@ -45,7 +45,13 @@ The scanner's documented scope is `02_Dataset_Raw/archive/*.xml`, producing **ag
 
 **Release rule:** Do not mark the overarching Gate 3 raw medical data permission/privacy decision as cleared on the strength of this automated scan. The original Git history was not altered or purged.
 
-## Optional confidential local narrative triage — prepared, not executed
+## Superseding automatic privacy triage — already executed
+
+The researcher stopped the interactive review process because it was impractical. A [separate, fully automated XML screen](DDTI_XML_AUTOMATED_TRIAGE_RESULT.md) was then run **on all 390 source XMLs in GitHub Actions**; [official success log](https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction/actions/runs/40668545283). Its outputs are **21 populated narratives; two flagged by conservative patterns (one date/year and one long narrative); 19 without a matching configured pattern; zero parsing errors, identifier phrases or email/phone matches**.
+
+**This supersedes the 21-item interactive task.** The older manual tool remains a historical optional aid only. No further c/f/q answers are required. These two rule flags are *not* a finding of actual identifiable information; the other 19 are *not* proven anonymous. Raw JPG overlays and original provider permissions remain separate outstanding questions.
+
+## Historical optional confidential local narrative triage — no longer recommended as the default
 
 A separate read-only terminal tool is available at `05_Source_Code/review_ddti_xml_narratives_local.py`. Its parser was exercised **only on synthetic input** in GitHub Actions; it has not yet been used to review the 21 actual narrative fields.
 
