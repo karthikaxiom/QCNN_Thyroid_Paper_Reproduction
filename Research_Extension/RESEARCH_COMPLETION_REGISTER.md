@@ -39,7 +39,7 @@ Exploratory McNemar comparisons operate on paired case correctness, and case-boo
 
 ## Continuation procedure
 
-At each live session verify the branch head, current commits, saved experimental results and outstanding gates. The next actionable task is to execute the already committed `05_Source_Code/exp_fusion_001.py` on the user's local data. No unscheduled background work or later notification is implied.
+The extension study is maintained on the research branch. Each result is backed by committed scripts, input hashes, prediction tables and verification artifacts; no experiment is assumed to have run unless its output is recorded.
 
 ## EXT-DUPLICATE-001 — exact raw image duplication audit
 
@@ -157,7 +157,7 @@ After these, close the experimental register, finish mathematical/figure/limitat
 
 ## Independent rederivation of EXT-PREPROC-001
 
-The uploaded `07_Results/exp_preproc_001/oof_predictions.csv` contains 311 out-of-fold ROI predictions **per model**, aligned to 203 unique case IDs. I independently re-aggregated the six predicted probabilities to cases by mean, obtained argmax labels, constructed each 6×6 confusion matrix and recalculated accuracy, balanced accuracy and macro-F1. All nine resulting scores match `07_Results/exp_preproc_001/metrics.json` to numerical precision:
+The uploaded `07_Results/exp_preproc_001/oof_predictions.csv` contains 311 out-of-fold ROI predictions **per model**, aligned to 203 unique case IDs. The verification re-aggregated the six predicted probabilities by case, constructed the 6×6 confusion matrices and recalculated accuracy, balanced accuracy and macro-F1. All nine resulting scores match `07_Results/exp_preproc_001/metrics.json` to numerical precision:
 
 - Median-original: 45/203, accuracy 0.221675, balanced 0.201021, macro-F1 0.197484.
 - Reflection: 51/203, accuracy 0.251232, balanced 0.227623, macro-F1 0.222953.
@@ -197,7 +197,7 @@ The quantum/classical feature-map audit was completed and the three flagged cros
 
 ## EXPERIMENTAL CLOSEOUT — EXT-QMAP-001 and visual review
 
-`EXT-QMAP-001` real training-only paired study was completed and pushed as commit `0868955`. I independently reconstructed the 203 case predictions by averaging six class probabilities from each of the 311 ROI out-of-fold rows per model; all stored case-level confusion matrices, accuracies, balanced accuracies and macro-F1 values matched.
+`EXT-QMAP-001` real training-only paired study was completed and pushed as commit `0868955`. The independent verification reconstructed all 203 case predictions by averaging six class probabilities from the 311 ROI out-of-fold rows per model. All stored case-level confusion matrices, accuracies, balanced accuracies and macro-F1 values matched.
 
 - Equal-dimensional 64-feature classical pooled image: **54/203 cases (26.60099%)**; balanced accuracy 25.22328%; macro-F1 24.26322%.
 - Existing fixed four-qubit quantum simulation on sixteen pooled 2×2 patches: **43/203 cases (21.18227%)**; balanced accuracy 21.90883%; macro-F1 20.67882%.
@@ -206,7 +206,7 @@ The quantum/classical feature-map audit was completed and the three flagged cros
 
 Evidence `07_Results/exp_qmap_001/metrics.json`, `07_Results/exp_qmap_001/oof_predictions.csv`, and independent read-only verification `Research_Extension/verification/exp_qmap_001_independent_metrics.json`.
 
-I reviewed the three pre-flagged cross-assigned-split raw ultrasound pairs directly. None appeared to be an identical raw frame. The case/patient identity question cannot be resolved from imagery alone; maintain this limitation. One full raw test image (`313_1.jpg`) has visible TI-RADS 4C text in its bottom border, outside the saved cropped test ROI y-range 12–190. Raw-overlay effects cannot be generalized from this one inspection. Evidence `Research_Extension/verification/near_duplicate_visual_review.json`. No raw ultrasound image has been republished in the research register.
+The three pre-flagged cross-split raw ultrasound pairs were reviewed directly. None appeared to be an identical raw frame. The case/patient identity question cannot be resolved from imagery alone; maintain this limitation. One full raw test image (`313_1.jpg`) has visible TI-RADS 4C text in its bottom border, outside the saved cropped test ROI y-range 12–190. Raw-overlay effects cannot be generalized from this one inspection. Evidence `Research_Extension/verification/near_duplicate_visual_review.json`. No raw ultrasound image has been republished in the research register.
 
 **Figure and arithmetic checkpoint:** Four stored PNG figure exports were visually checked for labels, axes and legibility at native display size (fixed-feature comparison, preprocessing sensitivity, padding/log-loss relationship, and paired fusion intervals); all have corresponding vector-source exports. IEEE final printed-column rendering, permissions/citations and source-paper equation correspondence remain to be checked.
 
