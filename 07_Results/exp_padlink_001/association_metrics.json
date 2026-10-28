@@ -1,0 +1,245 @@
+{
+  "experiment": "EXT-PADLINK-001",
+  "evidence_level": "Exploratory post-hoc training-case OOF analysis",
+  "cases": 203,
+  "rois": 311,
+  "padding_reference": "Pre-resize Phase13 median-intensity square padding",
+  "padding_formula": "1 - min(expanded ROI width, height) / max(width, height)",
+  "case_padding_summary": "Median padding fraction across each case's ROIs",
+  "quartiles": "Four pooled quantiles defined using case-median padding",
+  "bootstrap_seed": 20261028,
+  "bootstrap_resamples": 5000,
+  "sources_sha256": {
+    "03_Dataset_Processed\\phase13_roi_dataset\\train_roi_metadata.csv": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+    "07_Results\\exp_preproc_001\\metrics.json": "5be0bcf3c87e0f39e58a3abc00e9c1d51acfd7603c1bd52d920446844c781c9b",
+    "07_Results\\exp_preproc_001\\oof_predictions.csv": "10829b5699f9051c39f31890a4976fcd192367adbb7f3b67159870b62af2c71d"
+  },
+  "validation_or_test_accessed": false,
+  "model_training_or_selection": false,
+  "original_data_modified": false,
+  "variants": {
+    "median_original": {
+      "case_metrics": {
+        "accuracy": 0.22167487684729065,
+        "balanced_accuracy": 0.20102102919440382,
+        "macro_f1": 0.19748405685905687
+      },
+      "mean_case_log_loss": 1.8851391012863672
+    },
+    "reflection_padding": {
+      "case_metrics": {
+        "accuracy": 0.2512315270935961,
+        "balanced_accuracy": 0.22762316802564483,
+        "macro_f1": 0.222952500674878
+      },
+      "mean_case_log_loss": 1.9445773189043516
+    },
+    "direct_stretch": {
+      "case_metrics": {
+        "accuracy": 0.28078817733990147,
+        "balanced_accuracy": 0.27530043056358844,
+        "macro_f1": 0.2683127635441801
+      },
+      "mean_case_log_loss": 1.8729273866966094
+    }
+  },
+  "comparisons": {
+    "median_to_reflection_padding": {
+      "mean_case_log_loss_gain": -0.0594382176179844,
+      "case_bootstrap_95_CI_for_mean_log_loss_gain": [
+        -0.14322925084705876,
+        0.026735048332875697
+      ],
+      "mean_true_class_probability_gain": -0.0009935319868691714,
+      "spearman_case_median_padding_vs_log_loss_gain": {
+        "rho": 0.07163083738104324,
+        "exploratory_two_sided_p": 0.3098269064185789
+      },
+      "spearman_case_median_padding_vs_correctness_change": {
+        "rho": 0.04133829412422671,
+        "exploratory_two_sided_p": 0.5581487961975531
+      },
+      "by_padding_quartile": [
+        {
+          "quartile": 1,
+          "cases": 51,
+          "padding_min": 0.003236245954692518,
+          "padding_max": 0.1717171717171717,
+          "padding_median": 0.09223300970873782,
+          "TI_RADS_counts": {
+            "2": 6,
+            "3": 3,
+            "4a": 9,
+            "4b": 15,
+            "4c": 10,
+            "5": 8
+          },
+          "median_method_accuracy": 0.17647058823529413,
+          "alternative_accuracy": 0.23529411764705882,
+          "delta_case_accuracy": 0.058823529411764705,
+          "delta_case_log_loss_improvement": -0.09335460034169003
+        },
+        {
+          "quartile": 2,
+          "cases": 51,
+          "padding_min": 0.17341040462427748,
+          "padding_max": 0.26597906403940885,
+          "padding_median": 0.21836228287841186,
+          "TI_RADS_counts": {
+            "2": 4,
+            "3": 3,
+            "4a": 13,
+            "4b": 13,
+            "4c": 13,
+            "5": 5
+          },
+          "median_method_accuracy": 0.27450980392156865,
+          "alternative_accuracy": 0.21568627450980393,
+          "delta_case_accuracy": -0.058823529411764705,
+          "delta_case_log_loss_improvement": -0.0797929446111417
+        },
+        {
+          "quartile": 3,
+          "cases": 50,
+          "padding_min": 0.26678966242849944,
+          "padding_max": 0.33783783783783783,
+          "padding_median": 0.3021775694593899,
+          "TI_RADS_counts": {
+            "2": 7,
+            "3": 0,
+            "4a": 17,
+            "4b": 14,
+            "4c": 5,
+            "5": 7
+          },
+          "median_method_accuracy": 0.24,
+          "alternative_accuracy": 0.32,
+          "delta_case_accuracy": 0.08,
+          "delta_case_log_loss_improvement": 0.015517325676041676
+        },
+        {
+          "quartile": 4,
+          "cases": 51,
+          "padding_min": 0.33801098230628435,
+          "padding_max": 0.637883008356546,
+          "padding_median": 0.3995157384987893,
+          "TI_RADS_counts": {
+            "2": 9,
+            "3": 4,
+            "4a": 18,
+            "4b": 9,
+            "4c": 10,
+            "5": 1
+          },
+          "median_method_accuracy": 0.19607843137254902,
+          "alternative_accuracy": 0.23529411764705882,
+          "delta_case_accuracy": 0.0392156862745098,
+          "delta_case_log_loss_improvement": -0.07865293465997059
+        }
+      ]
+    },
+    "median_to_direct_stretch": {
+      "mean_case_log_loss_gain": 0.012211714589758145,
+      "case_bootstrap_95_CI_for_mean_log_loss_gain": [
+        -0.08940696651404448,
+        0.11623926057896916
+      ],
+      "mean_true_class_probability_gain": 0.011119411194548685,
+      "spearman_case_median_padding_vs_log_loss_gain": {
+        "rho": -0.010697143316186155,
+        "exploratory_two_sided_p": 0.8796018154005805
+      },
+      "spearman_case_median_padding_vs_correctness_change": {
+        "rho": 0.06678329291673815,
+        "exploratory_two_sided_p": 0.34379316041666586
+      },
+      "by_padding_quartile": [
+        {
+          "quartile": 1,
+          "cases": 51,
+          "padding_min": 0.003236245954692518,
+          "padding_max": 0.1717171717171717,
+          "padding_median": 0.09223300970873782,
+          "TI_RADS_counts": {
+            "2": 6,
+            "3": 3,
+            "4a": 9,
+            "4b": 15,
+            "4c": 10,
+            "5": 8
+          },
+          "median_method_accuracy": 0.17647058823529413,
+          "alternative_accuracy": 0.19607843137254902,
+          "delta_case_accuracy": 0.0196078431372549,
+          "delta_case_log_loss_improvement": 0.02663766946093566
+        },
+        {
+          "quartile": 2,
+          "cases": 51,
+          "padding_min": 0.17341040462427748,
+          "padding_max": 0.26597906403940885,
+          "padding_median": 0.21836228287841186,
+          "TI_RADS_counts": {
+            "2": 4,
+            "3": 3,
+            "4a": 13,
+            "4b": 13,
+            "4c": 13,
+            "5": 5
+          },
+          "median_method_accuracy": 0.27450980392156865,
+          "alternative_accuracy": 0.3137254901960784,
+          "delta_case_accuracy": 0.0392156862745098,
+          "delta_case_log_loss_improvement": 0.06938948335495604
+        },
+        {
+          "quartile": 3,
+          "cases": 50,
+          "padding_min": 0.26678966242849944,
+          "padding_max": 0.33783783783783783,
+          "padding_median": 0.3021775694593899,
+          "TI_RADS_counts": {
+            "2": 7,
+            "3": 0,
+            "4a": 17,
+            "4b": 14,
+            "4c": 5,
+            "5": 7
+          },
+          "median_method_accuracy": 0.24,
+          "alternative_accuracy": 0.36,
+          "delta_case_accuracy": 0.12,
+          "delta_case_log_loss_improvement": 0.13265156544175974
+        },
+        {
+          "quartile": 4,
+          "cases": 51,
+          "padding_min": 0.33801098230628435,
+          "padding_max": 0.637883008356546,
+          "padding_median": 0.3995157384987893,
+          "TI_RADS_counts": {
+            "2": 9,
+            "3": 4,
+            "4a": 18,
+            "4b": 9,
+            "4c": 10,
+            "5": 1
+          },
+          "median_method_accuracy": 0.19607843137254902,
+          "alternative_accuracy": 0.2549019607843137,
+          "delta_case_accuracy": 0.058823529411764705,
+          "delta_case_log_loss_improvement": -0.17747029419563848
+        }
+      ]
+    }
+  },
+  "interpretation_limits": [
+    "Post-hoc correlation is not proof that square padding caused model errors.",
+    "Direct stretching changes anatomical aspect ratio and other image properties.",
+    "Case IDs are not verified independent patient IDs.",
+    "Quartile composition may vary by TI-RADS category, case ROI count and acquisition.",
+    "Exploratory p-values and intervals are not adjusted for multiple comparisons.",
+    "Case bootstrap does not reflect model refitting or alternative fold assignment.",
+    "No independently untouched test set was used for the extension."
+  ]
+}
