@@ -92,3 +92,19 @@ A read-only, source-metadata calculation for 311 training ROIs (203 cases) found
 These quantities follow `1-min(width,height)/max(width,height)` and describe geometric area **before** resizing; they do not identify exact interpolated pixels or prove causal effects on classifier performance. Evidence: `07_Results/exp_padding_001/remote_metadata_precheck.json`. The independent local statistics-and-figure script is `05_Source_Code/exp_padding_001_metadata.py`; execution on local training metadata is pending.
 
 **Research decision:** Do not infer that padding was absent from zero-valued-pixel counts. Prioritize one controlled, training-only preprocessing comparison before considering a further expensive quantum architecture run.
+
+## EXT-PREPROC-001 — prespecified sensitivity experiment (execution pending)
+
+Code: `05_Source_Code/exp_preproc_001_ablation.py`.
+
+This development-only comparison tests three representations of the same 311 Phase 13 training ROIs, using identical case-stratified fivefold partitions, an unchanged 128-feature pooled image representation, and the same logistic-regression pipeline from EXT-FUSION-001:
+
+1. Reference: original median-intensity square padding and `cv2.INTER_AREA` resizing.
+2. Alternative: `cv2.BORDER_REFLECT_101` square padding.
+3. Sensitivity-only control: direct anisotropic resize without square padding (changes aspect ratios).
+
+Before fitting, the script reconstructs every reference ROI from its raw training source and metadata, checks reconstruction drift, and requires the original image-only OOF predictions to replicate the committed `EXT-FUSION-001` evidence. It saves case and ROI metrics, paired case-bootstrap intervals, exact McNemar results, full OOF probabilities, source hashes and vector/raster charts.
+
+**Interpretation guardrail:** Even a difference in these exploratory comparisons would not prove that padding caused the Phase 14 CNN collapse; the architecture, representation and training objective differ. No new test set is available for confirmatory claims.
+
+**Pending local commands:** Run `exp_padding_001_metadata.py` (if its outputs are absent), then `exp_preproc_001_ablation.py`. Preserve results as separate committed experiment evidence. The intentional two-file supporting-paper cleanup should be committed separately from research experiments.
