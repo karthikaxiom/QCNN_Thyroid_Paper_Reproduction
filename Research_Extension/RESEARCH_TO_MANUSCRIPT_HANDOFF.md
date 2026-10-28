@@ -1,7 +1,7 @@
 # QuCNet research closeout and manuscript handoff
 
 **Prepared:** 28 October 2026  
-**Study:** *QuCNet Revisited: An Independent Reproduction and Methodological Audit of Thyroid Ultrasound Classification*  
+**Study:** *QuCNet Revisited: An Independent Reconstruction and Methodological Audit of Thyroid Ultrasound Classification*  
 **Publication stage:** **Empirical research/evidence-engineering phase complete — ready to draft, NOT cleared for submission.**  
 **Source of truth:** GitHub versioned code, CSV/JSON evidence and this document, not an external proposed manuscript.
 
@@ -40,6 +40,14 @@ This is not the author's original QuCNet training run, a new optimized neural ar
 - Five-fold-assignment-seed RF average accuracies: quantum **29.36%** versus classical **27.49%**, with a ranking reversal and weak minority-class performance. Both RF arms show **0/10 TI-RADS 3 recall at each seed** on the *same ten recorded cases*.
 - The majority-class baseline is **57/203 = 28.08%**. A slightly higher single-fold accuracy is not clinical benefit or robust superiority.
 - The source authors' **97.63% tumor** and **93.87% suspicious-level** scores use other denominators and endpoints. They must **not** be plotted as directly matched test baselines. The **55/100 approximate protocol-fidelity score** in the fidelity audit is **not a model accuracy**.
+
+## 2A. Working abstract aligned with the README
+
+The article and README use a single **working paper title** (above). The archive's software `CITATION.cff` uses its historical release title and date; it is **not** evidence that the manuscript has been published.
+
+For the abstract, distinguish two experimental scopes: **eight classifier arms (four families × two representations) were evaluated on one seed-42 case-fold assignment**; only **four selected arms (logistic regression and random forest × two representations) were repeated across five assignment seeds**. Both scopes use only the same **203 recorded training case IDs**, not new independent patients or external clinical data. Both repeated-forest arms had **0/10 TI-RADS 3 recall at each seed**; five-seed forest case-accuracy means were **27.49% classical** and **29.36% fixed simulated quantum**. The strict 44-case Phase 14 ROI CNN is **separate and historical**. Thus, do not write that all eight classifier arms underwent five-seed evaluation.
+
+The README has been aligned to this interpretation; the [master verification matrix](FINAL_RESEARCH_VERIFICATION_MATRIX.md), individual saved results, and the append-only [Project_Log.txt](../Project_Log.txt) remain the technical source of truth. The live Overleaf manuscript is not automatically synchronized with GitHub; copy only reviewed text and figures into Overleaf.
 
 ## 3. Citation, figures and IEEE writing order
 
