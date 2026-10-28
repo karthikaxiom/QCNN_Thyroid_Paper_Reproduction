@@ -1,0 +1,144 @@
+{
+  "experiment": "EXT-DEV-001",
+  "protocol": "5-fold case-stratified cross-validation",
+  "training_cases": 203,
+  "training_rois": 311,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "seed": 42,
+  "input_hashes": {
+    "images": "568378f5be77ce1f0f53306e32124d1d7d7b809a3718437d815103e491dc5c36",
+    "labels": "dfbf611bbc2f2bb8edf72ce561847909052181f97bbfa45306b078d631d7cafe",
+    "cases": "569c00ca502462f5a2c4896dfca4848fee53bb873953abf11409100c5dbba228"
+  },
+  "results": {
+    "majority": {
+      "roi": {
+        "accuracy": 0.29260450160771706,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_f1": 0.07545605306799337
+      },
+      "case": {
+        "accuracy": 0.28078817733990147,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_f1": 0.07307692307692308
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "training_cases": 162,
+          "held_cases": 41,
+          "roi_metrics": {
+            "accuracy": 0.3225806451612903,
+            "balanced_accuracy": 0.16666666666666666,
+            "macro_f1": 0.08130081300813008
+          }
+        },
+        {
+          "fold": 2,
+          "training_cases": 162,
+          "held_cases": 41,
+          "roi_metrics": {
+            "accuracy": 0.3333333333333333,
+            "balanced_accuracy": 0.16666666666666666,
+            "macro_f1": 0.08333333333333333
+          }
+        },
+        {
+          "fold": 3,
+          "training_cases": 162,
+          "held_cases": 41,
+          "roi_metrics": {
+            "accuracy": 0.27586206896551724,
+            "balanced_accuracy": 0.16666666666666666,
+            "macro_f1": 0.07207207207207207
+          }
+        },
+        {
+          "fold": 4,
+          "training_cases": 163,
+          "held_cases": 40,
+          "roi_metrics": {
+            "accuracy": 0.30303030303030304,
+            "balanced_accuracy": 0.16666666666666666,
+            "macro_f1": 0.07751937984496124
+          }
+        },
+        {
+          "fold": 5,
+          "training_cases": 163,
+          "held_cases": 40,
+          "roi_metrics": {
+            "accuracy": 0.22580645161290322,
+            "balanced_accuracy": 0.16666666666666666,
+            "macro_f1": 0.06140350877192982
+          }
+        }
+      ]
+    },
+    "pooled_logistic": {
+      "roi": {
+        "accuracy": 0.2282958199356913,
+        "balanced_accuracy": 0.22879545080683603,
+        "macro_f1": 0.2155752457749944
+      },
+      "case": {
+        "accuracy": 0.22167487684729065,
+        "balanced_accuracy": 0.20102102919440382,
+        "macro_f1": 0.19748405685905687
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "training_cases": 162,
+          "held_cases": 41,
+          "roi_metrics": {
+            "accuracy": 0.12903225806451613,
+            "balanced_accuracy": 0.13769841269841268,
+            "macro_f1": 0.12665150941013012
+          }
+        },
+        {
+          "fold": 2,
+          "training_cases": 162,
+          "held_cases": 41,
+          "roi_metrics": {
+            "accuracy": 0.30158730158730157,
+            "balanced_accuracy": 0.2837301587301587,
+            "macro_f1": 0.2588522588522589
+          }
+        },
+        {
+          "fold": 3,
+          "training_cases": 162,
+          "held_cases": 41,
+          "roi_metrics": {
+            "accuracy": 0.22413793103448276,
+            "balanced_accuracy": 0.18888888888888888,
+            "macro_f1": 0.19959728380781008
+          }
+        },
+        {
+          "fold": 4,
+          "training_cases": 163,
+          "held_cases": 40,
+          "roi_metrics": {
+            "accuracy": 0.25757575757575757,
+            "balanced_accuracy": 0.27499999999999997,
+            "macro_f1": 0.25812673575831474
+          }
+        },
+        {
+          "fold": 5,
+          "training_cases": 163,
+          "held_cases": 40,
+          "roi_metrics": {
+            "accuracy": 0.22580645161290322,
+            "balanced_accuracy": 0.18734968734968735,
+            "macro_f1": 0.18070275403608738
+          }
+        }
+      ]
+    }
+  }
+}

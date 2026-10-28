@@ -1,0 +1,31 @@
+name: DDTI XML aggregate privacy triage
+
+on:
+  push:
+    branches:
+      - research/bn-recalibration-audit
+    paths:
+      - '05_Source_Code/auto_screen_ddti_xml.py'
+      - '.github/workflows/ddti-xml-aggregate-privacy-screen.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  xml-aggregate-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Sparse checkout of XML and non-disclosing scanner only
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            05_Source_Code/auto_screen_ddti_xml.py
+            02_Dataset_Raw/archive/*.xml
+      - name: Verify synthetic detection without source data in output
+        run: python3 05_Source_Code/auto_screen_ddti_xml.py --self-test
+      - name: Screen all archived XML with aggregate logs only
+        run: python3 05_Source_Code/auto_screen_ddti_xml.py

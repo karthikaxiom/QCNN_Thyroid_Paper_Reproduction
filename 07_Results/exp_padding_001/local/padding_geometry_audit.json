@@ -1,0 +1,84 @@
+{
+  "experiment": "EXT-PADDING-001",
+  "method": "Padding area from expanded ROI width/height before 64x64 resampling",
+  "formula": "1 - min(roi_width, roi_height)/max(roi_width, roi_height)",
+  "padding_fill": "Per-ROI median grayscale intensity; NOT zero-valued padding",
+  "input_path": "03_Dataset_Processed/phase13_roi_dataset/train_roi_metadata.csv",
+  "input_sha256": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+  "training_only": true,
+  "images_loaded": false,
+  "validation_or_test_accessed": false,
+  "original_files_modified": false,
+  "overall": {
+    "n": 311,
+    "median": 0.256,
+    "mean": 0.25580480416353757,
+    "min": 0.0,
+    "max": 0.6655518394648829,
+    "over_25_percent": 157,
+    "over_50_percent": 16,
+    "strictly_positive": 309
+  },
+  "by_tirads": [
+    {
+      "tirads": "2",
+      "n_cases": 26,
+      "n_rois": 33,
+      "median_padding_fraction": 0.28437500000000004,
+      "mean_padding_fraction": 0.28264464668002687,
+      "over_25_percent": 20,
+      "over_50_percent": 2
+    },
+    {
+      "tirads": "3",
+      "n_cases": 10,
+      "n_rois": 14,
+      "median_padding_fraction": 0.26275252525252524,
+      "mean_padding_fraction": 0.23964227229310972,
+      "over_25_percent": 7,
+      "over_50_percent": 0
+    },
+    {
+      "tirads": "4a",
+      "n_cases": 57,
+      "n_rois": 91,
+      "median_padding_fraction": 0.29378531073446323,
+      "mean_padding_fraction": 0.28614285809771756,
+      "over_25_percent": 51,
+      "over_50_percent": 3
+    },
+    {
+      "tirads": "4b",
+      "n_cases": 51,
+      "n_rois": 77,
+      "median_padding_fraction": 0.2471910112359551,
+      "mean_padding_fraction": 0.24332513716898566,
+      "over_25_percent": 37,
+      "over_50_percent": 4
+    },
+    {
+      "tirads": "4c",
+      "n_cases": 38,
+      "n_rois": 62,
+      "median_padding_fraction": 0.24031962424103565,
+      "mean_padding_fraction": 0.24317097703656732,
+      "over_25_percent": 29,
+      "over_50_percent": 6
+    },
+    {
+      "tirads": "5",
+      "n_cases": 21,
+      "n_rois": 34,
+      "median_padding_fraction": 0.22725626419940076,
+      "mean_padding_fraction": 0.20651155050424677,
+      "over_25_percent": 13,
+      "over_50_percent": 1
+    }
+  ],
+  "limitations": [
+    "This is pre-resize theoretical padding area, not a direct count of pixels.",
+    "Interpolation after resizing may blend original and padded regions.",
+    "Different padding proportions do not prove a cause of prediction errors.",
+    "Case label grouping does not establish patient identity independence."
+  ]
+}

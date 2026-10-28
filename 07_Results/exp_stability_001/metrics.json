@@ -1,0 +1,1672 @@
+{
+  "experiment": "EXT-STABILITY-001",
+  "status": "Completed after seed-42 exact-reference checks",
+  "scientific_role": "Case-fold assignment sensitivity (exploratory)",
+  "seeds": [
+    42,
+    101,
+    202,
+    303,
+    404
+  ],
+  "fold_count": 5,
+  "training_only_cases": 203,
+  "training_only_rois": 311,
+  "comparison": "2 fixed 64-feature maps x 2 classifiers",
+  "one_quantum_feature_calculation_for_all_seeds": true,
+  "quantum_reference_check": {
+    "n_circuit_evaluations": 4976,
+    "n_unique_patches": 4976,
+    "reference_single_patch_check_max_abs_error": 1.2571526930571508e-08,
+    "quantum_weights": [
+      [
+        2.353304971691044,
+        5.9735141613602165,
+        4.599253580133889,
+        3.761482191925223
+      ],
+      [
+        0.980294029274052,
+        0.9801424781769557,
+        0.3649500985631483,
+        5.442345232562516
+      ]
+    ],
+    "quantum_feature_std_min": 0.02305719088143973,
+    "quantum_feature_std_max": 0.04512690712143838
+  },
+  "model_hyperparameters": {
+    "logistic": {
+      "C": 0.1,
+      "class_weight": "balanced",
+      "max_iter": 1500,
+      "random_state": 42
+    },
+    "random_forest": {
+      "n_estimators": 300,
+      "min_samples_leaf": 2,
+      "max_features": "sqrt",
+      "class_weight": "balanced_subsample",
+      "random_state": 42
+    }
+  },
+  "frozen_input_sha256": {
+    "training_images": "568378f5be77ce1f0f53306e32124d1d7d7b809a3718437d815103e491dc5c36",
+    "training_labels": "dfbf611bbc2f2bb8edf72ce561847909052181f97bbfa45306b078d631d7cafe",
+    "training_case_ids": "569c00ca502462f5a2c4896dfca4848fee53bb873953abf11409100c5dbba228",
+    "training_roi_ids": "1d71e8d8527883db06edc2d74ba9a30c5178811cdc33add8eb7342c68e316a6d",
+    "training_metadata": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+    "reference_quantum_utils": "fb5a9cb1cfb26dd1e8a77021a56c451ce5c96a979a23b63aeb3accb0dc12f42a"
+  },
+  "reference_case_predictions_sha256": "fbcd0ad1da8ac710bd1959983df6ec82f58c0808e55ef9b36c937257ba804954",
+  "seed42_reference_probabilities_match": true,
+  "numpy_version": "2.5.0",
+  "sklearn_version": "1.9.0",
+  "original_test_or_validation_accessed": false,
+  "original_models_or_saved_results_modified": false,
+  "individual_per_seed": {
+    "classical_64__linear_logistic": [
+      {
+        "seed": 42,
+        "case_metrics": {
+          "accuracy": 0.2660098522167488,
+          "balanced_accuracy": 0.2522327689510352,
+          "macro_f1": 0.24263224917095574,
+          "confusion_matrix": [
+            [
+              2,
+              6,
+              8,
+              2,
+              6,
+              2
+            ],
+            [
+              3,
+              2,
+              1,
+              1,
+              2,
+              1
+            ],
+            [
+              10,
+              5,
+              17,
+              13,
+              8,
+              4
+            ],
+            [
+              8,
+              4,
+              11,
+              15,
+              6,
+              7
+            ],
+            [
+              4,
+              8,
+              8,
+              3,
+              10,
+              5
+            ],
+            [
+              2,
+              5,
+              2,
+              1,
+              3,
+              8
+            ]
+          ],
+          "correct_cases": 54,
+          "predicted_case_support": [
+            29,
+            30,
+            47,
+            35,
+            35,
+            27
+          ]
+        }
+      },
+      {
+        "seed": 101,
+        "case_metrics": {
+          "accuracy": 0.2561576354679803,
+          "balanced_accuracy": 0.24115681360263405,
+          "macro_f1": 0.22728031707054674,
+          "confusion_matrix": [
+            [
+              0,
+              5,
+              10,
+              2,
+              6,
+              3
+            ],
+            [
+              3,
+              2,
+              1,
+              1,
+              2,
+              1
+            ],
+            [
+              14,
+              3,
+              19,
+              10,
+              7,
+              4
+            ],
+            [
+              7,
+              3,
+              11,
+              14,
+              6,
+              10
+            ],
+            [
+              6,
+              7,
+              6,
+              3,
+              8,
+              8
+            ],
+            [
+              1,
+              4,
+              1,
+              2,
+              4,
+              9
+            ]
+          ],
+          "correct_cases": 52,
+          "predicted_case_support": [
+            31,
+            24,
+            48,
+            32,
+            33,
+            35
+          ]
+        }
+      },
+      {
+        "seed": 202,
+        "case_metrics": {
+          "accuracy": 0.20689655172413793,
+          "balanced_accuracy": 0.19912696522603643,
+          "macro_f1": 0.18895694255749004,
+          "confusion_matrix": [
+            [
+              2,
+              4,
+              7,
+              7,
+              3,
+              3
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              3,
+              1
+            ],
+            [
+              15,
+              7,
+              19,
+              11,
+              3,
+              2
+            ],
+            [
+              9,
+              6,
+              17,
+              5,
+              6,
+              8
+            ],
+            [
+              6,
+              7,
+              6,
+              7,
+              6,
+              6
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              5,
+              9
+            ]
+          ],
+          "correct_cases": 42,
+          "predicted_case_support": [
+            36,
+            27,
+            52,
+            33,
+            26,
+            29
+          ]
+        }
+      },
+      {
+        "seed": 303,
+        "case_metrics": {
+          "accuracy": 0.23645320197044334,
+          "balanced_accuracy": 0.21385458366882518,
+          "macro_f1": 0.20500787865174655,
+          "confusion_matrix": [
+            [
+              3,
+              4,
+              9,
+              3,
+              5,
+              2
+            ],
+            [
+              2,
+              1,
+              2,
+              1,
+              3,
+              1
+            ],
+            [
+              11,
+              8,
+              19,
+              8,
+              7,
+              4
+            ],
+            [
+              8,
+              3,
+              11,
+              14,
+              6,
+              9
+            ],
+            [
+              10,
+              3,
+              6,
+              8,
+              3,
+              8
+            ],
+            [
+              3,
+              3,
+              2,
+              3,
+              2,
+              8
+            ]
+          ],
+          "correct_cases": 48,
+          "predicted_case_support": [
+            37,
+            22,
+            49,
+            37,
+            26,
+            32
+          ]
+        }
+      },
+      {
+        "seed": 404,
+        "case_metrics": {
+          "accuracy": 0.26108374384236455,
+          "balanced_accuracy": 0.254883626865051,
+          "macro_f1": 0.23955513547012744,
+          "confusion_matrix": [
+            [
+              3,
+              4,
+              6,
+              5,
+              5,
+              3
+            ],
+            [
+              2,
+              2,
+              1,
+              2,
+              3,
+              0
+            ],
+            [
+              8,
+              7,
+              16,
+              14,
+              5,
+              7
+            ],
+            [
+              7,
+              5,
+              11,
+              15,
+              6,
+              7
+            ],
+            [
+              6,
+              8,
+              8,
+              3,
+              8,
+              5
+            ],
+            [
+              2,
+              2,
+              2,
+              2,
+              4,
+              9
+            ]
+          ],
+          "correct_cases": 53,
+          "predicted_case_support": [
+            28,
+            28,
+            44,
+            41,
+            31,
+            31
+          ]
+        }
+      }
+    ],
+    "classical_64__random_forest": [
+      {
+        "seed": 42,
+        "case_metrics": {
+          "accuracy": 0.2660098522167488,
+          "balanced_accuracy": 0.18923250811795703,
+          "macro_f1": 0.1786198526186937,
+          "confusion_matrix": [
+            [
+              1,
+              1,
+              16,
+              3,
+              5,
+              0
+            ],
+            [
+              1,
+              0,
+              3,
+              3,
+              3,
+              0
+            ],
+            [
+              1,
+              0,
+              29,
+              18,
+              8,
+              1
+            ],
+            [
+              1,
+              0,
+              24,
+              16,
+              6,
+              4
+            ],
+            [
+              1,
+              0,
+              22,
+              7,
+              5,
+              3
+            ],
+            [
+              0,
+              0,
+              7,
+              4,
+              7,
+              3
+            ]
+          ],
+          "correct_cases": 54,
+          "predicted_case_support": [
+            5,
+            1,
+            101,
+            51,
+            34,
+            11
+          ]
+        }
+      },
+      {
+        "seed": 101,
+        "case_metrics": {
+          "accuracy": 0.3103448275862069,
+          "balanced_accuracy": 0.22557336024828287,
+          "macro_f1": 0.2160576812791284,
+          "confusion_matrix": [
+            [
+              1,
+              1,
+              14,
+              4,
+              6,
+              0
+            ],
+            [
+              2,
+              0,
+              3,
+              2,
+              3,
+              0
+            ],
+            [
+              4,
+              1,
+              36,
+              13,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              23,
+              16,
+              7,
+              3
+            ],
+            [
+              2,
+              1,
+              21,
+              7,
+              5,
+              2
+            ],
+            [
+              0,
+              0,
+              7,
+              3,
+              6,
+              5
+            ]
+          ],
+          "correct_cases": 63,
+          "predicted_case_support": [
+            11,
+            3,
+            104,
+            45,
+            29,
+            11
+          ]
+        }
+      },
+      {
+        "seed": 202,
+        "case_metrics": {
+          "accuracy": 0.24630541871921183,
+          "balanced_accuracy": 0.18437968979764643,
+          "macro_f1": 0.17495825237396023,
+          "confusion_matrix": [
+            [
+              1,
+              0,
+              19,
+              4,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              5,
+              2,
+              2,
+              0
+            ],
+            [
+              5,
+              1,
+              29,
+              16,
+              6,
+              0
+            ],
+            [
+              1,
+              0,
+              25,
+              11,
+              10,
+              4
+            ],
+            [
+              0,
+              0,
+              17,
+              12,
+              4,
+              5
+            ],
+            [
+              0,
+              0,
+              7,
+              2,
+              7,
+              5
+            ]
+          ],
+          "correct_cases": 50,
+          "predicted_case_support": [
+            8,
+            1,
+            102,
+            47,
+            31,
+            14
+          ]
+        }
+      },
+      {
+        "seed": 303,
+        "case_metrics": {
+          "accuracy": 0.2561576354679803,
+          "balanced_accuracy": 0.20317668227884944,
+          "macro_f1": 0.19750691480954638,
+          "confusion_matrix": [
+            [
+              1,
+              1,
+              18,
+              3,
+              3,
+              0
+            ],
+            [
+              1,
+              0,
+              4,
+              3,
+              2,
+              0
+            ],
+            [
+              6,
+              1,
+              27,
+              14,
+              7,
+              2
+            ],
+            [
+              4,
+              0,
+              20,
+              11,
+              14,
+              2
+            ],
+            [
+              0,
+              0,
+              16,
+              11,
+              6,
+              5
+            ],
+            [
+              0,
+              0,
+              6,
+              3,
+              5,
+              7
+            ]
+          ],
+          "correct_cases": 52,
+          "predicted_case_support": [
+            12,
+            2,
+            91,
+            45,
+            37,
+            16
+          ]
+        }
+      },
+      {
+        "seed": 404,
+        "case_metrics": {
+          "accuracy": 0.2955665024630542,
+          "balanced_accuracy": 0.21854315275367905,
+          "macro_f1": 0.21396214896214896,
+          "confusion_matrix": [
+            [
+              2,
+              1,
+              10,
+              2,
+              11,
+              0
+            ],
+            [
+              1,
+              0,
+              6,
+              2,
+              1,
+              0
+            ],
+            [
+              5,
+              0,
+              30,
+              15,
+              5,
+              2
+            ],
+            [
+              1,
+              0,
+              22,
+              17,
+              9,
+              2
+            ],
+            [
+              0,
+              0,
+              19,
+              9,
+              7,
+              3
+            ],
+            [
+              0,
+              0,
+              6,
+              4,
+              7,
+              4
+            ]
+          ],
+          "correct_cases": 60,
+          "predicted_case_support": [
+            9,
+            1,
+            93,
+            49,
+            40,
+            11
+          ]
+        }
+      }
+    ],
+    "fixed_quantum_64__linear_logistic": [
+      {
+        "seed": 42,
+        "case_metrics": {
+          "accuracy": 0.21182266009852216,
+          "balanced_accuracy": 0.21908825608516014,
+          "macro_f1": 0.20678818850369404,
+          "confusion_matrix": [
+            [
+              3,
+              7,
+              6,
+              2,
+              7,
+              1
+            ],
+            [
+              4,
+              1,
+              1,
+              1,
+              2,
+              1
+            ],
+            [
+              14,
+              8,
+              10,
+              9,
+              12,
+              4
+            ],
+            [
+              8,
+              4,
+              12,
+              11,
+              8,
+              8
+            ],
+            [
+              8,
+              6,
+              5,
+              7,
+              7,
+              5
+            ],
+            [
+              1,
+              3,
+              2,
+              2,
+              2,
+              11
+            ]
+          ],
+          "correct_cases": 43,
+          "predicted_case_support": [
+            38,
+            29,
+            36,
+            32,
+            38,
+            30
+          ]
+        }
+      },
+      {
+        "seed": 101,
+        "case_metrics": {
+          "accuracy": 0.2315270935960591,
+          "balanced_accuracy": 0.22179978604127212,
+          "macro_f1": 0.20766033866081035,
+          "confusion_matrix": [
+            [
+              6,
+              7,
+              7,
+              3,
+              2,
+              1
+            ],
+            [
+              4,
+              0,
+              1,
+              1,
+              2,
+              2
+            ],
+            [
+              14,
+              4,
+              15,
+              8,
+              11,
+              5
+            ],
+            [
+              8,
+              5,
+              8,
+              9,
+              8,
+              13
+            ],
+            [
+              9,
+              3,
+              5,
+              5,
+              7,
+              9
+            ],
+            [
+              2,
+              3,
+              1,
+              2,
+              3,
+              10
+            ]
+          ],
+          "correct_cases": 47,
+          "predicted_case_support": [
+            43,
+            22,
+            37,
+            28,
+            33,
+            40
+          ]
+        }
+      },
+      {
+        "seed": 202,
+        "case_metrics": {
+          "accuracy": 0.23645320197044334,
+          "balanced_accuracy": 0.2394946642624661,
+          "macro_f1": 0.22348782159173072,
+          "confusion_matrix": [
+            [
+              3,
+              8,
+              4,
+              6,
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              3,
+              1
+            ],
+            [
+              10,
+              8,
+              15,
+              9,
+              11,
+              4
+            ],
+            [
+              7,
+              9,
+              13,
+              9,
+              6,
+              7
+            ],
+            [
+              6,
+              4,
+              8,
+              5,
+              8,
+              7
+            ],
+            [
+              1,
+              2,
+              1,
+              1,
+              4,
+              12
+            ]
+          ],
+          "correct_cases": 48,
+          "predicted_case_support": [
+            30,
+            32,
+            42,
+            31,
+            35,
+            33
+          ]
+        }
+      },
+      {
+        "seed": 303,
+        "case_metrics": {
+          "accuracy": 0.2561576354679803,
+          "balanced_accuracy": 0.25704513924328165,
+          "macro_f1": 0.23634059802446647,
+          "confusion_matrix": [
+            [
+              5,
+              3,
+              6,
+              3,
+              7,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              2,
+              3,
+              1
+            ],
+            [
+              13,
+              6,
+              17,
+              7,
+              8,
+              6
+            ],
+            [
+              6,
+              7,
+              13,
+              10,
+              5,
+              10
+            ],
+            [
+              11,
+              3,
+              4,
+              7,
+              7,
+              6
+            ],
+            [
+              3,
+              2,
+              1,
+              2,
+              1,
+              12
+            ]
+          ],
+          "correct_cases": 52,
+          "predicted_case_support": [
+            40,
+            22,
+            42,
+            31,
+            31,
+            37
+          ]
+        }
+      },
+      {
+        "seed": 404,
+        "case_metrics": {
+          "accuracy": 0.2413793103448276,
+          "balanced_accuracy": 0.24435031772493074,
+          "macro_f1": 0.22958294428882664,
+          "confusion_matrix": [
+            [
+              2,
+              8,
+              4,
+              7,
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              2,
+              2
+            ],
+            [
+              14,
+              8,
+              11,
+              11,
+              7,
+              6
+            ],
+            [
+              7,
+              7,
+              11,
+              12,
+              5,
+              9
+            ],
+            [
+              5,
+              6,
+              5,
+              7,
+              11,
+              4
+            ],
+            [
+              3,
+              2,
+              1,
+              1,
+              2,
+              12
+            ]
+          ],
+          "correct_cases": 49,
+          "predicted_case_support": [
+            34,
+            32,
+            33,
+            39,
+            30,
+            35
+          ]
+        }
+      }
+    ],
+    "fixed_quantum_64__random_forest": [
+      {
+        "seed": 42,
+        "case_metrics": {
+          "accuracy": 0.3103448275862069,
+          "balanced_accuracy": 0.23544532522860695,
+          "macro_f1": 0.2335028202292362,
+          "confusion_matrix": [
+            [
+              3,
+              1,
+              14,
+              4,
+              4,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              5,
+              3,
+              0
+            ],
+            [
+              5,
+              0,
+              25,
+              15,
+              9,
+              3
+            ],
+            [
+              3,
+              0,
+              18,
+              22,
+              5,
+              3
+            ],
+            [
+              2,
+              0,
+              19,
+              6,
+              9,
+              2
+            ],
+            [
+              0,
+              0,
+              7,
+              5,
+              5,
+              4
+            ]
+          ],
+          "correct_cases": 63,
+          "predicted_case_support": [
+            14,
+            1,
+            84,
+            57,
+            35,
+            12
+          ]
+        }
+      },
+      {
+        "seed": 101,
+        "case_metrics": {
+          "accuracy": 0.2955665024630542,
+          "balanced_accuracy": 0.21459096459096458,
+          "macro_f1": 0.20689122482060318,
+          "confusion_matrix": [
+            [
+              5,
+              2,
+              12,
+              1,
+              6,
+              0
+            ],
+            [
+              1,
+              0,
+              3,
+              4,
+              2,
+              0
+            ],
+            [
+              5,
+              0,
+              32,
+              14,
+              6,
+              0
+            ],
+            [
+              4,
+              0,
+              17,
+              17,
+              8,
+              5
+            ],
+            [
+              2,
+              0,
+              17,
+              12,
+              4,
+              3
+            ],
+            [
+              0,
+              0,
+              9,
+              4,
+              6,
+              2
+            ]
+          ],
+          "correct_cases": 60,
+          "predicted_case_support": [
+            17,
+            2,
+            90,
+            52,
+            32,
+            10
+          ]
+        }
+      },
+      {
+        "seed": 202,
+        "case_metrics": {
+          "accuracy": 0.270935960591133,
+          "balanced_accuracy": 0.21360433512136298,
+          "macro_f1": 0.21613846189188654,
+          "confusion_matrix": [
+            [
+              2,
+              1,
+              15,
+              2,
+              5,
+              1
+            ],
+            [
+              1,
+              0,
+              6,
+              2,
+              1,
+              0
+            ],
+            [
+              7,
+              0,
+              24,
+              15,
+              11,
+              0
+            ],
+            [
+              5,
+              0,
+              21,
+              16,
+              6,
+              3
+            ],
+            [
+              1,
+              0,
+              17,
+              11,
+              7,
+              2
+            ],
+            [
+              0,
+              0,
+              6,
+              3,
+              6,
+              6
+            ]
+          ],
+          "correct_cases": 55,
+          "predicted_case_support": [
+            16,
+            1,
+            89,
+            49,
+            36,
+            12
+          ]
+        }
+      },
+      {
+        "seed": 303,
+        "case_metrics": {
+          "accuracy": 0.2857142857142857,
+          "balanced_accuracy": 0.23311105818845756,
+          "macro_f1": 0.23290921566581582,
+          "confusion_matrix": [
+            [
+              3,
+              1,
+              12,
+              3,
+              7,
+              0
+            ],
+            [
+              1,
+              0,
+              5,
+              2,
+              2,
+              0
+            ],
+            [
+              7,
+              0,
+              25,
+              12,
+              10,
+              3
+            ],
+            [
+              3,
+              0,
+              22,
+              14,
+              9,
+              3
+            ],
+            [
+              3,
+              0,
+              15,
+              8,
+              9,
+              3
+            ],
+            [
+              0,
+              0,
+              9,
+              4,
+              1,
+              7
+            ]
+          ],
+          "correct_cases": 58,
+          "predicted_case_support": [
+            17,
+            1,
+            88,
+            43,
+            38,
+            16
+          ]
+        }
+      },
+      {
+        "seed": 404,
+        "case_metrics": {
+          "accuracy": 0.3054187192118227,
+          "balanced_accuracy": 0.22806734029644246,
+          "macro_f1": 0.2255708895284113,
+          "confusion_matrix": [
+            [
+              1,
+              1,
+              15,
+              4,
+              5,
+              0
+            ],
+            [
+              1,
+              0,
+              7,
+              2,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              29,
+              13,
+              7,
+              2
+            ],
+            [
+              2,
+              0,
+              20,
+              19,
+              8,
+              2
+            ],
+            [
+              2,
+              0,
+              18,
+              9,
+              8,
+              1
+            ],
+            [
+              0,
+              0,
+              8,
+              3,
+              5,
+              5
+            ]
+          ],
+          "correct_cases": 62,
+          "predicted_case_support": [
+            12,
+            1,
+            97,
+            50,
+            33,
+            10
+          ]
+        }
+      }
+    ]
+  },
+  "across_seed_summary": {
+    "classical_64__linear_logistic": {
+      "accuracy": {
+        "mean": 0.24532019704433497,
+        "std_across_seeds_ddof_1": 0.024233249017239108,
+        "min": 0.20689655172413793,
+        "max": 0.2660098522167488,
+        "per_seed": [
+          0.2660098522167488,
+          0.2561576354679803,
+          0.20689655172413793,
+          0.23645320197044334,
+          0.26108374384236455
+        ]
+      },
+      "balanced_accuracy": {
+        "mean": 0.2322509516627164,
+        "std_across_seeds_ddof_1": 0.024629505773944314,
+        "min": 0.19912696522603643,
+        "max": 0.254883626865051,
+        "per_seed": [
+          0.2522327689510352,
+          0.24115681360263405,
+          0.19912696522603643,
+          0.21385458366882518,
+          0.254883626865051
+        ]
+      },
+      "macro_f1": {
+        "mean": 0.22068650458417333,
+        "std_across_seeds_ddof_1": 0.02309601544432628,
+        "min": 0.18895694255749004,
+        "max": 0.24263224917095574,
+        "per_seed": [
+          0.24263224917095574,
+          0.22728031707054674,
+          0.18895694255749004,
+          0.20500787865174655,
+          0.23955513547012744
+        ]
+      }
+    },
+    "classical_64__random_forest": {
+      "accuracy": {
+        "mean": 0.27487684729064044,
+        "std_across_seeds_ddof_1": 0.027071195397111503,
+        "min": 0.24630541871921183,
+        "max": 0.3103448275862069,
+        "per_seed": [
+          0.2660098522167488,
+          0.3103448275862069,
+          0.24630541871921183,
+          0.2561576354679803,
+          0.2955665024630542
+        ]
+      },
+      "balanced_accuracy": {
+        "mean": 0.20418107863928295,
+        "std_across_seeds_ddof_1": 0.017891775051987968,
+        "min": 0.18437968979764643,
+        "max": 0.22557336024828287,
+        "per_seed": [
+          0.18923250811795703,
+          0.22557336024828287,
+          0.18437968979764643,
+          0.20317668227884944,
+          0.21854315275367905
+        ]
+      },
+      "macro_f1": {
+        "mean": 0.19622097000869554,
+        "std_across_seeds_ddof_1": 0.019182027351839798,
+        "min": 0.17495825237396023,
+        "max": 0.2160576812791284,
+        "per_seed": [
+          0.1786198526186937,
+          0.2160576812791284,
+          0.17495825237396023,
+          0.19750691480954638,
+          0.21396214896214896
+        ]
+      }
+    },
+    "fixed_quantum_64__linear_logistic": {
+      "accuracy": {
+        "mean": 0.2354679802955665,
+        "std_across_seeds_ddof_1": 0.016113721412607033,
+        "min": 0.21182266009852216,
+        "max": 0.2561576354679803,
+        "per_seed": [
+          0.21182266009852216,
+          0.2315270935960591,
+          0.23645320197044334,
+          0.2561576354679803,
+          0.2413793103448276
+        ]
+      },
+      "balanced_accuracy": {
+        "mean": 0.23635563267142215,
+        "std_across_seeds_ddof_1": 0.015904866833092494,
+        "min": 0.21908825608516014,
+        "max": 0.25704513924328165,
+        "per_seed": [
+          0.21908825608516014,
+          0.22179978604127212,
+          0.2394946642624661,
+          0.25704513924328165,
+          0.24435031772493074
+        ]
+      },
+      "macro_f1": {
+        "mean": 0.22077197821390565,
+        "std_across_seeds_ddof_1": 0.013180025774460617,
+        "min": 0.20678818850369404,
+        "max": 0.23634059802446647,
+        "per_seed": [
+          0.20678818850369404,
+          0.20766033866081035,
+          0.22348782159173072,
+          0.23634059802446647,
+          0.22958294428882664
+        ]
+      }
+    },
+    "fixed_quantum_64__random_forest": {
+      "accuracy": {
+        "mean": 0.2935960591133005,
+        "std_across_seeds_ddof_1": 0.015809661611705637,
+        "min": 0.270935960591133,
+        "max": 0.3103448275862069,
+        "per_seed": [
+          0.3103448275862069,
+          0.2955665024630542,
+          0.270935960591133,
+          0.2857142857142857,
+          0.3054187192118227
+        ]
+      },
+      "balanced_accuracy": {
+        "mean": 0.2249638046851669,
+        "std_across_seeds_ddof_1": 0.010277466932940871,
+        "min": 0.21360433512136298,
+        "max": 0.23544532522860695,
+        "per_seed": [
+          0.23544532522860695,
+          0.21459096459096458,
+          0.21360433512136298,
+          0.23311105818845756,
+          0.22806734029644246
+        ]
+      },
+      "macro_f1": {
+        "mean": 0.22300252242719062,
+        "std_across_seeds_ddof_1": 0.011420207660358542,
+        "min": 0.20689122482060318,
+        "max": 0.2335028202292362,
+        "per_seed": [
+          0.2335028202292362,
+          0.20689122482060318,
+          0.21613846189188654,
+          0.23290921566581582,
+          0.2255708895284113
+        ]
+      }
+    }
+  },
+  "paired_representation_difference": {
+    "linear_logistic": {
+      "quantum_minus_classical_accuracy_per_seed": [
+        -0.05418719211822662,
+        -0.024630541871921208,
+        0.02955665024630541,
+        0.019704433497536977,
+        -0.01970443349753695
+      ],
+      "mean_difference": -0.009852216748768478,
+      "all_seeds_positive": false,
+      "all_seeds_negative": false,
+      "discordance": [
+        {
+          "seed": 42,
+          "classical_only_correct": 21,
+          "quantum_only_correct": 10
+        },
+        {
+          "seed": 101,
+          "classical_only_correct": 16,
+          "quantum_only_correct": 11
+        },
+        {
+          "seed": 202,
+          "classical_only_correct": 9,
+          "quantum_only_correct": 15
+        },
+        {
+          "seed": 303,
+          "classical_only_correct": 12,
+          "quantum_only_correct": 16
+        },
+        {
+          "seed": 404,
+          "classical_only_correct": 21,
+          "quantum_only_correct": 17
+        }
+      ]
+    },
+    "random_forest": {
+      "quantum_minus_classical_accuracy_per_seed": [
+        0.04433497536945813,
+        -0.014778325123152691,
+        0.02463054187192118,
+        0.029556650246305383,
+        0.009852216748768461
+      ],
+      "mean_difference": 0.018719211822660092,
+      "all_seeds_positive": false,
+      "all_seeds_negative": false,
+      "discordance": [
+        {
+          "seed": 42,
+          "classical_only_correct": 13,
+          "quantum_only_correct": 22
+        },
+        {
+          "seed": 101,
+          "classical_only_correct": 20,
+          "quantum_only_correct": 17
+        },
+        {
+          "seed": 202,
+          "classical_only_correct": 13,
+          "quantum_only_correct": 18
+        },
+        {
+          "seed": 303,
+          "classical_only_correct": 12,
+          "quantum_only_correct": 18
+        },
+        {
+          "seed": 404,
+          "classical_only_correct": 17,
+          "quantum_only_correct": 19
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Repeated fivefold partitions of the SAME cases, not five independent patient cohorts.",
+    "Only fold assignment is varied: model RNG and quantum circuit remain fixed.",
+    "Reported ranges/SDs measure development-split variability and are not confidence intervals.",
+    "No multiplicity-corrected confirmatory test or external validation.",
+    "Case identifiers are not independently validated as distinct patients.",
+    "TI-RADS categories are radiological labels, not pathology outcomes.",
+    "Quantum filter is fixed and simulated, not an end-to-end trainable quantum network."
+  ]
+}

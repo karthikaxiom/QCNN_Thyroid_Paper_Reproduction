@@ -1,0 +1,46 @@
+{
+  "audit": "EXT-NEARDUP-001",
+  "source": "07_Results/exp_neardup_001/near_duplicate_candidate_audit.json",
+  "scope": "Exact identity and perceptual similarity candidate review; does not establish patient identities",
+  "total_different_case_candidates": 23,
+  "cross_assigned_split_candidates": 3,
+  "confirmed_exact_byte_cross_assigned_split_pairs": 0,
+  "manual_visual_review_status": "pending",
+  "candidates": [
+    {
+      "a": "277_1.jpg",
+      "case_a": "277",
+      "split_a": "validation",
+      "b": "348_1.jpg",
+      "case_b": "348",
+      "split_b": "train",
+      "phash": 8,
+      "dhash": 9,
+      "corr": 0.8625094294548035
+    },
+    {
+      "a": "177_1.jpg",
+      "case_a": "177",
+      "split_a": "train",
+      "b": "313_1.jpg",
+      "case_b": "313",
+      "split_b": "test",
+      "phash": 8,
+      "dhash": 12,
+      "corr": 0.8228142261505127
+    },
+    {
+      "a": "305_1.jpg",
+      "case_a": "305",
+      "split_a": "test",
+      "b": "34_1.jpg",
+      "case_b": "34",
+      "split_b": "train",
+      "phash": 8,
+      "dhash": 12,
+      "corr": 0.6879974007606506
+    }
+  ],
+  "threshold_note": "All are at pHash Hamming distance 8, the screen's inclusive upper threshold; none meet the strong-correlation arm at phash<=4/corr>=.95.",
+  "scientific_interpretation": "Potential near-similarity flagged. Do not label as confirmed duplicate or leakage without source-image review; avoid using test flags to choose models."
+}

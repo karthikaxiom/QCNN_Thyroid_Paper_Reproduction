@@ -1,0 +1,326 @@
+{
+  "experiment": "EXT-INTEGRITY-001",
+  "scope": "Read-only re-derivation of historical stored prediction metrics",
+  "original_results_modified": false,
+  "historical_test_status": "Previously analyzed; not an untouched holdout for extension selection",
+  "input_sha256": {
+    "07_Results\\phase14_roi_categorical_baseline\\test_roi_predictions.csv": "ef5151e7e22257209391a758e8553c124e39a2b42445dc088a3fe573397816f5",
+    "07_Results\\phase14_roi_categorical_baseline\\evaluation_metrics.json": "ad8a8abba0ba0af643eeb6971a85586e4aae1de96b4187238c3f0fd3635ada26",
+    "07_Results\\phase14_roi_categorical_baseline\\test_case_predictions.csv": "9f5f7824a9be6c4d3bf71810b3c12168a6502af37529a5cefdccdf6bbbbdaa84",
+    "07_Results\\phase16_binary_qucnet_evaluation\\binary_test_predictions.csv": "e21df9001abd58027785d00b21923e09df06c9659f109a0ff838fdaee9b9da0a",
+    "07_Results\\phase16_binary_qucnet_evaluation\\binary_evaluation_metrics.json": "3105145e1ea5b4c7aef5e1a9ffe07043b71d6968353e43c2e87013eb697767ac",
+    "07_Results\\phase9_paper_tirads_class_weighted\\test_predictions.csv": "e20df15011c2d1f4eba82a9be8e0c107e13cfef42e672651e1b1f2f2b5463566",
+    "07_Results\\phase9_paper_tirads_class_weighted\\test_metrics.json": "0370bb451769bc223b1e1d7b003baa0d8308803045f77d058c60a47085067e37"
+  },
+  "verified_all": true,
+  "evaluations": {
+    "phase14_roi": {
+      "prediction_file": "07_Results\\phase14_roi_categorical_baseline\\test_roi_predictions.csv",
+      "metric_file": "07_Results\\phase14_roi_categorical_baseline\\evaluation_metrics.json",
+      "measured": {
+        "total": 71,
+        "correct": 4,
+        "accuracy": 0.056338028169014086,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_precision": 0.009389671361502348,
+        "macro_f1": 0.017777777777777778,
+        "class_support": [
+          9,
+          4,
+          18,
+          16,
+          15,
+          9
+        ],
+        "predicted_class_counts": [
+          0,
+          71,
+          0,
+          0,
+          0,
+          0
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            18,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            16,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            15,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "checks": {
+        "accuracy": true,
+        "balanced_accuracy": true,
+        "macro_f1": true,
+        "macro_precision": true,
+        "sklearn_accuracy": true,
+        "sklearn_balanced": true,
+        "sklearn_macro_f1": true
+      },
+      "pass": true
+    },
+    "phase14_case": {
+      "prediction_file": "07_Results\\phase14_roi_categorical_baseline\\test_case_predictions.csv",
+      "metric_file": "07_Results\\phase14_roi_categorical_baseline\\evaluation_metrics.json",
+      "measured": {
+        "total": 44,
+        "correct": 2,
+        "accuracy": 0.045454545454545456,
+        "balanced_accuracy": 0.16666666666666666,
+        "macro_precision": 0.007575757575757576,
+        "macro_f1": 0.014492753623188408,
+        "class_support": [
+          5,
+          2,
+          12,
+          11,
+          9,
+          5
+        ],
+        "predicted_class_counts": [
+          0,
+          44,
+          0,
+          0,
+          0,
+          0
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "checks": {
+        "accuracy": true,
+        "balanced_accuracy": true,
+        "macro_f1": true,
+        "macro_precision": true,
+        "sklearn_accuracy": true,
+        "sklearn_balanced": true,
+        "sklearn_macro_f1": true
+      },
+      "pass": true
+    },
+    "phase16_binary_proxy": {
+      "prediction_file": "07_Results\\phase16_binary_qucnet_evaluation\\binary_test_predictions.csv",
+      "metric_file": "07_Results\\phase16_binary_qucnet_evaluation\\binary_evaluation_metrics.json",
+      "measured": {
+        "total": 70,
+        "correct": 38,
+        "accuracy": 0.5428571428571428,
+        "balanced_accuracy": 0.5070306038047974,
+        "macro_precision": 0.5114709851551957,
+        "macro_f1": 0.46969696969696967,
+        "class_support": [
+          31,
+          39
+        ],
+        "predicted_class_counts": [
+          13,
+          57
+        ],
+        "confusion_matrix": [
+          [
+            6,
+            25
+          ],
+          [
+            7,
+            32
+          ]
+        ]
+      },
+      "checks": {
+        "accuracy": true,
+        "true_negative": true,
+        "false_positive": true,
+        "false_negative": true,
+        "true_positive": true,
+        "sensitivity": true,
+        "specificity": true,
+        "positive_f1": true,
+        "sklearn_accuracy": true,
+        "sklearn_balanced": true,
+        "sklearn_macro_f1": true
+      },
+      "pass": true
+    },
+    "phase9_quantum_sixclass": {
+      "prediction_file": "07_Results\\phase9_paper_tirads_class_weighted\\test_predictions.csv",
+      "metric_file": "07_Results\\phase9_paper_tirads_class_weighted\\test_metrics.json",
+      "measured": {
+        "total": 70,
+        "correct": 13,
+        "accuracy": 0.18571428571428572,
+        "balanced_accuracy": 0.15162907268170425,
+        "macro_precision": 0.11458333333333333,
+        "macro_f1": 0.06715506715506715,
+        "class_support": [
+          8,
+          4,
+          19,
+          16,
+          14,
+          9
+        ],
+        "predicted_class_counts": [
+          0,
+          0,
+          2,
+          0,
+          64,
+          4
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            18,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            13,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ]
+        ]
+      },
+      "checks": {
+        "accuracy": true,
+        "balanced_accuracy": true,
+        "macro_f1": true,
+        "macro_precision": true,
+        "sklearn_accuracy": true,
+        "sklearn_balanced": true,
+        "sklearn_macro_f1": true
+      },
+      "pass": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "experiment": "EXT-DATA-001",
+  "master_rows": 480,
+  "final_rows": 480,
+  "case_ids": 390,
+  "labeled_images": 349,
+  "unlabeled_images": 131,
+  "labeled_cases": 298,
+  "binary_proxy_mismatches": 0,
+  "unlabeled_records_with_diagnosis": 0,
+  "conflicting_case_tirads_labels": 0,
+  "split_case_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "split_sizes": {
+    "train": {
+      "cases": 203,
+      "rois": 311
+    },
+    "validation": {
+      "cases": 44,
+      "rois": 58
+    },
+    "test": {
+      "cases": 44,
+      "rois": 71
+    }
+  },
+  "label_provenance": "TI-RADS-derived binary proxy; not pathology",
+  "patient_identity_independence_verified": false,
+  "test_image_or_prediction_accessed": false,
+  "input_hashes": {
+    "master_dataset.csv": "75b8a207cf0ebd4da774ba4fb42d5764e153e29f5d5e9ce9a096c10fd86d1f45",
+    "final_dataset.csv": "b4c38247555e7a3aef34f743706fc9e19caf0b57d1b74046e19e3f826cf3953e"
+  }
+}

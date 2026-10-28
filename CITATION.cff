@@ -12,9 +12,9 @@ authors:
 version: "1.2.0"
 date-released: 2026-07-24
 
-repository-code: "https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction"
+repository-code: "https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction"
 
-url: "https://github.com/Robbin808/QCNN_Thyroid_Paper_Reproduction"
+url: "https://github.com/karthikaxiom/QCNN_Thyroid_Paper_Reproduction"
 
 license: MIT
 
@@ -36,7 +36,7 @@ abstract: >
   classification using the Digital Database of Thyroid Ultrasound Images.
   The repository documents dataset verification, XML parsing, quantum-inspired
   feature reconstruction, classical comparisons, annotation auditing,
-  leakage-free patient-level splitting, lesion ROI preparation, and final
+  case-ID-separated splitting (without verified patient identity), lesion ROI preparation, and final
   ROI-level and case-level evaluation.
 
 references:
@@ -55,4 +55,24 @@ references:
     end: 27842
     year: 2024
     doi: "10.1109/ACCESS.2024.3367806"
-
+  - type: conference-paper
+    title: "An open access thyroid ultrasound-image database"
+    authors:
+      - family-names: Pedraza
+        given-names: Lina
+      - family-names: Vargas
+        given-names: Carlos
+      - family-names: Narvaez
+        given-names: Fabian
+      - family-names: Duran
+        given-names: Oscar
+      - family-names: Munoz
+        given-names: Emma
+      - family-names: Romero
+        given-names: Eduardo
+    conference:
+      name: "10th International Symposium on Medical Information Processing and Analysis"
+    volume: "9287"
+    year: 2015
+    doi: "10.1117/12.2073532"
+    url: "https://doi.org/10.1117/12.2073532"

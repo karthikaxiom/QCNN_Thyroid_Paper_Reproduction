@@ -38,7 +38,9 @@ desktop.ini
 
 # ============================================================
 # Raw dataset
-# DDTI is obtained separately and is not redistributed here.
+# Historical DDTI JPG/XML objects ARE already tracked in Git history.
+# These ignore patterns do not remove tracked content or authorize redistribution.
+# See Research_Extension/DATA_RELEASE_PERMISSION_DECISION.md.
 # ============================================================
 02_Dataset_Raw/*
 !02_Dataset_Raw/README.md
@@ -106,3 +108,6 @@ credentials.json
 # ============================================================
 !07_Results/**
 !09_Output_images/**
+
+# Local-only ultrasound near-duplicate contact sheets: avoid accidental public upload
+07_Results/exp_neardup_001/review_local/

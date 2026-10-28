@@ -1,0 +1,139 @@
+{
+  "experiment": "EXT-PADDING-001_REMOTE",
+  "scope": "Phase13 training-ROI metadata only; case-independent split restrictions respected",
+  "source_path": "03_Dataset_Processed/phase13_roi_dataset/train_roi_metadata.csv",
+  "source_git_blob_sha": "5e3a2ed5101e895b2223beecc0bbf1b943fbae06",
+  "method": "Theoretical padding fraction before square 64x64 resize (computed from expanded ROI dimensions), median-intensity padding per Phase13 preprocessing",
+  "formula": "1-min(extracted_roi_width, extracted_roi_height)/max(extracted_roi_width, extracted_roi_height)",
+  "not_measuring": "Zero intensity pixels, actual post-resize boundary area, causality or calibrated model effects",
+  "sample_size": {
+    "rois": 311,
+    "cases": 203
+  },
+  "summary": {
+    "roi": {
+      "n": 311,
+      "median": 0.256,
+      "mean": 0.25580480416353774,
+      "over_25_pct": 157,
+      "over_50_pct": 16
+    },
+    "case_median_per_case": {
+      "n": 203,
+      "median": 0.26597906403940885,
+      "mean": 0.25968733054864945,
+      "over_25_pct": 108,
+      "over_50_pct": 8
+    }
+  },
+  "by_tirads": {
+    "2": {
+      "roi": {
+        "n": 33,
+        "median": 0.28437500000000004,
+        "mean": 0.2826446466800268,
+        "over_25_pct": 20,
+        "over_50_pct": 2
+      },
+      "case_median": {
+        "n": 26,
+        "median": 0.30059445385532346,
+        "mean": 0.2805650223060128,
+        "over_25_pct": 17,
+        "over_50_pct": 1
+      },
+      "cases": 26
+    },
+    "3": {
+      "roi": {
+        "n": 14,
+        "median": 0.26275252525252524,
+        "mean": 0.23964227229310972,
+        "over_25_pct": 7,
+        "over_50_pct": 0
+      },
+      "case_median": {
+        "n": 10,
+        "median": 0.25772223209303746,
+        "mean": 0.2584629268787479,
+        "over_25_pct": 6,
+        "over_50_pct": 0
+      },
+      "cases": 10
+    },
+    "5": {
+      "roi": {
+        "n": 34,
+        "median": 0.22725626419940076,
+        "mean": 0.20651155050424677,
+        "over_25_pct": 13,
+        "over_50_pct": 1
+      },
+      "case_median": {
+        "n": 21,
+        "median": 0.24193548387096775,
+        "mean": 0.20629170473801653,
+        "over_25_pct": 8,
+        "over_50_pct": 0
+      },
+      "cases": 21
+    },
+    "4a": {
+      "roi": {
+        "n": 91,
+        "median": 0.29378531073446323,
+        "mean": 0.2861428580977176,
+        "over_25_pct": 51,
+        "over_50_pct": 3
+      },
+      "case_median": {
+        "n": 57,
+        "median": 0.30434782608695654,
+        "mean": 0.28626627019816336,
+        "over_25_pct": 35,
+        "over_50_pct": 1
+      },
+      "cases": 57
+    },
+    "4b": {
+      "roi": {
+        "n": 77,
+        "median": 0.2471910112359551,
+        "mean": 0.2433251371689857,
+        "over_25_pct": 37,
+        "over_50_pct": 4
+      },
+      "case_median": {
+        "n": 51,
+        "median": 0.25,
+        "mean": 0.248303343828367,
+        "over_25_pct": 25,
+        "over_50_pct": 3
+      },
+      "cases": 51
+    },
+    "4c": {
+      "roi": {
+        "n": 62,
+        "median": 0.24031962424103565,
+        "mean": 0.24317097703656726,
+        "over_25_pct": 29,
+        "over_50_pct": 6
+      },
+      "case_median": {
+        "n": 38,
+        "median": 0.23845129080004684,
+        "mean": 0.2506430135945165,
+        "over_25_pct": 17,
+        "over_50_pct": 3
+      },
+      "cases": 38
+    }
+  },
+  "limitations": [
+    "Padding uses the median intensity of the ROI, not zero. A zero-pixel audit cannot estimate the introduced padding.",
+    "Interpolation can alter exact pixel areas after downsampling.",
+    "ROI measurements within one case are correlated; case-median summaries are included separately.",
+    "Class-wise differences are descriptive and do not establish shortcut learning or patient identity."
+  ]
+}

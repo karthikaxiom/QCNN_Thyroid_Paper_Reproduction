@@ -1,0 +1,82 @@
+{
+  "experiment": "EXT-META-001",
+  "protocol": "5-fold case-stratified training-only CV",
+  "features": [
+    "log_bbox_area_fraction",
+    "log_relative_aspect_ratio",
+    "normalized_center_x",
+    "normalized_center_y"
+  ],
+  "train_rois": 311,
+  "train_cases": 203,
+  "validation_accessed": false,
+  "test_accessed": false,
+  "folds": [
+    {
+      "fold": 1,
+      "held_cases": 41,
+      "held_rois": 62,
+      "roi_metrics": {
+        "accuracy": 0.22580645161290322,
+        "balanced_accuracy": 0.2821428571428571,
+        "macro_f1": 0.20374269005847956
+      }
+    },
+    {
+      "fold": 2,
+      "held_cases": 41,
+      "held_rois": 63,
+      "roi_metrics": {
+        "accuracy": 0.14285714285714285,
+        "balanced_accuracy": 0.1130952380952381,
+        "macro_f1": 0.10743464052287582
+      }
+    },
+    {
+      "fold": 3,
+      "held_cases": 41,
+      "held_rois": 58,
+      "roi_metrics": {
+        "accuracy": 0.1724137931034483,
+        "balanced_accuracy": 0.15,
+        "macro_f1": 0.10963455149501661
+      }
+    },
+    {
+      "fold": 4,
+      "held_cases": 40,
+      "held_rois": 66,
+      "roi_metrics": {
+        "accuracy": 0.2878787878787879,
+        "balanced_accuracy": 0.3479166666666667,
+        "macro_f1": 0.26395784858565846
+      }
+    },
+    {
+      "fold": 5,
+      "held_cases": 40,
+      "held_rois": 62,
+      "roi_metrics": {
+        "accuracy": 0.27419354838709675,
+        "balanced_accuracy": 0.3253968253968254,
+        "macro_f1": 0.2332099799841735
+      }
+    }
+  ],
+  "roi_metrics": {
+    "accuracy": 0.22186495176848875,
+    "balanced_accuracy": 0.25255858415251203,
+    "macro_f1": 0.18980100200759523
+  },
+  "case_metrics": {
+    "accuracy": 0.1921182266009852,
+    "balanced_accuracy": 0.22703005628702222,
+    "macro_f1": 0.17844965912829758
+  },
+  "input_hashes": {
+    "metadata": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+    "labels": "dfbf611bbc2f2bb8edf72ce561847909052181f97bbfa45306b078d631d7cafe",
+    "case_ids": "569c00ca502462f5a2c4896dfca4848fee53bb873953abf11409100c5dbba228",
+    "roi_ids": "1d71e8d8527883db06edc2d74ba9a30c5178811cdc33add8eb7342c68e316a6d"
+  }
+}

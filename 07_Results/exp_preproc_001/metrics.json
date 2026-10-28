@@ -1,0 +1,801 @@
+{
+  "experiment": "EXT-PREPROC-001",
+  "status": "Exploratory matched development-case preprocessing ablation",
+  "variants": [
+    "median_original",
+    "reflection_padding",
+    "direct_stretch"
+  ],
+  "training_cases": 203,
+  "training_rois": 311,
+  "case_folds": 5,
+  "cv_seed": 42,
+  "bootstrap_seed": 20261028,
+  "bootstrap_repetitions": 5000,
+  "median_reference_reconstructed": true,
+  "max_absolute_reconstruction_error": 0.0,
+  "reconstructed_pixel_value_mismatches": 0,
+  "median_original_oof_matches_prior_fusion_run": true,
+  "input_hashes": {
+    "X_roi_train.npy": "568378f5be77ce1f0f53306e32124d1d7d7b809a3718437d815103e491dc5c36",
+    "train_roi_metadata.csv": "ce01f321f4a69c794ca268b63cd11cbaa6dab6bed90edfa86139c36b594d0523",
+    "reference_oof_predictions.csv": "daa2061996b918ca832dc387f2fb8df65b09ad8ea86d6494246ac3bea8b6d16b",
+    "training_raw_images": {
+      "02_Dataset_Raw/archive/130_1.jpg": "5e5ea948cf2eb0fb04722313f86b4bfcb65852a2ee8233860bb471dd034e9701",
+      "02_Dataset_Raw/archive/130_2.jpg": "7c90f942c32ce53988e9cf59e37979c9112df64dbf126d0349e12096cf44426e",
+      "02_Dataset_Raw/archive/134_1.jpg": "4ef4bc0ab880dffe0ce22ba3eefce2324856807ffc7f5fb1e1f20b3efa6ea40b",
+      "02_Dataset_Raw/archive/14_1.jpg": "156f84164cc803b409516a528dfb6a4907b633fff381242142a3ccf39549d8d0",
+      "02_Dataset_Raw/archive/17_1.jpg": "eeff100d2eb16b8e063ddf935fe81a8392a1897abd3b1224eff65473270508fb",
+      "02_Dataset_Raw/archive/190_1.jpg": "cdcbb11be96e551dba8477fc5e37f0a6c23ed9c78aba14a6a64b8e389f257992",
+      "02_Dataset_Raw/archive/193_1.jpg": "0c370f2ba53ca8c549fc8e2ba40f378a243e7815682a131a3b1bbcddcba317c1",
+      "02_Dataset_Raw/archive/204_1.jpg": "3802a1b8f99047ff842beab7541377e9b6ab8d1f970dde4b510525c688d2a39d",
+      "02_Dataset_Raw/archive/22_1.jpg": "4eae93f5a9c7acf9f522d4b853ee7c989cbce7fa38f6ce9239f1b558a21e4947",
+      "02_Dataset_Raw/archive/270_1.jpg": "66d75285eb8c7cdd93c9a921eb0ac2696e4e4a678884b685235e921fdac447e9",
+      "02_Dataset_Raw/archive/285_1.jpg": "33221d7a28d654f35005a173aa7889c0d452be47df7adb0e08e9d445399e6ea6",
+      "02_Dataset_Raw/archive/303_1.jpg": "403182a5071a5b74be6cd84558cf25ce06f805c1faec353f09397a7a64e7bf98",
+      "02_Dataset_Raw/archive/310_1.jpg": "e20e9c57f7a632274584503881e82ba75c2420d290938a99858e1371b222e8fc",
+      "02_Dataset_Raw/archive/329_1.jpg": "5025af39e3f5cef424ea62cfb6c074dc5754b00c8cb9047833c7b3364c6a4eba",
+      "02_Dataset_Raw/archive/331_1.jpg": "ec9e964c8530065dcf932d56eee8612a421d6dff725d50e0d5038cec141b56dc",
+      "02_Dataset_Raw/archive/335_1.jpg": "46393d6550e72271779045565c8ffd5df232804547a8ad16183e2444e4b4effd",
+      "02_Dataset_Raw/archive/335_2.jpg": "227ee07e1392a9147c5ceada2b4b185d00b104525c130df994f5f612a7d8e0e9",
+      "02_Dataset_Raw/archive/339_1.jpg": "b3cb33f96aa0bb38d51030ea67f65135f46dea7499ed19590ab1093147facd99",
+      "02_Dataset_Raw/archive/361_1.jpg": "5efce8b7117abbb5fe0171991c1b56311cbb51ad23934604ffacaf7707c99063",
+      "02_Dataset_Raw/archive/362_1.jpg": "0eb098d4dcccb72534da7f5ca573ab0f9ad275aec013878ef5f4df607522f0b8",
+      "02_Dataset_Raw/archive/364_1.jpg": "a3b91097dcf3c6d77d679e15278f35b7c476a534c717ab6ee76ebea4380b316e",
+      "02_Dataset_Raw/archive/365_1.jpg": "48e11a119371d7db576bf08348bf2d19cddf1cec8a4b277d23553b7a85f510c8",
+      "02_Dataset_Raw/archive/377_1.jpg": "670f28b06ff5f0c809eeca1014cfd1710ba2135c4a649d7a7f9a3d0d49f37777",
+      "02_Dataset_Raw/archive/386_1.jpg": "64d6d151b827e5de44a737c3182709159189279f5b88b3f9bd154ecd48a728a2",
+      "02_Dataset_Raw/archive/391_1.jpg": "ca7d93a45029a04ac5757caa88d0e8f0268016a99ec1bb906f1bddc76ff75dc8",
+      "02_Dataset_Raw/archive/391_2.jpg": "8e2b0a2c97fe86e4120c296f2d76cefc4b628abcbedcfe7c205fe8e8b2a69481",
+      "02_Dataset_Raw/archive/51_1.jpg": "02ab452c3b90c7a9481d339d8b03b447a2a9986930848e9aa812111d5ddcaf34",
+      "02_Dataset_Raw/archive/61_1.jpg": "d54b66c20150e8e19c7af09a87613937e4bb3beaf29ee4cfaf6a90e5a4d2a814",
+      "02_Dataset_Raw/archive/66_1.jpg": "ab56b4c531ea4826c9c75da36e5161792b47c8a3d64663a18eb6238829db7d79",
+      "02_Dataset_Raw/archive/16_1.jpg": "671a17564639ce5a215848b53caa5aadf9768b6425a7057f92785f762d2dcd81",
+      "02_Dataset_Raw/archive/25_1.jpg": "358a381d7321dd5d13b98b7e5851f20d9dcf31a6ec8e03b711ad8512cd86eb18",
+      "02_Dataset_Raw/archive/292_1.jpg": "1c42248414a2f5ca0752701e74003345500defd1d9e211e0ff84b134f1467399",
+      "02_Dataset_Raw/archive/309_1.jpg": "d27733a7ff79f31e60a00a68b44801132e4f736d69567ed8cda792a702cbffd4",
+      "02_Dataset_Raw/archive/334_1.jpg": "242c58b3be331592ea8fb16633ba7527608da777344887701fb2025c6746b69a",
+      "02_Dataset_Raw/archive/334_2.jpg": "1802724bd08b0e7072509cd2800efdbf10dc550f9856b556cbbc50617d3cb262",
+      "02_Dataset_Raw/archive/347_1.jpg": "5d8483371183f454b89a05531dca536e950593ff8cbb3a68ca51f2d65662c917",
+      "02_Dataset_Raw/archive/347_2.jpg": "bdc85c72eab252624a7a3a684c3abb85be6f37d473f60dd2d8fe6e6d6aec1382",
+      "02_Dataset_Raw/archive/373_1.jpg": "036d55e152f0eaf59177d03ca1d99fb9cf63510e6f91b01a51c822f2eff640ec",
+      "02_Dataset_Raw/archive/373_2.jpg": "cd0e23d20900bd0c3e34dfd380f309255fb00056c64f460fcb5f953e4bc6aa39",
+      "02_Dataset_Raw/archive/375_1.jpg": "dfe130e9d4c13739d56b9267d7aaf9be3bc06dfd82b986710ae96634a1afcea2",
+      "02_Dataset_Raw/archive/376_1.jpg": "eee49c7312c250c7d05b01a3c09ce0997dd27bc9d7be588e14817cdb56031fb2",
+      "02_Dataset_Raw/archive/380_1.jpg": "778ea64caf9be14c128ea8d7b08a246d6b6717b76c6875e489ef9f96e4356d33",
+      "02_Dataset_Raw/archive/100_1.jpg": "57aec7f38944961753d8df0783dae92e18291a648f0f07341d61f9c016676d04",
+      "02_Dataset_Raw/archive/105_1.jpg": "36160a796d60fde7012ce16bff8a442ec9e7231288da50165da8e38e08ce010e",
+      "02_Dataset_Raw/archive/108_1.jpg": "9adfc26126e4a5484c04dc1080acb30ff502f134223dfa2e5dbd69004e0e5e7f",
+      "02_Dataset_Raw/archive/111_1.jpg": "97c4df54f4786f352ff405cdd320d263d96b0f09994d1f5b2b66de738c4f1618",
+      "02_Dataset_Raw/archive/119_1.jpg": "88c546f4704fe043b2cd3b7940b85b86cb238279f0025f30e5a7c0729bdf603b",
+      "02_Dataset_Raw/archive/13_1.jpg": "0735c33322f9810f8ef86b27c8deffe7db1b478751ab1fef40261dba56c5b445",
+      "02_Dataset_Raw/archive/131_1.jpg": "1086b4cfa35ff9fcd1c032e476dc7aa9d60804b6fb322473b78ebd463f821130",
+      "02_Dataset_Raw/archive/143_1.jpg": "b521f89eb66a550cdb1f62e410a038a7270be62514bec9006f19c937d80dec6f",
+      "02_Dataset_Raw/archive/170_1.jpg": "9b3481e646446246bb4460799fa8c04fa31122069d7c07c2dcbe56b1b0ca6bd1",
+      "02_Dataset_Raw/archive/172_1.jpg": "5ae1b301462d908392aeb6af3f7ce449745eb4b3901ce16d13604da64864d8eb",
+      "02_Dataset_Raw/archive/174_1.jpg": "835562bb722d3cdeb0e6d62124b07ed074921680acbc6150a1b1075eabb2257a",
+      "02_Dataset_Raw/archive/18_1.jpg": "fe7ec38ad58bbbad83b4575d70b337550653fd65d93b0a4eb801c5510977e646",
+      "02_Dataset_Raw/archive/184_1.jpg": "21b3b41df5daa520ff83a33d3c0056b5ce49726bc4a1eb9e4f7d2d33b7377f65",
+      "02_Dataset_Raw/archive/185_1.jpg": "20782eb0d982e3f10fde745cdd11804d49eac96ec741feb478f61f8ba3a25700",
+      "02_Dataset_Raw/archive/194_1.jpg": "c9377feeb2b1e98d0a065efa2aa67c0b81b7553409592c32ef41d32cacccdfc2",
+      "02_Dataset_Raw/archive/198_1.jpg": "1319f2ec54ae60f3674713f5dae7686499735180ae28c95afd2fb167bbc564b9",
+      "02_Dataset_Raw/archive/198_2.jpg": "c61d56e91b31411bf3b46407ba93a04b1ba2cd8af52cc5513fcd407652ecf9a7",
+      "02_Dataset_Raw/archive/209_1.jpg": "9387017433787cf08ffa1becce6cbfd8eadfe96c8f6b6d5618f006b0ac4faff8",
+      "02_Dataset_Raw/archive/209_2.jpg": "4683bf3261449070ef25267e91e68d7b345c2058e3792d8dc390f2dee13f1da0",
+      "02_Dataset_Raw/archive/21_1.jpg": "9a36ccfef0c7f7ee1f4eb0b71b86222ea6d12d496ead7fa0bc719dd8a139fabe",
+      "02_Dataset_Raw/archive/224_1.jpg": "8f7743471385f2a28603c14710b24bceba0bc8e3f438a20d7104f36d5dcd6f97",
+      "02_Dataset_Raw/archive/225_1.jpg": "b4c897e6f2f69e5b74a5afa77730ea4bbfdf9092b4fc555088b66931b183f6ee",
+      "02_Dataset_Raw/archive/225_2.jpg": "fe0342d2f40840c47fd2c04e6e16061f477b26d9221fb483419d54960a8ef516",
+      "02_Dataset_Raw/archive/23_1.jpg": "6047d72dadafd5ea75584ab58cf3dc1bf3a0776d60c9953dba24d8b1a4198a67",
+      "02_Dataset_Raw/archive/231_1.jpg": "9cdd2ea0fa4cffa07b3a733ff0f2a10dad56d266f77f6407dd820cd70f36c0ae",
+      "02_Dataset_Raw/archive/255_1.jpg": "e237338e74b92968833a07e1a7c48a5a1dac531f69ce127f4f80cc582f919a21",
+      "02_Dataset_Raw/archive/257_1.jpg": "81ca43881bc09e7c5bd60503850b9389c12e5404c2234fc869b87375652e76a4",
+      "02_Dataset_Raw/archive/272_1.jpg": "729608f20ce784ff6166258a9182f08ce649700ec1d940b771e229c7370a8fca",
+      "02_Dataset_Raw/archive/278_1.jpg": "6e6a53b96baaa6895cf1deb14d3df1e679d481998fa46c20fbf483ab6dc9ccb1",
+      "02_Dataset_Raw/archive/283_1.jpg": "2be24dec279b07d1db76c01a11c40282133af9a80d35a42a7aa747793bb5ba8b",
+      "02_Dataset_Raw/archive/289_1.jpg": "26fd556b1ea3820118636814a1b2daab61a395ba4de72e732b800c0d64f7871d",
+      "02_Dataset_Raw/archive/293_1.jpg": "56bcca9fa5b495f4f09c5471af89745eb4380af903dd23565c731f76da4e3256",
+      "02_Dataset_Raw/archive/295_1.jpg": "41bf19ca5d7db679a01ebfdbdecb70be350c1785abc0a1092865f51f6720ad51",
+      "02_Dataset_Raw/archive/298_1.jpg": "cf3d6ce7e7fd2b91553ce2fecf9935e5a9ec3858784360b225e576ea61798cd9",
+      "02_Dataset_Raw/archive/3_1.jpg": "d50a3e7f7cddfb0dfba32d9e95766f84f7caebde56f2aa1f04709de536fc8e5c",
+      "02_Dataset_Raw/archive/300_1.jpg": "21f4c2d80afc81d187fe072de9c2b046a67862d6920527a72b37b731b57b3db8",
+      "02_Dataset_Raw/archive/306_1.jpg": "86fd3c7dfee5908122cad5cb67a00a597fc551ad77db881ec74690768c2fa2ea",
+      "02_Dataset_Raw/archive/307_1.jpg": "24c94d00b3419b37b35b7fc67e80043e3d5619ba814f409bf8c61292e0724257",
+      "02_Dataset_Raw/archive/314_1.jpg": "a161d3e793a6a79f163670283ccf1bc421045e406b35e5696bb77fe39f449101",
+      "02_Dataset_Raw/archive/32_1.jpg": "420d01f1f559618a489d2c59bd500e0d748545c139d32f6e0e116e9c0edb8cc5",
+      "02_Dataset_Raw/archive/348_1.jpg": "468976013935b2327a6169dd9de46baf9859e6064431253374b4d0fe32e9022b",
+      "02_Dataset_Raw/archive/350_1.jpg": "91a4a53a1efec4d77dca3d87e62ff324e41d40d024106b2c32aa6dbaefdf1eaf",
+      "02_Dataset_Raw/archive/350_2.jpg": "c500dd64b7ee481baa0a9221dc36d314a182862c15fd7781c53751e24281b89f",
+      "02_Dataset_Raw/archive/353_1.jpg": "c674375ddd04c6ffdfc298f9a3ba1e5fc733539af8114f92910da64b9b7d8e0c",
+      "02_Dataset_Raw/archive/353_2.jpg": "6bd4498c0eadb09d252421e58659373d6bb9d3ad81a14e496df05a371e724bd9",
+      "02_Dataset_Raw/archive/358_1.jpg": "e6cb240fdcb90eacfb5f608f785934f545ca2fe56c161991eba0a9e1c1414e1b",
+      "02_Dataset_Raw/archive/358_2.jpg": "9f533cefe6d5307e43e019cbd2b718bbefd3c69e9169ed6603fa6fd90566110e",
+      "02_Dataset_Raw/archive/360_1.jpg": "c4f4e8845e093d4599a4d62d240db1ccb7d26e905aa155798c183b74cb62afe9",
+      "02_Dataset_Raw/archive/360_2.jpg": "6848c566a8901120a019644be8075f3bde0882d454acaa97d52a8924eec0c6d3",
+      "02_Dataset_Raw/archive/39_1.jpg": "88a59f5e27843865e1f90f73b7c3dca9ff5175dec5e501e889c5d2da58c94fb5",
+      "02_Dataset_Raw/archive/395_1.jpg": "48a895611f9fcf68d1ef4a370e33e545853e7f56b0c548b9a84d3dc73d26b6e8",
+      "02_Dataset_Raw/archive/395_2.jpg": "1fe8fdc8a0cbbaf9a41d5dbc897ab301ad62a072cff732a41744dabf8a3eedd3",
+      "02_Dataset_Raw/archive/40_1.jpg": "025be9a77f9d4cc501162a1c66b39099a843abcc76c989023e5862238499dec3",
+      "02_Dataset_Raw/archive/400_1.jpg": "6b201e205ce2e1e0a8e5caa2ce0efe7c82211dcfc9608f2b6cd7f2b8a03e51ee",
+      "02_Dataset_Raw/archive/44_1.jpg": "7812bfe1dbe28bd06ccee3dd23ae2b90c4695fc81795c3e8bf500c5bd391c15f",
+      "02_Dataset_Raw/archive/47_1.jpg": "0ff209b5de45b553175b433abec78065cfc2416a6dc040287a0e9a7f0f32b74b",
+      "02_Dataset_Raw/archive/49_1.jpg": "cba5b3eaafffab28f8dacba342a8b2b19083253695ae638824a8cab2c256f404",
+      "02_Dataset_Raw/archive/52_1.jpg": "3c8fa131caa6029f17304374c84eb2535dd4b55fb0d0f53393565af68ee1ad17",
+      "02_Dataset_Raw/archive/70_1.jpg": "3ec2b8a2a4bedd9d63fb86e1b0a0d2e6008ceeb3b1f80ff446f07815bb4217a8",
+      "02_Dataset_Raw/archive/82_1.jpg": "d668fd97488ebafea66d53db4aa9a9cae952868c6f54cbf60f8bf268fdc2d340",
+      "02_Dataset_Raw/archive/83_1.jpg": "b14320ed828997afe3dce5f185dcb9b219c501a14cb556f343ec86ccebec8049",
+      "02_Dataset_Raw/archive/86_1.jpg": "d79a28b0cdeec103c2c046063d45a2869bb335ec7d987fdddba2c08a87e1f235",
+      "02_Dataset_Raw/archive/93_1.jpg": "591335d1a146717f3c52b5733076758ed6ad08416edf53456ff7850b8b50e171",
+      "02_Dataset_Raw/archive/93_2.jpg": "d3af6ee769059ce02acd20de78c8e4ab22600a0ac1a9841be5599535d57bd5a0",
+      "02_Dataset_Raw/archive/94_1.jpg": "4bcfffb7d818ea1fbfc6e00601a4d8de4c42681e41c02a07bacf1d11464a9a0b",
+      "02_Dataset_Raw/archive/98_1.jpg": "a1d6a9be808c4fbb631c888187dfbad8662581b2ac9f917fffa7b9cd3deea3eb",
+      "02_Dataset_Raw/archive/102_1.jpg": "214178943c5d2e40f42f6bbaefbdb15b42fa863131f19508d3f867624237583c",
+      "02_Dataset_Raw/archive/122_1.jpg": "e7b5f23dadac196a74b2f5027c261591335e7774a9d6f29b057d038ee8091a44",
+      "02_Dataset_Raw/archive/122_2.jpg": "18926f48726fb79dde8f0f3c84de0e4f0868c174d502d0d5dec8e880c5d1483c",
+      "02_Dataset_Raw/archive/126_1.jpg": "1ec6129c5f18210c463db4781341eab3187b4b10b55945c6193accb1b2a96335",
+      "02_Dataset_Raw/archive/129_1.jpg": "54bc81460a7431e423ab1eb5ada16dedc14c56e996d25bb6a2f404ddcb72dc22",
+      "02_Dataset_Raw/archive/129_2.jpg": "c2922933ead1d99c3d973ab0308e08c564d3da454f958660023782691925a997",
+      "02_Dataset_Raw/archive/144_1.jpg": "8663d3359da53fddd7ad849ebe696114141c19aac49c9d74d02cf1244be88244",
+      "02_Dataset_Raw/archive/148_1.jpg": "479c23bf56fcd89b1a5d86c8fce7332c20cbc299001ad5e30ccffb63a9260839",
+      "02_Dataset_Raw/archive/153_1.jpg": "de45dc07abb48e67c5469e06fd49bc4383f2e284fdf6afbcb8717233534fc751",
+      "02_Dataset_Raw/archive/154_1.jpg": "21cdd8af67b716b49aeca1a1b590c968efb85936608457aa43756e2845bbed78",
+      "02_Dataset_Raw/archive/171_1.jpg": "4e8ba79726534359fa6f9bc6898a82f74a5e28e216f4d733c4fbffb9d0dd303b",
+      "02_Dataset_Raw/archive/179_1.jpg": "e9f71106cbb841487d9445de64d700f4b08a34e10cc4dc93a8c1fbef92dea83b",
+      "02_Dataset_Raw/archive/187_1.jpg": "53d502c164c428fd77b60c621609383a1b2523e89a24ae0f4eb13dfc5491a15a",
+      "02_Dataset_Raw/archive/192_1.jpg": "12269e0f81391462ac1ffefb6b41d7fbb991b810a34a37f68e531686c1772eed",
+      "02_Dataset_Raw/archive/195_1.jpg": "d47790664e1432fb752ea21c435bae2903ae90534f4ef13cb50c2e9a1eaf1019",
+      "02_Dataset_Raw/archive/20_1.jpg": "d367dc0c3365e1ec2c0a0209c96d842250f5fe794e76bd7e86867496e80b32f8",
+      "02_Dataset_Raw/archive/214_1.jpg": "ba1229f7398fe55418b57042d9625c9bbd85dbeaca917d0bd16de35afcf7bb0a",
+      "02_Dataset_Raw/archive/221_1.jpg": "092daa5aa340b9d37d11540cea88eaf6c882c1d6cf69180c4095ce5eb210dc09",
+      "02_Dataset_Raw/archive/233_1.jpg": "27ef300c0cbb429f11a10737094a7083df6ef664cd72f05eb8e3fbaae067485c",
+      "02_Dataset_Raw/archive/233_2.jpg": "dff3a1475ee75f58fe6a68da406557054b8ec6702ce948b8a520096aa196381e",
+      "02_Dataset_Raw/archive/24_1.jpg": "4b4fa5d583561a96624998897e74ab90b61900e1cc20ca51688f4d1e932d0949",
+      "02_Dataset_Raw/archive/251_1.jpg": "fe7b9397552c733286d4db0c0c56873a5f595edcc366e44f70923a0331f70787",
+      "02_Dataset_Raw/archive/261_1.jpg": "0deecfefd910b84746dd9e97143d4c41637de0ef131c70fdb74439c6ea1d681e",
+      "02_Dataset_Raw/archive/264_1.jpg": "871b6c5110c1550258f3f3fca612b31381e9f23f9155edfc49c28298d295bf8b",
+      "02_Dataset_Raw/archive/267_1.jpg": "9b3104481a82565b9161b48960c5ad74da7cc5321500cb2edeb621295cbf805c",
+      "02_Dataset_Raw/archive/269_1.jpg": "1e72ae02c5238b0210f7c61430b9856604afb48731cceb4ea55413e7a2b92330",
+      "02_Dataset_Raw/archive/27_1.jpg": "33d6d735020e462abdc2c6651b3d7b1b90169b94bfcbc603a8e2ca52ef21305b",
+      "02_Dataset_Raw/archive/275_1.jpg": "cac45aece647da2fba5c9135041f211295bb6573318ac6781f0ee1f12b3fb6c0",
+      "02_Dataset_Raw/archive/279_1.jpg": "ac5c662c42dcdac47bb603234ca6c84c463889c789b0a8327b0c79de14d5713a",
+      "02_Dataset_Raw/archive/284_1.jpg": "61c5deb60384adf74331012b898797dbe96eda1a07eff3beceffcabf8f08c412",
+      "02_Dataset_Raw/archive/286_1.jpg": "57b4e1223ec70ea620078c4bcdc987d3cac3a154dbf1a1483d5fde22a5037923",
+      "02_Dataset_Raw/archive/302_1.jpg": "995197660b1df02ed40791f5ce3a4ffc4f7eac18a2cbfcab6fe0579171d26f84",
+      "02_Dataset_Raw/archive/311_1.jpg": "bf1695b2a674036f38eaf48e38f789318b6d6449e516c578f99911c15b29bdc1",
+      "02_Dataset_Raw/archive/320_1.jpg": "cd1cc02d1a681cbf40ea7bbadffe27e51a723711e85493ad6734839e5f7929be",
+      "02_Dataset_Raw/archive/343_1.jpg": "535e3f59498f4bd46cddeeee7c1861bda9bf1d6cc5d6a7fb7a2b7be8f57aba09",
+      "02_Dataset_Raw/archive/35_1.jpg": "9ee2e2927bd3cc83965aa5175d54756be5cddd6ef6172eaefa4532cca2a8d3dd",
+      "02_Dataset_Raw/archive/354_1.jpg": "31e91bd1d456170f146c35878971c57658f1e44c1c0c4356dd33f89f58d4d8b8",
+      "02_Dataset_Raw/archive/363_1.jpg": "d895bba44a5e96afd54c079907c822069755a94c10d6eac586b793783f6ff546",
+      "02_Dataset_Raw/archive/368_1.jpg": "3e0fea13c9e320a058180935d32c97b301bcc278d16cf2475c752a5a675c9a40",
+      "02_Dataset_Raw/archive/372_1.jpg": "c17b6e5326ee3a6f0a94897067e62840a84f5c923ed094188633a2d1e766e0ab",
+      "02_Dataset_Raw/archive/38_1.jpg": "d5e1b9ac5447e806921780ae4b536b5b42a3c99ed00d5ed67714e61870381a38",
+      "02_Dataset_Raw/archive/398_1.jpg": "5c6f43dcda3fde927bef7e4f845b041cd0ee205ecfd0888f8114bf9238f302b9",
+      "02_Dataset_Raw/archive/399_1.jpg": "483ffad5e619acc023e7a4ce0ab8d0ebfeae7a6c2fc5c4ab0d652019f20ddb4f",
+      "02_Dataset_Raw/archive/41_1.jpg": "1f7e2292926cd441236cb7aef264f5b3af49bd69b92319efc47ab94a239a1686",
+      "02_Dataset_Raw/archive/42_1.jpg": "4aec4e06207376f53f6ba37044c83259b5d398e1fb5deb0b8e0def7babc84074",
+      "02_Dataset_Raw/archive/45_1.jpg": "5278884cef29263478b51e26a6a539ce9c2f973aa4a79116a5e952f4b4b425c0",
+      "02_Dataset_Raw/archive/6_1.jpg": "e29ebe8907409f3d4b8dca7133874890bd94581bdd5c78d2722dab3893aa051e",
+      "02_Dataset_Raw/archive/67_1.jpg": "94ba6b2b9639b12e4b9237136703f1eeada9b0588799515043e407469cb17d73",
+      "02_Dataset_Raw/archive/73_1.jpg": "e5fd8a0dba43654338b2e787291ce37ecc2007d4a5e40d689668963018bd0d85",
+      "02_Dataset_Raw/archive/78_1.jpg": "50b778d78991204586c35664d63b4196c384299deb9fd4479cfa7306e403611d",
+      "02_Dataset_Raw/archive/79_1.jpg": "82236ca2e1aaa0a8921bc8dff1effaef47274d02b504772d9d49662c23d68ea6",
+      "02_Dataset_Raw/archive/89_1.jpg": "647e3319375005204929b19ae1ac0055a4e01922d7ae1a48c9ae0a8e51e77cc3",
+      "02_Dataset_Raw/archive/9_1.jpg": "7868481c9601efd6daff04ac935f4b0069711ea77227de9b4460655abefdb482",
+      "02_Dataset_Raw/archive/90_1.jpg": "fb11e563c8357d0a61f511a402faddf0ea7554c1b90cfa5dace7dc128f2bdc4f",
+      "02_Dataset_Raw/archive/90_2.jpg": "88343f837c6c64f46f113c93cffc36e604c2122d1b24906909d93de1d88c2591",
+      "02_Dataset_Raw/archive/125_1.jpg": "63f608261e6d7c11212586322267e08b1af672d63e56c987919f681229d452f7",
+      "02_Dataset_Raw/archive/128_1.jpg": "5ae43af8375c61183e1772c0caa8ab1c9a4dbc40845d23b8ef6cb0f9bf257a74",
+      "02_Dataset_Raw/archive/137_1.jpg": "41e023a58d2ca28b16f8160816091319d91801a4d996b869824c9b9cc0fcd2d3",
+      "02_Dataset_Raw/archive/141_1.jpg": "ed670c8775d48fa72d7c63b40582b69773ed0deab322cdd5fb807aa3677f3acc",
+      "02_Dataset_Raw/archive/142_1.jpg": "ab9c93b94296e2ccb03e701015741e7c73d8de144269abc7d6f561cc2e51d654",
+      "02_Dataset_Raw/archive/15_1.jpg": "f3d6b4094cef2e9c203b90576dd5f69d72fd2197e8f2f43f51feb18539681b55",
+      "02_Dataset_Raw/archive/155_1.jpg": "7677f8e4eebebff17231bef053bef964b524f580efbf4523f7edabeaf600c98a",
+      "02_Dataset_Raw/archive/156_1.jpg": "7a755553b65b0c2e21da159556e3e23d878593a3729b558bf90fd2b2cc700f04",
+      "02_Dataset_Raw/archive/156_2.jpg": "e7344382ae012b6d55b1562983449f29f89e77e5d49869797b68ed829f48e315",
+      "02_Dataset_Raw/archive/162_1.jpg": "b29278d9c29c28d15fad50ee8ec197d8b775d1b9d9b520721fcd31965999dfc7",
+      "02_Dataset_Raw/archive/168_1.jpg": "ed1699369cc0670984f8cb073f7807200b25bf83b702835416d2b1c16a0d27bc",
+      "02_Dataset_Raw/archive/177_1.jpg": "6be8dbbd7e97aced534e2cca1e53a7164ab9366aa8d2084252cecbd859854f1a",
+      "02_Dataset_Raw/archive/177_2.jpg": "cc7869403a3ce253828e84ad95fc44fd0a5eae4dd1ebb785c0b89a1f332c7050",
+      "02_Dataset_Raw/archive/201_1.jpg": "ff2cc0033c20d4350e03cdb48dcadc162813db6965a179e8a407d713220ea0bc",
+      "02_Dataset_Raw/archive/202_1.jpg": "5b821fdeec56981d2d2154a77a873e636d4d7962a533546a457510640a02d76a",
+      "02_Dataset_Raw/archive/215_1.jpg": "c9a2fc351887e931f76420f96a4ceb1ebfc573006745025b63d4deea1a7452d2",
+      "02_Dataset_Raw/archive/217_1.jpg": "372354d78684998feeb74775b221394e7cc28f5ce5f9960b0eeb97256af7cd47",
+      "02_Dataset_Raw/archive/228_1.jpg": "59a1cacc82605e29540f3f12a434d1e37882d31c817fdc96a37a531fc1e034ea",
+      "02_Dataset_Raw/archive/236_1.jpg": "35cee6a7c2530ff3848d5ae396e9105b68ef5bb8868ed5dc8870ad7510747278",
+      "02_Dataset_Raw/archive/244_1.jpg": "dc7cc91f8c718c61edcdaf948989dbb50522b567d1af21cd1ea691b38568b86a",
+      "02_Dataset_Raw/archive/258_1.jpg": "16cfeccbddcbb1424f89ed62cf98447d5d6f428b1138876fb9da67ec65bff6d1",
+      "02_Dataset_Raw/archive/271_1.jpg": "d66152947d279aff8e1acd63cc8b2b179d0daaa68da038a39082d7c3bb727158",
+      "02_Dataset_Raw/archive/281_1.jpg": "99d5bfd98ad6fccda92c9f8d708a9d3e29ac04d9806c08a1d4ede15065f8cbbe",
+      "02_Dataset_Raw/archive/288_1.jpg": "8929decdce71b5456983bb982e96d6a26b388875124608f3bb2d4752f54c5b2f",
+      "02_Dataset_Raw/archive/297_1.jpg": "068a781b20852f2ed75e445c96c7b7efe3daca10ade4db23fc84a9fcf07d17fa",
+      "02_Dataset_Raw/archive/30_1.jpg": "d41f7768539ae3fbf84d4445dde95c4be3145e1fc775b6f850f2d7754d2fee8d",
+      "02_Dataset_Raw/archive/317_1.jpg": "cb54d3684e97f95ffecc4f36c943af43d62b6a02b652e4e0fd345b90935d9e4e",
+      "02_Dataset_Raw/archive/317_2.jpg": "76e9f8b293d4610f218e88596498cbc4ca7280459809706a52066e3a3d3fc769",
+      "02_Dataset_Raw/archive/318_1.jpg": "dacdbdb7a6412b1b4448f2d3a5a4ecec058f5df0220857b5e47763d5b83f10aa",
+      "02_Dataset_Raw/archive/318_2.jpg": "d3f0c60cbda2c03d796636e50d3333c14cd7cfd413aab03bd558b2a07ba42c6a",
+      "02_Dataset_Raw/archive/319_1.jpg": "996e12d535eefca325beb4457c26f964b20fbddb1f3a5ed4907afb35cb499e2b",
+      "02_Dataset_Raw/archive/319_2.jpg": "a43a1825141ab0498179faa9b1bcde581f0456942a6cb1e50ddf77e69bbcebac",
+      "02_Dataset_Raw/archive/338_1.jpg": "de09e24f354c22a57d4b15b837a26df73240c5b8c488f33ba17cf187f2fcf0c5",
+      "02_Dataset_Raw/archive/338_2.jpg": "1426c52e4b1b3fa75261de1c1cd23c1e67880b01a4ed52961e1d5352e4cbaf32",
+      "02_Dataset_Raw/archive/34_1.jpg": "07e5c703576a9143e001ed9eeeac4d25681056ab316534cfba701745484b8460",
+      "02_Dataset_Raw/archive/341_1.jpg": "58446e1835da0d23ccfa5ac5467783bd4a06cfb86c1621eea6aa675ce68c8fcb",
+      "02_Dataset_Raw/archive/342_1.jpg": "089e829f05e15c427f64d42f37e64006ae4a82a98207e23f99d993f8dd637bea",
+      "02_Dataset_Raw/archive/367_1.jpg": "9591cacbebb84bcadb08f6ef6c001238b7f272b1b16950e30e09ae15323aed90",
+      "02_Dataset_Raw/archive/367_2.jpg": "b4d25fc4cf853045cd8bd07ff62d6eceb6af42f0cbb7dcddd54e981022aebda6",
+      "02_Dataset_Raw/archive/370_1.jpg": "4959e537d2c174469ce99589d6e8705f12e6034d82adc3a0e4cbe7ee9f096b88",
+      "02_Dataset_Raw/archive/371_1.jpg": "7782c9579224003d3f2390855b33d66736015079335d10a7881e28e98b0e3475",
+      "02_Dataset_Raw/archive/371_2.jpg": "337596b3b213f6268c4061de0f1de1ef083cb39f69db05396b53d8e8f79f444c",
+      "02_Dataset_Raw/archive/379_1.jpg": "62763b3658e05ee367b1c3daef8d1b0cbafd6017176b79866ee9e5be38505eaf",
+      "02_Dataset_Raw/archive/381_1.jpg": "828ebe69cd495fcd974c8f61f3ec71e7a8029c748a4d959533f3e4d06160a189",
+      "02_Dataset_Raw/archive/381_2.jpg": "8684197d9a8232a9b94de3a9fb79f35ed7090cf98d0035d09a66b54ade4d2120",
+      "02_Dataset_Raw/archive/392_1.jpg": "9567c3919293f982798641b382e2d777b4dcb77ad494340d8844cb09ab692338",
+      "02_Dataset_Raw/archive/8_1.jpg": "94b1d5eee6df467597f3e461825550fb36ef56c99c3e0f029d40d900700ba9ce",
+      "02_Dataset_Raw/archive/11_1.jpg": "3a3935a9ff361775d7c42e39b3f9c138eba5040058df834d7889651eaa3cabe9",
+      "02_Dataset_Raw/archive/180_1.jpg": "b445ab17d0cfe18d8be91188ad1555a4a7fcaf6c2a6c96e20d9c5f527cae09b2",
+      "02_Dataset_Raw/archive/186_1.jpg": "b7fafd98f013a0c6c1a8cf8e65ee96cccfa7f0f6a1740150f2999070fb2c1ab5",
+      "02_Dataset_Raw/archive/19_1.jpg": "d15ab61e3e2e6dd8b31547570ddce0e912996574051d50f4a52b402804c3eb1d",
+      "02_Dataset_Raw/archive/207_1.jpg": "edf04c1889c7429e3b8b2c63cd00a593a349a250cf8ff8f6da787cced39d26ac",
+      "02_Dataset_Raw/archive/246_1.jpg": "bc8b551b9f6fb97338b3a86c7bb9dad52269a41dc8d14133ee958032e5d6d6c0",
+      "02_Dataset_Raw/archive/29_1.jpg": "030669a9e197ed988cd009d0b0b0fd6d80a8fcd0a57f995bf4aa0125f6fcb890",
+      "02_Dataset_Raw/archive/290_1.jpg": "0da57f0862ba5f80ea92a0d971417eecb5508a3bd793015a5742873abf8fbacc",
+      "02_Dataset_Raw/archive/294_1.jpg": "6b07db3aba0f3571b7262ae24c992a525387e3e172a2671c65bd5070345115d4",
+      "02_Dataset_Raw/archive/294_2.jpg": "2cb8080c242a8b36a61578138b9080a420f9cfb50111dd1ae539931b2af2ae58",
+      "02_Dataset_Raw/archive/294_3.jpg": "79c2fdec3fce937692fb574ac4516663eb27b34bd30c652dd82173bf16f62347",
+      "02_Dataset_Raw/archive/296_1.jpg": "2b209eb9f4131ef32316f27f44014e93e7ad745332fcf547e87ed797d3f61c50",
+      "02_Dataset_Raw/archive/296_2.jpg": "c02ff7722902752f629f682e145c995d951bd0f37d55cdec298d9aa6e3801ba6",
+      "02_Dataset_Raw/archive/296_3.jpg": "62a07a0997cfb91b6cfe975eda73a9c6eb81d0dd7d35566c7c85aae2dcb81265",
+      "02_Dataset_Raw/archive/296_4.jpg": "7cbcca6aa49f7c55c4b26767e83fa1016484f4c4fb4c7b07337f2c08e60c9395",
+      "02_Dataset_Raw/archive/296_5.jpg": "ce4408c616707f7ed5c87356c08f1692e157cdce91e3afc73049c1ecfec08ebd",
+      "02_Dataset_Raw/archive/315_1.jpg": "e448c0fd347a3655a9dce362ff398d478641b525bfbaab9efaa68c7cfdc9481d",
+      "02_Dataset_Raw/archive/315_2.jpg": "a54bbf5d871f2da042aa37e3694f6c290fa5b279a57943ef11384489a9293c66",
+      "02_Dataset_Raw/archive/330_1.jpg": "ad6ee365bf220bd7e604ebb3eb468762b645f24343744cd62cc9bf0daa1f2d99",
+      "02_Dataset_Raw/archive/330_2.jpg": "a47a1677b91d59f600403d5f5106140914271e7f783c66b21413010b012df7f8",
+      "02_Dataset_Raw/archive/340_1.jpg": "ad4bcc9297cfbe2affed72a8e0eb2c6b69ccd9f0c550654513d924776255e275",
+      "02_Dataset_Raw/archive/345_1.jpg": "c588e37ed3026e4817208dc60224109dbac4e2a285581730dacd88d785da500e",
+      "02_Dataset_Raw/archive/351_1.jpg": "cc500e2e93358d197557e2428144274d2ec4b5bdea04da5ca0e523d8fbafa6ef",
+      "02_Dataset_Raw/archive/351_2.jpg": "5984aa977ae24d12a6dfb1ac762799063a40d6d29eb8f985d648255145b10ed6",
+      "02_Dataset_Raw/archive/36_1.jpg": "1b3005ac9d9741fc31e845c8e4563e6417778c25317f320de9cf55440a108671",
+      "02_Dataset_Raw/archive/374_1.jpg": "811033dbb7730ee84cd3721df20c53bea07d92e48b8295df3010f4ad0d0723c8",
+      "02_Dataset_Raw/archive/394_1.jpg": "b5b28d73e4307e23ba4b2872ef31a5d399f6e5043cfa5b0f9a8cb4e90eade6bc",
+      "02_Dataset_Raw/archive/46_1.jpg": "4e7b5b0e005dd891116bfba5b3416746b7006b049f1f91166064a7b2aa8abdce",
+      "02_Dataset_Raw/archive/56_1.jpg": "c360fa40633db1fc12ae71cf2315810ac713ac27d06a0d5a7d18a9eb66f95cf7",
+      "02_Dataset_Raw/archive/85_1.jpg": "2f224d4e99d7567c164d8a663c6341fc0272ffc8f1b412ee8ab15a1a58e29e90",
+      "02_Dataset_Raw/archive/85_2.jpg": "09cd09ae25d6872b5d65930da5e520b84f3c8218ef64577d8df729bf17f5df12"
+    }
+  },
+  "cv_settings": {
+    "feature_representation": "8x8 mean grayscale + horizontal-gradient pooling",
+    "standard_scaler": "Fitted in each training fold",
+    "classifier": "LogisticRegression",
+    "C": 0.1,
+    "class_weight": "balanced",
+    "max_iter": 1500,
+    "case_prediction": "Argmax of case mean ROI class probabilities"
+  },
+  "versions": {
+    "opencv": "4.13.0",
+    "sklearn": "1.9.0"
+  },
+  "validation_accessed": false,
+  "test_accessed": false,
+  "original_files_modified": false,
+  "models": {
+    "median_original": {
+      "pooled_roi": {
+        "accuracy": 0.2282958199356913,
+        "balanced_accuracy": 0.22879545080683603,
+        "macro_f1": 0.2155752457749944,
+        "confusion_matrix": [
+          [
+            4,
+            5,
+            8,
+            10,
+            6,
+            0
+          ],
+          [
+            2,
+            2,
+            3,
+            2,
+            4,
+            1
+          ],
+          [
+            19,
+            3,
+            25,
+            20,
+            19,
+            5
+          ],
+          [
+            20,
+            7,
+            16,
+            16,
+            9,
+            9
+          ],
+          [
+            10,
+            10,
+            16,
+            9,
+            6,
+            11
+          ],
+          [
+            1,
+            3,
+            2,
+            2,
+            8,
+            18
+          ]
+        ]
+      },
+      "pooled_case": {
+        "accuracy": 0.22167487684729065,
+        "balanced_accuracy": 0.20102102919440382,
+        "macro_f1": 0.19748405685905687,
+        "confusion_matrix": [
+          [
+            3,
+            4,
+            6,
+            8,
+            5,
+            0
+          ],
+          [
+            2,
+            0,
+            2,
+            2,
+            3,
+            1
+          ],
+          [
+            12,
+            1,
+            16,
+            12,
+            14,
+            2
+          ],
+          [
+            13,
+            4,
+            9,
+            13,
+            6,
+            6
+          ],
+          [
+            7,
+            4,
+            12,
+            4,
+            3,
+            8
+          ],
+          [
+            1,
+            2,
+            2,
+            1,
+            5,
+            10
+          ]
+        ]
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_roi_accuracy": 0.12903225806451613
+        },
+        {
+          "fold": 2,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_roi_accuracy": 0.30158730158730157
+        },
+        {
+          "fold": 3,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_roi_accuracy": 0.22413793103448276
+        },
+        {
+          "fold": 4,
+          "training_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_roi_accuracy": 0.25757575757575757
+        },
+        {
+          "fold": 5,
+          "training_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_roi_accuracy": 0.22580645161290322
+        }
+      ],
+      "representation_difference": {
+        "mean_absolute_pixel_difference_from_reference": 0.0,
+        "fraction_of_pixels_changed_from_reference": 0.0
+      },
+      "predicted_case_counts": [
+        38,
+        15,
+        47,
+        40,
+        36,
+        27
+      ]
+    },
+    "reflection_padding": {
+      "pooled_roi": {
+        "accuracy": 0.24115755627009647,
+        "balanced_accuracy": 0.21163487577149817,
+        "macro_f1": 0.21296376918982785,
+        "confusion_matrix": [
+          [
+            7,
+            5,
+            9,
+            5,
+            7,
+            0
+          ],
+          [
+            2,
+            0,
+            6,
+            0,
+            2,
+            4
+          ],
+          [
+            17,
+            5,
+            27,
+            21,
+            17,
+            4
+          ],
+          [
+            18,
+            5,
+            21,
+            19,
+            8,
+            6
+          ],
+          [
+            11,
+            8,
+            15,
+            10,
+            10,
+            8
+          ],
+          [
+            3,
+            4,
+            2,
+            1,
+            12,
+            12
+          ]
+        ]
+      },
+      "pooled_case": {
+        "accuracy": 0.2512315270935961,
+        "balanced_accuracy": 0.22762316802564483,
+        "macro_f1": 0.222952500674878,
+        "confusion_matrix": [
+          [
+            6,
+            4,
+            7,
+            4,
+            5,
+            0
+          ],
+          [
+            1,
+            0,
+            5,
+            0,
+            1,
+            3
+          ],
+          [
+            11,
+            2,
+            16,
+            15,
+            10,
+            3
+          ],
+          [
+            11,
+            2,
+            14,
+            15,
+            5,
+            4
+          ],
+          [
+            9,
+            3,
+            9,
+            6,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            1,
+            1,
+            5,
+            9
+          ]
+        ]
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_roi_accuracy": 0.27419354838709675
+        },
+        {
+          "fold": 2,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_roi_accuracy": 0.31746031746031744
+        },
+        {
+          "fold": 3,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_roi_accuracy": 0.2413793103448276
+        },
+        {
+          "fold": 4,
+          "training_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_roi_accuracy": 0.19696969696969696
+        },
+        {
+          "fold": 5,
+          "training_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_roi_accuracy": 0.1774193548387097
+        }
+      ],
+      "representation_difference": {
+        "mean_absolute_pixel_difference_from_reference": 0.027263935655355453,
+        "fraction_of_pixels_changed_from_reference": 0.2668064522206592
+      },
+      "predicted_case_counts": [
+        40,
+        14,
+        52,
+        41,
+        31,
+        25
+      ]
+    },
+    "direct_stretch": {
+      "pooled_roi": {
+        "accuracy": 0.2765273311897106,
+        "balanced_accuracy": 0.26790408621528167,
+        "macro_f1": 0.2603030767981063,
+        "confusion_matrix": [
+          [
+            8,
+            2,
+            10,
+            4,
+            8,
+            1
+          ],
+          [
+            1,
+            2,
+            4,
+            2,
+            3,
+            2
+          ],
+          [
+            24,
+            4,
+            28,
+            16,
+            15,
+            4
+          ],
+          [
+            10,
+            3,
+            17,
+            23,
+            19,
+            5
+          ],
+          [
+            6,
+            6,
+            14,
+            16,
+            9,
+            11
+          ],
+          [
+            3,
+            0,
+            1,
+            4,
+            10,
+            16
+          ]
+        ]
+      },
+      "pooled_case": {
+        "accuracy": 0.28078817733990147,
+        "balanced_accuracy": 0.27530043056358844,
+        "macro_f1": 0.2683127635441801,
+        "confusion_matrix": [
+          [
+            8,
+            2,
+            6,
+            3,
+            6,
+            1
+          ],
+          [
+            0,
+            2,
+            4,
+            1,
+            2,
+            1
+          ],
+          [
+            15,
+            1,
+            17,
+            9,
+            12,
+            3
+          ],
+          [
+            8,
+            1,
+            11,
+            17,
+            9,
+            5
+          ],
+          [
+            4,
+            5,
+            9,
+            8,
+            5,
+            7
+          ],
+          [
+            2,
+            0,
+            1,
+            4,
+            6,
+            8
+          ]
+        ]
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 62,
+          "held_roi_accuracy": 0.25806451612903225
+        },
+        {
+          "fold": 2,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 63,
+          "held_roi_accuracy": 0.2857142857142857
+        },
+        {
+          "fold": 3,
+          "training_cases": 162,
+          "held_cases": 41,
+          "held_rois": 58,
+          "held_roi_accuracy": 0.25862068965517243
+        },
+        {
+          "fold": 4,
+          "training_cases": 163,
+          "held_cases": 40,
+          "held_rois": 66,
+          "held_roi_accuracy": 0.24242424242424243
+        },
+        {
+          "fold": 5,
+          "training_cases": 163,
+          "held_cases": 40,
+          "held_rois": 62,
+          "held_roi_accuracy": 0.3387096774193548
+        }
+      ],
+      "representation_difference": {
+        "mean_absolute_pixel_difference_from_reference": 0.07626201957464218,
+        "fraction_of_pixels_changed_from_reference": 0.9400591589630225
+      },
+      "predicted_case_counts": [
+        37,
+        11,
+        48,
+        42,
+        40,
+        25
+      ]
+    }
+  },
+  "paired_case_comparisons": {
+    "median_original_to_reflection_padding": {
+      "left_only_correct": 14,
+      "right_only_correct": 20,
+      "both_correct": 31,
+      "both_wrong": 138,
+      "difference_right_minus_left": 0.029556650246305438,
+      "case_bootstrap_95_percentile_ci": [
+        -0.02463054187192118,
+        0.08374384236453203
+      ],
+      "exact_mcnemar_p_two_sided": 0.39152830513194203
+    },
+    "median_original_to_direct_stretch": {
+      "left_only_correct": 17,
+      "right_only_correct": 29,
+      "both_correct": 28,
+      "both_wrong": 129,
+      "difference_right_minus_left": 0.05911330049261082,
+      "case_bootstrap_95_percentile_ci": [
+        -0.0049261083743842304,
+        0.12315270935960593
+      ],
+      "exact_mcnemar_p_two_sided": 0.10380535550410741
+    }
+  },
+  "limitations": [
+    "Training-set OOF development evidence only; no untouched test evaluation.",
+    "Median-vs-reflection-versus-stretch sensitivity is not causal attribution.",
+    "Stretch ablation changes aspect ratios and should not be deployed by default.",
+    "Case IDs are not independently verified unique patient identities.",
+    "Repeated exploratory model contrasts lack multiplicity correction."
+  ]
+}

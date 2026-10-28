@@ -1,0 +1,22 @@
+study,model,unit,n,correct,accuracy,balanced_accuracy,macro_f1,evidence_type,source_result
+EXT-FUSION-001,majority,case,203,57,0.280788177,0.166666667,0.073076923,training-only exploratory case-fold OOF,07_Results/exp_fusion_001/metrics.json
+EXT-FUSION-001,image,case,203,45,0.221674877,0.201021029,0.197484057,training-only exploratory case-fold OOF,07_Results/exp_fusion_001/metrics.json
+EXT-FUSION-001,geometry,case,203,39,0.192118227,0.227030056,0.178449659,training-only exploratory case-fold OOF,07_Results/exp_fusion_001/metrics.json
+EXT-FUSION-001,fusion,case,203,46,0.226600985,0.211691559,0.204109920,training-only exploratory case-fold OOF,07_Results/exp_fusion_001/metrics.json
+EXT-PREPROC-001,median_original,case,203,45,0.221674877,0.201021029,0.197484057,training-only exploratory case-fold OOF,07_Results/exp_preproc_001/metrics.json
+EXT-PREPROC-001,reflection_padding,case,203,51,0.251231527,0.227623168,0.222952501,training-only exploratory case-fold OOF,07_Results/exp_preproc_001/metrics.json
+EXT-PREPROC-001,direct_stretch,case,203,57,0.280788177,0.275300431,0.268312764,training-only exploratory case-fold OOF,07_Results/exp_preproc_001/metrics.json
+EXT-QMAP-001,classical_64,case,203,54,0.266009852,0.252232769,0.242632249,training-only exploratory case-fold OOF,07_Results/exp_qmap_001/metrics.json
+EXT-QMAP-001,fixed_quantum_64,case,203,43,0.211822660,0.219088256,0.206788189,training-only exploratory case-fold OOF,07_Results/exp_qmap_001/metrics.json
+EXT-INTEGRITY-001,phase14_roi,roi,71,4,0.056338028,0.166666667,0.017777778,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-INTEGRITY-001,phase14_case,case,44,2,0.045454545,0.166666667,0.014492754,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-INTEGRITY-001,phase16_binary_proxy,image,70,38,0.542857143,0.507030604,0.469696970,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-INTEGRITY-001,phase9_quantum_sixclass,image,70,13,0.185714286,0.151629073,0.067155067,historical previously inspected; not new untouched test,07_Results/exp_integrity_001/historical_metrics_audit.json
+EXT-MODELS-001,classical_64__linear_logistic,case,203,54,0.266009852,0.252232769,0.242632249,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,classical_64__rbf_svm,case,203,57,0.280788177,0.180905696,0.137935652,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,classical_64__random_forest,case,203,54,0.266009852,0.189232508,0.178619853,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,classical_64__knn_7,case,203,58,0.285714286,0.192841644,0.176332444,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,fixed_quantum_64__linear_logistic,case,203,43,0.211822660,0.219088256,0.206788189,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,fixed_quantum_64__rbf_svm,case,203,54,0.266009852,0.172907760,0.131869105,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,fixed_quantum_64__random_forest,case,203,63,0.310344828,0.235445325,0.233502820,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json
+EXT-MODELS-001,fixed_quantum_64__knn_7,case,203,59,0.290640394,0.204153861,0.190692682,training-only exploratory matched classifier case-fold OOF,07_Results/exp_models_001/metrics.json

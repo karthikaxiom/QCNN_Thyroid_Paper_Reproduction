@@ -1,0 +1,154 @@
+{
+  "audit": "EXT-QMAP-001_INDEPENDENT",
+  "source_commit": "08689559def585173c6e951e6bc03427311c724d",
+  "source_git_blobs": {
+    "metrics": "bde9506b04d12c08d403ad17c170b8f98558b4df",
+    "oof_predictions": "a1ee52fe343435202ffd890863a84275b42a3d15"
+  },
+  "method": "Independent parse of 622 saved ROI out-of-fold rows; group by case_id and average six class probabilities, argmax, full 6×6 confusion matrix, metrics, exact McNemar binomial two-sided calculation",
+  "cases": 203,
+  "rois_per_model": 311,
+  "verified": true,
+  "case_label_support": [
+    26,
+    10,
+    57,
+    51,
+    38,
+    21
+  ],
+  "models": {
+    "classical_64": {
+      "correct_cases": 54,
+      "accuracy": 0.2660098522167488,
+      "balanced_accuracy": 0.2522327689510352,
+      "macro_f1": 0.24263224917095574,
+      "confusion_matrix": [
+        [
+          2,
+          6,
+          8,
+          2,
+          6,
+          2
+        ],
+        [
+          3,
+          2,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          10,
+          5,
+          17,
+          13,
+          8,
+          4
+        ],
+        [
+          8,
+          4,
+          11,
+          15,
+          6,
+          7
+        ],
+        [
+          4,
+          8,
+          8,
+          3,
+          10,
+          5
+        ],
+        [
+          2,
+          5,
+          2,
+          1,
+          3,
+          8
+        ]
+      ]
+    },
+    "fixed_quantum_64": {
+      "correct_cases": 43,
+      "accuracy": 0.21182266009852216,
+      "balanced_accuracy": 0.21908825608516014,
+      "macro_f1": 0.20678818850369404,
+      "confusion_matrix": [
+        [
+          3,
+          7,
+          6,
+          2,
+          7,
+          1
+        ],
+        [
+          4,
+          1,
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          14,
+          8,
+          10,
+          9,
+          12,
+          4
+        ],
+        [
+          8,
+          4,
+          12,
+          11,
+          8,
+          8
+        ],
+        [
+          8,
+          6,
+          5,
+          7,
+          7,
+          5
+        ],
+        [
+          1,
+          3,
+          2,
+          2,
+          2,
+          11
+        ]
+      ]
+    }
+  },
+  "paired": {
+    "both_correct": 33,
+    "both_wrong": 139,
+    "classical_only_correct": 21,
+    "quantum_only_correct": 10,
+    "delta_quantum_minus_classical": -0.054187192118226604,
+    "exact_mcnemar_two_sided_p": 0.07075554598122835,
+    "source_bootstrap_95_percentile_ci": [
+      -0.10837438423645321,
+      0
+    ]
+  },
+  "quantum_reference_max_abs_error": 1.2571526930571508e-8,
+  "interpretation": "Classical fixed representation has higher exploratory point estimates, but evidence does not establish a confirmatory advantage; the feature mappings have same dimension yet different nonlinear transformations.",
+  "limitations": [
+    "Train-only case-stratified CV; no new independent patient-unique or untouched test set.",
+    "Fixed quantum circuit, not a full QuCNet model or demonstration of quantum advantage.",
+    "Case-bootstrap interval excludes partition/refitting uncertainty and touches zero.",
+    "Historical results and other preprocessing explorations cannot be pooled as if prespecified confirmatory comparisons."
+  ]
+}

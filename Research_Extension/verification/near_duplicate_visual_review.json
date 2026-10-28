@@ -1,0 +1,67 @@
+{
+  "audit": "EXT-NEARDUP-001 visual review follow-up",
+  "review_date": "2026-10-28",
+  "method": "Direct visual comparison of original grayscale JPEG files fetched through connected GitHub repository, alongside the deterministic SHA256/pHash/dHash/correlation candidate screen and frozen Phase13 ROI metadata.",
+  "scope": "Three cross-assigned-split screening candidate pairs only",
+  "image_copies_republished": false,
+  "case_ids_not_verified_patients": true,
+  "disposition": "No visually identical cross-split raw-image pairs confirmed among the three flagged pairs; patient-level independence remains unverified",
+  "pairs": [
+    {
+      "a": "277_1.jpg",
+      "split_a": "validation",
+      "label_a": "4b",
+      "b": "348_1.jpg",
+      "split_b": "train",
+      "label_b": "4a",
+      "assessment": "Visually different ultrasound frames: structures/lesion location and orientation marks differ (277 shows DER/right, 348 shows IZQ/left). No indication of identical pixel content or the same frame in this review.",
+      "confirmed_same_image": false,
+      "identity_unknown": true,
+      "screening_phash": 8,
+      "screening_dhash": 9,
+      "correlation": 0.8625094294548035
+    },
+    {
+      "a": "177_1.jpg",
+      "split_a": "train",
+      "label_a": "4c",
+      "b": "313_1.jpg",
+      "split_b": "test",
+      "label_b": "4c",
+      "assessment": "Visually distinct grayscale anatomical patterns and lesion framing; not the same displayed ultrasound frame. Image 313_1.jpg contains burned-in TI-RADS text at the bottom of the full raw frame, but the saved Phase13 test ROI crop spans y=12..190 and therefore excludes that bottom text; no claim that the model read this overlay.",
+      "confirmed_same_image": false,
+      "identity_unknown": true,
+      "screening_phash": 8,
+      "screening_dhash": 12,
+      "correlation": 0.8228142261505127
+    },
+    {
+      "a": "305_1.jpg",
+      "split_a": "test",
+      "label_a": "2",
+      "b": "34_1.jpg",
+      "split_b": "train",
+      "label_b": "4c",
+      "assessment": "Different apparent lesion morphology and relative position; not the same displayed ultrasound frame on visual comparison. Similar fixed ultrasound frame/overlay layouts may contribute to perceptual-hash similarity.",
+      "confirmed_same_image": false,
+      "identity_unknown": true,
+      "screening_phash": 8,
+      "screening_dhash": 12,
+      "correlation": 0.6879974007606506
+    }
+  ],
+  "image_git_blob_shas": {
+    "277_1.jpg": "9d42b43352f06fec5c286b13b6cfa504b9c8f7f8",
+    "348_1.jpg": "61b87ab58e7e9996af3f9f56678ef2037752e57a",
+    "177_1.jpg": "7764b1c2250c2e7a102f11e37653d3ba1f67ca1e",
+    "313_1.jpg": "36dc53715469a6ca08d73e3cce9b79fde97db6d3",
+    "305_1.jpg": "dc9bf90d153d4016f6c023fd1a0bbcc4c8cef394",
+    "34_1.jpg": "d7c056db7732f59c759f45a281ea961d22e8cd55"
+  },
+  "limits": [
+    "Qualitative review is not radiologist adjudication and cannot establish different patient identity or rule out duplicate lesions acquired in different views.",
+    "Only the three preselected cross-split candidates were visually reviewed, not every possible image pairing.",
+    "The perceptual-hash screen may miss true duplicates with strong crop/rotation/compression differences.",
+    "A TI-RADS label is visibly embedded in the full raw image 313_1.jpg, but absent from the recorded Phase13 test ROI bounds. Raw-image pipelines should screen for burned-in text separately before interpretability claims."
+  ]
+}

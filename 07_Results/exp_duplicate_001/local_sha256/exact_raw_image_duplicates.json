@@ -1,0 +1,182 @@
+{
+  "experiment": "EXT-DUPLICATE-001",
+  "method": "SHA-256 over raw image file bytes",
+  "scope": "480 recovered raw DDTI ultrasound images",
+  "split_assignment_source": "07_Results/phase12_case_level_split/split_case_assignments.csv",
+  "split_assignment_sha256": "6a27b824e5eb3e768c887db357151dd1db2a45ad7ee0e4b687e08414eb6bb9cf",
+  "original_files_modified": false,
+  "image_files_decoded_or_displayed": false,
+  "raw_test_images_hashed_for_identity": true,
+  "test_predictions_accessed": false,
+  "model_selection_or_training_performed": false,
+  "cannot_detect": [
+    "Near-duplicate images with different encodings or crops",
+    "Distinct files depicting the same nodule or patient",
+    "False patient identity separation across case IDs"
+  ],
+  "counts": {
+    "raw_image_files": 480,
+    "distinct_file_sha256": 471,
+    "duplicate_groups": 6,
+    "files_in_duplicate_groups": 15,
+    "redundant_files": 9,
+    "cross_case_duplicate_groups": 2,
+    "cross_assigned_split_duplicate_groups": 0
+  },
+  "duplicate_groups": [
+    {
+      "sha256": "54d07f9919db2731a56856e63843fa9b9177cb18d77a3bad6f650f56879a9ba5",
+      "file_count": 2,
+      "case_count": 1,
+      "cross_case": false,
+      "cross_assigned_split": false,
+      "assigned_splits": [],
+      "files": [
+        {
+          "image_path": "02_Dataset_Raw/archive/230_1.jpg",
+          "case_id": "230",
+          "split": "outside_strict_split",
+          "size_bytes": 26691
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/230_2.jpg",
+          "case_id": "230",
+          "split": "outside_strict_split",
+          "size_bytes": 26691
+        }
+      ]
+    },
+    {
+      "sha256": "6bd4498c0eadb09d252421e58659373d6bb9d3ad81a14e496df05a371e724bd9",
+      "file_count": 2,
+      "case_count": 2,
+      "cross_case": true,
+      "cross_assigned_split": false,
+      "assigned_splits": [
+        "train"
+      ],
+      "files": [
+        {
+          "image_path": "02_Dataset_Raw/archive/353_2.jpg",
+          "case_id": "353",
+          "split": "train",
+          "size_bytes": 34167
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/396_1.jpg",
+          "case_id": "396",
+          "split": "outside_strict_split",
+          "size_bytes": 34167
+        }
+      ]
+    },
+    {
+      "sha256": "9d0eaeebb6aeaf884066557d045cef7c4135dfcf6d6aef015b98c6c81cdc3d8b",
+      "file_count": 2,
+      "case_count": 1,
+      "cross_case": false,
+      "cross_assigned_split": false,
+      "assigned_splits": [],
+      "files": [
+        {
+          "image_path": "02_Dataset_Raw/archive/213_1.jpg",
+          "case_id": "213",
+          "split": "outside_strict_split",
+          "size_bytes": 44924
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/213_2.jpg",
+          "case_id": "213",
+          "split": "outside_strict_split",
+          "size_bytes": 44924
+        }
+      ]
+    },
+    {
+      "sha256": "ada89d13d264522ddc0e5f4e90573d1fa2c19426002f4080b92596e7809076e3",
+      "file_count": 2,
+      "case_count": 1,
+      "cross_case": false,
+      "cross_assigned_split": false,
+      "assigned_splits": [],
+      "files": [
+        {
+          "image_path": "02_Dataset_Raw/archive/1_1.jpg",
+          "case_id": "1",
+          "split": "outside_strict_split",
+          "size_bytes": 29865
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/1_2.jpg",
+          "case_id": "1",
+          "split": "outside_strict_split",
+          "size_bytes": 29865
+        }
+      ]
+    },
+    {
+      "sha256": "dff3a1475ee75f58fe6a68da406557054b8ec6702ce948b8a520096aa196381e",
+      "file_count": 5,
+      "case_count": 5,
+      "cross_case": true,
+      "cross_assigned_split": false,
+      "assigned_splits": [
+        "train"
+      ],
+      "files": [
+        {
+          "image_path": "02_Dataset_Raw/archive/150_1.jpg",
+          "case_id": "150",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/233_2.jpg",
+          "case_id": "233",
+          "split": "train",
+          "size_bytes": 33556
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/323_1.jpg",
+          "case_id": "323",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/326_1.jpg",
+          "case_id": "326",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/349_1.jpg",
+          "case_id": "349",
+          "split": "outside_strict_split",
+          "size_bytes": 33556
+        }
+      ]
+    },
+    {
+      "sha256": "ed9df81ee97c2910b30bf0af472fd3104ee63b0f51857d0305e421cc88539d69",
+      "file_count": 2,
+      "case_count": 1,
+      "cross_case": false,
+      "cross_assigned_split": false,
+      "assigned_splits": [],
+      "files": [
+        {
+          "image_path": "02_Dataset_Raw/archive/92_3.jpg",
+          "case_id": "92",
+          "split": "outside_strict_split",
+          "size_bytes": 36633
+        },
+        {
+          "image_path": "02_Dataset_Raw/archive/92_4.jpg",
+          "case_id": "92",
+          "split": "outside_strict_split",
+          "size_bytes": 36633
+        }
+      ]
+    }
+  ]
+}
