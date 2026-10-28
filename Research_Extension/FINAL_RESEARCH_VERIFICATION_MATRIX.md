@@ -75,9 +75,9 @@ Visually reviewed the stored PNG versions of the four plots below, with the same
 
 ## Remaining closeout gates — NOT READY FOR MANUSCRIPT YET
 
-1. **Bibliography verified:** QuCNet is IEEE Access 12 (2024), pp. 27829–27842, DOI 10.1109/ACCESS.2024.3367806; institutional abstract performance pertains to 127 and 98 images, **not** our historical 70-image evaluation. Full-paper methodological claims, figure/equation correspondence and the original source PDF still require final direct page-by-page inspection.
+1. **Full paper methods and equations checked:** the locally available 14-page original IEEE PDF was inspected directly; its §III–VI preprocessing, four-channel QFT, quantum circuit, architectures, callbacks, mathematical definitions and authors' distinct test denominators have been compared against the repository code. The precise source/implementation matrix is recorded in ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md. The source gives broad pipeline details but not all circuit or CNN hyperparameters, and even its RX angle descriptions differ between sections. This is not a gate-for-gate identical reproduction.
 2. **Dataset provenance located but rights unresolved:** original CIM@LAB listing and Kaggle DDTI mirror verified; mirror license is 'Other (specified in description)', not an explicit unrestricted redistribution grant. Confirm permissions and screen raw images/XML and publication figures for identifying/burned-in material before reusing them.
-3. Check all final selected figure exports at IEEE column width, and make sure every displayed quantity can be recreated from stored CSV or JSON data. Continue preserving original experiment charts unchanged.
+3. **Selected figures audited:** five vector SVGs have measured physical widths and reproducible CSV/JSON sources. Four wide plots require double-column IEEE placement; single-column downscaling would reduce nominal label sizes to ~4.3–4.7 pt. The figure audit is in IEEE_FIGURE_PREFLIGHT.md. Actual final printed template proof remains an editorial/typesetting step.
 4. Final consistency review of the experiment table, frozen-split counts, optional patient-ID uncertainty, publication ethics, negative findings and explicit limitations. Confirm manuscript outline only after these checks.
 5. The public research branch and the historical result records should be reconciled into the README by a **narrow, additive, reviewed update** only when approved for final handoff. Do not overwrite its existing historical text.
 
@@ -89,4 +89,14 @@ Bibliographic identity and reported source-paper abstract metrics were checked a
 
 A machine-readable **13-row consolidated results inventory** was generated directly from the repository's verified metrics JSON, distinguishing unit/partition/evidence level: `Research_Extension/MASTER_VERIFIED_RESULTS.csv`.
 
-**No new empirical trials are needed by default.** Manuscript readiness remains blocked by the full paper-method comparison, source-data permissions, and final print-scale/figure checks. These are disclosure and documentation issues; they do not justify further untargeted model searches.
+**No new empirical trials are needed by default.** The full-paper method comparison and selected figure-format audit are now documented. The remaining substantive unresolved item is raw DDTI image/XML redistribution permission; final compiled IEEE print proof is a manuscript production step, not a new scientific experiment. Do not claim unrestricted image rights.
+
+## Final method and figure verification update — 2026-10-28
+
+I independently inspected the complete 14-page original Main_Paper.pdf (not only its metadata/abstract) and reconciled the paper-specific training/testing claims with the source code. The paper states a 128×128 full-image quantum input, four 64×64 channels from 2×2 quantum patches, source 80/20 image split, mean/std scaling, augmentation and SMOTE. The more recent 64×64 ROI case-separated experiment changes the observation unit and preprocessing; it is therefore an independent methodological audit, **not exact numerical reproduction**. Details, page anchors and specific unresolved circuit settings are in ORIGINAL_PAPER_FULLTEXT_FIDELITY_AUDIT.md.
+
+**Source-article numerical notation note:** IEEE printed equation (19) depicts the softmax denominator with lower index starting at j=i. That text is not the standard all-category normalization. The independent implementation uses the standard sum over all classes; do not copy the apparent printed notation anomaly into our own equations as valid software mathematics.
+
+Selected vector figures and accompanying data are accounted for. Existing wide SVGs must be placed as double-column figures; they are too small when blindly scaled into a single IEEE column. See IEEE_FIGURE_PREFLIGHT.md.
+
+**Remaining decision external to machine learning experiments:** obtain explicit documented DDTI raw image/XML re-publication authority or refrain from distributing raw medical images and annotate the dataset source and limits. The publicly tracked raw files are an existing repository-release concern; do not rewrite or delete original Git history without the owner's express instructions. No image copy is required to present the numeric experiments in the article.
