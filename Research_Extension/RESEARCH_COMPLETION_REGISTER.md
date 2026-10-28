@@ -316,3 +316,28 @@ Phase9 configuration records 223 training and 56 validation images from its 279 
 7. **Guide-specific diagnostics added without retraining.** The eight-model macro one-vs-rest AUCs range from 0.5353 to 0.6069, and full sensitivity, specificity, precision, NPV and ROC data are saved under exp_eval_001. These are descriptive training-only TI-RADS ROC curves, not clinical binary cancer diagnostic ROC curves.
 
 **Scope decision:** The bounded experiments and methodological audits support research discussion with the guide. Any new data processing, gate encoding or model architecture requires a specific testable question and a separately versioned experiment; indefinite accuracy searching is not justified. **Manuscript and Overleaf drafting remain on hold until explicitly requested.**
+
+## Guide-directed research strengthening sequence — locked before manuscript
+
+**Purpose:** Address the guide's handwritten review of the whole research project. The guide expects results from genuinely comparable model families; a model-by-model architecture figure with diagrams; dataset category/split counts; hyperparameters and model complexity; comparison with the published article; sensitivity/specificity/F1/ROC; an explanation of failures; and candid discussion/future work. The public README presentation is retained, with new colour figures added additively.
+
+### Research questions and evidence status
+
+| Research question | Present evidence | Scientific decision |
+| --- | --- | --- |
+| Does a genuine four-qubit fixed filter match the historical implementation? | PennyLane QNode and tensor channel checks; single-patch reference agreement approximately 1.26e−8; cache-key collisions quantified for synthetic SMOTE patches | **Answered for fixed simulated filter.** Cannot claim author-exact Qiskit gates or quantum speedup. |
+| Does a quantum feature representation beat comparable classical features? | Eight models = four classifiers × two 64-dimensional inputs, same 203 case IDs and folds, full probabilities/confusions, paired intervals | **Exploratory; no established quantum superiority.** Quantum RF is highest observed raw accuracy (63/203), but low class-level recall and uncertain paired gain. |
+| Why did the strict ROI CNN collapse into one predicted class? | Original metrics; BN recalibration; padding/resize/fusion controls; per-class diagnostic analyses | **Failure documented; cause not proven.** Maintain its zero-heavy confusion matrix. Do not fix charts or assign a cause without an isolation experiment. |
+| Which representation choices change predictions and are they robust? | Original/reflection/direct-stretch folds and padding association, all with case-level paired tests | **Exploratory, limited evidence.** Stretch changes shape; accuracy changes do not prove a preprocessing improvement. |
+| Can we report clinical diagnostic performance or cross-dataset generalization? | No pathology ground truth; no verified patient linkage; no separate independent dataset or new untouched clinical test | **Not yet answerable**. These are required inputs, not code defects that model tuning can repair. |
+
+### Limited further empirical work, if pursued before writing
+
+1. **Priority A — reproducibility and stability, not a model-selection contest:** perform a single predeclared repeatability analysis of the *same fixed classical/quantum feature comparisons* under multiple case-stratified fold seeds, with every repeat reported rather than choosing a best seed. Report distribution and rank instability of balanced accuracy and macro-F1, whole-case grouping, and no use of historical validation/test partitions. This adds uncertainty about fold assignment but remains development-only.
+2. **Priority B — circuit-encoding ablation only if needed to answer a precise question:** contrast the existing RX(pixel in [0,1]) with one expressly named RX(pi·pixel) variant under the same 203 training cases, fixed circuit weights, same classifier(s), identical folds and bootstrap procedure. A different encoding is a *hypothesis*, never an automatic correction. Report all chosen variants, computational cost and adverse findings.
+3. **Priority C — genuinely independent validation only if a legitimate external dataset becomes available:** recover appropriate TI-RADS labels, verify patient identifiers and consent/terms, define an untouched test protocol before loading outcomes, and do not merge data sources with incompatible targets. This would materially strengthen claims; it cannot be simulated using the already-inspected 44 historical test cases.
+4. **Presentation/engineering check:** retain exact historical architecture, parameters, model-size counts and hyperparameters; record actual hardware/library versions and measured runtime only where logs exist; show source-paper numbers as *non-comparable author reports* and explain why.
+
+These are **candidate future tasks, not completed experiments or evidence of improved accuracy**. Do not launch all exploratory arms in a search for a favorable p-value. If time is limited, prioritize fully checked interpretation, external validation feasibility and a concise, reproducible comparative matrix over accumulating weakly identified models.
+
+**Writing gate:** IEEE/Overleaf manuscript preparation begins only on the researcher's explicit instruction. The eventual paper should be an independent methodological audit with precise equations, paper-versus-code deviations, all adverse results, and reviewer-auditable files. No result is represented as a new clinical benchmark or quantum computational advantage.
